@@ -1,4 +1,5 @@
 ---
+title: Placeholder page!
 ---
 
 # Placeholder page!
