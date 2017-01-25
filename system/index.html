@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/static/">
+    <link href="patternfly.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="index_data_002/system.css" rel="stylesheet">
+    <script src="jquery.js"></script><style type="text/css">
+:root #content > #right > .dose > .dosesingle,
+:root #content > #center > .dose > .dosesingle
+{ display: none !important; }</style>
+    <script src="cockpit.js"></script>
+    <script src="po.js"></script>
+<link rel="stylesheet" type="text/css" href="socialwidgets.css"></head>
+<body>
+
+    <script id="ssh-host-keys-tmpl" type="x-template/mustache">
+        <div class="list-group dialog-list-ct">
+            {{#keys}}
+                <div class="list-group-item">
+                    <p>{{ title }}</p>
+                    {{#fps}}
+                    <small>{{.}}</small>
+                    {{/fps}}
+                </div>
+            {{/keys}}
+            {{^keys}}
+                <div class="list-group-item">
+                    <p translatable="yes">No host keys found.</p>
+                </div>
+            {{/keys}}
+        </div>
+    </script>
+
+    <script id="ntp-status-icon-tmpl" type="x-template/mustache">
+      {{#Synched}}
+      <span class="fa fa-lg fa-info-circle"></span>
+      {{/Synched}}
+      {{^Synched}}
+      {{#Server}}
+      <span class="spinner spinner-xs spinner-inline"></span>
+      {{/Server}}
+      {{^Server}}
+      <span class="fa fa-lg fa-exclamation-circle fa-red"></span>
+      {{/Server}}
+      {{/Synched}}
+    </script>
+
+    <script id="ntp-status-tmpl" type="x-template/mustache">
+      {{#Synched}}
+      {{#Server}}
+      <div translatable="yes">Synchronized with {{Server}}</div>
+      {{/Server}}
+      {{^Server}}
+      <div translatable="yes">Synchronized</div>
+      {{/Server}}
+      {{/Synched}}
+      {{^Synched}}
+      {{#Server}}
+      <div translatable="yes">Trying to synchronize with {{Server}}</div>
+      {{/Server}}
+      {{^Server}}
+      <div translatable="yes">Not synchronized</div>
+      {{#service}}
+      <a data-goto-service="{{.}}" class="small-messages" translate>Log messages</a>
+      {{/service}}
+      {{/Server}}
+      {{/Synched}}
+      {{#SubStatus}}
+      <div class="small-messages">{{SubStatus}}</div>
+      {{/SubStatus}}
+    </script>
+
+    <div id="server" class="container-fluid page-ct">
+        <div class="col-md-4 col-lg-3 info-table-ct-container">
+            <table class="info-table-ct">
+                <tbody><tr>
+                    <td>Hardware</td>
+                    <td id="system_information_hardware_text"></td>
+                </tr>
+                <tr id="system-info-asset-row" style="display: none;">
+                    <td>Asset Tag</td>
+                    <td id="system_information_asset_tag_text"></td>
+                </tr>
+                <tr>
+                    <td>Machine ID</td>
+                    <td id="system_machine_id" title="a253204d210e4bd59f7954f7afc02420
+">a253204d210e4bd59f7954f7afc02420
+</td>
+                </tr>
+                <tr id="system_information_os">
+                    <td>Operating System</td>
+                    <td id="system_information_os_text">Fedora 25 (Server Edition)</td>
+                </tr>
+                <tr id="system-ssh-keys">
+                    <td>Secure Shell Keys</td>
+                    <td><a id="system-ssh-keys-link" data-toggle="modal" data-target="#system_information_ssh_keys">Show fingerprints</a></td>
+                </tr>
+                <tr id="system-ostree-version" class="hidden">
+                    <td>Version</td>
+                    <td><a id="system-ostree-version-link"></a></td>
+                </tr>
+                <tr>
+                    <td>Host Name</td>
+                    <td><a class="hostname-privileged" id="system_information_hostname_button" data-original-title="" title="">Dew</a></td>
+                </tr>
+                <tr id="system-info-domain">
+                    <td>Domain</td>
+                    <td class="button-location">
+                    <a data-original-title="" title="">Join Domain</a></td>
+                </tr>
+                <tr>
+                    <td>System Time</td>
+                    <td><a class="systime-privileged" id="system_information_systime_button">2017-01-25 16:21</a>
+                      <a id="system_information_systime_ntp_status" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-html="true" data-content="
+      &lt;div&gt;Synchronized&lt;/div&gt;
+    " data-original-title="" title="" style="display: inline;" hidden="">
+      <span class="fa fa-lg fa-info-circle"></span>
+    </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Power Options</td>
+                    <td id="shutdown-group">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-danger" data-action="restart" data-container="body">Restart</button>
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                <span class="caret"></span>
+                            </button>
+                            <ul role="menu" class="dropdown-menu">
+                                <li class="presentation">
+                                    <a role="menuitem" data-action="restart">Restart</a>
+                                </li>
+                                <li class="presentation">
+                                    <a role="menuitem" data-action="shutdown">Shut Down</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="system-info-performance">
+                    <td>Performance Profile</td>
+                    <td class="button-location">
+                    <div>
+  <a class="action-trigger">throughput-performance</a>
+  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-html="true" data-content="This system is using a custom profile" data-original-title="" title="">
+    <span class="fa fa-lg fa-info-circle"></span>
+  </a>
+</div></td>
+                </tr>
+                <tr id="server-pmlogger-onoff-row" style="display: none;" hidden="">
+                    <td>Store Performance Data</td>
+                    <td>
+                        <div class="btn-group btn-onoff-ct" id="server-pmlogger-switch" data-toggle="buttons">
+                            <label class="btn">
+                                <input name="pmlogger-switch" autocomplete="off" type="radio">
+                                <span>On</span>
+                            </label>
+                            <label class="btn active">
+                                <input name="pmlogger-switch" autocomplete="off" checked="checked" type="radio">
+                                <span>Off</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div id="server-graph-columns" class="col-md-8 col-lg-9">
+            <div id="server-graph-toolbar" class="zoom-controls standard-zoom-controls">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span>5 minutes</span>
+                        <div class="caret"></div>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-action="goto-now">Go to now</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-range="300">5 minutes</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-range="3600">1 hour</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-range="21600">6 hours</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-range="86400">1 day</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-range="604800">1 week</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-default" data-action="zoom-out">
+                    <span class="glyphicon glyphicon-zoom-out"></span>
+                </button>
+                <div class="btn-group">
+                    <button class="btn btn-default fa fa-angle-left" data-action="scroll-left"></button>
+                    <button class="btn btn-default fa fa-angle-right" data-action="scroll-right" disabled="disabled"></button>
+                </div>
+            </div>
+            <div>
+              <span class="plot-unit" id="server_cpu_unit">%</span><a id="link-cpu">CPU</a>
+            </div>
+            <div id="server_cpu_graph" class="server-graph zoomable-plot" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 122px; top: 100px; left: 84px; text-align: center;" class="flot-tick-label tickLabel"> 16:17</div><div style="position: absolute; max-width: 122px; top: 100px; left: 250px; text-align: center;" class="flot-tick-label tickLabel"> 16:18</div><div style="position: absolute; max-width: 143px; top: 100px; left: 415px; text-align: center;" class="flot-tick-label tickLabel"> 16:19</div><div style="position: absolute; max-width: 143px; top: 100px; left: 581px; text-align: center;" class="flot-tick-label tickLabel"> 16:20</div><div style="position: absolute; max-width: 143px; top: 100px; left: 747px; text-align: center;" class="flot-tick-label tickLabel"> 16:21</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 92px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">0</div><div style="position: absolute; top: 69px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">50</div><div style="position: absolute; top: 46px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">100</div><div style="position: absolute; top: 23px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">150</div><div style="position: absolute; top: 0px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">200</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas></div>
+            <br>
+            <div>
+              <span class="plot-unit" id="server_memory_unit">MiB</span><a id="link-memory">Memory</a>
+            </div>
+            <div id="server_memory_graph" class="server-graph zoomable-plot" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 122px; top: 100px; left: 84px; text-align: center;" class="flot-tick-label tickLabel"> 16:17</div><div style="position: absolute; max-width: 122px; top: 100px; left: 250px; text-align: center;" class="flot-tick-label tickLabel"> 16:18</div><div style="position: absolute; max-width: 143px; top: 100px; left: 415px; text-align: center;" class="flot-tick-label tickLabel"> 16:19</div><div style="position: absolute; max-width: 143px; top: 100px; left: 581px; text-align: center;" class="flot-tick-label tickLabel"> 16:20</div><div style="position: absolute; max-width: 143px; top: 100px; left: 747px; text-align: center;" class="flot-tick-label tickLabel"> 16:21</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 92px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">0</div><div style="position: absolute; top: 68px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">256</div><div style="position: absolute; top: 45px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">512</div><div style="position: absolute; top: 21px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">768</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas></div>
+            <br>
+            <div>
+              <span class="plot-unit" id="server_disk_io_unit">MiB/s</span><a id="link-disk">Disk I/O</a>
+            </div>
+            <div id="server_disk_io_graph" class="server-graph zoomable-plot" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 122px; top: 100px; left: 84px; text-align: center;" class="flot-tick-label tickLabel"> 16:17</div><div style="position: absolute; max-width: 122px; top: 100px; left: 250px; text-align: center;" class="flot-tick-label tickLabel"> 16:18</div><div style="position: absolute; max-width: 143px; top: 100px; left: 415px; text-align: center;" class="flot-tick-label tickLabel"> 16:19</div><div style="position: absolute; max-width: 143px; top: 100px; left: 581px; text-align: center;" class="flot-tick-label tickLabel"> 16:20</div><div style="position: absolute; max-width: 143px; top: 100px; left: 747px; text-align: center;" class="flot-tick-label tickLabel"> 16:21</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 92px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">0</div><div style="position: absolute; top: 19px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">1</div><div style="position: absolute; top: 56px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">0.5</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas></div>
+            <br>
+            <div>
+              <span class="plot-unit" id="server_network_traffic_unit">Kbps</span><a id="link-network">Network Traffic</a>
+            </div>
+            <div id="server_network_traffic_graph" class="server-graph zoomable-plot" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 122px; top: 100px; left: 84px; text-align: center;" class="flot-tick-label tickLabel"> 16:17</div><div style="position: absolute; max-width: 122px; top: 100px; left: 250px; text-align: center;" class="flot-tick-label tickLabel"> 16:18</div><div style="position: absolute; max-width: 143px; top: 100px; left: 415px; text-align: center;" class="flot-tick-label tickLabel"> 16:19</div><div style="position: absolute; max-width: 143px; top: 100px; left: 581px; text-align: center;" class="flot-tick-label tickLabel"> 16:20</div><div style="position: absolute; max-width: 143px; top: 100px; left: 747px; text-align: center;" class="flot-tick-label tickLabel"> 16:21</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 92px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">0</div><div style="position: absolute; top: 46px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">400</div><div style="position: absolute; top: 0px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">800</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 859px; height: 120px;" width="859" height="120"></canvas></div>
+        </div>
+    </div>
+
+    <div id="cpu_status" style="display: none;" hidden="">
+        <ul class="server-graph-legend">
+            <li class="cpu-io-wait">
+                <i class="fa fa-square"></i>
+                <span>I/O Wait</span>
+            </li>
+            <li class="cpu-kernel">
+                <i class="fa fa-square"></i>
+                <span>Kernel</span>
+            </li>
+            <li class="cpu-user">
+                <i class="fa fa-square"></i>
+                <span>User</span>
+            </li>
+            <li class="cpu-nice">
+                <i class="fa fa-square"></i>
+                <span>Nice</span>
+            </li>
+        </ul>
+        <div id="cpu_status_graph"></div>
+    </div>
+
+    <div id="memory_status" style="display: none;" hidden="">
+        <ul class="server-graph-legend">
+            <li class="memory-swap">
+                <i class="fa fa-square"></i>
+                <span>Swap Used</span>
+            </li>
+            <li class="memory-cached">
+                <i class="fa fa-square"></i>
+                <span>Cached</span>
+            </li>
+            <li class="memory-used">
+                <i class="fa fa-square"></i>
+                <span>Used</span>
+            </li>
+            <li class="memory-free">
+                <i class="fa fa-square"></i>
+                <span>Free</span>
+            </li>
+        </ul>
+        <div id="memory_status_graph"></div>
+    </div>
+
+    <div class="modal" id="error-popup" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="error-popup-title">Unexpected error</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="error-popup-message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="system_information_ssh_keys" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Machine SSH Key Fingerprints</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="spinner spinner-lg"></div>
+                    <div class="alert alert-danger" hidden="">
+                      <span class="pficon pficon-error-circle-o"></span>
+                      <strong></strong>
+                    </div>
+                    <div class="content" hidden=""></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="system_information_change_hostname" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Change Host Name</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="form-table-ct">
+                        <tbody><tr>
+                            <td>
+                                <label class="control-label" for="sich-pretty-hostname">Pretty Host Name</label>
+                            </td>
+                            <td>
+                                <input id="sich-pretty-hostname" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label" for="sich-hostname">Real Host Name</label>
+                            </td>
+                            <td>
+                                <div id="sich-hostname-error">
+                                    <input id="sich-hostname" class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="has-error">
+                                    <span id="sich-note-1" class="help-block"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="has-error">
+                                    <span id="sich-note-2" class="help-block"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" id="sich-apply-button">Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="ntp-servers-tmpl" type="x-template/mustache">
+      <div class="systime-inline">
+        {{#NTPServers}}
+        <form class="form-inline">
+          <button data-action="add" data-index={{index}} class="btn btn-default fa fa-plus"></button>
+          <button data-action="del" data-index={{index}} class="btn btn-default pficon-close"></button>
+          <div class="form-group">
+            <input type="text" class="form-control" value="{{Value}}" placeholder="{{Placeholder}}">
+          </div>
+        </form>
+        {{/NTPServers}}
+      </div>
+    </script>
+
+    <div class="modal" id="system_information_change_systime" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog cockpit-modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Change System Time</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="form-table-ct">
+                        <tbody><tr>
+                            <td>
+                                <label class="control-label">Time Zone</label>
+                            </td>
+                            <td>
+                                <div class="combobox-container"> <input name="" value="" type="hidden"> <div class="input-group"> <input autocomplete="off" class="form-control" type="text"> <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret"></span> <span class="glyphicon glyphicon-remove"></span> </span> </div> </div><select class="form-control" id="systime-timezones" style="max-height: 10em; display: none;">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="has-error">
+                                <span id="systime-timezone-error" class="help-block">Invalid time zone</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label" for="change_systime">Set Time</label></td>
+                            <td>
+                                <div class="btn-group bootstrap-select dropdown form-control" id="change_systime">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <span class="pull-left">Manually</span>
+                                        <div class="caret"></div>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li value="manual_time"><a>Manually</a></li>
+                                        <li value="ntp_time"><a>Automatically using NTP</a></li>
+                                        <li value="ntp_time_custom"><a>Automatically using specific NTP servers</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="systime-manual-row">
+                            <td></td>
+                            <td>
+                                <input class="form-control" id="systime-date-input" type="text">
+                                <input class="form-control" id="systime-time-hours" type="text">
+                                :
+                                <input class="form-control" id="systime-time-minutes" type="text">
+                            </td>
+                        </tr>
+                        <tr id="systime-manual-error-row">
+                            <td>
+                            </td>
+                            <td class="has-error">
+                                <span id="systime-parse-error" class="help-block"></span>
+                            </td>
+                        </tr>
+                        <tr id="systime-ntp-servers-row">
+                            <td></td>
+                            <td id="systime-ntp-servers">
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" id="systime-apply-button">Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="shutdown-dialog" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control">                    </textarea>
+                    <table>
+                        <tbody><tr>
+                            <td>
+                                <label>Delay</label>
+                            </td>
+                            <td>
+                                <div class="btn-group bootstrap-select dropdown form-control">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <span class="pull-left">1 Minute</span>
+                                        <div class="caret"></div>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li value="1"><a>1 Minute</a></li>
+                                        <li value="5"><a>5 Minutes</a></li>
+                                        <li value="20"><a>20 Minutes</a></li>
+                                        <li value="40"><a>40 Minutes</a></li>
+                                        <li value="60"><a>60 Minutes</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li value="0"><a>No Delay</a></li>
+                                        <li value="x"><a>Specific Time</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input class="form-control shutdown-date" type="text">
+                                    <input class="form-control shutdown-hours" type="text">
+                                    :
+                                    <input class="form-control shutdown-minutes" type="text">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirmation-dialog" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="confirmation-dialog-title"></h4>
+                </div>
+                <div class="modal-body" id="confirmation-dialog-body">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" id="confirmation-dialog-cancel">Cancel</button>
+                    <button class="btn btn-danger" id="confirmation-dialog-confirm">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index_data_002/system.js"></script>
+    <script src="index_data_002/domain.js"></script>
+    <script src="index_data_002/performance.js"></script>
+
+
+<ul class="typeahead typeahead-long dropdown-menu"></ul></body></html>

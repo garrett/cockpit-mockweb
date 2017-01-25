@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--
+ * This file is part of Cockpit.
+ *
+ * Copyright (C) 2015 Red Hat, Inc.
+ *
+ * Cockpit is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * Cockpit is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="patternfly.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="branding.css" rel="stylesheet">
+    <script src="jquery.js"></script><style type="text/css">
+:root #content > #right > .dose > .dosesingle,
+:root #content > #center > .dose > .dosesingle
+{ display: none !important; }</style>
+    <script src="cockpit.js"></script>
+    <script src="po.js"></script>
+    <script src="manifests.js"></script>
+    <script src="index_data/dashboard.js"></script>
+<link rel="stylesheet" type="text/css" href="socialwidgets.css"></head>
+<body>
+
+    <div id="dashboard" class="container-fluid page-ct">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="dashboard-toolbar" class="pull-right zoom-controls">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span>5 minutes</span>
+                            <div class="caret"></div>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-action="goto-now">Go to now</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-range="300">5 minutes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-range="3600">1 hour</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-range="21600">6 hours</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-range="86400">1 day</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-range="604800">1 week</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-default" data-action="zoom-out">
+                        <span class="glyphicon glyphicon-zoom-out"></span>
+                    </button>
+                    <div class="btn-group">
+                        <button class="btn btn-default fa fa-angle-left" data-action="scroll-left"></button>
+                        <button class="btn btn-default fa fa-angle-right" data-action="scroll-right" disabled="disabled"></button>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li data-monitor-id="0" class="active"><a><span>CPU</span></a></li>
+                    <li data-monitor-id="1"><a><span>Memory</span></a></li>
+                    <li data-monitor-id="2"><a><span>Network</span></a></li>
+                    <li data-monitor-id="3"><a><span>Disk I/O</span></a></li>
+                </ul>
+                <br>
+                <div class="dashboard-plot zoomable-plot" id="dashboard-plot-0" style=""></div>
+                <div class="dashboard-plot zoomable-plot" id="dashboard-plot-1" style="display: none;"></div>
+                <div class="dashboard-plot zoomable-plot" id="dashboard-plot-2" style="display: none;"></div>
+                <div class="dashboard-plot zoomable-plot" id="dashboard-plot-3" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default" id="dashboard-hosts">
+                    <div class="panel-heading">
+                        <button class="btn btn-primary servers-privileged fa fa-plus" id="dashboard-add" title="" data-original-title="Add Server"></button>
+                        <button class="btn btn-default fa fa-check" id="dashboard-enable-edit" title="Edit Server"></button>
+                        <span>Servers</span>
+                    </div>
+                    <div class="list-group">
+            <a data-address="localhost" class="list-group-item connected" data-color="#0099d3" target="_parent" href="https://dew:9090/@localhost" style="border-left-color: rgb(0, 153, 211);">
+                <button class="btn btn-danger edit-button pficon btn-delete pficon-delete delete-localhost disabled" data-original-title="" title=""></button>
+                <button class="btn btn-default edit-button servers-privileged pficon pficon-edit" data-original-title="" title=""></button>
+                <img class="host-avatar " src="server-small.png">
+                <div class="spinner hidden"></div>
+                <div class="os"></div>
+                <span class="host-label">dew
+                    <span class="reconnecting hidden">Lost connection. Trying to reconnect</span></span>
+            </a>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="dashboard-hosts-tmpl" type="x-template/mustache">
+        {{#machines}}
+            {{! state can be 'failed' or 'connected' }}
+            <a data-address="{{address}}" class="list-group-item {{state}}"
+                data-color="{{ color }}" target="_parent" href="/@{{address}}">
+                <button class="btn btn-danger edit-button servers-privileged pficon btn-delete pficon-delete delete-{{address}}"></button>
+                <button class="btn btn-default edit-button servers-privileged pficon pficon-edit"></button>
+                <img class="host-avatar {{avatar_display}}" src="{{render_avatar}}">
+                <div class="spinner {{connecting_display}}"></div>
+                <div class="os">{{os}}</div>
+                <span class="host-label">{{label}}
+                    <span class="reconnecting {{connecting_display}}"
+                        translatable="yes">Lost connection. Trying to reconnect</span></span>
+            </a>
+        {{/machines}}
+    </script>
+
+    <div class="modal" id="error-popup" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="error-popup-title">Unexpected error</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="error-popup-message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="dashboard_setup_server_dialog" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="host-edit-dialog" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Server</h4>
+                </div>
+                <div class="modal-body">
+                <div>
+                    <input data-role="none" id="host-edit-file-input" type="file" hidden="">
+                    <table class="form-table-ct">
+                        <tbody><tr>
+                            <td class="top">Host Name</td>
+                            <td>
+                                <input class="form-control" id="host-edit-name">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr id="host-edit-user-row">
+                            <td class="top">User</td>
+                            <td>
+                                <input class="form-control" id="host-edit-user">
+                            </td>
+                            <td>
+                                <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.">
+                                    <span class="fa fa-lg fa-info-circle"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td id="host-edit-colorpicker">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="top">Avatar</td>
+                            <td>
+                                <div id="host-edit-avatar" style="width: 256px; height: 256px; position: relative;"><canvas width="256" height="256"></canvas><canvas style="position: absolute; top: 0px; left: 0px; z-index: 10;" width="256" height="256"></canvas></div>
+                                <div id="host-edit-fail"></div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="pull-left"><a id="host-edit-sync-users">Synchronize users</a></div>
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" id="host-edit-apply">Set</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<input data-role="none" style="display: none;" type="file"></body></html>
