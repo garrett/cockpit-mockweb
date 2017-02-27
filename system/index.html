@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="socialwidgets.css"></head>
 <body>
 
+  {% raw %}
     <script id="ssh-host-keys-tmpl" type="x-template/mustache">
         <div class="list-group dialog-list-ct">
             {{#keys}}
@@ -75,6 +76,8 @@
       <div class="small-messages">{{SubStatus}}</div>
       {{/SubStatus}}
     </script>
+
+    {% endraw %}
 
     <div id="server" class="container-fluid page-ct">
         <div class="col-md-4 col-lg-3 info-table-ct-container">
@@ -350,6 +353,7 @@
         </div>
     </div>
 
+    {% raw %}
     <script id="ntp-servers-tmpl" type="x-template/mustache">
       <div class="systime-inline">
         {{#NTPServers}}
@@ -363,6 +367,7 @@
         {{/NTPServers}}
       </div>
     </script>
+    {% endraw %}
 
     <div class="modal" id="system_information_change_systime" tabindex="-1" role="dialog" data-backdrop="static">
         <div class="modal-dialog cockpit-modal-md">
