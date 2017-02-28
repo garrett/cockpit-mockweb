@@ -4,7 +4,7 @@ require 'rubygems'
 require 'yaml'
 require 'oga'
 
-htmldoc = File.read('hardware.html')
+htmldoc = ARGF.read
 
 doc = Oga.parse_html(htmldoc)
 
@@ -35,7 +35,9 @@ doc.css('.node').each do |item|
       end
       val = val_obj
     when 'id'
-      device_info['class'] = val.split(':').first
+      dev_regex = /usb|cpu|scsi|pci|sata|^isa$|^cd/i
+      device_info['class'] = val.split(':').first.capitalize
+                                .sub(dev_regex, &:upcase)
     else
       # Convert to a number if appropriate
       val = val.to_i if val.to_i.to_s == val
