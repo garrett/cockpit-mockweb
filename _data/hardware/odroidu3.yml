@@ -1,0 +1,109 @@
+---
+- class: Computer
+  id: computer
+  description: Computer
+  width: 32 bits
+- class: Core
+  id: core
+  description: Motherboard
+  physical id: 0
+- class: Memory
+  id: memory
+  description: System memory
+  physical id: 0
+  size: 2023MiB
+- class: CPU
+  id: cpu
+  physical id: 1
+  bus info: cpu@0
+  size: 1704MHz
+  capacity: 1704MHz
+  capabilities:
+  - cpufreq
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  physical id: 1
+  logical name: veth03fde77
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: veth
+    driverversion: '1.0'
+    duplex: full
+    link: 'yes'
+    port: twisted
+    pair: 
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  physical id: 2
+  logical name: vethb7ccb39
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: veth
+    driverversion: '1.0'
+    duplex: full
+    link: 'yes'
+    port: twisted
+    pair: 
+- class: Network
+  id: network:2
+  description: Ethernet interface
+  physical id: 3
+  logical name: veth5db9190
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: veth
+    driverversion: '1.0'
+    duplex: full
+    link: 'yes'
+    port: twisted
+    pair: 
+- class: Network
+  id: network:3
+  description: Ethernet interface
+  physical id: 4
+  logical name: eth0
+  serial: "[REMOVED]"
+  size: 100Mbit/s
+  capacity: 100Mbit/s
+  capabilities:
+  - ethernet
+  - physical
+  - tp
+  - mii
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: smsc95xx
+    driverversion: 22-Aug-2005
+    duplex: full
+    firmware: smsc95xx
+    USB: 
+    '2.0': 
+    Ethernet: 
+    ip: "[REMOVED]"
+    link: 'yes'
+    multicast: 'yes'
+    port: MII
+    speed: 100Mbit/s

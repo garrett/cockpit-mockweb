@@ -1,0 +1,1476 @@
+---
+- class: Computer
+  id: computer
+  description: System
+  product: Z10PE-D8 WS (All)
+  vendor: ASUSTeK COMPUTER INC.
+  version: System Version
+  serial: "[REMOVED]"
+  width: 64 bits
+  capabilities:
+  - smbios-2.8
+  - dmi-2.8
+  - smp
+  - vsyscall32
+  configuration:
+    boot: normal
+    chassis: server
+    family: ASUS
+    MB: 
+    sku: All
+    uuid: "[REMOVED]"
+- class: Core
+  id: core
+  description: Motherboard
+  product: Z10PE-D8 WS
+  vendor: ASUSTeK COMPUTER INC.
+  physical id: 0
+  version: Rev 1.xx
+  serial: "[REMOVED]"
+  slot: To be filled by O.E.M.
+- class: Firmware
+  id: firmware
+  description: BIOS
+  vendor: American Megatrends Inc.
+  physical id: 0
+  version: 1001
+  date: 03/17/2015
+  size: 64KiB
+  capacity: 15MiB
+  capabilities:
+  - pci
+  - apm
+  - upgrade
+  - shadowing
+  - cdboot
+  - bootselect
+  - socketedrom
+  - edd
+  - int13floppy1200
+  - int13floppy720
+  - int13floppy2880
+  - int5printscreen
+  - int9keyboard
+  - int14serial
+  - int17printer
+  - acpi
+  - usb
+  - biosbootspecification
+  - uefi
+- class: Memory
+  id: memory:0
+  description: System Memory
+  physical id: 63
+  slot: System board or motherboard
+  capabilities:
+  - ecc
+  configuration:
+    errordetection: multi-bit-ecc
+- class: Bank
+  id: bank:0
+  description: DIMM Synchronous 2133 MHz (0.5 ns)
+  product: 36ASF2G72PZ-2G1A2
+  vendor: Micron
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: DIMM_A1
+  size: 16GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Bank
+  id: bank:1
+  description: DIMM Synchronous 2133 MHz (0.5 ns)
+  product: 36ASF2G72PZ-2G1A2
+  vendor: Micron
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: DIMM_B1
+  size: 16GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Memory
+  id: memory:1
+  description: System Memory
+  physical id: 69
+  slot: System board or motherboard
+  capabilities:
+  - ecc
+  configuration:
+    errordetection: multi-bit-ecc
+- class: Bank
+  id: bank:0
+  description: DIMM Synchronous 2133 MHz (0.5 ns)
+  product: 36ASF2G72PZ-2G1A2
+  vendor: Micron
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: DIMM_C1
+  size: 16GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Bank
+  id: bank:1
+  description: DIMM Synchronous 2133 MHz (0.5 ns)
+  product: 36ASF2G72PZ-2G1A2
+  vendor: Micron
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: DIMM_D1
+  size: 16GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Memory
+  id: memory:2
+  description: System Memory
+  physical id: 6f
+  slot: System board or motherboard
+  capabilities:
+  - ecc
+  configuration:
+    errordetection: multi-bit-ecc
+- class: Bank
+  id: bank:0
+  description: DIMM Synchronous [empty]
+  product: NO DIMM
+  vendor: NO DIMM
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: DIMM_E1
+- class: Bank
+  id: bank:1
+  description: DIMM Synchronous [empty]
+  product: NO DIMM
+  vendor: NO DIMM
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: DIMM_F1
+- class: Memory
+  id: memory:3
+  description: System Memory
+  physical id: 72
+  slot: System board or motherboard
+  capabilities:
+  - ecc
+  configuration:
+    errordetection: multi-bit-ecc
+- class: Bank
+  id: bank:0
+  description: DIMM Synchronous [empty]
+  product: NO DIMM
+  vendor: NO DIMM
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: DIMM_G1
+- class: Bank
+  id: bank:1
+  description: DIMM Synchronous [empty]
+  product: NO DIMM
+  vendor: NO DIMM
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: DIMM_H1
+- class: Cache
+  id: cache:0
+  description: L1 cache
+  physical id: 75
+  slot: CPU Internal L1
+  size: 640KiB
+  capacity: 640KiB
+  capabilities:
+  - internal
+  - write-back
+  configuration:
+    level: 1
+- class: Cache
+  id: cache:1
+  description: L2 cache
+  physical id: 76
+  slot: CPU Internal L2
+  size: 2560KiB
+  capacity: 2560KiB
+  capabilities:
+  - internal
+  - write-back
+  - unified
+  configuration:
+    level: 2
+- class: Cache
+  id: cache:2
+  description: L3 cache
+  physical id: 77
+  slot: CPU Internal L3
+  size: 12MiB
+  capacity: 12MiB
+  capabilities:
+  - internal
+  - write-back
+  - unified
+  configuration:
+    level: 3
+- class: CPU
+  id: cpu:0
+  description: CPU
+  product: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+  vendor: Intel Corp.
+  physical id: 78
+  bus info: cpu@0
+  version: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+  slot: SOCKET 1
+  size: 2273MHz
+  capacity: 4GHz
+  width: 64 bits
+  clock: 100MHz
+  capabilities:
+  - x86-64
+  - fpu
+  - fpu_exception
+  - wp
+  - vme
+  - de
+  - pse
+  - tsc
+  - msr
+  - pae
+  - mce
+  - cx8
+  - apic
+  - sep
+  - mtrr
+  - pge
+  - mca
+  - cmov
+  - pat
+  - pse36
+  - clflush
+  - dts
+  - acpi
+  - mmx
+  - fxsr
+  - sse
+  - sse2
+  - ss
+  - ht
+  - tm
+  - pbe
+  - syscall
+  - nx
+  - pdpe1gb
+  - rdtscp
+  - constant_tsc
+  - arch_perfmon
+  - pebs
+  - bts
+  - rep_good
+  - nopl
+  - xtopology
+  - nonstop_tsc
+  - aperfmperf
+  - eagerfpu
+  - pni
+  - pclmulqdq
+  - dtes64
+  - monitor
+  - ds_cpl
+  - vmx
+  - smx
+  - est
+  - tm2
+  - ssse3
+  - sdbg
+  - fma
+  - cx16
+  - xtpr
+  - pdcm
+  - pcid
+  - dca
+  - sse4_1
+  - sse4_2
+  - x2apic
+  - movbe
+  - popcnt
+  - tsc_deadline_timer
+  - aes
+  - xsave
+  - avx
+  - f16c
+  - rdrand
+  - lahf_lm
+  - abm
+  - epb
+  - tpr_shadow
+  - vnmi
+  - flexpriority
+  - ept
+  - vpid
+  - fsgsbase
+  - tsc_adjust
+  - bmi1
+  - avx2
+  - smep
+  - bmi2
+  - erms
+  - invpcid
+  - cqm
+  - xsaveopt
+  - cqm_llc
+  - cqm_occup_llc
+  - dtherm
+  - arat
+  - pln
+  - pts
+  - cpufreq
+  configuration:
+    cores: 10
+    enabledcores: 10
+    threads: 20
+- class: PCI
+  id: pci
+  description: Host bridge
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 DMI2
+  vendor: Intel Corporation
+  physical id: 100
+  bus info: pci@0000:00:00.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:0
+  description: PCI bridge
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 PCI Express Root Port 1
+  vendor: Intel Corporation
+  physical id: 1
+  bus info: pci@0000:00:01.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '25'
+- class: PCI
+  id: pci:1
+  description: PCI bridge
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 PCI Express Root Port 1
+  vendor: Intel Corporation
+  physical id: '1.1'
+  bus info: pci@0000:00:01.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '26'
+    memory:
+    - fa500000-fa5fffff
+- class: USB
+  id: usb
+  description: USB controller
+  product: ASM1042A USB 3.0 Host Controller
+  vendor: ASMedia Technology Inc.
+  physical id: 0
+  bus info: pci@0000:02:00.0
+  version: '00'
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - msi
+  - msix
+  - pm
+  - pciexpress
+  - xhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: xhci_hcd
+    latency: 0
+  resources:
+    irq: '39'
+    memory:
+    - fa500000-fa507fff
+- class: USBhost
+  id: usbhost:0
+  product: xHCI Host Controller
+  vendor: Linux 4.8.6-300.fc25.x86_64 xhci-hcd
+  physical id: 0
+  bus info: usb@3
+  logical name: usb3
+  version: '4.08'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 480Mbit/s
+- class: USBhost
+  id: usbhost:1
+  product: xHCI Host Controller
+  vendor: Linux 4.8.6-300.fc25.x86_64 xhci-hcd
+  physical id: 1
+  bus info: usb@4
+  logical name: usb4
+  version: '4.08'
+  capabilities:
+  - usb-3.00
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 5000Mbit/s
+- class: PCI
+  id: pci:2
+  description: PCI bridge
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 PCI Express Root Port 2
+  vendor: Intel Corporation
+  physical id: 2
+  bus info: pci@0000:00:02.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '28'
+    ioport: e000(size=4096) e0000000(size=301989888)
+    memory:
+    - f9000000-fa0fffff
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: GM107GL [Quadro K2200]
+  vendor: NVIDIA Corporation
+  physical id: 0
+  bus info: pci@0000:03:00.0
+  version: a2
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - vga_controller
+  - bus_master
+  - cap_list
+  - rom
+  configuration:
+    driver: nouveau
+    latency: 0
+  resources:
+    irq: '59'
+    memory:
+    - f9000000-f9ffffff
+    - e0000000-efffffff
+    - f0000000-f1ffffff
+    - c0000-dffff
+    ioport: e000(size=128)
+- class: Multimedia
+  id: multimedia
+  description: Audio device
+  product: NVIDIA Corporation
+  vendor: NVIDIA Corporation
+  physical id: '0.1'
+  bus info: pci@0000:03:00.1
+  version: a1
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - bus_master
+  - cap_list
+  configuration:
+    driver: snd_hda_intel
+    latency: 0
+  resources:
+    irq: '62'
+    memory:
+    - fa080000-fa083fff
+- class: PCI
+  id: pci:3
+  description: PCI bridge
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 PCI Express Root Port 3
+  vendor: Intel Corporation
+  physical id: 3
+  bus info: pci@0000:00:03.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '30'
+    ioport: d000(size=4096) 3bfe0000000(size=301989888)
+    memory:
+    - f7000000-f80fffff
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: GM107GL [Quadro K2200]
+  vendor: NVIDIA Corporation
+  physical id: 0
+  bus info: pci@0000:04:00.0
+  version: a2
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - vga_controller
+  - bus_master
+  - cap_list
+  - rom
+  configuration:
+    driver: nouveau
+    latency: 0
+  resources:
+    iomemory: 3bf0-3bef 3bf0-3bef
+    irq: '60'
+    memory:
+    - f7000000-f7ffffff
+    - 3bfe0000000-3bfefffffff
+    - 3bff0000000-3bff1ffffff
+    - f8000000-f807ffff
+    ioport: d000(size=128)
+- class: Multimedia
+  id: multimedia
+  description: Audio device
+  product: NVIDIA Corporation
+  vendor: NVIDIA Corporation
+  physical id: '0.1'
+  bus info: pci@0000:04:00.1
+  version: a1
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - bus_master
+  - cap_list
+  configuration:
+    driver: snd_hda_intel
+    latency: 0
+  resources:
+    irq: '63'
+    memory:
+    - f8080000-f8083fff
+- class: Storage
+  id: storage:0
+  description: SATA controller
+  product: C610/X99 series chipset sSATA Controller [AHCI mode]
+  vendor: Intel Corporation
+  physical id: '11.4'
+  bus info: pci@0000:00:11.4
+  version: '05'
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - storage
+  - msi
+  - pm
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '36'
+    ioport: f110(size=8) f100(size=4) f0f0(size=8) f0e0(size=4) f020(size=32)
+    memory:
+    - f6116000-f61167ff
+- class: USB
+  id: usb
+  description: USB controller
+  product: C610/X99 series chipset USB xHCI Host Controller
+  vendor: Intel Corporation
+  physical id: 14
+  bus info: pci@0000:00:14.0
+  version: '05'
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - xhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: xhci_hcd
+    latency: 0
+  resources:
+    irq: '19'
+    memory:
+    - f6100000-f610ffff
+- class: USBhost
+  id: usbhost:0
+  product: xHCI Host Controller
+  vendor: Linux 4.8.6-300.fc25.x86_64 xhci-hcd
+  physical id: 0
+  bus info: usb@1
+  logical name: usb1
+  version: '4.08'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 15
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: ASM107x
+  vendor: ASUS Tek.
+  physical id: 9
+  bus info: usb@1:9
+  version: '1.00'
+  capabilities:
+  - usb-2.10
+  configuration:
+    driver: hub
+    maxpower: 100mA
+    slots: 4
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: USB2.0 Hub
+  vendor: Genesys Logic, Inc.
+  physical id: 1
+  bus info: usb@1:9.1
+  version: '9.01'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    maxpower: 100mA
+    slots: 4
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: Keyboard Hub
+  vendor: Apple, Inc.
+  physical id: 3
+  bus info: usb@1:9.1.3
+  version: '96.15'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    maxpower: 300mA
+    slots: 3
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: Keyboard
+  product: Apple Keyboard
+  vendor: Apple, Inc
+  physical id: 2
+  bus info: usb@1:9.1.3.2
+  version: '0.71'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: usbhid
+    maxpower: 20mA
+    speed: 2Mbit/s
+- class: USBhost
+  id: usbhost:1
+  product: xHCI Host Controller
+  vendor: Linux 4.8.6-300.fc25.x86_64 xhci-hcd
+  physical id: 1
+  bus info: usb@2
+  logical name: usb2
+  version: '4.08'
+  capabilities:
+  - usb-3.00
+  configuration:
+    driver: hub
+    slots: 6
+    speed: 5000Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: ASM107x
+  vendor: ASUS Tek.
+  physical id: 5
+  bus info: usb@2:5
+  version: '1.00'
+  capabilities:
+  - usb-3.00
+  configuration:
+    driver: hub
+    maxpower: 8mA
+    slots: 4
+    speed: 5000Mbit/s
+- class: Multimedia
+  id: multimedia
+  description: Audio device
+  product: C610/X99 series chipset HD Audio Controller
+  vendor: Intel Corporation
+  physical id: 1b
+  bus info: pci@0000:00:1b.0
+  version: '05'
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - bus_master
+  - cap_list
+  configuration:
+    driver: snd_hda_intel
+    latency: 0
+  resources:
+    iomemory: 3bf0-3bef
+    irq: '61'
+    memory:
+    - 3bffff00000-3bffff03fff
+- class: PCI
+  id: pci:4
+  description: PCI bridge
+  product: 'C610/X99 series chipset PCI Express Root Port #1'
+  vendor: Intel Corporation
+  physical id: 1c
+  bus info: pci@0000:00:1c.0
+  version: d5
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '31'
+- class: PCI
+  id: pci:5
+  description: PCI bridge
+  product: 'C610/X99 series chipset PCI Express Root Port #3'
+  vendor: Intel Corporation
+  physical id: 1c.2
+  bus info: pci@0000:00:1c.2
+  version: d5
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '32'
+    ioport: c000(size=4096)
+    memory:
+    - fa400000-fa4fffff
+- class: Network
+  id: network
+  description: Ethernet interface
+  product: I210 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: 0
+  bus info: pci@0000:06:00.0
+  logical name: enp6s0
+  version: '03'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 3.16,
+    '0x800004d7': 
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '18'
+    memory:
+    - fa400000-fa47ffff
+    - fa480000-fa483fff
+    ioport: c000(size=32)
+- class: PCI
+  id: pci:6
+  description: PCI bridge
+  product: 'C610/X99 series chipset PCI Express Root Port #4'
+  vendor: Intel Corporation
+  physical id: 1c.3
+  bus info: pci@0000:00:1c.3
+  version: d5
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '33'
+    ioport: b000(size=4096)
+    memory:
+    - fa300000-fa3fffff
+- class: Network
+  id: network
+  description: Ethernet interface
+  product: I210 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: 0
+  bus info: pci@0000:07:00.0
+  logical name: enp7s0
+  version: '03'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    duplex: full
+    firmware: 3.16,
+    '0x80000513': 
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 1Gbit/s
+  resources:
+    irq: '19'
+    memory:
+    - fa300000-fa37ffff
+    - fa380000-fa383fff
+    ioport: b000(size=32)
+- class: PCI
+  id: pci:7
+  description: PCI bridge
+  product: 'C610/X99 series chipset PCI Express Root Port #5'
+  vendor: Intel Corporation
+  physical id: 1c.4
+  bus info: pci@0000:00:1c.4
+  version: d5
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '34'
+    ioport: a000(size=4096)
+    memory:
+    - fa200000-fa2fffff
+- class: Storage
+  id: storage
+  description: SATA controller
+  product: ASM1062 Serial ATA Controller
+  vendor: ASMedia Technology Inc.
+  physical id: 0
+  bus info: pci@0000:08:00.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - storage
+  - msi
+  - pm
+  - pciexpress
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '38'
+    ioport: a050(size=8) a040(size=4) a030(size=8) a020(size=4) a000(size=32)
+    memory:
+    - fa200000-fa2001ff
+- class: PCI
+  id: pci:8
+  description: PCI bridge
+  product: 'C610/X99 series chipset PCI Express Root Port #8'
+  vendor: Intel Corporation
+  physical id: 1c.7
+  bus info: pci@0000:00:1c.7
+  version: d5
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '35'
+    ioport: 9000(size=4096)
+    memory:
+    - f4000000-f60fffff
+- class: PCI
+  id: pci
+  description: PCI bridge
+  product: AST1150 PCI-to-PCI Bridge
+  vendor: ASPEED Technology, Inc.
+  physical id: 0
+  bus info: pci@0000:09:00.0
+  version: '03'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pm
+  - pciexpress
+  - normal_decode
+  - bus_master
+  - cap_list
+  resources:
+    ioport: 9000(size=4096)
+    memory:
+    - f4000000-f60fffff
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: ASPEED Graphics Family
+  vendor: ASPEED Technology, Inc.
+  physical id: 0
+  bus info: pci@0000:0a:00.0
+  version: 30
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - vga_controller
+  - cap_list
+  configuration:
+    driver: ast
+    latency: 0
+  resources:
+    irq: '16'
+    memory:
+    - f4000000-f5ffffff
+    - f6000000-f601ffff
+    ioport: 9000(size=128)
+- class: ISA
+  id: isa
+  description: ISA bridge
+  product: C610/X99 series chipset LPC Controller
+  vendor: Intel Corporation
+  physical id: 1f
+  bus info: pci@0000:00:1f.0
+  version: '05'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - isa
+  - bus_master
+  - cap_list
+  configuration:
+    driver: lpc_ich
+    latency: 0
+  resources:
+    irq: '0'
+- class: Storage
+  id: storage:1
+  description: SATA controller
+  product: C610/X99 series chipset 6-Port SATA Controller [AHCI mode]
+  vendor: Intel Corporation
+  physical id: 1f.2
+  bus info: pci@0000:00:1f.2
+  version: '05'
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - storage
+  - msi
+  - pm
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '37'
+    ioport: f070(size=8) f060(size=4) f050(size=8) f040(size=4) f000(size=32)
+    memory:
+    - f6110000-f61107ff
+- class: Serial
+  id: serial
+  description: SMBus
+  product: C610/X99 series chipset SMBus Controller
+  vendor: Intel Corporation
+  physical id: 1f.3
+  bus info: pci@0000:00:1f.3
+  version: '05'
+  width: 64 bits
+  clock: 33MHz
+  configuration:
+    driver: i801_smbus
+    latency: 0
+  resources:
+    iomemory: 3bf0-3bef
+    irq: '18'
+    memory:
+    - 3bffff04000-3bffff040ff
+    ioport: 580(size=32)
+- class: Generic
+  id: generic:1
+  description: Performance counters
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 R3 QPI Link 0 & 1 Monitoring
+  vendor: Intel Corporation
+  physical id: b.1
+  bus info: pci@0000:ff:0b.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:2
+  description: Performance counters
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 R3 QPI Link 0 & 1 Monitoring
+  vendor: Intel Corporation
+  physical id: b.2
+  bus info: pci@0000:ff:0b.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:21
+  description: Performance counters
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 PCIe Ring Interface
+  vendor: Intel Corporation
+  physical id: '10.1'
+  bus info: pci@0000:ff:10.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:26
+  description: Performance counters
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Home Agent 0
+  vendor: Intel Corporation
+  physical id: '12.1'
+  bus info: pci@0000:ff:12.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:28
+  description: Performance counters
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Home Agent 1
+  vendor: Intel Corporation
+  physical id: '12.5'
+  bus info: pci@0000:ff:12.5
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:35
+  description: System peripheral
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Integrated Memory Controller 0 Channel 0
+    Thermal Control
+  vendor: Intel Corporation
+  physical id: 14
+  bus info: pci@0000:ff:14.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - cap_list
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:36
+  description: System peripheral
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Integrated Memory Controller 0 Channel 1
+    Thermal Control
+  vendor: Intel Corporation
+  physical id: '14.1'
+  bus info: pci@0000:ff:14.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - cap_list
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:49
+  description: System peripheral
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Integrated Memory Controller 1 Channel 0
+    Thermal Control
+  vendor: Intel Corporation
+  physical id: 17
+  bus info: pci@0000:ff:17.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - cap_list
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:50
+  description: System peripheral
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Integrated Memory Controller 1 Channel 1
+    Thermal Control
+  vendor: Intel Corporation
+  physical id: '17.1'
+  bus info: pci@0000:ff:17.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - cap_list
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:60
+  description: System peripheral
+  product: Xeon E7 v3/Xeon E5 v3/Core i7 Power Control Unit
+  vendor: Intel Corporation
+  physical id: 1e.3
+  bus info: pci@0000:ff:1e.3
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: hswep_uncore
+    latency: 0
+  resources:
+    irq: '0'
+- class: SCSI
+  id: scsi:0
+  physical id: 3
+  logical name: scsi0
+  capabilities:
+  - emulated
+- class: Disk
+  id: disk
+  description: ATA Disk
+  product: Samsung SSD 850
+  physical id: 0.0.0
+  bus info: scsi@0:0.0.0
+  logical name: "/dev/sda"
+  version: 2B6Q
+  serial: "[REMOVED]"
+  size: 238GiB (256GB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+    signature: 000a5ec2
+- class: Volume
+  id: volume:0
+  description: Linux filesystem partition
+  physical id: 1
+  bus info: scsi@0:0.0.0,1
+  logical name: "/dev/sda1"
+  capacity: 1GiB
+  capabilities:
+  - primary
+  - bootable
+- class: Volume
+  id: volume:1
+  description: Linux LVM Physical Volume partition
+  physical id: 2
+  bus info: scsi@0:0.0.0,2
+  logical name: "/dev/sda2"
+  serial: "[REMOVED]"
+  size: 237GiB
+  capacity: 237GiB
+  capabilities:
+  - primary
+  - multi
+  - lvm2
+- class: SCSI
+  id: scsi:1
+  physical id: 4
+  logical name: scsi4
+  capabilities:
+  - emulated
+- class: Disk
+  id: disk
+  description: ATA Disk
+  product: Samsung SSD 850
+  physical id: 0.0.0
+  bus info: scsi@4:0.0.0
+  logical name: "/dev/sdb"
+  version: 2B6Q
+  serial: "[REMOVED]"
+  size: 238GiB (256GB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+    signature: 6e63348d
+- class: Volume
+  id: volume:0
+  description: EXT4 volume
+  vendor: Linux
+  physical id: 1
+  bus info: scsi@4:0.0.0,1
+  logical name: "/boot"
+  version: '1.0'
+  serial: "[REMOVED]"
+  size: 1GiB
+  capacity: 1GiB
+  capabilities:
+  - primary
+  - bootable
+  - journaled
+  - extended_attributes
+  - large_files
+  - huge_files
+  - dir_nlink
+  - 64bit
+  - extents
+  - ext4
+  - ext2
+  - initialized
+  configuration:
+    created: '2017-01-30'
+    '11:19:55': 
+    filesystem: ext4
+    lastmountpoint: "/boot"
+    modified: '2017-02-01'
+    '09:55:01': 
+    mount.fstype: ext4
+    mount.options: rw,seclabel,relatime,data
+    mounted: '2017-01-31'
+    '10:34:49': 
+    state: mounted
+- class: Volume
+  id: volume:1
+  description: Linux LVM Physical Volume partition
+  physical id: 2
+  bus info: scsi@4:0.0.0,2
+  logical name: "/dev/sdb2"
+  serial: "[REMOVED]"
+  size: 237GiB
+  capacity: 237GiB
+  capabilities:
+  - primary
+  - multi
+  - lvm2
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  physical id: 2
+  logical name: vnet0
+  serial: "[REMOVED]"
+  size: 10Mbit/s
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: tun
+    driverversion: '1.6'
+    duplex: full
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 10Mbit/s
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  physical id: 3
+  logical name: virbr1
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'yes'
+    multicast: 'yes'
+- class: Network
+  id: network:4
+  description: Ethernet interface
+  physical id: 6
+  logical name: vnet1
+  serial: "[REMOVED]"
+  size: 10Mbit/s
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: tun
+    driverversion: '1.6'
+    duplex: full
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 10Mbit/s
+- class: Network
+  id: network:5
+  description: Ethernet interface
+  physical id: 7
+  logical name: virbr0
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'yes'
+    multicast: 'yes'
