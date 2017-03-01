@@ -21,17 +21,14 @@ doc.css('.node').each do |item|
     when 'capabilities'
       val = val.split(' ')
     when 'configuration'
-      val_obj = []
+      val_obj = {}
       val.split(' ').each do |config|
-        config_info = {}
         config_key, config_val = config.split('=')
 
         # Convert to a number if appropriate
         config_val = config_val.to_i if config_val.to_i.to_s == config_val
 
-        config_info[config_key] = config_val
-
-        val_obj.push config_info
+        val_obj[config_key] = config_val
       end
       val = val_obj
     when 'id'
