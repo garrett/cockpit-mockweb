@@ -35,6 +35,17 @@ doc.css('.node').each do |item|
       dev_regex = /usb|cpu|scsi|pci|sata|^isa$|^cd/i
       device_info['class'] = val.split(':').first.capitalize
                                 .sub(dev_regex, &:upcase)
+    when 'resources'
+      val_obj = {}
+      val.split(' ').each do |res|
+        location, address = res.split(':')
+        val_obj[location] ||= []
+        val_obj[location].push address
+      end
+
+      val_obj.each { |i, v| val_obj[i] = v.join(' ') unless i == 'memory' }
+
+      val = val_obj
     else
       # Convert to a number if appropriate
       val = val.to_i if val.to_i.to_s == val
