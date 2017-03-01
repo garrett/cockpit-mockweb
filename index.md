@@ -1,5 +1,5 @@
 ---
-title: Placeholder page!
+title: Cockpit HTML mockups
 layout: minimal
 ---
 
