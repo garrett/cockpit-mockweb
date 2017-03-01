@@ -1,0 +1,91 @@
+{% if include.filter %}
+  {% assign nofilter = false %}
+{% else %}
+  {% assign nofilter = true %}
+{% endif %}
+
+{% assign bus_size = include.items | group_by: 'bus info' | map: 'name' | join: ' ' | size %}
+{% assign name_size = include.items | group_by: 'product' | map: 'name' | join: ' ' | size %}
+{% assign vendor_size = include.items | group_by: 'vendor' | map: 'name' | join: ' ' | size %}
+{% assign config = include.items | group_by: 'configuration' | map: 'items' | array_to_sentence_string %}
+
+<div class="panel panel-default">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        {% if name_size > 0 %}
+          <th>Name</th>
+        {% endif %}
+
+        <th>ID</th>
+
+        <th>Description</th>
+
+        {% if vendor_size > 0 %}
+          <th>Vendor</th>
+        {% endif %}
+
+        {% if bus_size > 0 %}
+          <th>Bus info</th>
+        {% endif %}
+
+        {% if config contains '"speed"' and nofilter %}
+          <th>Speed</th>
+        {% endif %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in include.items %}
+        {% if item['bus info'] contains include.filter or nofilter == true %}
+
+          {% if item.vendor contains 'Linux' %}
+            {% assign vendor = 'Linux' %}
+          {% elsif item.vendor contains 'Illegal' %}
+            {% assign vendor = ' ' %}
+          {% else %}
+            {% assign vendor = item.vendor %}
+          {% endif %}
+
+          {% case item.configuration.driver %}
+          {% when 'igbvf'%}
+            {% assign name = 'SR-IOV' %}
+            {% assign vendor = 'Virtual' %}
+          {% when 'bridge'%}
+            {% assign name = 'Bridge' %}
+          {% else %}
+            {% assign name = '' %}
+          {% endcase %}
+
+          <tr>
+
+            {% if name_size > 0 %}
+              <td>{{ name | default: item.product }}</td>
+            {% endif %}
+
+            <td>{{ item['id'] }}</td>
+
+            <td>{{ item['logical name'] | default: item.description }}</td>
+
+            {% if vendor_size > 0 %}
+              <td>{{ vendor | item.vendor }}</td>
+            {% endif %}
+
+            {% if bus_size > 0 %}
+              <td>{{ item['bus info'] | split: '@' | last }}</td>
+            {% endif %}
+
+            {% if config contains '"speed"' and nofilter %}
+              <td>{{ item.configuration.speed }}</td>
+            {% endif %}
+          </tr>
+          <!--
+          <tr><td colspan="6">{{ item }}</td></tr>
+          -->
+        {% endif %}
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
