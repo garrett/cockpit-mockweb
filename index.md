@@ -5,7 +5,7 @@ layout: minimal
 
 # Placeholder page!
 
-For now, go see:
+For now, please visit:
 
-* [demo page](test.html).
+* [demo page](test)
 * [Hardware lists](hardware)
