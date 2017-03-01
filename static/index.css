@@ -1662,3 +1662,11 @@ tbody.unlock .credential-unlock {
 }
 
 /*# sourceMappingURL=index.css.map*/
+
+table {
+ font: inherit;
+}
+
+.content-wrapper {
+ margin-left: 180px;
+}

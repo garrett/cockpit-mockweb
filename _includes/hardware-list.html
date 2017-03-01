@@ -1,0 +1,76 @@
+{% if include.machine and site.data.hardware[include.machine] %}
+
+  <style>
+    .device-comparison td {
+      vertical-align: top;
+      padding: 1em 3em;
+    }
+  </style>
+
+
+  <div class="container-fluid">
+
+    {% assign hardware = site.data.hardware[include.machine] | sort: 'bus info' %}
+
+    {% assign busses = 'usb,scsi,pci' | split: ',' %}
+    {% assign descs = hardware | sort: 'description' | group_by: 'description' %}
+    {% assign classes = hardware | group_by: 'class' %}
+
+    <table class="device-comparison"><tr><td>
+
+          <h1>Description-based</h1>
+          {% for desc in descs %}
+            <h2>{{ desc.name | default: '[undefined]' }}
+              ({{ desc.size }} item{% if desc.size != 1 %}s{% endif%})</h2>
+
+            {% include hardware-table.html items=desc.items %}
+          {% endfor %}
+
+          </td><td>
+
+          <h1>Class-based (normalized IDs)</h1>
+          {% for class in classes %}
+            <h2>{{ class.name }}</h2>
+
+            {% include hardware-table.html items=class.items %}
+            <!--
+            <ol>
+              {% for item in class.items %}
+                <li><strong>{{ item.id }}</strong> — 
+                  {{ item.description | default: item.id
+                  }}{% if item.product %}, {{ item.product }}{% endif %}{% if
+                    item['logical name'] %}, {{ item.capacity }} {{ item['logical name']}} {% endif%}
+                </li>
+                {{ item }}
+              {% endfor %}
+            </ol>
+            -->
+          {% endfor %}
+
+          </td><td>
+
+          <h1>Bus-filtered</h1>
+          {% for bus in busses %}
+            <h2>{{ bus | upcase }}</h2>
+
+            {% include hardware-table.html items=hardware filter=bus %}
+          {% endfor %}
+
+    </td></tr></table>
+
+  {% else %}
+
+    <div style="text-align: center; margin: 25vh 0 0;">
+      <h1>
+        Data not found.
+      </h2>
+
+      <p>
+        Be sure to
+        <pre>
+      {% raw %}{% include hardware-list.html machine="machineName" %}{% endraw %}
+      </pre>
+      </p>
+    </div>
+
+  {% endif %}

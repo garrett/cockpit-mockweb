@@ -1,0 +1,2122 @@
+---
+- class: Computer
+  id: computer
+  description: Rack Mount Chassis
+  product: ProLiant DL160 G6 (641458-425)
+  vendor: HP
+  serial: "[REMOVED]"
+  width: 64 bits
+  capabilities:
+  - smbios-2.7
+  - dmi-2.7
+  - smp
+  - vsyscall32
+  configuration:
+    boot: normal
+    chassis: rackmount
+    sku: 641458-425
+    uuid: "[REMOVED]"
+- class: Core
+  id: core
+  description: Motherboard
+  physical id: 0
+- class: Firmware
+  id: firmware
+  description: BIOS
+  vendor: HP
+  physical id: 0
+  version: O33
+  date: 05/01/2012
+  size: 64KiB
+  capacity: 1984KiB
+  capabilities:
+  - isa
+  - pci
+  - pnp
+  - upgrade
+  - shadowing
+  - escd
+  - cdboot
+  - bootselect
+  - edd
+  - int5printscreen
+  - int14serial
+  - int10video
+  - acpi
+  - usb
+  - biosbootspecification
+- class: CPU
+  id: cpu:0
+  description: CPU
+  product: Xeon
+  vendor: Intel Corp.
+  vendor_id: GenuineIntel
+  physical id: 4
+  bus info: cpu@0
+  version: Intel(R) Xeon(R) CPU           E5606  @ 2.13GHz
+  slot: Proc 1
+  size: 2133MHz
+  capacity: 2133MHz
+  width: 64 bits
+  clock: 532MHz
+  capabilities:
+  - x86-64
+  - fpu
+  - fpu_exception
+  - wp
+  - vme
+  - de
+  - pse
+  - tsc
+  - msr
+  - pae
+  - mce
+  - cx8
+  - apic
+  - sep
+  - mtrr
+  - pge
+  - mca
+  - cmov
+  - pat
+  - pse36
+  - clflush
+  - dts
+  - acpi
+  - mmx
+  - fxsr
+  - sse
+  - sse2
+  - ss
+  - ht
+  - tm
+  - pbe
+  - syscall
+  - nx
+  - pdpe1gb
+  - rdtscp
+  - constant_tsc
+  - arch_perfmon
+  - pebs
+  - bts
+  - rep_good
+  - nopl
+  - xtopology
+  - nonstop_tsc
+  - aperfmperf
+  - pni
+  - pclmulqdq
+  - dtes64
+  - monitor
+  - ds_cpl
+  - vmx
+  - smx
+  - est
+  - tm2
+  - ssse3
+  - cx16
+  - xtpr
+  - pdcm
+  - pcid
+  - dca
+  - sse4_1
+  - sse4_2
+  - popcnt
+  - aes
+  - lahf_lm
+  - arat
+  - dtherm
+  - tpr_shadow
+  - vnmi
+  - flexpriority
+  - ept
+  - vpid
+  - cpufreq
+  configuration:
+    cores: 4
+    enabledcores: 4
+    threads: 4
+- class: Cache
+  id: cache:0
+  description: L1 cache
+  physical id: 5
+  slot: L1-Cache
+  size: 256KiB
+  capacity: 256KiB
+  capabilities:
+  - internal
+  - write-through
+  - instruction
+  configuration:
+    level: 1
+- class: Cache
+  id: cache:1
+  description: L2 cache
+  physical id: 6
+  slot: L2-Cache
+  size: 1MiB
+  capacity: 1MiB
+  capabilities:
+  - internal
+  - write-through
+  - unified
+  configuration:
+    level: 2
+- class: Cache
+  id: cache:2
+  description: L3 cache
+  physical id: 7
+  slot: L3-Cache
+  size: 8MiB
+  capacity: 8MiB
+  capabilities:
+  - internal
+  - write-back
+  - unified
+  configuration:
+    level: 3
+- class: Memory
+  id: memory
+  description: System Memory
+  physical id: 20
+  slot: System board or motherboard
+  size: 12GiB
+- class: Bank
+  id: bank:0
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: M391B5673GB0-CH9
+  vendor: Samsung
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 3A
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:1
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: 18JSF25672AZ-1G4G
+  vendor: Micron
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 2D
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:2
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber02
+  vendor: Manufacturer02
+  physical id: 2
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 1G
+  width: 64 bits
+- class: Bank
+  id: bank:3
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: 18JSF25672AZ-1G4G
+  vendor: Micron
+  physical id: 3
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 6B
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:4
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: 18JSF25672AZ-1G4G
+  vendor: Micron
+  physical id: 4
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 5E
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:5
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber05
+  vendor: Manufacturer05
+  physical id: 5
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 4H
+  width: 64 bits
+- class: Bank
+  id: bank:6
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: 18JSF25672AZ-1G4G
+  vendor: Micron
+  physical id: 6
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 9C
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:7
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: M391B5673GB0-CH9
+  vendor: Samsung
+  physical id: 7
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 8F
+  size: 2GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:8
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber08
+  vendor: Manufacturer08
+  physical id: 8
+  serial: "[REMOVED]"
+  slot: PROC 1 DIMM 7I
+  width: 64 bits
+- class: Bank
+  id: bank:9
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber09
+  vendor: Manufacturer09
+  physical id: 9
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 3A
+  width: 64 bits
+- class: Bank
+  id: bank:10
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber10
+  vendor: Manufacturer10
+  physical id: a
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 2D
+  width: 64 bits
+- class: Bank
+  id: bank:11
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber11
+  vendor: Manufacturer11
+  physical id: b
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 1G
+  width: 64 bits
+- class: Bank
+  id: bank:12
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber12
+  vendor: Manufacturer12
+  physical id: c
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 6B
+  width: 64 bits
+- class: Bank
+  id: bank:13
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber13
+  vendor: Manufacturer13
+  physical id: d
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 5E
+  width: 64 bits
+- class: Bank
+  id: bank:14
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber14
+  vendor: Manufacturer14
+  physical id: e
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 4H
+  width: 64 bits
+- class: Bank
+  id: bank:15
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber15
+  vendor: Manufacturer15
+  physical id: f
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 9C
+  width: 64 bits
+- class: Bank
+  id: bank:16
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber16
+  vendor: Manufacturer16
+  physical id: 10
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 8F
+  width: 64 bits
+- class: Bank
+  id: bank:17
+  description: DIMM DDR3 Synchronous [empty]
+  product: ModulePartNumber17
+  vendor: Manufacturer17
+  physical id: 11
+  serial: "[REMOVED]"
+  slot: PROC 2 DIMM 7I
+  width: 64 bits
+- class: PCI
+  id: pci:0
+  description: Host bridge
+  product: 5520 I/O Hub to ESI Port
+  vendor: Intel Corporation
+  physical id: 100
+  bus info: pci@0000:00:00.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:0
+  description: PCI bridge
+  product: 5520/5500/X58 I/O Hub PCI Express Root Port 1
+  vendor: Intel Corporation
+  physical id: 1
+  bus info: pci@0000:00:01.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+- class: PCI
+  id: pci:1
+  description: PCI bridge
+  product: 5520/5500/X58 I/O Hub PCI Express Root Port 3
+  vendor: Intel Corporation
+  physical id: 3
+  bus info: pci@0000:00:03.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+    ioport: d000(size=8192)
+    memory:
+    - f9800000-fbefffff
+- class: PCI
+  id: pci
+  description: PCI bridge
+  product: PES12N3A PCI Express Switch
+  vendor: Integrated Device Technology, Inc. [IDT]
+  physical id: 0
+  bus info: pci@0000:07:00.0
+  version: 0e
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+    ioport: d000(size=8192)
+    memory:
+    - f9800000-fbefffff
+- class: PCI
+  id: pci:0
+  description: PCI bridge
+  product: PES12N3A PCI Express Switch
+  vendor: Integrated Device Technology, Inc. [IDT]
+  physical id: 2
+  bus info: pci@0000:08:02.0
+  version: 0e
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - pm
+  - msi
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '27'
+    ioport: e000(size=4096)
+    memory:
+    - fac00000-fbefffff
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: 0
+  bus info: pci@0000:0a:00.0
+  logical name: enp10s0f0
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 1.5.1
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '29'
+    memory:
+    - fbea0000-fbebffff
+    - fb000000-fb3fffff
+    - fbed8000-fbedbfff
+    - fac00000-faffffff
+    - fbc00000-fbc1ffff
+    - fbc20000-fbc3ffff
+    ioport: e880(size=32)
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: '0.1'
+  bus info: pci@0000:0a:00.1
+  logical name: enp10s0f1
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 1.5.1
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '40'
+    memory:
+    - fbee0000-fbefffff
+    - fb800000-fbbfffff
+    - fbedc000-fbedffff
+    - fb400000-fb7fffff
+    - fbc40000-fbc5ffff
+    - fbc60000-fbc7ffff
+    ioport: ec00(size=32)
+- class: PCI
+  id: pci:1
+  description: PCI bridge
+  product: PES12N3A PCI Express Switch
+  vendor: Integrated Device Technology, Inc. [IDT]
+  physical id: 4
+  bus info: pci@0000:08:04.0
+  version: 0e
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - pm
+  - msi
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '28'
+    ioport: d000(size=4096)
+    memory:
+    - f9800000-fabfffff
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: 0
+  bus info: pci@0000:09:00.0
+  logical name: enp9s0f0
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 1.5.1
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '50'
+    memory:
+    - faba0000-fabbffff
+    - f9c00000-f9ffffff
+    - fabd8000-fabdbfff
+    - f9800000-f9bfffff
+    - fa800000-fa81ffff
+    - fa820000-fa83ffff
+    ioport: d880(size=32)
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: '0.1'
+  bus info: pci@0000:09:00.1
+  logical name: enp9s0f1
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 1.5.1
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '60'
+    memory:
+    - fabe0000-fabfffff
+    - fa400000-fa7fffff
+    - fabdc000-fabdffff
+    - fa000000-fa3fffff
+    - fa840000-fa85ffff
+    - fa860000-fa87ffff
+    ioport: dc00(size=32)
+- class: PCI
+  id: pci:2
+  description: PCI bridge
+  product: 5520/5500/X58 I/O Hub PCI Express Root Port 7
+  vendor: Intel Corporation
+  physical id: 7
+  bus info: pci@0000:00:07.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+- class: PCI
+  id: pci:3
+  description: PCI bridge
+  product: 7500/5520/5500/X58 I/O Hub PCI Express Root Port 9
+  vendor: Intel Corporation
+  physical id: 9
+  bus info: pci@0000:00:09.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+    ioport: c000(size=4096)
+    memory:
+    - c0400000-c05fffff
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: 0
+  bus info: pci@0000:05:00.0
+  logical name: enp5s0f0
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    duplex: full
+    firmware: 1.8.2
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 1Gbit/s
+  resources:
+    irq: '70'
+    memory:
+    - c0400000-c041ffff
+    - c0420000-c043ffff
+    - c04c0000-c04c3fff
+    - c0440000-c045ffff
+    - c04c4000-c04e3fff
+    - c04e4000-c0503fff
+    ioport: c880(size=32)
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  product: 82576 Gigabit Network Connection
+  vendor: Intel Corporation
+  physical id: '0.1'
+  bus info: pci@0000:05:00.1
+  logical name: enp5s0f1
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - rom
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: igb
+    driverversion: 5.3.0-k
+    firmware: 1.8.2
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+  resources:
+    irq: '80'
+    memory:
+    - c0460000-c047ffff
+    - c0480000-c049ffff
+    - c0504000-c0507fff
+    - c04a0000-c04bffff
+    - c0508000-c0527fff
+    - c0528000-c0547fff
+    ioport: cc00(size=32)
+- class: Network
+  id: network:2
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: 10
+  bus info: pci@0000:05:10.0
+  logical name: enp5s16
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04c4000-c04c7fff
+    - c04e4000-c04e7fff
+- class: Network
+  id: network:3
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.1'
+  bus info: pci@0000:05:10.1
+  logical name: enp5s16f1
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c0508000-c050bfff
+    - c0528000-c052bfff
+- class: Network
+  id: network:4
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.2'
+  bus info: pci@0000:05:10.2
+  logical name: enp5s16f2
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04c8000-c04cbfff
+    - c04e8000-c04ebfff
+- class: Network
+  id: network:5
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.3'
+  bus info: pci@0000:05:10.3
+  logical name: enp5s16f3
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c050c000-c050ffff
+    - c052c000-c052ffff
+- class: Network
+  id: network:6
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.4'
+  bus info: pci@0000:05:10.4
+  logical name: enp5s16f4
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04cc000-c04cffff
+    - c04ec000-c04effff
+- class: Network
+  id: network:7
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.5'
+  bus info: pci@0000:05:10.5
+  logical name: enp5s16f5
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c0510000-c0513fff
+    - c0530000-c0533fff
+- class: Network
+  id: network:8
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.6'
+  bus info: pci@0000:05:10.6
+  logical name: enp5s16f6
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04d0000-c04d3fff
+    - c04f0000-c04f3fff
+- class: Network
+  id: network:9
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '10.7'
+  bus info: pci@0000:05:10.7
+  logical name: enp5s16f7
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c0514000-c0517fff
+    - c0534000-c0537fff
+- class: Network
+  id: network:10
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: 11
+  bus info: pci@0000:05:11.0
+  logical name: enp5s17
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04d4000-c04d7fff
+    - c04f4000-c04f7fff
+- class: Network
+  id: network:11
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '11.1'
+  bus info: pci@0000:05:11.1
+  logical name: enp5s17f1
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c0518000-c051bfff
+    - c0538000-c053bfff
+- class: Network
+  id: network:12
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '11.2'
+  bus info: pci@0000:05:11.2
+  logical name: enp5s17f2
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04d8000-c04dbfff
+    - c04f8000-c04fbfff
+- class: Network
+  id: network:13
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '11.3'
+  bus info: pci@0000:05:11.3
+  logical name: enp5s17f3
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c051c000-c051ffff
+    - c053c000-c053ffff
+- class: Network
+  id: network:14
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '11.4'
+  bus info: pci@0000:05:11.4
+  logical name: enp5s17f4
+  version: '01'
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    duplex: full
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    speed: 1Gbit/s
+  resources:
+    irq: '0'
+    memory:
+    - c04dc000-c04dffff
+    - c04fc000-c04fffff
+- class: Network
+  id: network:15
+  description: Ethernet interface
+  product: Illegal Vendor ID
+  vendor: Illegal Vendor ID
+  physical id: '11.5'
+  bus info: pci@0000:05:11.5
+  logical name: enp5s17f5
+  version: '01'
+  serial: "[REMOVED]"
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - 1000bt-fd
+  configuration:
+    autonegotiation: 'off'
+    broadcast: 'yes'
+    driver: igbvf
+    driverversion: 2.0.2-k
+    latency: 0
+    link: 'no'
+    multicast: 'yes'
+  resources:
+    irq: '0'
+    memory:
+    - c0520000-c0523fff
+    - c0540000-c0543fff
+- class: PCI
+  id: pci:4
+  description: PCI bridge
+  product: 7500/5520/5500/X58 I/O Hub PCI Express Root Port 10
+  vendor: Intel Corporation
+  physical id: a
+  bus info: pci@0000:00:0a.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - msi
+  - pciexpress
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '0'
+- class: Generic
+  id: generic:0
+  description: PIC
+  product: 7500/5520/5500/X58 I/O Hub System Management Registers
+  vendor: Intel Corporation
+  physical id: 14
+  bus info: pci@0000:00:14.0
+  version: 13
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pciexpress
+  - '8259'
+  - cap_list
+  configuration:
+    driver: i7core_edac
+    latency: 0
+  resources:
+    irq: '0'
+- class: USB
+  id: usb:0
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB UHCI Controller #4'
+  vendor: Intel Corporation
+  physical id: 1a
+  bus info: pci@0000:00:1a.0
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - uhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: uhci_hcd
+    latency: 0
+  resources:
+    irq: '16'
+    ioport: a800(size=32)
+- class: USBhost
+  id: usbhost
+  product: UHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 uhci_hcd
+  physical id: 1
+  bus info: usb@3
+  logical name: usb3
+  version: '3.10'
+  capabilities:
+  - usb-1.10
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 12Mbit/s
+- class: USB
+  id: usb:1
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB2 EHCI Controller #2'
+  vendor: Intel Corporation
+  physical id: 1a.7
+  bus info: pci@0000:00:1a.7
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - debug
+  - ehci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ehci-pci
+    latency: 0
+  resources:
+    irq: '18'
+    memory:
+    - f87f8000-f87f83ff
+- class: USBhost
+  id: usbhost
+  product: EHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 ehci_hcd
+  physical id: 1
+  bus info: usb@1
+  logical name: usb1
+  version: '3.10'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 480Mbit/s
+- class: PCI
+  id: pci:5
+  description: PCI bridge
+  product: 82801JI (ICH10 Family) PCI Express Root Port 1
+  vendor: Intel Corporation
+  physical id: 1c
+  bus info: pci@0000:00:1c.0
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '25'
+    ioport: 1000(size=4096) f7f00000(size=1048576)
+    memory:
+    - c0000000-c03fffff
+- class: PCI
+  id: pci:6
+  description: PCI bridge
+  product: 82801JI (ICH10 Family) PCI Express Root Port 5
+  vendor: Intel Corporation
+  physical id: 1c.4
+  bus info: pci@0000:00:1c.4
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '26'
+    ioport: 2000(size=4096) f6000000(size=16777216)
+    memory:
+    - f8800000-f96fffff
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: MGA G200e [Pilot] ServerEngines (SEP1)
+  vendor: Matrox Electronics Systems Ltd.
+  physical id: 0
+  bus info: pci@0000:02:00.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - pciexpress
+  - msi
+  - vga_controller
+  - bus_master
+  - cap_list
+  - rom
+  configuration:
+    driver: mgag200
+    latency: 0
+  resources:
+    irq: '16'
+    memory:
+    - f6000000-f6ffffff
+    - f96fc000-f96fffff
+    - f8800000-f8ffffff
+    - f96e0000-f96effff
+- class: USB
+  id: usb:2
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB UHCI Controller #1'
+  vendor: Intel Corporation
+  physical id: 1d
+  bus info: pci@0000:00:1d.0
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - uhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: uhci_hcd
+    latency: 0
+  resources:
+    irq: '23'
+    ioport: a880(size=32)
+- class: USBhost
+  id: usbhost
+  product: UHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 uhci_hcd
+  physical id: 1
+  bus info: usb@4
+  logical name: usb4
+  version: '3.10'
+  capabilities:
+  - usb-1.10
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 12Mbit/s
+- class: USB
+  id: usb:3
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB UHCI Controller #2'
+  vendor: Intel Corporation
+  physical id: 1d.1
+  bus info: pci@0000:00:1d.1
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - uhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: uhci_hcd
+    latency: 0
+  resources:
+    irq: '19'
+    ioport: ac00(size=32)
+- class: USBhost
+  id: usbhost
+  product: UHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 uhci_hcd
+  physical id: 1
+  bus info: usb@5
+  logical name: usb5
+  version: '3.10'
+  capabilities:
+  - usb-1.10
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 12Mbit/s
+- class: USB
+  id: usb
+  description: Mouse
+  product: ThinkPad USB Laser Mouse
+  vendor: Lenovo
+  physical id: 1
+  bus info: usb@5:1
+  version: '0.00'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: usbhid
+    maxpower: 98mA
+    speed: 2Mbit/s
+- class: USB
+  id: usb:4
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB UHCI Controller #3'
+  vendor: Intel Corporation
+  physical id: 1d.2
+  bus info: pci@0000:00:1d.2
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - uhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: uhci_hcd
+    latency: 0
+  resources:
+    irq: '18'
+    ioport: b000(size=32)
+- class: USBhost
+  id: usbhost
+  product: UHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 uhci_hcd
+  physical id: 1
+  bus info: usb@6
+  logical name: usb6
+  version: '3.10'
+  capabilities:
+  - usb-1.10
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 12Mbit/s
+- class: USB
+  id: usb:5
+  description: USB controller
+  product: '82801JI (ICH10 Family) USB2 EHCI Controller #1'
+  vendor: Intel Corporation
+  physical id: 1d.7
+  bus info: pci@0000:00:1d.7
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - debug
+  - ehci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ehci-pci
+    latency: 0
+  resources:
+    irq: '23'
+    memory:
+    - f87fa000-f87fa3ff
+- class: USBhost
+  id: usbhost
+  product: EHCI Host Controller
+  vendor: Linux 3.10.0-514.6.1.el7.x86_64 ehci_hcd
+  physical id: 1
+  bus info: usb@2
+  logical name: usb2
+  version: '3.10'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 6
+    speed: 480Mbit/s
+- class: PCI
+  id: pci:7
+  description: PCI bridge
+  product: 82801 PCI Bridge
+  vendor: Intel Corporation
+  physical id: 1e
+  bus info: pci@0000:00:1e.0
+  version: 90
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - subtractive_decode
+  - bus_master
+  - cap_list
+- class: ISA
+  id: isa
+  description: ISA bridge
+  product: 82801JIR (ICH10R) LPC Interface Controller
+  vendor: Intel Corporation
+  physical id: 1f
+  bus info: pci@0000:00:1f.0
+  version: '00'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - isa
+  - bus_master
+  - cap_list
+  configuration:
+    driver: lpc_ich
+    latency: 0
+  resources:
+    irq: '0'
+- class: SATA
+  id: sata
+  description: SATA controller
+  product: 82801JI (ICH10 Family) SATA AHCI Controller
+  vendor: Intel Corporation
+  physical id: 1f.2
+  bus info: pci@0000:00:1f.2
+  logical name: scsi4
+  version: '00'
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - sata
+  - msi
+  - pm
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  - emulated
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '39'
+    ioport: b880(size=8) b800(size=4) b480(size=8) b400(size=4) b080(size=32)
+    memory:
+    - f87fc000-f87fc7ff
+- class: Disk
+  id: disk:0
+  description: ATA Disk
+  product: MB0500EBNCR
+  physical id: 0
+  bus info: scsi@0:0.0.0
+  logical name: "/dev/sda"
+  version: HPG2
+  serial: "[REMOVED]"
+  size: 465GiB (500GB)
+  capabilities:
+  - removable
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+- class: Medium
+  id: medium
+  physical id: 0
+  logical name: "/dev/sda"
+  size: 465GiB (500GB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    signature: 000cd733
+- class: Disk
+  id: disk:1
+  description: ATA Disk
+  product: Hitachi HUA72201
+  vendor: Hitachi
+  physical id: 1
+  bus info: scsi@1:0.0.0
+  logical name: "/dev/sdb"
+  version: A3MA
+  serial: "[REMOVED]"
+  size: 931GiB (1TB)
+  capabilities:
+  - removable
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+- class: Medium
+  id: medium
+  physical id: 0
+  logical name: "/dev/sdb"
+  size: 931GiB (1TB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    signature: 000cc4fa
+- class: Volume
+  id: volume
+  description: Linux LVM Physical Volume partition
+  physical id: 1
+  logical name: "/dev/sdb1"
+  serial: "[REMOVED]"
+  size: 931GiB
+  capacity: 931GiB
+  capabilities:
+  - primary
+  - multi
+  - lvm2
+- class: CDrom
+  id: cdrom
+  description: DVD reader
+  product: DV-18S-B
+  vendor: HP
+  physical id: 0.0.0
+  bus info: scsi@4:0.0.0
+  logical name: "/dev/sr0"
+  version: G.Y4
+  capabilities:
+  - removable
+  - audio
+  - dvd
+  configuration:
+    ansiversion: 5
+    status: nodisc
+- class: PCI
+  id: pci:1
+  description: Host bridge
+  product: Xeon 5600 Series QuickPath Architecture Generic Non-core Registers
+  vendor: Intel Corporation
+  physical id: 101
+  bus info: pci@0000:fe:00.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:2
+  description: Host bridge
+  product: Xeon 5600 Series QuickPath Architecture System Address Decoder
+  vendor: Intel Corporation
+  physical id: 102
+  bus info: pci@0000:fe:00.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:3
+  description: Host bridge
+  product: Xeon 5600 Series QPI Link 0
+  vendor: Intel Corporation
+  physical id: 103
+  bus info: pci@0000:fe:02.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:4
+  description: Host bridge
+  product: Xeon 5600 Series QPI Physical 0
+  vendor: Intel Corporation
+  physical id: 104
+  bus info: pci@0000:fe:02.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:5
+  description: Host bridge
+  product: Xeon 5600 Series Mirror Port Link 0
+  vendor: Intel Corporation
+  physical id: 105
+  bus info: pci@0000:fe:02.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:6
+  description: Host bridge
+  product: Xeon 5600 Series Mirror Port Link 1
+  vendor: Intel Corporation
+  physical id: 106
+  bus info: pci@0000:fe:02.3
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:7
+  description: Host bridge
+  product: Xeon 5600 Series QPI Link 1
+  vendor: Intel Corporation
+  physical id: 107
+  bus info: pci@0000:fe:02.4
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:8
+  description: Host bridge
+  product: Xeon 5600 Series QPI Physical 1
+  vendor: Intel Corporation
+  physical id: 108
+  bus info: pci@0000:fe:02.5
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:9
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Registers
+  vendor: Intel Corporation
+  physical id: 109
+  bus info: pci@0000:fe:03.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:10
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Target Address Decoder
+  vendor: Intel Corporation
+  physical id: 10a
+  bus info: pci@0000:fe:03.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:11
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller RAS Registers
+  vendor: Intel Corporation
+  physical id: 10b
+  bus info: pci@0000:fe:03.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:12
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Test Registers
+  vendor: Intel Corporation
+  physical id: 10c
+  bus info: pci@0000:fe:03.4
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:13
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 0 Control
+  vendor: Intel Corporation
+  physical id: 10d
+  bus info: pci@0000:fe:04.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:14
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 0 Address
+  vendor: Intel Corporation
+  physical id: 10e
+  bus info: pci@0000:fe:04.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:15
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 0 Rank
+  vendor: Intel Corporation
+  physical id: 10f
+  bus info: pci@0000:fe:04.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:16
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 0 Thermal Control
+  vendor: Intel Corporation
+  physical id: 110
+  bus info: pci@0000:fe:04.3
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:17
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 1 Control
+  vendor: Intel Corporation
+  physical id: 111
+  bus info: pci@0000:fe:05.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:18
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 1 Address
+  vendor: Intel Corporation
+  physical id: 112
+  bus info: pci@0000:fe:05.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:19
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 1 Rank
+  vendor: Intel Corporation
+  physical id: 113
+  bus info: pci@0000:fe:05.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:20
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 1 Thermal Control
+  vendor: Intel Corporation
+  physical id: 114
+  bus info: pci@0000:fe:05.3
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:21
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 2 Control
+  vendor: Intel Corporation
+  physical id: 115
+  bus info: pci@0000:fe:06.0
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:22
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 2 Address
+  vendor: Intel Corporation
+  physical id: 116
+  bus info: pci@0000:fe:06.1
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:23
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 2 Rank
+  vendor: Intel Corporation
+  physical id: 117
+  bus info: pci@0000:fe:06.2
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: PCI
+  id: pci:24
+  description: Host bridge
+  product: Xeon 5600 Series Integrated Memory Controller Channel 2 Thermal Control
+  vendor: Intel Corporation
+  physical id: 118
+  bus info: pci@0000:fe:06.3
+  version: '02'
+  width: 32 bits
+  clock: 33MHz
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  physical id: 2
+  logical name: ovirtmgmt
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'yes'
+    multicast: 'yes'
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  physical id: 3
+  logical name: ";vdsmdummy;"
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    link: 'yes'
+    multicast: 'yes'
+- class: Network
+  id: network:2
+  description: Ethernet interface
+  physical id: 4
+  logical name: sr-iov
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    link: 'no'
+    multicast: 'yes'

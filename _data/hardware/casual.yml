@@ -1,0 +1,616 @@
+---
+- class: Computer
+  id: computer
+  description: Rack Mount Chassis
+  product: PowerEdge R210 II
+  vendor: Dell Inc.
+  serial: "[REMOVED]"
+  width: 64 bits
+  capabilities:
+  - smbios-2.7
+  - dmi-2.7
+  - smp
+  - vsyscall32
+  configuration:
+    boot: normal
+    chassis: rackmount
+    uuid: "[REMOVED]"
+- class: Core
+  id: core
+  description: Motherboard
+  product: '09T7VV'
+  vendor: Dell Inc.
+  physical id: 0
+  version: A05
+  serial: "[REMOVED]"
+- class: Firmware
+  id: firmware
+  description: BIOS
+  vendor: Dell Inc.
+  physical id: 5
+  version: 1.3.1
+  date: 11/10/2011
+  size: 64KiB
+  capacity: 4032KiB
+  capabilities:
+  - isa
+  - pci
+  - pnp
+  - upgrade
+  - shadowing
+  - cdboot
+  - bootselect
+  - edd
+  - int13floppytoshiba
+  - int13floppy360
+  - int13floppy1200
+  - int13floppy720
+  - int9keyboard
+  - int14serial
+  - int10video
+  - acpi
+  - usb
+  - biosbootspecification
+  - netboot
+- class: Memory
+  id: memory
+  description: System Memory
+  physical id: 24
+  slot: System board or motherboard
+  size: 8GiB
+- class: Bank
+  id: bank:0
+  description: DIMM DDR3 [empty]
+  physical id: 0
+  slot: DIMM A2
+- class: Bank
+  id: bank:1
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: HMT351U7BFR8A-H9
+  vendor: Hynix Semiconductor (Hyundai Electronics)
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: DIMM A1
+  size: 4GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: Bank
+  id: bank:2
+  description: DIMM DDR3 [empty]
+  physical id: 2
+  slot: DIMM B2
+- class: Bank
+  id: bank:3
+  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+  product: HMT351U7BFR8A-H9
+  vendor: Hynix Semiconductor (Hyundai Electronics)
+  physical id: 3
+  serial: "[REMOVED]"
+  slot: DIMM B1
+  size: 4GiB
+  width: 64 bits
+  clock: 1333MHz (0.8ns)
+- class: CPU
+  id: cpu
+  description: CPU
+  product: Xeon
+  vendor: Intel Corp.
+  vendor_id: GenuineIntel
+  physical id: 33
+  bus info: cpu@0
+  version: Intel(R) Xeon(R) CPU E31240 @ 3.30GHz
+  slot: CPU1
+  size: 3300MHz
+  capacity: 4GHz
+  width: 64 bits
+  clock: 1333MHz
+  capabilities:
+  - x86-64
+  - fpu
+  - fpu_exception
+  - wp
+  - vme
+  - de
+  - pse
+  - tsc
+  - msr
+  - pae
+  - mce
+  - cx8
+  - apic
+  - sep
+  - mtrr
+  - pge
+  - mca
+  - cmov
+  - pat
+  - pse36
+  - clflush
+  - dts
+  - acpi
+  - mmx
+  - fxsr
+  - sse
+  - sse2
+  - ss
+  - ht
+  - tm
+  - pbe
+  - syscall
+  - nx
+  - rdtscp
+  - constant_tsc
+  - arch_perfmon
+  - pebs
+  - bts
+  - rep_good
+  - nopl
+  - xtopology
+  - nonstop_tsc
+  - aperfmperf
+  - eagerfpu
+  - pni
+  - pclmulqdq
+  - dtes64
+  - monitor
+  - ds_cpl
+  - vmx
+  - smx
+  - est
+  - tm2
+  - ssse3
+  - cx16
+  - xtpr
+  - pdcm
+  - pcid
+  - sse4_1
+  - sse4_2
+  - x2apic
+  - popcnt
+  - tsc_deadline_timer
+  - aes
+  - xsave
+  - avx
+  - lahf_lm
+  - ida
+  - arat
+  - epb
+  - pln
+  - pts
+  - dtherm
+  - tpr_shadow
+  - vnmi
+  - flexpriority
+  - ept
+  - vpid
+  - xsaveopt
+  - cpufreq
+  configuration:
+    cores: 4
+    enabledcores: 4
+    threads: 8
+- class: Cache
+  id: cache:0
+  description: L1 cache
+  physical id: 35
+  slot: L1 Cache
+  size: 32KiB
+  capacity: 32KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-through
+  - instruction
+  configuration:
+    level: 1
+- class: Cache
+  id: cache:1
+  description: L2 cache
+  physical id: 36
+  slot: L2 Cache
+  size: 256KiB
+  capacity: 256KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-through
+  - unified
+  configuration:
+    level: 2
+- class: Cache
+  id: cache:2
+  description: L3 cache
+  physical id: 37
+  slot: L3 Cache
+  size: 8MiB
+  capacity: 8MiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-through
+  - unified
+  configuration:
+    level: 3
+- class: Cache
+  id: cache
+  description: L1 cache
+  physical id: 34
+  slot: L1 Cache
+  size: 32KiB
+  capacity: 32KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-through
+  - data
+  configuration:
+    level: 1
+- class: PCI
+  id: pci
+  description: Host bridge
+  product: Xeon E3-1200 Processor Family DRAM Controller
+  vendor: Intel Corporation
+  physical id: 100
+  bus info: pci@0000:00:00.0
+  version: '09'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: ie31200_edac
+  resources:
+    irq: '0'
+- class: USB
+  id: usb:0
+  description: USB controller
+  product: '6 Series/C200 Series Chipset Family USB Enhanced Host Controller #2'
+  vendor: Intel Corporation
+  physical id: 1a
+  bus info: pci@0000:00:1a.0
+  version: '04'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - debug
+  - ehci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ehci-pci
+    latency: 0
+  resources:
+    irq: '16'
+    memory:
+    - c5106000-c51063ff
+- class: USBhost
+  id: usbhost
+  product: EHCI Host Controller
+  vendor: Linux 3.10.0-327.22.2.el7.x86_64 ehci_hcd
+  physical id: 1
+  bus info: usb@1
+  logical name: usb1
+  version: '3.10'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: Integrated Rate Matching Hub
+  vendor: Intel Corp.
+  physical id: 1
+  bus info: usb@1:1
+  version: '0.00'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 6
+    speed: 480Mbit/s
+- class: PCI
+  id: pci:0
+  description: PCI bridge
+  product: 6 Series/C200 Series Chipset Family PCI Express Root Port 1
+  vendor: Intel Corporation
+  physical id: 1c
+  bus info: pci@0000:00:1c.0
+  version: b4
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '25'
+    memory:
+    - c0000000-c3ffffff
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  product: NetXtreme II BCM5716 Gigabit Ethernet
+  vendor: Broadcom Limited
+  physical id: 0
+  bus info: pci@0000:01:00.0
+  logical name: em1
+  version: 20
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - vpd
+  - msi
+  - msix
+  - pciexpress
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: bnx2
+    driverversion: 2.2.6
+    duplex: full
+    firmware: 6.2.15
+    bc: 
+    5.2.3: 
+    NCSI: 
+    2.0.11: 
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 1Gbit/s
+  resources:
+    irq: '16'
+    memory:
+    - c0000000-c1ffffff
+- class: USB
+  id: usb:1
+  description: USB controller
+  product: '6 Series/C200 Series Chipset Family USB Enhanced Host Controller #1'
+  vendor: Intel Corporation
+  physical id: 1d
+  bus info: pci@0000:00:1d.0
+  version: '04'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - debug
+  - ehci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ehci-pci
+    latency: 0
+  resources:
+    irq: '23'
+    memory:
+    - c5105000-c51053ff
+- class: USBhost
+  id: usbhost
+  product: EHCI Host Controller
+  vendor: Linux 3.10.0-327.22.2.el7.x86_64 ehci_hcd
+  physical id: 1
+  bus info: usb@2
+  logical name: usb2
+  version: '3.10'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 2
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: Integrated Rate Matching Hub
+  vendor: Intel Corp.
+  physical id: 1
+  bus info: usb@2:1
+  version: '0.00'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 6
+    speed: 480Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: USB 2.0 Hub
+  vendor: Standard Microsystems Corp.
+  physical id: 5
+  bus info: usb@2:1.5
+  version: '0.00'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    maxpower: 2mA
+    slots: 4
+    speed: 480Mbit/s
+- class: PCI
+  id: pci:1
+  description: PCI bridge
+  product: 82801 PCI Bridge
+  vendor: Intel Corporation
+  physical id: 1e
+  bus info: pci@0000:00:1e.0
+  version: a4
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - subtractive_decode
+  - bus_master
+  - cap_list
+  resources:
+    memory:
+    - c4800000-c50fffff
+    ioport: c4000000(size=8388608)
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: MGA G200eW WPCM450
+  vendor: Matrox Electronics Systems Ltd.
+  physical id: 3
+  bus info: pci@0000:02:03.0
+  version: 0a
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - vga_controller
+  - bus_master
+  - cap_list
+  - rom
+  configuration:
+    driver: mgag200
+    latency: 0
+    maxlatency: 32
+    mingnt: 16
+  resources:
+    irq: '19'
+    memory:
+    - c4000000-c47fffff
+    - c5000000-c5003fff
+    - c4800000-c4ffffff
+    - c5010000-c501ffff
+- class: ISA
+  id: isa
+  description: ISA bridge
+  product: C202 Chipset Family LPC Controller
+  vendor: Intel Corporation
+  physical id: 1f
+  bus info: pci@0000:00:1f.0
+  version: '04'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - isa
+  - bus_master
+  - cap_list
+  configuration:
+    driver: lpc_ich
+    latency: 0
+  resources:
+    irq: '0'
+- class: SATA
+  id: sata
+  description: SATA controller
+  product: 6 Series/C200 Series Chipset Family SATA AHCI Controller
+  vendor: Intel Corporation
+  physical id: 1f.2
+  bus info: pci@0000:00:1f.2
+  logical name: scsi4
+  version: '04'
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - sata
+  - msi
+  - pm
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  - emulated
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '26'
+    ioport: 2048(size=8) 2054(size=4) 2040(size=8) 2050(size=4) 2020(size=32)
+    memory:
+    - c5104000-c51047ff
+- class: Disk
+  id: disk
+  description: ATA Disk
+  product: WDC WD2502ABYS-1
+  vendor: Western Digital
+  physical id: 0
+  bus info: scsi@0:0.0.0
+  logical name: "/dev/sda"
+  version: 3B05
+  serial: "[REMOVED]"
+  size: 232GiB (250GB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+    signature: 000440b8
+- class: Volume
+  id: volume:1
+  description: Linux LVM Physical Volume partition
+  physical id: 2
+  bus info: scsi@0:0.0.0,2
+  logical name: "/dev/sda2"
+  serial: "[REMOVED]"
+  size: 232GiB
+  capacity: 232GiB
+  capabilities:
+  - primary
+  - multi
+  - lvm2
+- class: CDrom
+  id: cdrom
+  description: DVD-RAM writer
+  product: DVD+-RW DS-8A5SH
+  vendor: PLDS
+  physical id: 1
+  bus info: scsi@4:0.0.0
+  logical name: "/dev/sr0"
+  version: XD51
+  capabilities:
+  - removable
+  - audio
+  - cd-r
+  - cd-rw
+  - dvd
+  - dvd-r
+  - dvd-ram
+  configuration:
+    ansiversion: 5
+    status: nodisc
+- class: Network
+  id: network:0
+  description: Ethernet interface
+  physical id: 1
+  logical name: ovirtmgmt
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'yes'
+    multicast: 'yes'
