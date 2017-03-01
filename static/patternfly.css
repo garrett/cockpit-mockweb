@@ -4,11 +4,11 @@ body,figure{margin:0}
 .c3 svg,html{-webkit-tap-highlight-color:transparent}
 .fa,.glyphicon{-moz-osx-font-smoothing:grayscale}
 .list-view-pf-top-align .list-view-pf-actions,.list-view-pf-top-align .list-view-pf-checkbox{align-self:flex-start}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(../../static/fonts/OpenSans-Light-webfont.woff) format('woff')}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(../../static/fonts/OpenSans-Regular-webfont.woff) format('woff')}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(../../static/fonts/OpenSans-Semibold-webfont.woff) format('woff')}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(../../static/fonts/OpenSans-Bold-webfont.woff) format('woff')}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(../../static/fonts/OpenSans-ExtraBold-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(fonts/OpenSans-Light-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(fonts/OpenSans-Regular-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(fonts/OpenSans-Semibold-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(fonts/OpenSans-Bold-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(fonts/OpenSans-ExtraBold-webfont.woff) format('woff')}
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
