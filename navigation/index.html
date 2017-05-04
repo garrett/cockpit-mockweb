@@ -1,0 +1,200 @@
+---
+layout: minimal
+---
+
+<style>
+  iframe {
+    border: none;
+  }
+
+  .navbar-header {
+    /*
+    line-height: 40px;
+     */
+  }
+
+  .navbar-pf .navbar-utility {
+    font-size: 13px;
+  }
+
+  .navbar-pf .navbar-brand {
+    padding: 13px 0 0;
+  }
+
+  .navbar-pf .pficon,
+  .navbar-pf .navbar-nav > li > a {
+    line-height: 34px;
+  }
+
+  .flex-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row wrap;
+  }
+
+  .flex-navbar {
+    min-width: 100%;
+  }
+
+  .flex-sidebar {
+    flex: 0;
+    height: 100%;
+    width: 68px;
+  }
+
+  .flex-content {
+    flex: 1;
+    width: calc(100vw - 68px);
+  }
+
+  .nav-pf-vertical {
+    position: static !important;
+    overflow: visible !important;
+    height: 100%;
+  }
+
+  .fa {
+    font-size: 22px !important;
+  }
+
+  .flex-sidebar {
+    position: relative;
+  }
+
+  .nav-sidebar {
+    /*
+    transition: max-width 300ms;
+    background: red;
+    */
+    width: 68px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .nav-sidebar > .list-group {
+    /*
+    max-width: 68px;
+    border: none;
+     */
+  }
+
+  .nav-sidebar .list-group-item {
+    border-right-width: 0;
+    overflow: hidden;
+  }
+
+  .nav-sidebar .list-group-item-value {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  .flex-sidebar:hover .nav-sidebar {
+    width: 180px;
+    overflow: visible !important;
+  }
+  .flex-sidebar:hover .list-group {
+  }
+  .flex-sidebar:hover .list-group-item-value {
+    opacity: 1;
+  }
+</style>
+
+<div class="flex-container">
+
+  <nav id="topnav" class="navbar navbar-default navbar-pf
+    navbar-pf-vertical flex-navbar" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <i class="fa fa-bars" alt="Toggle navigation"></i>
+      </button>
+      <div class="navbar-brand">
+        <div id="index-brand">Fedora <b>Server Edition</b></div>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-utility">
+        <li class="credential-lock credential-unlocked credential-blink">
+          <a data-toggle="tooltip" data-placement="bottom" title="Privileged tasks not available">
+            <i class="fa fa-lock"></i>
+            <span>Locked</span>
+          </a>
+        </li>
+        <li id="navbar-oops" hidden="">
+          <a><span class="oops-status">Ooops!</span></a>
+        </li>
+        <li class="dropdown">
+          <a id="navbar-dropdown" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="pficon pficon-user"></span>
+            <span id="content-user-name">Korben Dallas</span><b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="display-language-menu">
+              <a data-toggle="modal" data-target="#display-language">Display Language</a>
+            </li>
+            <li class="divider display-language-menu"></li>
+            <li>
+              <a data-toggle="modal" data-target="#about">About Cockpit</a>
+            </li>
+            <li>
+              <a id="active-pages" class="navbar-advanced" style="display: none;">Active Pages</a>
+            </li>
+            <li class="divider"></li>
+            <li id="go-account" style="display: list-item;" hidden="">
+              <a>Account Settings</a>
+            </li>
+            <li>
+              <a data-toggle="modal" data-target="#credentials-dialog" id="credentials-item">Authentication</a>
+            </li>
+            <li>
+              <a id="go-logout">Log out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--
+  <div id="sidebar" class="nav-pf-vertical nav-sidebar" style="height: 833px;">
+    Sidebar!
+  </div>
+  -->
+
+  <div class="flex-sidebar">
+    <div class="nav-sidebar nav-pf-vertical">
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a>
+            <span class="fa fa-dashboard" data-toggle="tooltip" title="" data-original-title="Dashboard"></span>
+            <span class="list-group-item-value">Dashboard</span>
+          </a>
+        </li>
+        <li class="list-group-item active">
+          <a>
+            <span class="fa fa-server" data-toggle="tooltip" title="" data-original-title="Host"></span>
+            <span class="list-group-item-value">Host</span>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a>
+            <span class="fa fa-shield" data-toggle="tooltip" title="" data-original-title="Image Registry"></span>
+            <span class="list-group-item-value">Image Registry</span>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a>
+            <span class="fa fa-shield" data-toggle="tooltip" title="" data-original-title="Cluster"></span>
+            <span class="list-group-item-value">Cluster</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <iframe src="content.html" class="flex-content"></iframe>
+</div>
+
