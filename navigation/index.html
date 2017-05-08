@@ -41,6 +41,7 @@ layout: minimal
     flex: 0;
     height: 100%;
     width: 68px;
+    background: #292e34;
   }
 
   .flex-content {
@@ -54,8 +55,13 @@ layout: minimal
     height: 100%;
   }
 
+  .nav-sidebar-wrap {
+    width: 68px;
+  }
+
   .nav-sidebar .fa {
     font-size: 22px !important;
+    margin-left: -4px;
   }
 
   .flex-sidebar {
@@ -63,13 +69,11 @@ layout: minimal
   }
 
   .nav-sidebar {
-    /*
-    transition: max-width 300ms;
-    background: red;
-    */
+    transition: all 300ms ease-in-out;
+    box-shadow: 0 0;
     width: 68px;
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 0;
   }
 
@@ -92,7 +96,7 @@ layout: minimal
 
   .flex-sidebar:hover .nav-sidebar {
     width: 180px;
-    overflow: visible !important;
+    box-shadow: 0 0 9px rgba(0,0,0,0.5);
   }
   .flex-sidebar:hover .list-group {
   }
@@ -163,36 +167,38 @@ layout: minimal
   -->
 
   <div class="flex-sidebar">
+    <div class="nav-sidebar-wrap">
     <div class="nav-sidebar nav-pf-vertical">
 
       <ul class="list-group">
         <li class="list-group-item">
           <a>
-            <span class="fa fa-dashboard" data-toggle="tooltip" title="" data-original-title="Dashboard"></span>
+            <span class="fa pficon-topology" data-toggle="tooltip" title="" data-original-title="Dashboard"></span>
             <span class="list-group-item-value">Dashboard</span>
           </a>
         </li>
         <li class="list-group-item active">
           <a>
-            <span class="fa fa-server" data-toggle="tooltip" title="" data-original-title="Host"></span>
+            <span class="fa pficon-container-node" data-toggle="tooltip" title="" data-original-title="Host"></span>
             <span class="list-group-item-value">Host</span>
           </a>
         </li>
         <li class="list-group-item">
           <a>
-            <span class="fa fa-shield" data-toggle="tooltip" title="" data-original-title="Image Registry"></span>
+            <span class="fa pficon-registry" data-toggle="tooltip" title="" data-original-title="Image Registry"></span>
             <span class="list-group-item-value">Image Registry</span>
           </a>
         </li>
         <li class="list-group-item">
           <a>
-            <span class="fa fa-shield" data-toggle="tooltip" title="" data-original-title="Cluster"></span>
+            <span class="fa pficon-cluster" data-toggle="tooltip" title="" data-original-title="Cluster"></span>
             <span class="list-group-item-value">Cluster</span>
           </a>
         </li>
       </ul>
 
     </div>
+  </div>
   </div>
 
   <iframe src="content.html" class="flex-content"></iframe>
