@@ -64,7 +64,6 @@ layout: minimal
 
   .flex-content {
     flex: 1;
-    width: calc(100vw - 68px);
   }
 
   .nav-pf-vertical {
@@ -74,7 +73,7 @@ layout: minimal
     border-right-width: 0;
   }
 
-  .nav-sidebar-wrap {
+  .nav-sidebar-wrap:not(.expanded) {
     width: 68px;
   }
 
@@ -91,6 +90,9 @@ layout: minimal
   .nav-sidebar {
     transition: all 150ms ease-out;
     box-shadow: 0 0;
+  }
+
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar {
     width: 68px;
   }
 
@@ -99,7 +101,7 @@ layout: minimal
     overflow: hidden;
   }
 
-  .nav-sidebar .list-group-item-value {
+  .nav-sidebar-wrap:not(.expanded) .list-group-item-value {
     opacity: 0;
     transition: opacity 150ms ease-out;
   }
@@ -110,13 +112,13 @@ layout: minimal
     background: active;
   }
 
-  .nav-sidebar:not(.clicked):hover {
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar:not(.clicked):hover {
     width: 180px;
     box-shadow: 0 0 3px rgba(0,0,0,0.5), 0 0 32px rgba(0,0,0,0.75);
     transition-duration: 500ms;
     transition-timing-function: cubic-bezier(0,1.2,0.8,1);
   }
-  .nav-sidebar:not(.clicked):hover .list-group-item-value {
+  .nav-sidebar-wrap:not(.epanded) .nav-sidebar:not(.clicked):hover .list-group-item-value {
     transition-duration: 300ms;
     opacity: 1;
   }
@@ -127,7 +129,7 @@ layout: minimal
   <nav id="topnav" class="navbar navbar-default navbar-pf
     navbar-pf-vertical flex-navbar" role="navigation">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+      <button type="button" class="navbar-toggle">
         <i class="fa fa-bars" alt="Toggle navigation"></i>
       </button>
       <div class="navbar-brand">
@@ -243,6 +245,10 @@ layout: minimal
   $(function() {
     $('.nav-sidebar a').click(function(ev){
       switchSelect(this);
+    });
+
+    $('.navbar-toggle').click(function(ev){
+      $('.nav-sidebar-wrap').toggleClass('expanded');
     });
   });
 </script>
