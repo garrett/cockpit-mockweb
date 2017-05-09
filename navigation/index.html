@@ -106,13 +106,17 @@ layout: minimal
 
   .flex-sidebar:hover {}
   
-  .nav-sidebar:hover {
+  .nav-sidebar:focus {
+    background: active;
+  }
+
+  .nav-sidebar:not(.clicked):hover {
     width: 180px;
     box-shadow: 0 0 3px rgba(0,0,0,0.5), 0 0 32px rgba(0,0,0,0.75);
     transition-duration: 500ms;
     transition-timing-function: cubic-bezier(0,1.2,0.8,1);
   }
-  .nav-sidebar:hover .list-group-item-value {
+  .nav-sidebar:not(.clicked):hover .list-group-item-value {
     transition-duration: 300ms;
     opacity: 1;
   }
@@ -185,25 +189,25 @@ layout: minimal
 
       <ul class="list-group">
         <li class="list-group-item">
-          <a>
+          <a href="dashboard.html" target="content" x-sidebar="expanded">
             <span class="fa pficon-topology" data-toggle="tooltip" title="" data-original-title="Dashboard"></span>
             <span class="list-group-item-value">Dashboard</span>
           </a>
         </li>
         <li class="list-group-item active">
-          <a>
+          <a href="host.html" target="content">
             <span class="fa pficon-container-node" data-toggle="tooltip" title="" data-original-title="Host"></span>
             <span class="list-group-item-value">Host</span>
           </a>
         </li>
         <li class="list-group-item">
-          <a>
+          <a href="image-registry.html" target="content">
             <span class="fa pficon-registry" data-toggle="tooltip" title="" data-original-title="Image Registry"></span>
             <span class="list-group-item-value">Image Registry</span>
           </a>
         </li>
         <li class="list-group-item">
-          <a>
+          <a href="cluster.html" target="content">
             <span class="fa pficon-cluster" data-toggle="tooltip" title="" data-original-title="Cluster"></span>
             <span class="list-group-item-value">Cluster</span>
           </a>
@@ -213,6 +217,32 @@ layout: minimal
     </div>
   </div>
   </div>
-  <iframe src="content.html" class="flex-content"></iframe>
+  <iframe src="host.html" class="flex-content" name="content"></iframe>
 </div>
 
+<script>
+  var switchSelect = function(el) {
+    var $el = $(el);
+    var $nav = $el.closest('.nav-sidebar');
+
+    $nav.find('.active').removeClass('active');
+
+    $el.closest('li').addClass('active');
+
+    // Add a clicked class to stop hover effect
+    // (see :not(.clicked):hover in CSS)
+    $nav.addClass('clicked');
+
+    // Remove clicked class when hovering away from
+    // the freshly selected navigation item
+    $el.mouseleave(function(ev){
+      $nav.removeClass('clicked');
+    });
+  };
+
+  $(function() {
+    $('.nav-sidebar a').click(function(ev){
+      switchSelect(this);
+    });
+  });
+</script>
