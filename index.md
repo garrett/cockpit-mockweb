@@ -9,3 +9,4 @@ For now, please visit:
 
 * [demo page](test)
 * [Hardware lists](hardware)
+* [Navigation demo](navigation)
