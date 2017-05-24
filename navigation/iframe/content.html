@@ -9,7 +9,7 @@ layout: minimal
     float: left;
     height: 100vh;
     margin-right: 2ex;
-    transition: all 500ms;
+    transition: all 600ms;
     position: relative;
     width: 15em;
     overflow: hidden;
@@ -48,7 +48,15 @@ layout: minimal
     toggling a class on the body of each document.
   </p> 
   <p>
-    (Animation, positioning, etc. is handled purely by CSS.)
-  </p> 
+    (Animation, positioning, etc. is handled purely by CSS. Animation
+    between outer and inner nav is purposely timed different, but can be
+    in sync — or have no animation at all.)
+  </p>
+  <p>
+    Ideally, the module in the sub-frame would pull in stock Cockpit CSS
+    with the logic to handle the internal sub-navigation sidebar
+    (responsiveness, animation, style). It could choose to handle it
+    itself, however, as it is based purely on the classname in the body.
+  </p>
 </div>
 

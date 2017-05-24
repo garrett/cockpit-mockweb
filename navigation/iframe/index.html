@@ -28,20 +28,32 @@ layout: minimal
   })
 
   $('#clicker').click(function(){
+    // Switch the state — we're using a variable here to ensure both
+    // pages are in sync.
     menuState = !menuState;
+
+    // Toggle the class on the top page.
     $('body').toggleClass('menu-toggled', menuState);
+
+    // Toggle the class for the body in the iframe.
     $frame.contents().find('body').toggleClass('menu-toggled', menuState);
   });
 </script>
 
 <style>
   body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
   }
   header {
+    flex: 0;
     padding: 2ex;
     background: #aaa;
   }
   .content {
+    flex: 1;
     display: flex;
   }
   .menu-outer,
@@ -50,7 +62,7 @@ layout: minimal
     overflow: hidden;
   }
   .menu-outer {
-    transition: all 500ms;
+    transition: all 300ms;
     background: black;
     color: white;
   }
@@ -59,8 +71,7 @@ layout: minimal
   }
   iframe {
     flex: 1;
-    height: 12em;
-    outline: 2px solid #900;
+    outline: 2px solid red;
     border: none;
   }
 
