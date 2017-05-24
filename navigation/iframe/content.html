@@ -2,31 +2,6 @@
 layout: minimal
 ---
 
-<style>
-  .sidebar {
-    background: #eee;
-    border-right: 1px solid #ccc;
-    float: left;
-    height: 100vh;
-    margin-right: 2ex;
-    transition: all 600ms;
-    position: relative;
-    width: 15em;
-    overflow: hidden;
-  }
-  .menu {
-    width: 15em;
-    margin: 2ex;
-  }
-  .menu-toggled .sidebar {
-    width: 0;
-    border: none;
-  }
-  .inner-content {
-    padding: 2ex;
-  }
-</style>
-
 <div class="sidebar" id="thing">
   <div class="menu">
     Menubar
@@ -60,3 +35,30 @@ layout: minimal
   </p>
 </div>
 
+<style>
+  .sidebar {
+    background: #eee;
+    border-right: 1px solid #ccc;
+    float: left;
+    height: 100vh;
+    margin-right: 2ex;
+    transition: all 600ms;
+    position: relative;
+    width: 15em;
+    overflow: hidden;
+  }
+
+  .menu {
+    width: 15em;
+    margin: 2ex;
+  }
+
+  .menu-toggled .sidebar {
+    width: 0;
+    border: none;
+  }
+
+  .inner-content {
+    padding: 2ex;
+  }
+</style>
