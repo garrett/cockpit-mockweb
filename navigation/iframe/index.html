@@ -1,0 +1,70 @@
+---
+layout: minimal
+---
+
+<header>
+  <button id="clicker">Click to toggle menu</button>
+  Parent page!
+</header>
+
+<div class="content">
+  <div class="menu-outer">
+    <div class="menu-outer-content">
+      This is an outer menu.
+    </div>
+  </div>
+  <iframe src="content.html" id="frame"></iframe>
+</div>
+
+<script>
+  'use strict';
+
+  var menuState = false;
+
+  var $frame = $('#frame');
+
+  $frame.on('load', function(foo){
+    console.log(['hi', foo, this, $frame]);
+  })
+
+  $('#clicker').click(function(){
+    menuState = !menuState;
+    $('body').toggleClass('menu-toggled', menuState);
+    $frame.contents().find('body').toggleClass('menu-toggled', menuState);
+  });
+</script>
+
+<style>
+  body {
+  }
+  header {
+    padding: 2ex;
+    background: #aaa;
+  }
+  .content {
+    display: flex;
+  }
+  .menu-outer,
+  .menu-outer-content {
+    width: 10em;
+    overflow: hidden;
+  }
+  .menu-outer {
+    transition: all 500ms;
+    background: black;
+    color: white;
+  }
+  .menu-outer-content {
+    padding: 2ex;
+  }
+  iframe {
+    flex: 1;
+    height: 12em;
+    outline: 2px solid #900;
+    border: none;
+  }
+
+  .menu-toggled .menu-outer {
+    width: 0;
+  }
+</style>

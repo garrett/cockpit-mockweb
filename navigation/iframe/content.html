@@ -1,0 +1,54 @@
+---
+layout: minimal
+---
+
+<style>
+  .sidebar {
+    background: #eee;
+    border-right: 1px solid #ccc;
+    float: left;
+    height: 100vh;
+    margin-right: 2ex;
+    transition: all 500ms;
+    position: relative;
+    width: 15em;
+    overflow: hidden;
+  }
+  .menu {
+    width: 15em;
+    margin: 2ex;
+  }
+  .menu-toggled .sidebar {
+    width: 0;
+    border: none;
+  }
+  .inner-content {
+    padding: 2ex;
+  }
+</style>
+
+<div class="sidebar" id="thing">
+  <div class="menu">
+    Menubar
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ul>
+  </div>
+</div>
+
+<div class="inner-content">
+  <p>
+    Everything inside the red border is in the iframe. 
+    Everything outside is the parent frame. 
+  </p> 
+  <p>
+    The parent frame controls both the top and secondary menus by simply
+    toggling a class on the body of each document.
+  </p> 
+  <p>
+    (Animation, positioning, etc. is handled purely by CSS.)
+  </p> 
+</div>
+
