@@ -1,6 +1,6 @@
 ---
 title: Cockpit HTML mockups
-layout: minimal
+layout: document
 ---
 
 # Placeholder page!
