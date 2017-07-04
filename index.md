@@ -11,3 +11,4 @@ For now, please visit:
 * [Hardware lists](hardware)
 * [Navigation demo](navigation)
 * [Navigation iframe subnav demo](navigation/iframe)
+* [Software updates demos](updates)
