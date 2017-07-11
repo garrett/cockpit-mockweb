@@ -4,6 +4,18 @@ layout: document
 
 # Software updates demos
 
+## Available updates
+
+* [Available updates list](available/)
+
+## Update history
+
+- [Flow list](flow)
+
+### Deprecated
+
+{% capture dep %}
 - [Table list](list)
 - [Table list, scrolly](list-scroll)
-- [Flow list](flow)
+{% endcapture %}
+<strike>{{ dep | markdownify }}</strike>
