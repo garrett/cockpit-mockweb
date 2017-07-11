@@ -95,6 +95,8 @@ layout: minimal
     }
    }
 
+   /***** New CSS below! *****/
+
    .info-short {
    }
    .info-extended {
@@ -116,9 +118,17 @@ layout: minimal
 $(function(){
  $updatesList = $('#updates-list');
 
+ // Ignore this block.
+ // (It's a quick hack for for simple duplication of the row HTML.)
+ $row = $updatesList.find('tr.listing-ct-item');
+ html = 'xxxxx'.replace(/x/g, $row[0].outerHTML);
+ $row.after(html);
+
+ // Add a click handler and check for bubbling of the link
  $updatesList.click(function(event){
   if (event.target.className == 'info-expander') {
-   console.log($(event.target).parents('tr').addClass('info-expanded'));
+   // When a matching link is clicked, add a toggle class to the parent <tr>
+   $(event.target).parents('tr').addClass('info-expanded');
   }
  });
 });
