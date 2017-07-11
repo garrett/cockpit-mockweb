@@ -96,6 +96,7 @@ layout: minimal
    /***** New CSS below! *****/
 
    .info-short {
+    display: inline;
    }
    .info-extended {
     display: none;
@@ -105,11 +106,12 @@ layout: minimal
    }
 
    .listing-ct-item.info-expanded .info-extended {
-    display: block;
+    display: inline;
    }
    .listing-ct-item.info-expanded .info-expander {
     display: none;
    }
+
 </style>
 
 <script>
@@ -481,7 +483,8 @@ $(function(){
     <td class="changelog"><div class="info-short"><a href="http://wine-staging.com/">Wine-staging.com</a>
 
      - Preloader compatibility enhancements for older macOS versions.
-     - NVAPI improvements.</div><div class="info-extended">- Support for starting position-independent executables (PIE) from Wine.
+     - NVAPI improvements.</div><div class="info-extended">
+     - Support for starting position-independent executables (PIE) from Wine.
      - Keyboard/Mouse handling fixes.
      - Various smaller bug fixes and improvements.
 
