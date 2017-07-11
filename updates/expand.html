@@ -1,0 +1,454 @@
+---
+layout: minimal
+---
+
+<style>
+
+ @import url('{{ site.baseurl }}/updates/updates.css');
+
+ .listing-ct-item th {
+  color: #aaa;
+  font-weight: 400;
+  max-height: 2em;
+  overflow: hidden;
+ }
+ .listing-ct-item th .tooltip-ct-inner {
+  font-weight: 600;
+  color: inherit;
+  color: #363636;
+ }
+
+ /* Reformat table for narrow widths */
+ @media screen and (max-width: 640px) {
+  .listing-ct {
+   /* counteract .container-fluid */
+   margin: 0 0 0 -20px;
+   width: 100vw;
+   overflow: hidden;
+  }
+  .listing-ct thead {
+   display: none;
+  }
+  .listing-ct-item {
+   display: block;
+   width: 100vw;
+  }
+  .listing-ct-item th,
+  .listing-ct-item td {
+   display: block;
+   width: 100%;
+   max-width: 100% !important;
+   padding: 10px 15px !important;
+  }
+  .listing-ct-item th + td,
+  .listing-ct-item td + td {
+   padding-top: 0 !important;
+  }
+ }
+
+ @media screen and (min-width: 800px) {
+  tr.listing-ct-item td.changelog {
+   width: 80ex;
+   white-space: pre-line;
+  }
+
+  .listing-ct-item td.narrow:nth-child(2) {
+   max-width: 25ex;
+  }
+ }
+
+ @media screen and (min-width: 800px) and (max-width: 1400px) {
+  .listing-ct-item th {
+   min-width: 30%;
+  }
+
+  /* This really should be .update-bugs or similar */
+  .listing-ct-item td.narrow:nth-child(3) {
+   /* Don't copy this !important — it's just to override the CSS */
+   min-width: 19ex !important;
+   width: 20ex;
+  }
+  /* Basically children of the above, but break before the odd bug links */
+  .listing-ct-item td.narrow:nth-child(3) a:nth-child(odd):before {
+   display: block;
+   content: '';
+  }
+ }
+
+ @media screen and (min-width: 1401px) {
+  .listing-ct-item th {
+   /*
+   min-width: 30%;
+    */
+    }
+
+    /* This really should be .update-bugs or similar */
+    .listing-ct-item td.narrow:nth-child(3) {
+     /* Don't copy this !important — it's just to override the CSS */
+     min-width: 36ex !important;
+     width: 38ex;
+    }
+    /* Basically children of the above, but break before the odd bug links */
+    .listing-ct-item td.narrow:nth-child(3) a:nth-child(4n+5):before {
+     display: block;
+     content: '';
+    }
+   }
+
+  </style>
+
+  <table class="listing-ct">
+   <thead>
+    <tr>
+     <th>Name</th>
+     <th>Version</th>
+     <th>Bugs</th>
+     <th>Details</th>
+    </tr>
+   </thead>
+   <tr class="listing-ct-item">
+    <th>
+     <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine</span>
+      </div>
+      <div class="tooltip top" style="top: -64px; left: -30px; width: 220px; height: 64px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 43px;">
+       </div>
+       <div class="tooltip-inner">A compatibility layer for windows applications</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-alsa</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -44px; width: 142px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 71px;">
+       </div>
+       <div class="tooltip-inner">Alsa support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-alsa</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -44px; width: 142px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 71px;">
+       </div>
+       <div class="tooltip-inner">Alsa support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-arial-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -27.5px; width: 143px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 71.5px;">
+       </div>
+       <div class="tooltip-inner">Wine Arial font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-capi</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -46px; width: 146px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 73px;">
+       </div>
+       <div class="tooltip-inner">ISDN support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-capi</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -46px; width: 146px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 73px;">
+       </div>
+       <div class="tooltip-inner">ISDN support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-cms</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -62.5px; width: 180px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 90px;">
+       </div>
+       <div class="tooltip-inner">Color Management for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-cms</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -30px; width: 180px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 57.5px;">
+       </div>
+       <div class="tooltip-inner">Color Management for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-common</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -10.5px; width: 101px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 50.5px;">
+       </div>
+       <div class="tooltip-inner">Common files</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-core</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -37px; width: 130px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 65px;">
+       </div>
+       <div class="tooltip-inner">Wine core package</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-core</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -37px; width: 130px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 65px;">
+       </div>
+       <div class="tooltip-inner">Wine core package</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-courier-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -27.5px; width: 159px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 79.5px;">
+       </div>
+       <div class="tooltip-inner">Wine Courier font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-desktop</span>
+      </div>
+      <div class="tooltip top" style="top: -64px; left: -30px; width: 220px; height: 64px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 68px;">
+       </div>
+       <div class="tooltip-inner">Desktop integration features for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-filesystem</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -52px; width: 194px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 97px;">
+       </div>
+       <div class="tooltip-inner">Filesystem directories for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-fixedsys-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -26px; width: 164px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 82px;">
+       </div>
+       <div class="tooltip-inner">Wine Fixedsys font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -22px; width: 103px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 51.5px;">
+       </div>
+       <div class="tooltip-inner">Wine font files</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-ldap</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -47px; width: 148px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 74px;">
+       </div>
+       <div class="tooltip-inner">LDAP support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-ldap</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -30px; width: 148px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 57px;">
+       </div>
+       <div class="tooltip-inner">LDAP support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-marlett-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -27px; width: 158px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 79px;">
+       </div>
+       <div class="tooltip-inner">Wine Marlett font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-ms-sans-serif-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -25.5px; width: 194px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 97px;">
+       </div>
+       <div class="tooltip-inner">Wine MS Sans Serif font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-openal</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -45px; width: 158px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 79px;">
+       </div>
+       <div class="tooltip-inner">Openal support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-openal</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -30px; width: 158px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 64px;">
+       </div>
+       <div class="tooltip-inner">Openal support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-opencl</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -47px; width: 162px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 81px;">
+       </div>
+       <div class="tooltip-inner">OpenCL support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-opencl</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -47px; width: 162px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 81px;">
+       </div>
+       <div class="tooltip-inner">OpenCL support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-pulseaudio</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -43.5px; width: 179px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 89.5px;">
+       </div>
+       <div class="tooltip-inner">Pulseaudio support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-pulseaudio</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -43.5px; width: 179px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 89.5px;">
+       </div>
+       <div class="tooltip-inner">Pulseaudio support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-small-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -27px; width: 148px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 74px;">
+       </div>
+       <div class="tooltip-inner">Wine Small font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-symbol-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -26.5px; width: 158px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 79px;">
+       </div>
+       <div class="tooltip-inner">Wine Symbol font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-system-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -26px; width: 158px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 79px;">
+       </div>
+       <div class="tooltip-inner">Wine System font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-systemd</span>
+      </div>
+      <div class="tooltip top" style="top: -64px; left: -70px; width: 220px; height: 64px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 110px;">
+       </div>
+       <div class="tooltip-inner">Systemd config for the wine binfmt handler</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-tahoma-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -28px; width: 162px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 81px;">
+       </div>
+       <div class="tooltip-inner">Wine Tahoma font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-times-new-roman-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -64px; left: -28.5px; width: 220px; height: 64px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 110px;">
+       </div>
+       <div class="tooltip-inner">Wine Times New Roman font family</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-twain</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -45.5px; width: 151px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 75.5px;">
+       </div>
+       <div class="tooltip-inner">Twain support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-twain</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -45.5px; width: 151px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 75.5px;">
+       </div>
+       <div class="tooltip-inner">Twain support for wine</div>
+      </div>
+      </div>, <div class="tooltip-ct-outer">
+      <div class="tooltip-ct-inner">
+       <span>wine-wingdings-fonts</span>
+      </div>
+      <div class="tooltip top" style="top: -47px; left: -27.5px; width: 175px; height: 47px; z-index: -2000;">
+       <div class="tooltip-arrow" style="left: 87.5px;">
+       </div>
+       <div class="tooltip-inner">Wine Wingdings font family</div>
+      </div>
+     </div>
+    </th>
+    <td class="narrow">2.11-1.fc26</td>
+    <td class="narrow">
+     <a rel="noopener" target="_blank" href="https://bugzilla.redhat.com/show_bug.cgi?id=1464628">1464628</a>
+    </td>
+    <td class="changelog">Wine-staging.com
+
+     - Preloader compatibility enhancements for older macOS versions.
+     - NVAPI improvements.
+     - Support for starting position-independent executables (PIE) from Wine.
+     - Keyboard/Mouse handling fixes.
+     - Various smaller bug fixes and improvements.
+
+     Winehq.org
+
+
+     - OpenGL support in the Android driver.
+     - Relay debugging on ARM64.
+     - More dictionary support in WebServices.
+     - New registry file parser in RegEdit.
+     - Various bug fixes.</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+</div>
+</div>
+</div>
