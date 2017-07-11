@@ -95,9 +95,36 @@ layout: minimal
     }
    }
 
-  </style>
+   .info-short {
+   }
+   .info-extended {
+    display: none;
+   }
+   .info-expander {
+    display: block;
+   }
 
-  <table class="listing-ct">
+   .listing-ct-item.info-expanded .info-extended {
+    display: block;
+   }
+   .listing-ct-item.info-expanded .info-expander {
+    display: none;
+   }
+</style>
+
+<script>
+$(function(){
+ $updatesList = $('#updates-list');
+
+ $updatesList.click(function(event){
+  if (event.target.className == 'info-expander') {
+   console.log($(event.target).parents('tr').addClass('info-expanded'));
+  }
+ });
+});
+</script>
+
+  <table class="listing-ct" id="updates-list">
    <thead>
     <tr>
      <th>Name</th>
@@ -270,7 +297,11 @@ layout: minimal
        </div>
        <div class="tooltip-inner">LDAP support for wine</div>
       </div>
-      </div>, <div class="tooltip-ct-outer">
+      </div>,
+
+      <div class="info-extended">
+
+      <div class="tooltip-ct-outer">
       <div class="tooltip-ct-inner">
        <span>wine-marlett-fonts</span>
       </div>
@@ -424,16 +455,18 @@ layout: minimal
        <div class="tooltip-inner">Wine Wingdings font family</div>
       </div>
      </div>
+    </div>
+    <a class="info-expander">and 17 more&hellip;</a>
+
     </th>
     <td class="narrow">2.11-1.fc26</td>
     <td class="narrow">
      <a rel="noopener" target="_blank" href="https://bugzilla.redhat.com/show_bug.cgi?id=1464628">1464628</a>
     </td>
-    <td class="changelog">Wine-staging.com
+    <td class="changelog"><div class="info-short">Wine-staging.com
 
      - Preloader compatibility enhancements for older macOS versions.
-     - NVAPI improvements.
-     - Support for starting position-independent executables (PIE) from Wine.
+     - NVAPI improvements.</div><div class="info-extended">- Support for starting position-independent executables (PIE) from Wine.
      - Keyboard/Mouse handling fixes.
      - Various smaller bug fixes and improvements.
 
@@ -444,7 +477,10 @@ layout: minimal
      - Relay debugging on ARM64.
      - More dictionary support in WebServices.
      - New registry file parser in RegEdit.
-     - Various bug fixes.</td>
+     - Various bug fixes.
+    </div>
+    <a class="info-expander">More information…</a>
+    </td>
    </tr>
   </tbody>
  </table>
