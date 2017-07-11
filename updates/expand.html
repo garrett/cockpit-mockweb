@@ -126,9 +126,13 @@ $(function(){
 
  // Add a click handler and check for bubbling of the link
  $updatesList.click(function(event){
-  if (event.target.className == 'info-expander') {
+  if (!event.target.href && event.target.className.match(/info-expander|info-short/)) {
    // When a matching link is clicked, add a toggle class to the parent <tr>
    $(event.target).parents('tr').addClass('info-expanded');
+
+   if (event.stopPropagation) {
+    event.stopPropagation()
+   }
   }
  });
 });
@@ -145,6 +149,7 @@ $(function(){
    </thead>
    <tr class="listing-ct-item">
     <th>
+     <div class="info-short">
      <div class="tooltip-ct-outer">
       <div class="tooltip-ct-inner">
        <span>wine</span>
@@ -309,6 +314,7 @@ $(function(){
       </div>
       </div>,
 
+      </div>
       <div class="info-extended">
 
       <div class="tooltip-ct-outer">
@@ -473,7 +479,7 @@ $(function(){
     <td class="narrow">
      <a rel="noopener" target="_blank" href="https://bugzilla.redhat.com/show_bug.cgi?id=1464628">1464628</a>
     </td>
-    <td class="changelog"><div class="info-short">Wine-staging.com
+    <td class="changelog"><div class="info-short"><a href="http://wine-staging.com/">Wine-staging.com</a>
 
      - Preloader compatibility enhancements for older macOS versions.
      - NVAPI improvements.</div><div class="info-extended">- Support for starting position-independent executables (PIE) from Wine.
