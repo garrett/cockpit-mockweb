@@ -20,6 +20,10 @@ layout: minimal
     tr.listing-ct-item td.changelog {
       width: 80ex;
       white-space: pre-line;
+     }
+
+     .listing-ct-item td.narrow:nth-child(2) {
+      max-width: 25ex;
     }
   }
 
@@ -30,7 +34,9 @@ layout: minimal
 
     /* This really should be .update-bugs or similar */
     .listing-ct-item td.narrow:nth-child(3) {
-      min-width: 19ex !important;
+     /* Don't copy this !important — it's just to override the CSS */
+     min-width: 19ex !important;
+     width: 20ex;
     }
     /* Basically children of the above, but break before the odd bug links */
     .listing-ct-item td.narrow:nth-child(3) a:nth-child(odd):before {
@@ -43,12 +49,14 @@ layout: minimal
     .listing-ct-item th {
       /*
       min-width: 30%;
-      */
+       */
     }
 
     /* This really should be .update-bugs or similar */
     .listing-ct-item td.narrow:nth-child(3) {
-      min-width: 36ex !important;
+     /* Don't copy this !important — it's just to override the CSS */
+     min-width: 36ex !important;
+     width: 38ex;
     }
     /* Basically children of the above, but break before the odd bug links */
     .listing-ct-item td.narrow:nth-child(3) a:nth-child(4n+5):before {
