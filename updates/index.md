@@ -6,7 +6,7 @@ layout: document
 
 ## Available updates
 
-* [Available updates list](available/)
+* [Available updates list](available)
 
 ## Update history
 
