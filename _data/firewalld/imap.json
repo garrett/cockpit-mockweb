@@ -1,0 +1,1 @@
+{"service":{"short":"IMAP","description":"The Internet Message Access Protocol(IMAP) allows a local client to access email on a remote server. If you plan to provide a IMAP service (e.g. with dovecot), enable this option.","port":{"protocol":"tcp","port":"143"}}}

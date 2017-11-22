@@ -1,0 +1,1 @@
+{"service":{"short":"oVirt VM Console","description":"oVirt VM Consoles enables secure access to virtual machine serial console.","port":{"protocol":"tcp","port":"2223"}}}

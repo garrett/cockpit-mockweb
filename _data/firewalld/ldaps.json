@@ -1,0 +1,1 @@
+{"service":{"short":"LDAPS","description":"Lightweight Directory Access Protocol (LDAP) over Secure Sockets Layer (SSL) server","port":{"protocol":"tcp","port":"636"}}}

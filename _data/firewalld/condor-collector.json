@@ -1,0 +1,1 @@
+{"service":{"short":"HT Condor Collector","description":"The HT Condor Collector is needed to organize the condor worker nodes.","port":{"protocol":"tcp","port":"9618"}}}

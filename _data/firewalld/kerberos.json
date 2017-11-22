@@ -1,0 +1,1 @@
+{"service":{"short":"Kerberos","description":"Kerberos network authentication protocol server","port":[{"protocol":"tcp","port":"88"},{"protocol":"udp","port":"88"}]}}

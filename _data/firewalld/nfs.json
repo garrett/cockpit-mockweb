@@ -1,0 +1,1 @@
+{"service":{"short":"NFS4","description":"The NFS4 protocol is used to share files via TCP networking. You will need to have the NFS tools installed and properly configure your NFS server for this option to be useful.","port":{"protocol":"tcp","port":"2049"}}}

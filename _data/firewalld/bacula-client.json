@@ -1,0 +1,1 @@
+{"service":{"short":"Bacula Client","description":"This option allows a Bacula server to connect to the local machine to schedule backups. You need the bacula-client package installed for this option to be useful.","port":{"protocol":"tcp","port":"9102"}}}

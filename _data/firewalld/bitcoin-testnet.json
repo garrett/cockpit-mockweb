@@ -1,0 +1,1 @@
+{"service":{"short":"Bitcoin testnet","description":"The default port used by Bitcoin testnet.  Enable this option if you plan to be a Bitcoin full node on the test network.","port":{"protocol":"tcp","port":"18333"}}}

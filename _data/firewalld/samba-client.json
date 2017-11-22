@@ -1,0 +1,1 @@
+{"service":{"short":"Samba Client","description":"This option allows you to access Windows file and printer sharing networks. You need the samba-client package installed for this option to be useful.","port":[{"protocol":"udp","port":"137"},{"protocol":"udp","port":"138"}],"module":{"name":"nf_conntrack_netbios_ns"}}}

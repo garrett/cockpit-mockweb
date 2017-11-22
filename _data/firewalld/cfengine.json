@@ -1,0 +1,1 @@
+{"service":{"short":"CFEngine","description":"CFEngine server","port":{"protocol":"tcp","port":"5308"}}}

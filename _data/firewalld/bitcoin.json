@@ -1,0 +1,1 @@
+{"service":{"short":"Bitcoin","description":"The default port used by Bitcoin.  Enable this option if you plan to be a full Bitcoin node.","port":{"protocol":"tcp","port":"8333"}}}

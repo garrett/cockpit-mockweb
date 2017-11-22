@@ -1,0 +1,1 @@
+{"service":{"short":"SNMP","description":"Simple Network Management Protocol is an \"Internet-standard protocol for managing devices on IP networks\". Enable this service if you run SNMP agent (server).","port":[{"protocol":"tcp","port":"161"},{"protocol":"udp","port":"161"}]}}

@@ -1,0 +1,1 @@
+{"service":{"short":"ceph-mon","description":"Ceph is a distributed object store and file system. Enable this option to support Ceph's Monitor Daemon.","port":[{"protocol":"tcp","port":"3300"},{"protocol":"tcp","port":"6789"}]}}

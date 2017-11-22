@@ -1,0 +1,1 @@
+{"service":{"short":"Virtual Machine Management","description":"Enable this option if you want to allow remote virtual machine management with SASL authentication and encryption (digest-md5 passwords or GSSAPI/Kerberos). The libvirtd service is needed for this option to be useful.","port":{"protocol":"tcp","port":"16509"}}}

@@ -1,0 +1,1 @@
+{"service":{"short":"XMPP Link-Local Messaging","description":"Serverless XMPP-like communication over local networks based on zero-configuration networking.","port":{"protocol":"tcp","port":"5298"}}}

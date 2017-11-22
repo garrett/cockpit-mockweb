@@ -1,0 +1,1 @@
+{"service":{"short":"rsh","description":"Rsh is a protocol for logging into remote machines. It is unencrypted, and provides little security from network snooping attacks. Enabling rsh is not recommended.","port":{"port":"514","protocol":"tcp"}}}

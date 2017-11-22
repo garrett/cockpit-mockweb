@@ -1,0 +1,1 @@
+{"service":{"short":"Virtual Machine Management (TLS)","description":"Enable this option if you want to allow remote virtual machine management with TLS encryption, x509 certificates and optional SASL authentication. The libvirtd service is needed for this option to be useful.","port":{"protocol":"tcp","port":"16514"}}}

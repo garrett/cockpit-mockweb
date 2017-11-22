@@ -1,0 +1,1 @@
+{"service":{"short":"Bitcoin RPC","description":"Enable this option if you need access to the Bitcoin RPC interface.  This is not required when connecting on localhost.","port":{"protocol":"tcp","port":"8332"}}}

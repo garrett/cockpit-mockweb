@@ -1,0 +1,1 @@
+{"service":{"short":"WWW (HTTP)","description":"HTTP is the protocol used to serve Web pages. If you plan to make your Web server publicly available, enable this option. This option is not required for viewing pages locally or developing Web pages.","port":{"protocol":"tcp","port":"80"}}}

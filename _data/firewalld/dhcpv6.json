@@ -1,0 +1,1 @@
+{"service":{"short":"DHCPv6","description":"This allows a DHCPv6 server to accept messages from DHCPv6 clients and relay agents.","port":{"protocol":"udp","port":"547"}}}

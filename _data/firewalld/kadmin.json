@@ -1,0 +1,1 @@
+{"service":{"short":"kadmin","description":"Kerberos Administration Protocol","port":{"protocol":"tcp","port":"749"}}}

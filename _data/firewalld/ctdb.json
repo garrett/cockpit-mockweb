@@ -1,0 +1,1 @@
+{"service":{"short":"CTDB","description":"CTDB is a cluster implementation of the TDB database used by Samba and other projects to store temporary data.","port":[{"protocol":"tcp","port":"4379"},{"protocol":"udp","port":"4379"}]}}

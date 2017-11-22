@@ -1,0 +1,1 @@
+{"service":{"short":"OpenVPN","description":"OpenVPN is a virtual private network (VPN) solution. It is used to create encrypted point-to-point tunnels between computers. If you plan to provide a VPN service, enable this option.","port":{"protocol":"udp","port":"1194"}}}

@@ -1,0 +1,1 @@
+{"service":{"short":"Network Time Protocol (NTP) Server","description":"The Network Time Protocol (NTP) allows to synchronize computers to a time server. Enable this option, if you are providing a NTP server. You need the ntp or chrony package installed for this option to be useful.","port":{"protocol":"udp","port":"123"}}}

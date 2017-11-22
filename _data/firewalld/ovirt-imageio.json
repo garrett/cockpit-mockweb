@@ -1,0 +1,1 @@
+{"service":{"short":"oVirt Image I/O","description":"oVirt Image I/O simplifies the workflow of introducing new oVirt images into the oVirt environment.","port":{"protocol":"tcp","port":"54322"}}}

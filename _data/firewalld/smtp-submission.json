@@ -1,0 +1,1 @@
+{"service":{"short":"Mail (SMTP-Submission)","description":"SMTP-Submission allows remote users to submit mail over port 587.","port":{"protocol":"tcp","port":"587"}}}

@@ -1,0 +1,1 @@
+{"service":{"short":"SIP-TLS (SIPS)","description":"SIP-TLS is a modified SIP (Session Initiation Protocol) using TLS for secure signaling.","port":[{"protocol":"tcp","port":"5061"},{"protocol":"udp","port":"5061"}]}}

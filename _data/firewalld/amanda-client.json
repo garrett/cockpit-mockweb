@@ -1,0 +1,1 @@
+{"service":{"short":"Amanda Backup Client","description":"The Amanda backup client option allows you to connect to a Amanda backup and archiving server. You need the amanda-client package installed for this option to be useful.","port":[{"protocol":"udp","port":"10080"},{"protocol":"tcp","port":"10080"}],"module":{"name":"nf_conntrack_amanda"}}}

@@ -1,0 +1,1 @@
+{"service":{"short":"Cockpit","description":"Cockpit lets you access and configure your server remotely.","port":{"protocol":"tcp","port":"9090"}}}

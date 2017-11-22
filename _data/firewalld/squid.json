@@ -1,0 +1,1 @@
+{"service":{"short":"squid","description":"Squid HTTP proxy server","port":{"protocol":"tcp","port":"3128"}}}

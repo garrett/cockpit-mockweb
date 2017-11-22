@@ -1,0 +1,1 @@
+{"service":{"short":"ganglia-master","description":"Ganglia collector","port":{"protocol":"tcp","port":"8651"}}}

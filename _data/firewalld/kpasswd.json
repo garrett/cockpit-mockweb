@@ -1,0 +1,1 @@
+{"service":{"short":"Kpasswd","description":"Kerberos password (Kpasswd) server","port":[{"protocol":"tcp","port":"464"},{"protocol":"udp","port":"464"}]}}

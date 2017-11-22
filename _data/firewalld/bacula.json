@@ -1,0 +1,1 @@
+{"service":{"short":"Bacula","description":"Bacula is a network backup solution. Enable this option, if you plan to provide Bacula backup, file and storage services.","port":[{"protocol":"tcp","port":"9101"},{"protocol":"tcp","port":"9102"},{"protocol":"tcp","port":"9103"}]}}

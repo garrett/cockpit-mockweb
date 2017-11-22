@@ -1,0 +1,1 @@
+{"service":{"short":"Puppet Master","description":"Puppet is a network tool for managing many disparate systems. Puppet Master is a server which Puppet Agents pull their configurations from.","port":{"protocol":"tcp","port":"8140"}}}

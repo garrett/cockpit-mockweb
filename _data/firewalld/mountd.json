@@ -1,0 +1,1 @@
+{"service":{"short":"mountd","description":"NFS Mount Lock Daemon","port":[{"protocol":"tcp","port":"20048"},{"protocol":"udp","port":"20048"}]}}

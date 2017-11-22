@@ -1,0 +1,1 @@
+{"service":{"short":"Proxy DHCP","description":"PXE redirection service (Proxy DHCP) responds to PXE clients and provides redirection to PXE boot servers.","port":{"protocol":"udp","port":"4011"}}}

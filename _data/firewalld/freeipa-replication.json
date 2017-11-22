@@ -1,0 +1,1 @@
+{"service":{"short":"FreeIPA replication","description":"FreeIPA is an LDAP and Kerberos domain controller for Linux systems. Enable this option if you want to enable LDAP replication between FreeIPA servers.","port":{"protocol":"tcp","port":"7389"}}}

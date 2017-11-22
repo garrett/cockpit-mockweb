@@ -1,0 +1,1 @@
+{"service":{"short":"Elasticsearch","description":"Elasticsearch is a distributed, open source search and analytics engine, designed for horizontal scalability, reliability, and easy management.","port":[{"protocol":"tcp","port":"9300"},{"protocol":"tcp","port":"9200"}]}}

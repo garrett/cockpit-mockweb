@@ -1,0 +1,1 @@
+{"service":{"short":"tinc VPN","description":"tinc is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.","port":[{"protocol":"tcp","port":"655"},{"protocol":"udp","port":"655"}]}}

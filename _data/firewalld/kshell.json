@@ -1,0 +1,1 @@
+{"service":{"short":"kshell","description":"Kerberized rshell server accepts rshell commands authenticated and encrypted with Kerberos 5","port":{"port":"544","protocol":"tcp"}}}

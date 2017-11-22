@@ -1,0 +1,1 @@
+{"service":{"short":"SNMPTRAP","description":"SNMP traps enable an agent to notify the management station of significant events by way of an unsolicited SNMP message.","port":[{"protocol":"tcp","port":"162"},{"protocol":"udp","port":"162"}]}}

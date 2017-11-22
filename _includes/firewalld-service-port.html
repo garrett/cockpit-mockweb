@@ -1,0 +1,33 @@
+{% comment %}
+  Cross-reference port information with /etc/services and output result
+{% endcomment %}{% if include.display == 'header'
+%}| Port | Protocol | Service Info |
+| --- | --- | --- |{%
+  endif
+%}{%
+  if include.port
+    %}{%
+    assign port = include.port
+    %}{%
+    assign port_type = port.port | append: "/" | append: port.protocol
+    %}{%
+    assign port_first = port.port | split: "-" | first | append: "/" | append: port.protocol
+    %}{%
+    assign etc_info = site.data.etc_services | where: "port", port_first
+    %}| {{
+      port.port
+    }} | {{
+      port.protocol
+    }} | {%
+      for info in etc_info
+        %} {{
+          info['comment']
+        }} `{{
+          info['service-name']
+        }} {{
+          info['aliases']
+        }}` {%
+      endfor
+    %} |{%
+  endif
+%}

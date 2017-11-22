@@ -1,0 +1,1 @@
+{"service":{"short":"NRPE","description":"NRPE allows you to execute Nagios plugins on a remote host in as transparent a manner as possible.","port":{"protocol":"tcp","port":"5666"}}}

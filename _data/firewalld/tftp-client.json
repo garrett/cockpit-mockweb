@@ -1,0 +1,1 @@
+{"service":{"short":"TFTP Client","description":"This option allows you to access Trivial File Transfer Protocol (TFTP) servers. You need the tftp package installed for this option to be useful.","module":{"name":"nf_conntrack_tftp"}}}

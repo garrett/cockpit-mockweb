@@ -1,0 +1,1 @@
+{"service":{"short":"KDE Connect","description":"KDE Connect allows intercommunicating with mobile devices to receive messages and notifications.","port":[{"protocol":"tcp","port":"1714-1764"},{"protocol":"udp","port":"1714-1764"}]}}

@@ -1,0 +1,1 @@
+{"service":{"short":"Transmission","description":"Transmission is a lightweight BitTorrent client.","port":[{"protocol":"tcp","port":"51413"},{"protocol":"udp","port":"51413"}]}}

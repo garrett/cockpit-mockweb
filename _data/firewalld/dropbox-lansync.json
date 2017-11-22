@@ -1,0 +1,1 @@
+{"service":{"version":"1.0","short":"dropboxlansync","description":"Dropbox LAN sync","port":[{"protocol":"udp","port":"17500"},{"protocol":"tcp","port":"17500"}]}}

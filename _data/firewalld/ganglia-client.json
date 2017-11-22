@@ -1,0 +1,1 @@
+{"service":{"short":"ganglia-client","description":"Ganglia monitoring daemon","port":{"protocol":"tcp","port":"8660"}}}

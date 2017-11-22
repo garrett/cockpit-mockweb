@@ -1,0 +1,1 @@
+{"service":{"short":"IMAP over SSL","description":"The Internet Message Access Protocol over SSL (IMAPs) allows a local client to access email on a remote server in a secure way. If you plan to provide a IMAP over SSL service (e.g. with dovecot), enable this option.","port":{"protocol":"tcp","port":"993"}}}

@@ -1,0 +1,1 @@
+{"service":{"short":"Rsync in daemon mode","description":"Rsync in daemon mode works as a central server, in order to house centralized files and keep them synchronized.","port":[{"protocol":"tcp","port":"873"},{"protocol":"udp","port":"873"}]}}

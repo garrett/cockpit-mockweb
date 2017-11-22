@@ -1,0 +1,1 @@
+{"service":{"short":"syslog","description":"Syslog is a client/server protocol: a logging application transmits a text message to the syslog receiver. The receiver is commonly called syslogd, syslog daemon or syslog server.","port":{"protocol":"udp","port":"514"}}}

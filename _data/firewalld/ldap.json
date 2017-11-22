@@ -1,0 +1,1 @@
+{"service":{"short":"LDAP","description":"Lightweight Directory Access Protocol (LDAP) server","port":{"protocol":"tcp","port":"389"}}}
