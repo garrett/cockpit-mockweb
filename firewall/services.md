@@ -47,22 +47,26 @@ _Destination:_
 {% if service.destination.ipv6 %}- _ipv6: `{{ service.destination.ipv6 }}`_{% endif %}
 {% endif %}
 
-{:.table}
 {%
-  include firewalld-service-port.html display='header'
-%}{%
-  if service.port[0]
-    %}{%
-      for port in service.port
+  if service.port
+  %}{:.table}
+  {%
+    include firewalld-service-port.html display='header'
+  %}{%
+    if service.port[0]
       %}{%
-        include firewalld-service-port.html port=port
+        for port in service.port
+        %}{%
+          include firewalld-service-port.html port=port
+        %}{%
+        endfor
       %}{%
-      endfor
-    %}{%
-  else
-    %}{%
-      include firewalld-service-port.html port=service.port
-    %}{%
+    else
+      %}{%
+        include firewalld-service-port.html port=service.port
+      %}{%
+    endif
+  %}{%
   endif
 %}
 
