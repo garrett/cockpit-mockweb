@@ -38,13 +38,13 @@ cross-referenced with `/etc/services`
 {{ service.description }}
 
 {% if service.module.name %}
-Required module: `{{ service.module.name }}`
+_Required module: `{{ service.module.name }}`_
 {% endif %}
 
 {% if service.destination %}
-Destination:
-{% if service.destination.ipv4 %}- ipv4: `{{ service.destination.ipv4 }}`{% endif %}
-{% if service.destination.ipv6 %}- ipv6: `{{ service.destination.ipv6 }}`{% endif %}
+_Destination:_
+{% if service.destination.ipv4 %}- _ipv4: `{{ service.destination.ipv4 }}`_{% endif %}
+{% if service.destination.ipv6 %}- _ipv6: `{{ service.destination.ipv6 }}`_{% endif %}
 {% endif %}
 
 {:.table}
