@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# To get the machine data to run this command, run the following:
+# sudo lshw -sanitize -html > hardware-`hostname`.html
+
 require 'rubygems'
 require 'yaml'
 require 'oga'
