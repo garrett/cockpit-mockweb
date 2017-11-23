@@ -7,6 +7,7 @@
 {% assign bus_size = include.items | group_by: 'bus info' | map: 'name' | join: ' ' | size %}
 {% assign name_size = include.items | group_by: 'product' | map: 'name' | join: ' ' | size %}
 {% assign vendor_size = include.items | group_by: 'vendor' | map: 'name' | join: ' ' | size %}
+{% assign serial_size = include.items | group_by: 'serial' | map: 'name' | join: ' ' | size %}
 {% assign config = include.items | group_by: 'configuration' | map: 'items' | array_to_sentence_string %}
 
 <div class="panel panel-default">
@@ -24,6 +25,10 @@
 
         {% if vendor_size > 0 %}
           <th>Vendor</th>
+        {% endif %}
+
+        {% if serial_size > 0 %}
+          <th>Serial</th>
         {% endif %}
 
         {% if bus_size > 0 %}
@@ -70,6 +75,10 @@
 
             {% if vendor_size > 0 %}
               <td>{{ vendor | item.vendor }}</td>
+            {% endif %}
+
+            {% if serial_size > 0 %}
+              <td>{{ item['serial'] }}</td>
             {% endif %}
 
             {% if bus_size > 0 %}
