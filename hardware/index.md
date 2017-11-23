@@ -10,6 +10,7 @@ layout: minimal
 * [Big server](big)
 * [Big server, SR-IOV](sriov)
 * [Laptop (Lenovo X230)](x230)
+* [Laptop (Lenovo T460s)](t460s)
 * [Arm (Banana Pro)](banana)
 * [Arm (Odroid U3)](odroidu3)
 {% endcapture %}

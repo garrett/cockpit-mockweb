@@ -1,0 +1,1054 @@
+---
+- class: Computer
+  id: computer
+  description: Notebook
+  product: 20FAS2BN0F (LENOVO_MT_20FA_BU_Think_FM_ThinkPad T460s)
+  vendor: LENOVO
+  version: ThinkPad T460s
+  serial: "[REMOVED]"
+  width: 64 bits
+  capabilities:
+  - smbios-2.8
+  - dmi-2.8
+  - smp
+  - vsyscall32
+  configuration:
+    administrator_password: disabled
+    chassis: notebook
+    family: ThinkPad
+    T460s: 
+    power-on_password: disabled
+    sku: LENOVO_MT_20FA_BU_Think_FM_ThinkPad
+    uuid: "[REMOVED]"
+- class: Core
+  id: core
+  description: Motherboard
+  product: 20FAS2BN0F
+  vendor: LENOVO
+  physical id: 0
+  version: Not Defined
+  serial: "[REMOVED]"
+  slot: Not Available
+- class: Cache
+  id: cache:0
+  description: L1 cache
+  physical id: 3
+  slot: L1 Cache
+  size: 64KiB
+  capacity: 64KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-back
+  - data
+  configuration:
+    level: 1
+- class: Cache
+  id: cache:1
+  description: L1 cache
+  physical id: 4
+  slot: L1 Cache
+  size: 64KiB
+  capacity: 64KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-back
+  - instruction
+  configuration:
+    level: 1
+- class: Cache
+  id: cache:2
+  description: L2 cache
+  physical id: 5
+  slot: L2 Cache
+  size: 512KiB
+  capacity: 512KiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-back
+  - unified
+  configuration:
+    level: 2
+- class: Cache
+  id: cache:3
+  description: L3 cache
+  physical id: 6
+  slot: L3 Cache
+  size: 4MiB
+  capacity: 4MiB
+  capabilities:
+  - synchronous
+  - internal
+  - write-back
+  - unified
+  configuration:
+    level: 3
+- class: CPU
+  id: cpu
+  description: CPU
+  product: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz
+  vendor: Intel Corp.
+  physical id: 7
+  bus info: cpu@0
+  version: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz
+  serial: "[REMOVED]"
+  slot: U3E1
+  size: 2245MHz
+  capacity: 4005MHz
+  width: 64 bits
+  clock: 100MHz
+  capabilities:
+  - x86-64
+  - fpu
+  - fpu_exception
+  - wp
+  - vme
+  - de
+  - pse
+  - tsc
+  - msr
+  - pae
+  - mce
+  - cx8
+  - apic
+  - sep
+  - mtrr
+  - pge
+  - mca
+  - cmov
+  - pat
+  - pse36
+  - clflush
+  - dts
+  - acpi
+  - mmx
+  - fxsr
+  - sse
+  - sse2
+  - ss
+  - ht
+  - tm
+  - pbe
+  - syscall
+  - nx
+  - pdpe1gb
+  - rdtscp
+  - constant_tsc
+  - art
+  - arch_perfmon
+  - pebs
+  - bts
+  - rep_good
+  - nopl
+  - xtopology
+  - nonstop_tsc
+  - cpuid
+  - aperfmperf
+  - tsc_known_freq
+  - pni
+  - pclmulqdq
+  - dtes64
+  - monitor
+  - ds_cpl
+  - vmx
+  - smx
+  - est
+  - tm2
+  - ssse3
+  - sdbg
+  - fma
+  - cx16
+  - xtpr
+  - pdcm
+  - pcid
+  - sse4_1
+  - sse4_2
+  - x2apic
+  - movbe
+  - popcnt
+  - tsc_deadline_timer
+  - aes
+  - xsave
+  - avx
+  - f16c
+  - rdrand
+  - lahf_lm
+  - abm
+  - 3dnowprefetch
+  - cpuid_fault
+  - epb
+  - intel_pt
+  - tpr_shadow
+  - vnmi
+  - flexpriority
+  - ept
+  - vpid
+  - fsgsbase
+  - tsc_adjust
+  - bmi1
+  - hle
+  - avx2
+  - smep
+  - bmi2
+  - erms
+  - invpcid
+  - rtm
+  - mpx
+  - rdseed
+  - adx
+  - smap
+  - clflushopt
+  - xsaveopt
+  - xsavec
+  - xgetbv1
+  - xsaves
+  - dtherm
+  - ida
+  - arat
+  - pln
+  - pts
+  - hwp
+  - hwp_notify
+  - hwp_act_window
+  - hwp_epp
+  - cpufreq
+  configuration:
+    cores: 2
+    enabledcores: 2
+    threads: 4
+- class: Memory
+  id: memory
+  description: System Memory
+  physical id: 8
+  slot: System board or motherboard
+  size: 20GiB
+- class: Bank
+  id: bank:0
+  description: Chip DDR4 Synchronous 2133 MHz (0.5 ns)
+  vendor: '0000'
+  physical id: 0
+  serial: "[REMOVED]"
+  slot: ChannelA-DIMM0
+  size: 4GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Bank
+  id: bank:1
+  description: SODIMM DDR4 Synchronous 2133 MHz (0.5 ns)
+  product: M471A2K43CB1-CRC
+  vendor: Samsung
+  physical id: 1
+  serial: "[REMOVED]"
+  slot: ChannelB-DIMM0
+  size: 16GiB
+  width: 64 bits
+  clock: 2133MHz (0.5ns)
+- class: Firmware
+  id: firmware
+  description: BIOS
+  vendor: LENOVO
+  physical id: c
+  version: N1CET52W (1.20 )
+  date: 11/30/2016
+  size: 128KiB
+  capacity: 15MiB
+  capabilities:
+  - pci
+  - pnp
+  - upgrade
+  - shadowing
+  - cdboot
+  - bootselect
+  - edd
+  - int13floppy720
+  - int5printscreen
+  - int9keyboard
+  - int14serial
+  - int17printer
+  - int10video
+  - acpi
+  - usb
+  - biosbootspecification
+  - uefi
+- class: PCI
+  id: pci
+  description: Host bridge
+  product: Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Host Bridge/DRAM Registers
+  vendor: Intel Corporation
+  physical id: 100
+  bus info: pci@0000:00:00.0
+  version: '08'
+  width: 32 bits
+  clock: 33MHz
+  configuration:
+    driver: skl_uncore
+  resources:
+    irq: '0'
+- class: Display
+  id: display
+  description: VGA compatible controller
+  product: Skylake GT2 [HD Graphics 520]
+  vendor: Intel Corporation
+  physical id: 2
+  bus info: pci@0000:00:02.0
+  version: '07'
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pciexpress
+  - msi
+  - pm
+  - vga_controller
+  - bus_master
+  - cap_list
+  - rom
+  configuration:
+    driver: i915
+    latency: 0
+  resources:
+    irq: '126'
+    memory:
+    - f0000000-f0ffffff
+    - e0000000-efffffff
+    - c0000-dffff
+    ioport: e000(size=64)
+- class: USB
+  id: usb
+  description: USB controller
+  product: Sunrise Point-LP USB 3.0 xHCI Controller
+  vendor: Intel Corporation
+  physical id: 14
+  bus info: pci@0000:00:14.0
+  version: 21
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - xhci
+  - bus_master
+  - cap_list
+  configuration:
+    driver: xhci_hcd
+    latency: 0
+  resources:
+    irq: '123'
+    memory:
+    - f1220000-f122ffff
+- class: USBhost
+  id: usbhost:0
+  product: xHCI Host Controller
+  vendor: Linux 4.13.15-300.fc27.x86_64 xhci-hcd
+  physical id: 0
+  bus info: usb@1
+  logical name: usb1
+  version: '4.13'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    slots: 12
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: Keyboard
+  product: Yubikey 4 OTP+U2F+CCID
+  vendor: Yubico
+  physical id: 3
+  bus info: usb@1:3
+  version: '4.31'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: usbhid
+    maxpower: 30mA
+    speed: 12Mbit/s
+- class: USB
+  id: usb:1
+  description: USB hub
+  product: Lenovo ThinkPad Dock
+  vendor: LENOVO
+  physical id: 4
+  bus info: usb@1:4
+  version: '50.40'
+  capabilities:
+  - usb-2.10
+  configuration:
+    driver: hub
+    slots: 4
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: Audio device
+  product: USB PnP Sound Device
+  vendor: C-Media Electronics Inc.
+  physical id: 2
+  bus info: usb@1:4.2
+  version: '1.00'
+  capabilities:
+  - usb-1.10
+  - audio-control
+  configuration:
+    driver: usbhid
+    maxpower: 100mA
+    speed: 12Mbit/s
+- class: USB
+  id: usb:1
+  description: USB hub
+  product: Lenovo ThinkPad Dock
+  vendor: Lenovo
+  physical id: 4
+  bus info: usb@1:4.4
+  version: '0.01'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    maxpower: 2mA
+    slots: 3
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: USB hub
+  product: Hub
+  vendor: Texas Instruments, Inc.
+  physical id: 1
+  bus info: usb@1:4.4.1
+  version: '1.00'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.10
+  configuration:
+    driver: hub
+    slots: 3
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: USB hub
+  product: USB2.0 Hub
+  vendor: Genesys Logic, Inc.
+  physical id: 2
+  bus info: usb@1:4.4.1.2
+  version: '9.01'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: hub
+    maxpower: 100mA
+    slots: 4
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: Generic USB device
+  product: Nexus 5
+  vendor: LGE
+  physical id: 2
+  bus info: usb@1:4.4.1.2.2
+  version: '2.32'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: usbfs
+    maxpower: 500mA
+    speed: 480Mbit/s
+- class: USB
+  id: usb:1
+  description: Human interface device
+  product: FiiO USB DAC K1
+  vendor: FiiO
+  physical id: 3
+  bus info: usb@1:4.4.1.2.3
+  version: '0.01'
+  capabilities:
+  - usb-1.10
+  configuration:
+    driver: snd-usb-audio
+    maxpower: 100mA
+    speed: 12Mbit/s
+- class: USB
+  id: usb:2
+  description: Video
+  product: HD Pro Webcam C920
+  vendor: Logitech, Inc.
+  physical id: 4
+  bus info: usb@1:4.4.1.2.4
+  version: '0.11'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: snd-usb-audio
+    maxpower: 500mA
+    speed: 480Mbit/s
+- class: USB
+  id: usb:1
+  description: USB hub
+  product: Hub
+  vendor: Texas Instruments, Inc.
+  physical id: 3
+  bus info: usb@1:4.4.1.3
+  version: '1.00'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.10
+  configuration:
+    driver: hub
+    slots: 3
+    speed: 480Mbit/s
+- class: USB
+  id: usb:0
+  description: Keyboard
+  product: Microsoft
+  vendor: Microsoft
+  physical id: 2
+  bus info: usb@1:4.4.1.3.2
+  version: '7.77'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: usbhid
+    maxpower: 100mA
+    speed: 12Mbit/s
+- class: USB
+  id: usb:1
+  description: Mass storage device
+  product: USB3.0 Card Reader
+  vendor: Realtek
+  physical id: 3
+  bus info: usb@1:4.4.1.3.3
+  logical name: scsi2
+  version: '1.63'
+  serial: "[REMOVED]"
+  capabilities:
+  - usb-2.10
+  - scsi
+  - emulated
+  - scsi-host
+  configuration:
+    driver: usb-storage
+    maxpower: 500mA
+    speed: 480Mbit/s
+- class: Disk
+  id: disk
+  description: SCSI Disk
+  product: SD/MMC/MS/MSPRO
+  vendor: Generic-
+  physical id: 0.0.0
+  bus info: scsi@2:0.0.0
+  logical name: "/dev/sdb"
+  version: '1.00'
+  serial: "[REMOVED]"
+  capabilities:
+  - removable
+  configuration:
+    ansiversion: 4
+    logicalsectorsize: 512
+    sectorsize: 512
+- class: Medium
+  id: medium
+  physical id: 0
+  logical name: "/dev/sdb"
+- class: USB
+  id: usb:2
+  description: Bluetooth wireless interface
+  vendor: Intel Corp.
+  physical id: 7
+  bus info: usb@1:7
+  version: '0.01'
+  capabilities:
+  - bluetooth
+  - usb-2.00
+  configuration:
+    driver: btusb
+    maxpower: 100mA
+    speed: 12Mbit/s
+- class: USB
+  id: usb:3
+  description: Video
+  product: Integrated Camera
+  vendor: 8SSC20F26968L1GZ71E09D5
+  physical id: 8
+  bus info: usb@1:8
+  version: '0.13'
+  capabilities:
+  - usb-2.00
+  configuration:
+    driver: uvcvideo
+    maxpower: 500mA
+    speed: 480Mbit/s
+- class: USBhost
+  id: usbhost:1
+  product: xHCI Host Controller
+  vendor: Linux 4.13.15-300.fc27.x86_64 xhci-hcd
+  physical id: 1
+  bus info: usb@2
+  logical name: usb2
+  version: '4.13'
+  capabilities:
+  - usb-3.00
+  configuration:
+    driver: hub
+    slots: 6
+    speed: 5000Mbit/s
+- class: USB
+  id: usb
+  description: USB hub
+  product: Lenovo ThinkPad Dock
+  vendor: LENOVO
+  physical id: 4
+  bus info: usb@2:4
+  version: '50.41'
+  capabilities:
+  - usb-3.00
+  configuration:
+    driver: hub
+    slots: 4
+    speed: 5000Mbit/s
+- class: Generic
+  id: generic:1
+  description: Signal processing controller
+  product: Sunrise Point-LP Thermal subsystem
+  vendor: Intel Corporation
+  physical id: '14.2'
+  bus info: pci@0000:00:14.2
+  version: 21
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - bus_master
+  - cap_list
+  configuration:
+    driver: intel_pch_thermal
+    latency: 0
+  resources:
+    irq: '18'
+    memory:
+    - f124b000-f124bfff
+- class: Communication
+  id: communication:0
+  description: Communication controller
+  product: 'Sunrise Point-LP CSME HECI #1'
+  vendor: Intel Corporation
+  physical id: 16
+  bus info: pci@0000:00:16.0
+  version: 21
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - bus_master
+  - cap_list
+  configuration:
+    driver: mei_me
+    latency: 0
+  resources:
+    irq: '127'
+    memory:
+    - f124c000-f124cfff
+- class: Communication
+  id: communication:1
+  description: Serial controller
+  product: Intel Corporation
+  vendor: Intel Corporation
+  physical id: '16.3'
+  bus info: pci@0000:00:16.3
+  version: 21
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - msi
+  - pm
+  - '16550'
+  - bus_master
+  - cap_list
+  configuration:
+    driver: serial
+    latency: 0
+  resources:
+    irq: '19'
+    ioport: e080(size=8)
+    memory:
+    - f1250000-f1250fff
+- class: Storage
+  id: storage
+  description: SATA controller
+  product: Sunrise Point-LP SATA Controller [AHCI mode]
+  vendor: Intel Corporation
+  physical id: 17
+  bus info: pci@0000:00:17.0
+  version: 21
+  width: 32 bits
+  clock: 66MHz
+  capabilities:
+  - storage
+  - msi
+  - pm
+  - ahci_1.0
+  - bus_master
+  - cap_list
+  configuration:
+    driver: ahci
+    latency: 0
+  resources:
+    irq: '122'
+    memory:
+    - f1248000-f1249fff
+    - f124f000-f124f0ff
+    - f124d000-f124d7ff
+    ioport: e088(size=8) e090(size=4) e060(size=32)
+- class: PCI
+  id: pci:0
+  description: PCI bridge
+  product: 'Sunrise Point-LP PCI Express Root Port #1'
+  vendor: Intel Corporation
+  physical id: 1c
+  bus info: pci@0000:00:1c.0
+  version: f1
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '16'
+    memory:
+    - f1100000-f11fffff
+- class: Generic
+  id: generic
+  description: Unassigned class
+  product: RTS522A PCI Express Card Reader
+  vendor: Realtek Semiconductor Co., Ltd.
+  physical id: 0
+  bus info: pci@0000:02:00.0
+  version: '01'
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - pciexpress
+  - bus_master
+  - cap_list
+  configuration:
+    driver: rtsx_pci
+    latency: 0
+  resources:
+    irq: '124'
+    memory:
+    - f1100000-f1100fff
+- class: PCI
+  id: pci:1
+  description: PCI bridge
+  product: 'Sunrise Point-LP PCI Express Root Port #3'
+  vendor: Intel Corporation
+  physical id: 1c.2
+  bus info: pci@0000:00:1c.2
+  version: f1
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pci
+  - pciexpress
+  - msi
+  - pm
+  - normal_decode
+  - bus_master
+  - cap_list
+  configuration:
+    driver: pcieport
+  resources:
+    irq: '18'
+    memory:
+    - f1000000-f10fffff
+- class: ISA
+  id: isa
+  description: ISA bridge
+  product: Sunrise Point-LP LPC Controller
+  vendor: Intel Corporation
+  physical id: 1f
+  bus info: pci@0000:00:1f.0
+  version: 21
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - isa
+  - bus_master
+  configuration:
+    latency: 0
+- class: Memory
+  id: memory
+  description: Memory controller
+  product: Sunrise Point-LP PMC
+  vendor: Intel Corporation
+  physical id: 1f.2
+  bus info: pci@0000:00:1f.2
+  version: 21
+  width: 32 bits
+  clock: 33MHz (30.3ns)
+  capabilities:
+  - bus_master
+  configuration:
+    driver: intel_pmc_core
+    latency: 0
+  resources:
+    irq: '0'
+    memory:
+    - f1244000-f1247fff
+- class: Multimedia
+  id: multimedia
+  description: Audio device
+  product: Sunrise Point-LP HD Audio
+  vendor: Intel Corporation
+  physical id: 1f.3
+  bus info: pci@0000:00:1f.3
+  version: 21
+  width: 64 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - bus_master
+  - cap_list
+  configuration:
+    driver: snd_hda_intel
+    latency: 64
+  resources:
+    irq: '129'
+    memory:
+    - f1240000-f1243fff
+    - f1230000-f123ffff
+- class: Serial
+  id: serial
+  description: SMBus
+  product: Sunrise Point-LP SMBus
+  vendor: Intel Corporation
+  physical id: 1f.4
+  bus info: pci@0000:00:1f.4
+  version: 21
+  width: 64 bits
+  clock: 33MHz
+  configuration:
+    driver: i801_smbus
+    latency: 0
+  resources:
+    irq: '16'
+    memory:
+    - f124e000-f124e0ff
+    ioport: efa0(size=32)
+- class: Network
+  id: network
+  description: Ethernet interface
+  product: Ethernet Connection I219-LM
+  vendor: Intel Corporation
+  physical id: 1f.6
+  bus info: pci@0000:00:1f.6
+  logical name: enp0s31f6
+  version: 21
+  serial: "[REMOVED]"
+  size: 1Gbit/s
+  capacity: 1Gbit/s
+  width: 32 bits
+  clock: 33MHz
+  capabilities:
+  - pm
+  - msi
+  - bus_master
+  - cap_list
+  - ethernet
+  - physical
+  - tp
+  - 10bt
+  - 10bt-fd
+  - 100bt
+  - 100bt-fd
+  - 1000bt-fd
+  - autonegotiation
+  configuration:
+    autonegotiation: 'on'
+    broadcast: 'yes'
+    driver: e1000e
+    driverversion: 3.2.6-k
+    duplex: full
+    firmware: 0.13-3
+    ip: "[REMOVED]"
+    latency: 0
+    link: 'yes'
+    multicast: 'yes'
+    port: twisted
+    pair: 
+    speed: 1Gbit/s
+  resources:
+    irq: '125'
+    memory:
+    - f1200000-f121ffff
+- class: SCSI
+  id: scsi
+  physical id: 0
+  logical name: scsi1
+  capabilities:
+  - emulated
+- class: Disk
+  id: disk
+  description: ATA Disk
+  product: TOSHIBA THNSNJ51
+  vendor: Toshiba
+  physical id: 0.0.0
+  bus info: scsi@1:0.0.0
+  logical name: "/dev/sda"
+  version: '0103'
+  serial: "[REMOVED]"
+  size: 476GiB (512GB)
+  capabilities:
+  - partitioned
+  - partitioned:dos
+  configuration:
+    ansiversion: 5
+    logicalsectorsize: 512
+    sectorsize: 512
+    signature: eff7a489
+- class: Volume
+  id: volume:0
+  description: EXT4 volume
+  vendor: Linux
+  physical id: 1
+  bus info: scsi@1:0.0.0,1
+  logical name: "/boot"
+  version: '1.0'
+  serial: "[REMOVED]"
+  size: 1GiB
+  capacity: 1GiB
+  capabilities:
+  - primary
+  - bootable
+  - journaled
+  - extended_attributes
+  - large_files
+  - huge_files
+  - dir_nlink
+  - 64bit
+  - extents
+  - ext4
+  - ext2
+  - initialized
+  configuration:
+    created: '2017-03-28'
+    '18:18:18': 
+    filesystem: ext4
+    lastmountpoint: "/boot"
+    modified: '2017-11-23'
+    '14:39:13': 
+    mount.fstype: ext4
+    mount.options: rw,seclabel,relatime,data
+    mounted: '2017-11-23'
+    '14:19:47': 
+    state: mounted
+- class: Volume
+  id: volume:1
+  description: Linux filesystem partition
+  physical id: 2
+  bus info: scsi@1:0.0.0,2
+  logical name: "/dev/sda2"
+  serial: "[REMOVED]"
+  size: 416GiB
+  capacity: 416GiB
+  width: 512 bits
+  capabilities:
+  - primary
+  - encrypted
+  - luks
+  - initialized
+  configuration:
+    bits: 512
+    cipher: aes
+    filesystem: luks
+    hash: sha256
+    mode: xts-plain64
+    version: 1
+- class: Volume
+  id: volume:2
+  description: Linux filesystem partition
+  physical id: 3
+  bus info: scsi@1:0.0.0,3
+  logical name: "/dev/sda3"
+  serial: "[REMOVED]"
+  size: 59GiB
+  capacity: 59GiB
+  width: 512 bits
+  capabilities:
+  - primary
+  - encrypted
+  - luks
+  - initialized
+  configuration:
+    bits: 512
+    cipher: aes
+    filesystem: luks
+    hash: sha256
+    mode: xts-plain64
+    version: 1
+- class: Battery
+  id: battery:0
+  product: 00HW023
+  vendor: SMP
+  physical id: 1
+  slot: Front
+  capacity: 23540mWh
+  configuration:
+    voltage: 11.4V
+- class: Battery
+  id: battery:1
+  product: 01AV406
+  vendor: SMP
+  physical id: 2
+  slot: Rear
+  capacity: 26060mWh
+  configuration:
+    voltage: 11.5V
+- class: Network
+  id: network:1
+  description: Ethernet interface
+  physical id: 4
+  logical name: cockpit1
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'no'
+    multicast: 'yes'
+- class: Network
+  id: network:2
+  description: Ethernet interface
+  physical id: 5
+  logical name: virbr0
+  serial: "[REMOVED]"
+  capabilities:
+  - ethernet
+  - physical
+  configuration:
+    broadcast: 'yes'
+    driver: bridge
+    driverversion: '2.3'
+    firmware: N/A
+    ip: "[REMOVED]"
+    link: 'no'
+    multicast: 'yes'
