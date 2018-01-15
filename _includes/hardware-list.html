@@ -16,47 +16,48 @@
     {% assign descs = hardware | sort: 'description' | group_by: 'description' %}
     {% assign classes = hardware | group_by: 'class' %}
 
-    <table class="device-comparison"><tr><td>
-
-          <h1>Description-based</h1>
           {% for desc in descs %}
-            <h2>{{ desc.name | default: '[undefined]' }}
-              ({{ desc.size }} item{% if desc.size != 1 %}s{% endif%})</h2>
+            {%
+              if desc.name == 'BIOS'
+              or desc.name == 'CPU'
+            %}
+              <h2>{{ desc.name | default: '[undefined]' }}</h2>
 
-            {% include hardware-table.html items=desc.items %}
+              {% include hardware-table.html items=desc.items name=desc.name %}
+            {% endif %}
           {% endfor %}
 
-          </td><td>
-
-          <h1>Class-based (normalized IDs)</h1>
           {% for class in classes %}
-            <h2>{{ class.name }}</h2>
+            {%
+              if class.name == 'Bank'
+              or class.name == 'Computer'
+            %}
 
-            {% include hardware-table.html items=class.items %}
-            <!--
-            <ol>
-              {% for item in class.items %}
-                <li><strong>{{ item.id }}</strong> — 
-                  {{ item.description | default: item.id
-                  }}{% if item.product %}, {{ item.product }}{% endif %}{% if
-                    item['logical name'] %}, {{ item.capacity }} {{ item['logical name']}} {% endif%}
-                </li>
-                {{ item }}
-              {% endfor %}
-            </ol>
-            -->
+              <h2>
+              {% if class.name == 'Bank' %}
+                  Memory
+              {% else %}
+                {{ class.name }}
+              {% endif %}
+              </h2>
+
+              {% include hardware-table.html items=class.items name=class.name %}
+            {% endif %}
           {% endfor %}
 
-          </td><td>
-
-          <h1>Bus-filtered</h1>
           {% for bus in busses %}
             <h2>{{ bus | upcase }}</h2>
 
-            {% include hardware-table.html items=hardware filter=bus %}
-          {% endfor %}
+            {% capture panel %}
+              {% include hardware-table.html items=hardware filter=bus name=bus %}
+            {% endcapture %}
 
-    </td></tr></table>
+            {% if panel contains '<td' %}
+              {{ panel }}
+            {% else %}
+              No {{ bus | upcase }} devices found.
+            {% endif %}
+          {% endfor %}
 
   {% else %}
 

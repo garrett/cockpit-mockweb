@@ -1,100 +1,128 @@
-{% if include.filter %}
-  {% assign nofilter = false %}
-{% else %}
-  {% assign nofilter = true %}
-{% endif %}
+{% capture panel %}
+  {% if include.filter %}
+    {% assign nofilter = false %}
+  {% else %}
+    {% assign nofilter = true %}
+  {% endif %}
 
-{% assign bus_size = include.items | group_by: 'bus info' | map: 'name' | join: ' ' | size %}
-{% assign name_size = include.items | group_by: 'product' | map: 'name' | join: ' ' | size %}
-{% assign vendor_size = include.items | group_by: 'vendor' | map: 'name' | join: ' ' | size %}
-{% assign serial_size = include.items | group_by: 'serial' | map: 'name' | join: ' ' | size %}
-{% assign config = include.items | group_by: 'configuration' | map: 'items' | array_to_sentence_string %}
+  {% assign bus_size = include.items | group_by: 'bus info' | map: 'name' | join: ' ' | size %}
+  {% assign name_size = include.items | group_by: 'product' | map: 'name' | join: ' ' | size %}
+  {% assign vendor_size = include.items | group_by: 'vendor' | map: 'name' | join: ' ' | size %}
+  {% assign serial_size = include.items | group_by: 'serial' | map: 'name' | join: ' ' | size %}
+  {% assign version_size = include.items | group_by: 'version' | map: 'name' | join: ' ' | size %}
+  {% assign config = include.items | group_by: 'configuration' | map: 'items' | array_to_sentence_string %}
 
-<div class="panel panel-default">
+  <div class="panel panel-default hw-list-{{ include.name | default: 'default'}}">
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        {% if name_size > 0 %}
-          <th>Name</th>
-        {% endif %}
-
-        <th>ID</th>
-
-        <th>Description</th>
-
-        {% if vendor_size > 0 %}
-          <th>Vendor</th>
-        {% endif %}
-
-        {% if serial_size > 0 %}
-          <th>Serial</th>
-        {% endif %}
-
-        {% if bus_size > 0 %}
-          <th>Bus info</th>
-        {% endif %}
-
-        {% if config contains '"speed"' and nofilter %}
-          <th>Speed</th>
-        {% endif %}
-      </tr>
-    </thead>
-
-    <tbody>
-      {% for item in include.items %}
-        {% if item['bus info'] contains include.filter or nofilter == true %}
-
-          {% if item.vendor contains 'Linux' %}
-            {% assign vendor = 'Linux' %}
-          {% elsif item.vendor contains 'Illegal' %}
-            {% assign vendor = ' ' %}
-          {% else %}
-            {% assign vendor = item.vendor %}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          {% if name_size > 0 %}
+            <th class="name">Name</th>
           {% endif %}
 
-          {% case item.configuration.driver %}
-          {% when 'igbvf'%}
-            {% assign name = 'SR-IOV' %}
-            {% assign vendor = 'Virtual' %}
-          {% when 'bridge'%}
-            {% assign name = 'Bridge' %}
-          {% else %}
-            {% assign name = '' %}
-          {% endcase %}
+          <th class="id">ID</th>
 
-          <tr>
+          <th class="description">Description</th>
 
-            {% if name_size > 0 %}
-              <td>{{ name | default: item.product }}</td>
+          {% if vendor_size > 0 %}
+            <th class="vendor">Vendor</th>
+          {% endif %}
+
+          {% if bus_size > 0 %}
+            <th class="bus">Bus info</th>
+          {% endif %}
+
+          {% if config contains '"speed"' and nofilter %}
+            <th class="speed">Speed</th>
+          {% endif %}
+
+          {% if version_size > 0 %}
+            <th class="version">Version</th>
+          {% endif %}
+
+          {% if serial_size > 0 %}
+            <th class="serial">Serial</th>
+          {% endif %}
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for item in include.items %}
+          {% if item['bus info'] contains include.filter or nofilter == true %}
+
+            {% if item.vendor contains 'Linux' %}
+              {% assign vendor = 'Linux' %}
+            {% elsif item.vendor contains 'Illegal' %}
+              {% assign vendor = ' ' %}
+            {% else %}
+              {% assign vendor = item.vendor %}
             {% endif %}
 
-            <td>{{ item['id'] }}</td>
+            {% case item.configuration.driver %}
+            {% when 'igbvf'%}
+              {% assign name = 'SR-IOV' %}
+              {% assign vendor = 'Virtual' %}
+            {% when 'bridge'%}
+              {% assign name = 'Bridge' %}
+            {% else %}
+              {% assign name = '' %}
+            {% endcase %}
 
-            <td>{{ item['logical name'] | default: item.description }}</td>
-
-            {% if vendor_size > 0 %}
-              <td>{{ vendor | item.vendor }}</td>
+            {% if item.description contains '[empty]' %}
+              {% assign empty_slot = true %}
+            {% else %}
+              {% assign empty_slot = false %}
             {% endif %}
 
-            {% if serial_size > 0 %}
-              <td>{{ item['serial'] }}</td>
-            {% endif %}
+            {% if item.product contains 'Hub' %}
+            {% elsif item.product contains 'Host Controller' %}
+            {% elsif item.product contains 'UHCI Controller' %}
+            {% elsif item.product contains 'EHCI Controller' %}
+            {% elsif item.product contains 'Root Port' %}
+            {% elsif item.product contains 'Memory Controller' %}
+            {% elsif item.description contains 'Host bridge' %}
+            {% elsif item.description contains 'PCI bridge' %}
+            {% else %}
+              <tr>
 
-            {% if bus_size > 0 %}
-              <td>{{ item['bus info'] | split: '@' | last }}</td>
-            {% endif %}
+                {% if name_size > 0 %}
+                  <td class="name">{% unless empty_slot %}{{ name | default: item.product }}{% endunless %}</td>
+                {% endif %}
 
-            {% if config contains '"speed"' and nofilter %}
-              <td>{{ item.configuration.speed }}</td>
-            {% endif %}
-          </tr>
-          <!--
-          <tr><td colspan="6">{{ item }}</td></tr>
-          -->
-        {% endif %}
+                <td class="id">{{ item['id'] }}</td>
 
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+                <td class="description">{{ item['logical name'] | default: item.description }}</td>
+
+                {% if vendor_size > 0 %}
+                  <td class="vendor">{% unless empty_slot %}{{ vendor | item.vendor }}{% endunless %}</td>
+                {% endif %}
+
+                {% if bus_size > 0 %}
+                  <td class="bus">{{ item['bus info'] | split: '@' | last }}</td>
+                {% endif %}
+
+                {% if config contains '"speed"' and nofilter %}
+                  <td class="speed">{{ item.configuration.speed }}</td>
+                {% endif %}
+
+                {% if version_size > 0 %}
+                  <td class="version">{{ item.version }}</td>
+                {% endif %}
+
+                {% if serial_size > 0 %}
+                  <td class="serial">{% unless empty_slot %}{{ item['serial'] }}{% endunless %}</td>
+                {% endif %}
+              </tr>
+              <!--
+              <tr><td colspan="6">{{ item }}</td></tr>
+              -->
+            {% endif %}
+          {% endif %}
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endcapture %}
+{% if panel contains '<td'%}{{ panel | strip }}{% endif %}
