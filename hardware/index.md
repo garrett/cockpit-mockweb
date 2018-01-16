@@ -4,7 +4,7 @@ layout: minimal
 ---
 
 {% capture md %}
-# Example computers for the hardware list:
+# Example computers for the hardware list
 
 * [Smaller server](casual)
 * [Big server](big)
@@ -13,6 +13,9 @@ layout: minimal
 * [Laptop (Lenovo T460s)](t460s)
 * [Arm (Banana Pro)](banana)
 * [Arm (Odroid U3)](odroidu3)
+
+## RAW data
+- [JSON export](devices.json)
 {% endcapture %}
 
 <div style="padding: 5vh 5vw 0; font-size: 140%">
