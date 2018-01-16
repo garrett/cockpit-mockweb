@@ -1,17 +1,34 @@
 ---
 ---
 
-.panel:not(.hw-list-bank)
+.panel
+  &:not(.hw-list-bank)
+    th, td
+      &.width,
+      &.clock,
+      &.size
+        display: none
+
   th, td
-    &.width,
-    &.clock,
-    &.size
+    &.width
       display: none
 
-th, td
-  &.width
-    display: none
+  tr.empty
+    td
+      color: #999
 
-tr.empty
-  td
-    color: #999
+  &.hw-list-pci,
+  &.hw-list-usb
+    .version
+      display: none
+
+  &.hw-list-usb,
+  &.hw-list-scsi
+    .id
+      display: none
+
+  &.hw-list-usb,
+  &.hw-list-scsi,
+  &.hw-list-pci
+    .bus
+      display: none
