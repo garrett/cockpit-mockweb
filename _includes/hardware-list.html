@@ -1,6 +1,7 @@
 {% if include.machine and site.data.hardware[include.machine] %}
 
   <style>
+    @import url({{ site.baseurl }}/static/hardware.css);
     .device-comparison td {
       vertical-align: top;
       padding: 1em 3em;
@@ -10,54 +11,97 @@
 
   <div class="container-fluid">
 
+
+    <a href="#overview_link">Overview</a> <i class="fa fa-angle-double-right"></i> System Information
+    
     {% assign hardware = site.data.hardware[include.machine] | sort: 'bus info' %}
 
     {% assign busses = 'usb,scsi,pci' | split: ',' %}
     {% assign descs = hardware | sort: 'description' | group_by: 'description' %}
     {% assign classes = hardware | group_by: 'class' %}
 
-          {% for desc in descs %}
-            {%
-              if desc.name == 'BIOS'
-              or desc.name == 'CPU'
-            %}
-              <h2>{{ desc.name | default: '[undefined]' }}</h2>
+    <h1>System Information</h1>
 
-              {% include hardware-table.html items=desc.items name=desc.name %}
-            {% endif %}
-          {% endfor %}
+    <table class="info-table-ct">
+      {% for class in classes %}
+        {% if class.name == 'Computer' %}
+          <tr>
+            <th>Type</th>
+            <td>{{ class.items[0].description }}</td>
+          </tr><tr>
+            <th>Hardware</th>
+            <td>{{ class.items[0].version }}</td>
+          </tr><tr>
+            <th>Hardware Extended</th>
+            <td>{{ class.items[0].vendor}} {{ class.items[0].product }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
 
-          {% for class in classes %}
-            {%
-              if class.name == 'Bank'
-              or class.name == 'Computer'
-            %}
+      {% for desc in descs %}
+        {% if desc.name == 'CPU' %}
+          <tr>
+            <th>CPU</th>
+            <td>
+              <!--
+              {{ desc.items[0].vendor }}
+              {{ desc.items[0].product }}
+              -->
+              {{ desc.items[0].version }}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
 
-              <h2>
-              {% if class.name == 'Bank' %}
-                  Memory
-              {% else %}
-                {{ class.name }}
-              {% endif %}
-              </h2>
+      {% for desc in descs %}
+        {% if desc.name == 'BIOS' %}
+          <tr>
+            <th>BIOS</th>
+            <td>
+              {{ desc.items[0].vendor }}
+            </td>
+          </tr><tr>
+            <th>BIOS version</th>
+            <td>
+              {{ desc.items[0].version }}
+            </td>
+          </tr><tr>
+            <th>BIOS date</th>
+            <td>
+              {{ desc.items[0].date }}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
 
-              {% include hardware-table.html items=class.items name=class.name %}
-            {% endif %}
-          {% endfor %}
+    {% for class in classes %}
+      {% if class.name == 'Bank' %}
+        <h2>
+        {% if class.name == 'Bank' %}
+            Memory
+        {% else %}
+          {{ class.name }}
+        {% endif %}
+        </h2>
 
-          {% for bus in busses %}
-            <h2>{{ bus | upcase }}</h2>
+        {% include hardware-table.html items=class.items name=class.name %}
+      {% endif %}
+    {% endfor %}
 
-            {% capture panel %}
-              {% include hardware-table.html items=hardware filter=bus name=bus %}
-            {% endcapture %}
+    {% for bus in busses %}
+      <h2>{{ bus | upcase }}</h2>
 
-            {% if panel contains '<td' %}
-              {{ panel }}
-            {% else %}
-              No {{ bus | upcase }} devices found.
-            {% endif %}
-          {% endfor %}
+      {% capture panel %}
+        {% include hardware-table.html items=hardware filter=bus name=bus %}
+      {% endcapture %}
+
+      {% if panel contains '<td' %}
+        {{ panel }}
+      {% else %}
+        No {{ bus | upcase }} devices found.
+      {% endif %}
+        {% endfor %}
 
   {% else %}
 

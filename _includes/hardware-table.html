@@ -10,23 +10,26 @@
   {% assign vendor_size = include.items | group_by: 'vendor' | map: 'name' | join: ' ' | size %}
   {% assign serial_size = include.items | group_by: 'serial' | map: 'name' | join: ' ' | size %}
   {% assign version_size = include.items | group_by: 'version' | map: 'name' | join: ' ' | size %}
+  {% assign size_size = include.items | group_by: 'size' | map: 'name' | join: ' ' | size %}
+  {% assign width_size = include.items | group_by: 'width' | map: 'name' | join: ' ' | size %}
+  {% assign clock_size = include.items | group_by: 'clock' | map: 'name' | join: ' ' | size %}
   {% assign config = include.items | group_by: 'configuration' | map: 'items' | array_to_sentence_string %}
 
-  <div class="panel panel-default hw-list-{{ include.name | default: 'default'}}">
+  <div class="panel panel-default hw-list-{{ include.name | default: 'default' | downcase}}">
 
     <table class="table table-hover">
       <thead>
         <tr>
-          {% if name_size > 0 %}
-            <th class="name">Name</th>
-          {% endif %}
-
           <th class="id">ID</th>
 
           <th class="description">Description</th>
 
           {% if vendor_size > 0 %}
             <th class="vendor">Vendor</th>
+          {% endif %}
+
+          {% if name_size > 0 %}
+            <th class="name">Name</th>
           {% endif %}
 
           {% if bus_size > 0 %}
@@ -41,8 +44,20 @@
             <th class="version">Version</th>
           {% endif %}
 
+          {% if size_size > 0 %}
+            <th class="size">size</th>
+          {% endif %}
+
+          {% if width_size > 0 %}
+            <th class="width">width</th>
+          {% endif %}
+
+          {% if clock_size > 0 %}
+            <th class="clock">clock</th>
+          {% endif %}
+
           {% if serial_size > 0 %}
-            <th class="serial">Serial</th>
+            <th class="serial">serial</th>
           {% endif %}
         </tr>
       </thead>
@@ -71,8 +86,10 @@
 
             {% if item.description contains '[empty]' %}
               {% assign empty_slot = true %}
+              {% assign empty_class = 'empty' %}
             {% else %}
               {% assign empty_slot = false %}
+              {% assign empty_class = '' %}
             {% endif %}
 
             {% if item.product contains 'Hub' %}
@@ -81,21 +98,24 @@
             {% elsif item.product contains 'EHCI Controller' %}
             {% elsif item.product contains 'Root Port' %}
             {% elsif item.product contains 'Memory Controller' %}
+            {% elsif item.id contains 'volume:' %}
+            {% elsif item.description contains 'hub' %}
+            {% elsif item.description contains ' controller' %}
             {% elsif item.description contains 'Host bridge' %}
+            {% elsif item.description contains 'ISA bridge' %}
             {% elsif item.description contains 'PCI bridge' %}
             {% else %}
-              <tr>
-
-                {% if name_size > 0 %}
-                  <td class="name">{% unless empty_slot %}{{ name | default: item.product }}{% endunless %}</td>
-                {% endif %}
-
+              <tr class="{{ empty_class }}">
                 <td class="id">{{ item['id'] }}</td>
 
                 <td class="description">{{ item['logical name'] | default: item.description }}</td>
 
                 {% if vendor_size > 0 %}
                   <td class="vendor">{% unless empty_slot %}{{ vendor | item.vendor }}{% endunless %}</td>
+                {% endif %}
+
+                {% if name_size > 0 %}
+                  <td class="name">{% unless empty_slot %}{{ name | default: item.product }}{% endunless %}</td>
                 {% endif %}
 
                 {% if bus_size > 0 %}
@@ -108,6 +128,18 @@
 
                 {% if version_size > 0 %}
                   <td class="version">{{ item.version }}</td>
+                {% endif %}
+
+                {% if size_size > 0 %}
+                  <td class="size">{% unless empty_slot %}{{ item['size'] }}{% endunless %}</td>
+                {% endif %}
+
+                {% if width_size > 0 %}
+                  <td class="width">{% unless empty_slot %}{{ item['width'] }}{% endunless %}</td>
+                {% endif %}
+
+                {% if clock_size > 0 %}
+                  <td class="clock">{% unless empty_slot %}{{ item['clock'] }}{% endunless %}</td>
                 {% endif %}
 
                 {% if serial_size > 0 %}
