@@ -8,6 +8,8 @@ kubernetes-topology-graph {
     font-size: 18px;
     text-anchor: middle;
     cursor: pointer;
+    outline: none;
+    stroke-width: 0;
 }
 
 .kube-topology g text {
@@ -20,22 +22,30 @@ kubernetes-topology-graph {
 }
 
 .kube-topology g.fixed use {
+    stroke-dasharray: 2, 2;
+    stroke-width: 2px;
+}
+
+.kube-topology g:hover use,
+.kube-topology g:hover circle {
+    stroke-dasharray: 1, 0;
     stroke-width: 2px;
 }
 
 .kube-topology g.selected use,
 .kube-topology g.selected circle {
+    stroke-dasharray: 1, 0;
     stroke-width: 4px;
 }
 
 .kube-topology line {
     stroke: #aaa;
-    stroke-width: 1;
+    stroke-width: 1.5;
 }
 
 .kube-topology line.ReplicationControllerPod {
     stroke-linecap: round;
-    stroke-dasharray: 5, 2;
+    stroke-dasharray: 6, 6;
 }
 
 kubernetes-topology-icon {

@@ -55,6 +55,7 @@
         /* Allow the force to be passed in, default if not */
         if (!force) {
             force = d3.layout.force()
+                .friction(0.5)
                 .charge(-800)
                 .gravity(0.2)
                 .linkDistance(80);
@@ -88,6 +89,8 @@
                 .attr("transform", function(d) {
                     return "translate(" + d.x + "," + d.y + ")";
                 });
+
+            if (force.alpha() > 0.03) { force.tick(); }
         });
 
         drag
