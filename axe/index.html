@@ -1,0 +1,73 @@
+---
+layout: document
+---
+{% assign newline= "
+" %}
+
+<h1>aXe tests</h1>
+
+{% for axe in site.data.axe %}
+  <h2>{{ axe[0] }}</h2>
+
+  {% for test in axe[1] %}
+    <h3 id="{{ test.id }}">{{ test.impact }}: {{ test.help }}</h3>
+
+    <a href="{{ test.helpUrl }}">View details…</a>
+
+    {% for node in test.nodes %}
+      {% assign summary = node.failureSummary | split: newline %}
+
+      <dl>
+        <dt>{{ node.target }}</dt>
+        <!--
+        <dd><pre>{{ node | jsonify }}</pre></dd>
+        -->
+
+        <dd>
+          <ul>
+            <li>HTML: <pre>{{ node.html | xml_escape }}</pre></li>
+
+            {% assign all = '' | split: ',' %}
+            {% assign any = '' | split: ',' %}
+            {% assign all_or_any = '' %}
+
+
+            {% for sum in summary %}
+              {% case sum %}
+              {% when "Fix all of the following:" %}
+                {% assign all_or_any = 'all' %}
+              {% when "Fix any of the following:" %}
+                {% assign all_or_any = 'any' %}
+              {% when "" %}
+              {% else %}
+                {% if all_or_any == "all" %}
+                  {% assign all = all | push: sum %}
+                {% elsif all_or_any == "any" %}
+                  {% assign any = any | push: sum %}
+                {% endif %}
+              {% endcase %}
+            {% endfor %}
+
+            <li>Issue:
+              <ul>
+              {% for item in all %}
+                <li>{{ item | xml_escape }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+
+          <li>Choose one to fix:
+            <ul>
+              {% for item in any %}
+                <li>{{ item | xml_escape }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+
+          </ul>
+        </dd>
+      </dl>
+    {% endfor %}
+  {% endfor %}
+
+{% endfor %}
