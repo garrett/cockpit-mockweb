@@ -6,69 +6,66 @@ layout: document
 
 <h1>aXe tests</h1>
 
-{% for axe in site.data.axe.Test-navigation-axe %}
-  <h2>{{ axe[0] }}</h2>
+{% assign types = "violations incomplete" | split: " " %}
 
-  {% for test in axe[1] %}
-    <h3 id="{{ test.id }}">{{ test.impact }}: {{ test.help | xml_escape }}</h3>
+{% for type in types %}
+  {% assign items = site.data.axe.Test-navigation-axe[type] %}
 
-    <a href="{{ test.helpUrl }}">View details…</a>
+  <h2 id="type-{{ type }}">{{ type }}</h2>
 
-    {% for node in test.nodes %}
-      {% assign summary = node.failureSummary | split: newline %}
+  {% for test in items %}
+    <h3 id="{{ test.id }}">
+      <a href="{{ test.helpUrl }}">
+        {{ test.impact }}: {{ test.help | xml_escape }}
+      </a>
+    </h3>
 
-      <dl>
-        <dt>{{ node.target }}</dt>
-        <dd>Node: <pre>{{ node | xml_escape }}</pre></dd>
-        <!--
-        -->
+    <section>
 
-        <dd>
-          <ul>
+      {% for node in test.nodes %}
+        {% assign summary = node.failureSummary | split: newline %}
+
+        <dl>
+          {% for target in node.target %}
+            <dt>{{ target }}</dt>
+          {% endfor %}
+
+          <dd>
+            <ul>
+
             <li>HTML: <pre>{{ node.html | xml_escape }}</pre></li>
 
-            {% assign all = '' | split: ',' %}
-            {% assign any = '' | split: ',' %}
-            {% assign all_or_any = '' %}
-
-
-            {% for sum in summary %}
-              <li>MSG: {{ sum.message }}</li>
-              {% case sum %}
-              {% when "Fix all of the following:" %}
-                {% assign all_or_any = 'all' %}
-              {% when "Fix any of the following:" %}
-                {% assign all_or_any = 'any' %}
-              {% when "" %}
-              {% else %}
-                {% if all_or_any == "all" %}
-                  {% assign all = all | push: sum %}
-                {% elsif all_or_any == "any" %}
-                  {% assign any = any | push: sum %}
-                {% endif %}
-              {% endcase %}
+            {% for none in node.none %}
+              <li>Message: {{ none.message | xml_escape }}</li>
             {% endfor %}
 
-            <li>Issue:
-              <ul>
-              {% for item in all %}
-                <li>{{ item | xml_escape }}</li>
-              {% endfor %}
-            </ul>
-          </li>
+            {% if node.any %}
+              {% if node.any.relatedNodes %}
+                <li>Related element: {{ node.any.relatedNodes }}</li>
+              {% endif %}
 
-          <li>Choose one to fix:
-            <ul>
-              {% for item in any %}
-                <li>{{ item | xml_escape }}</li>
-              {% endfor %}
-            </ul>
-          </li>
+              <li>Possible issues (fix one):
+                <ul>
+                  {% for any in node.any %}
+                    <li>{{ any.message | xml_escape }}
+                      {% if any.data %}
+                        <ul>
+                          {% for point in any.data %}
+                            <li>{{ point[0] }}: <strong>{{ point[1] }}</strong></li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
 
           </ul>
         </dd>
       </dl>
-    {% endfor %}
+    </section>
   {% endfor %}
+{% endfor %}
 
 {% endfor %}
