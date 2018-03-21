@@ -1,15 +1,33 @@
 ---
-layout:
+layout: minimal
 ---
 <style>@import url(overview.css);</style>
 
 <div class="overview">
   <section class="information">
     <h2>System Information</h2>
-    <table>
+    <table class="info-table-ct">
       <tbody>
         <tr>
-          <th>Hardware</th>
+          <th>Host Name</th>
+          <td>DemoBox</td>
+        </tr>
+        <tr>
+          <th>Operating System</th>
+          <td>Fedora 27 (Workstation Edition)</td>
+        </tr>
+        <tr>
+          <th>Secure Shell Keys</th>
+          <td><a href="#ssh-link">Show fingerprints</a></td>
+        </tr>
+        <tr>
+          <th>Domain</th>
+          <td><a href="#domain-link">Join domain...</a></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th>Machine</th>
           <td>LENOVO 2F45T2FR5</td>
         </tr>
         <tr>
@@ -23,32 +41,26 @@ layout:
         <tr>
           <th></th>
           <td>
-            <a href="#fake-link">View hardware</a>
+            <a href="#fake-link">View hardware details</a>
           </td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <th>Operating System</th>
-          <td>Fedora 27 (Workstation Edition)</td>
-        </tr>
-        <tr>
-          <th>Host Name</th>
-          <td>DemoBox</td>
-        </tr>
-        <tr>
-          <th>Secure Shell Keys</th>
-          <td><a href="#ssh-link">Show fingerprints</a></td>
-        </tr>
-        <tr>
-          <th>Domain</th>
-          <td><a href="#domain-link">Join domain...</a></td>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th>System Time</th>
           <td><a href="#time-link">2018-03-21 12:37</a></td>
+        </tr>
+        <tr>
+          <th>Last Boot</th>
+          <td>1 day, 3 hours ago</td>
+        </tr>
+        <tr>
+          <th>Power Options</th>
+          <td>
+
+            <button class="btn btn-default btn-danger shutdown-privileged" data-action="restart" data-container="body" data-original-title="" title="">Restart</button><button data-toggle="dropdown" class="btn btn-default dropdown-toggle shutdown-privileged" aria-labelledby="system_information_power_options_label" data-original-title="" title=""><span class="caret"></span></button>
+
+          <ytd>
         </tr>
       </tbody>
     </table>
@@ -67,12 +79,12 @@ layout:
     </section>
 
     <section class="graph-ram">
-      <h3>RAM</h3>
+      <h3>Memory</h3>
       <div class="graph"></div>
     </section>
 
     <section class="graph-io">
-      <h3>IO</h3>
+      <h3>Disk I/O</h3>
       <div class="graph"></div>
     </section>
 
@@ -82,7 +94,7 @@ layout:
     </section>
   </section>
   <section class="processes">
-    <h2>Top Processes</h2>
+    <h3>Top Processes</h3>
     <table class="procs">
       <thead>
         <tr>
@@ -136,5 +148,7 @@ layout:
         </tr>
       </tbody>
     </table>
+
+    <a href="#proc-history">View history…</a>
   </section>
 </div>
