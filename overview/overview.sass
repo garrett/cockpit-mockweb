@@ -1,0 +1,159 @@
+---
+---
+
+$on-phone: 800px
+
+*
+  box-sizing: border-box
+
+body
+  font-family: open sans, sans-serif
+  margin: 0
+  padding: 0
+  display: flex
+  width: 100vw
+  height: 100vh
+  line-height: 1.6
+
+h2,
+h3
+  margin-top: 0
+  font-weight: normal
+  color: #777
+
+.overview
+  display: grid
+  grid-template: "i i i" minmax(8rem, auto) "g g h" minmax(8rem, auto) "g g p" 1fr
+  grid-template: "i i i" minmax(8rem, auto) "h g g" minmax(8rem, auto) "p g g" 1fr
+  margin: auto
+  width: 100%
+  height: 100%
+  grid-template-columns: 1fr 1fr minmax(20rem, auto)
+  grid-template-columns: minmax(20rem, auto) 1fr 1fr
+
+  > section
+    padding: 1rem
+
+.information
+  grid-area: i
+
+  table
+    tr
+      vertical-align: top
+      line-height: 1.6rem
+
+    th
+      white-space: nowrap
+      text-align: right
+      font-weight: normal
+      color: #555
+      padding-right: 1rem
+
+    tbody > td:first-child
+      padding: 1rem
+
+    td
+
+    .serial
+      word-break: break-all
+      font-family: fira mono, droid sans mono, monospace
+
+  @media (min-width: $on-phone)
+
+    table
+      margin: -1rem 0 0 0
+
+      th
+        min-width: 15ex
+
+      tbody
+        margin: 1rem 1rem 0 0
+        float: left
+
+.health
+  grid-area: h
+
+.graphs
+  display: grid
+  grid-area: g
+  grid-gap: 20px
+  grid-template-columns: 1fr
+  
+  > section
+    position: relative
+    overflow: hidden
+    display: flex
+    flex-flow: column
+
+  h3
+    margin: 0
+
+.graph
+  animation: scrollBackground 1800s steps(6000) infinite
+  background: #f6f6f6 url(graph-cpu.svg) repeat-x
+  background-clip: content-box
+  background-position: 0 100%
+  background-size: 300% 100%
+  height: 100%
+  min-height: 6rem
+  max-height: 100%
+  width: 100%
+  opacity: 0.8
+  position: relative
+  z-index: 10
+  border: 1px solid #aaa
+
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    content: ''
+    background: url(pixel.png) 0 20%, url(pixel.png) 0 40%, url(pixel.png) 0 60%, url(pixel.png) 0 80%
+    background-repeat: repeat-x
+    z-index: -1
+    opacity: 0.1
+
+.graph-cpu .graph
+  background-image: url(graph-cpu.svg)
+
+  &:before
+    background: url(pixel.png) 0 25%, url(pixel.png) 0 50%, url(pixel.png) 0 75%
+    background-repeat: repeat-x
+
+.graph-ram .graph
+  background-image: url(graph-ram.svg)
+
+.graph-io .graph
+  background-image: url(graph-io.svg)
+
+.graph-network .graph
+  background-image: url(graph-network.svg)
+
+.processes
+  grid-area: p
+
+.procs
+
+  thead
+    th
+    td
+
+  tbody
+    th
+    td
+
+@media (max-width: $on-phone)
+  .overview
+    display: block
+
+  .graphs
+    grid-template-columns: repeat(2, 1fr)
+
+@keyframes scrollBackground
+  0%
+    background-position: 0 100%
+
+  100%
+    background-position: 600% 100%
