@@ -7,13 +7,13 @@ $on-phone: 800px
   box-sizing: border-box
 
 body
-  font-family: open sans, sans-serif
+  //font-family: open sans, sans-serif
   margin: 0
   padding: 0
   display: flex
   width: 100vw
   height: 100vh
-  line-height: 1.6
+  //line-height: 1.6
 
 h2,
 h3
@@ -30,9 +30,9 @@ h3
   grid-template-columns: 1fr 1fr minmax(20rem, auto)
 
 .overview
-  @extend %sidebar-right
+  @extend %sidebar-left
   display: grid
-  margin: auto
+  margin: 0 auto auto
   width: 100%
   height: 100%
 
@@ -43,21 +43,25 @@ h3
   grid-area: i
 
   table
+    width: 100%
+
     tr
-      vertical-align: top
-      line-height: 1.6rem
+      //line-height: 1.6rem
 
     th
       white-space: nowrap
       text-align: right
       font-weight: normal
-      color: #555
+      color: #777
       padding-right: 1rem
 
     tbody > td:first-child
       padding: 1rem
 
+    th,
     td
+      vertical-align: baseline
+      padding-top: 0
 
     .serial
       word-break: break-all
@@ -67,12 +71,15 @@ h3
 
     table
       margin: -1rem 0 0 0
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
 
       th
         min-width: 15ex
 
       tbody
-        margin: 1rem 1rem 0 0
+        margin: 0.8rem 1.6rem 0.8rem 0
         float: left
 
 .health
@@ -82,7 +89,9 @@ h3
   display: grid
   grid-area: g
   grid-gap: 20px
-  grid-template-columns: 1fr
+  grid-auto-flow: row
+  grid-template-columns: repeat(2,1fr)
+  //grid-template-columns: 1fr
   
   > section
     position: relative
@@ -100,9 +109,7 @@ h3
   background-position: 0 100%
   background-size: 300% 100%
   height: 100%
-  min-height: 6rem
-  max-height: 100%
-  width: 100%
+  min-height: 7rem
   opacity: 0.8
   position: relative
   z-index: 10
@@ -140,14 +147,22 @@ h3
   grid-area: p
 
 .procs
+  width: 100%
+
+  th, td
+    &:not(:first-child)
+      text-align: right
 
   thead
     th
-    td
+      font-weight: normal
+      text-align: left
+      color: #777
 
   tbody
     th
-    td
+      text-align: left
+      font-weight: 600
 
 @media (max-width: $on-phone)
   .overview
