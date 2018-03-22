@@ -1,10 +1,13 @@
 ---
 ---
 
-$on-phone: 800px
+$on-phone: 800px !default
 
 *
   box-sizing: border-box
+
+.stick-together
+  display: inline-block
 
 body
   //font-family: open sans, sans-serif
@@ -19,7 +22,7 @@ body
 .intro
   text-align: center
   padding: 4rem
-  background: #ccc
+  background: #eee
 
   h1
     margin: 0
@@ -39,11 +42,17 @@ h3
   grid-template-columns: 1fr 1fr minmax(20rem, auto)
 
 .overview
-  @extend %sidebar-left
   display: grid
   margin: 0 auto auto
   width: 100%
   height: 100%
+  padding: 2rem
+
+  &:not(.sidebar-right)
+    @extend %sidebar-left
+
+  &.sidebar-right
+    @extend %sidebar-right
 
   > section
     padding: 1rem
@@ -101,7 +110,7 @@ h3
   grid-auto-flow: row
   grid-template-columns: repeat(2,1fr)
   //grid-template-columns: 1fr
-  
+
   > section
     position: relative
     overflow: hidden
@@ -113,7 +122,7 @@ h3
 
 .graph
   animation: scrollBackground 1800s steps(6000) infinite
-  background: #f6f6f6 url(graph-cpu.svg) repeat-x
+  background: #f6f6f6 url(../img/graph-cpu.svg) repeat-x
   background-clip: content-box
   background-position: 0 100%
   background-size: 300% 100%
@@ -131,26 +140,26 @@ h3
     width: 100%
     height: 100%
     content: ''
-    background: url(pixel.png) 0 20%, url(pixel.png) 0 40%, url(pixel.png) 0 60%, url(pixel.png) 0 80%
+    background: url(../img/pixel.png) 0 20%, url(../img/pixel.png) 0 40%, url(../img/pixel.png) 0 60%, url(../img/pixel.png) 0 80%
     background-repeat: repeat-x
     z-index: -1
     opacity: 0.1
 
 .graph-cpu .graph
-  background-image: url(graph-cpu.svg)
+  background-image: url(../img/graph-cpu.svg)
 
   &:before
-    background: url(pixel.png) 0 25%, url(pixel.png) 0 50%, url(pixel.png) 0 75%
+    background: url(../img/pixel.png) 0 25%, url(../img/pixel.png) 0 50%, url(../img/pixel.png) 0 75%
     background-repeat: repeat-x
 
 .graph-ram .graph
-  background-image: url(graph-ram.svg)
+  background-image: url(../img/graph-ram.svg)
 
 .graph-io .graph
-  background-image: url(graph-io.svg)
+  background-image: url(../img/graph-io.svg)
 
 .graph-network .graph
-  background-image: url(graph-network.svg)
+  background-image: url(../img/graph-network.svg)
 
 .processes
   grid-area: p
