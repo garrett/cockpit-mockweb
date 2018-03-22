@@ -3,7 +3,11 @@ layout: minimal
 ---
 <style>@import url(overview.css);</style>
 
-<div class="overview">
+<section class="intro">
+  <h1>System overview mockup</h1>
+</section>
+
+<div class="overview" role="main">
   <section class="information">
     <h2>System Information</h2>
     <table class="info-table-ct">
@@ -55,7 +59,7 @@ layout: minimal
           <td>1 day, 3 hours ago</td>
         </tr>
         <tr>
-          <th>Power Options</th>
+          <th id="system_information_power_options_label">Power Options</th>
           <td>
 
             <button class="btn btn-default btn-danger shutdown-privileged" data-action="restart" data-container="body" data-original-title="" title="">Restart</button><button data-toggle="dropdown" class="btn btn-default dropdown-toggle shutdown-privileged" aria-labelledby="system_information_power_options_label" data-original-title="" title=""><span class="caret"></span></button>
