@@ -168,19 +168,29 @@ h3
   width: 100%
 
   th, td
+    padding: 0
+
     &:not(:first-child)
       text-align: right
 
-  thead
+  > thead >
     th
+      padding: 1rem
       font-weight: normal
       text-align: left
       color: #777
 
-  tbody
-    th
-      text-align: left
-      font-weight: 600
+  > tbody
+    > tr
+      vertical-align: baseline
+      line-height: 1.6
+
+      th
+        text-align: left
+        font-weight: 600
+
+      th, td
+        padding: 1rem
 
 @media (max-width: $on-phone)
   .overview
