@@ -20,12 +20,59 @@ body
   //line-height: 1.6
 
 .intro
-  text-align: center
-  padding: 4rem
-  background: #eee
+  background: #1d1d1d
+  border-top: 2px solid #39a5dc
 
   h1
     margin: 0
+    line-height: 46px
+    font-size: 1rem
+    text-transform: uppercase
+    font-size: 14px
+    color: #fff
+    text-shadow: 0 0
+    padding-left: 2ex
+
+.frame
+  height: 100%
+  display: grid
+  grid-template-areas: "sidebar overview"
+  grid-template-columns: 250px 1fr
+
+.sidebar
+  display: flex
+  //width: 290px
+  background: #393f44
+  border-left: 68px solid #292e34
+  position: relative
+  grid-area: sidebar
+
+  &:after
+    background: #393f44
+    content: ''
+    position: absolute
+    top: 0
+    left: -68px
+    width: 68px
+    height: 68px
+    border: 3px solid #39a5dc
+    border-width: 0 0 0 3px
+
+@media (max-width: $on-phone)
+  .frame
+    grid-template-areas: "overview" "sidebar"
+    height: 100vh
+    grid-template-rows: 1fr 68px
+    grid-template-columns: 1fr
+
+    .sidebar
+      background: #292e34
+
+      &:after
+        border-width: 0 0 3px 0
+
+    .overview
+      overflow: auto
 
 h2,
 h3
@@ -42,10 +89,12 @@ h3
   grid-template-columns: 1fr 1fr minmax(20rem, auto)
 
 .overview
+  grid-area: overview
   display: grid
   margin: 0 auto auto
   width: 100%
-  height: 100%
+  min-height: 66vh
+  max-height: 100%
   padding: 2rem
 
   &:not(.sidebar-right)
@@ -103,6 +152,9 @@ h3
 .health
   grid-area: h
 
+  ul
+    padding-left: 2ex
+
 .graphs
   display: grid
   grid-area: g
@@ -117,8 +169,15 @@ h3
     display: flex
     flex-flow: column
 
-  h3
-    margin: 0
+  .info
+    font-size: 1.5rem
+    display: flex
+    align-items: baseline
+    justify-content: space-around
+    order: 2
+
+    .primary
+      //font-size: 2rem
 
 .graph
   animation: scrollBackground 1800s steps(6000) infinite
@@ -155,11 +214,24 @@ h3
 .graph-ram .graph
   background-image: url(../img/graph-ram.svg)
 
+  &.swap
+    background-image: url(../img/graph-swap.svg)
+    height: 10%
+    min-height: 2rem
+
+    &:before
+      background: none
+
 .graph-io .graph
   background-image: url(../img/graph-io.svg)
 
 .graph-network .graph
   background-image: url(../img/graph-network.svg)
+
+  &.outgoing
+    background-image: url(../img/graph-network-outgoing.svg)
+    transform: scaleY(-1)
+    margin-top: -1px
 
 .processes
   grid-area: p

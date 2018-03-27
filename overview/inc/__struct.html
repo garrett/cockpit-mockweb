@@ -2,25 +2,31 @@
 
 <section class="intro">
   <h1>
-    System overview mockup{% if include.title %}:{% endif %}
+    System overview <b>mockup</b>{% if include.title %}:{% endif %}
     <span class="stick-together">{{ include.title }}</span>
   </h1>
 </section>
 
-<div class="overview {{ include.class }}" role="main">
-  <section class="information">
-    {% include_relative inc/_information.html %}
-  </section>
+<div class="frame">
+  <div class="sidebar">
+  </div>
 
-  <section class="health">
-    {% include_relative inc/_health.html %}
-  </section>
+  <div class="overview {{ include.class }}" role="main">
+    <section class="information">
+      {% include_relative inc/_information.html %}
+    </section>
 
-  <section class="graphs">
-    {% include_relative inc/_graphs.html %}
-  </section>
+    <section class="health">
+      {% include_relative inc/_health.html %}
+    </section>
 
-  <section class="processes">
-    {% include_relative inc/_procs.html %}
-  </section>
+    <section class="graphs">
+      {% include_relative inc/_graphs.html %}
+    </section>
+
+    <section class="processes">
+      {% include_relative inc/_procs.html %}
+    </section>
+  </div>
+
 </div>
