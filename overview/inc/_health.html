@@ -1,20 +1,31 @@
 {% capture md %}
 ## Health
 
-<!--
-&check; Everything's fine
--->
-
+{% if include.issues %}
 Issues Found
+{:.issues-summary}
 
+{% capture block %}
 Current:
 - [Security updates available](#link-to-update)
 - [`/var` is full](#link-to-disk-full)
 - [Bad clusters found on `hdc`](#link-to-disk-issue)
+{% endcapture %}
 
+<div class="issues-current">{{ block | markdownify}}</div>
+
+{% capture block %}
 Past 24 hours:
 - Low available memory
 - High swap
+{% endcapture %}
+<div class="issues-past">{{ block | markdownify}}</div>
+
+{% else %}
+<i class="fa fa-check"></i> Everything's fine
+{:.issues-summary}
+{% endif %}
+
 {% endcapture %}
 
 {{ md | markdownify }}

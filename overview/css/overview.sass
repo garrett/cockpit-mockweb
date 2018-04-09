@@ -151,9 +151,22 @@ h3
 
 .health
   grid-area: h
+  overflow: hidden
 
   ul
     padding-left: 2ex
+
+@media (max-width: $on-phone)
+  .health
+    display: grid
+    grid-auto-columns: repeat(4, 50%)
+
+    h2, p
+      grid-column: 1/3
+
+    .issues-current
+
+    .issues-past
 
 .graphs
   display: grid
