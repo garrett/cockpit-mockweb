@@ -1,0 +1,81 @@
+---
+---
+
+$on-phone: 800px !default
+
+*
+  box-sizing: border-box
+
+body
+  //font-family: open sans, sans-serif
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  width: 100vw
+  height: 100vh
+  //line-height: 1.6
+
+.mock-topbar
+  background: #1d1d1d
+  border-top: 2px solid #39a5dc
+
+  h1
+    margin: 0
+    line-height: 46px
+    font-size: 1rem
+    text-transform: uppercase
+    font-size: 14px
+    color: #fff
+    text-shadow: 0 0
+    padding-left: 2ex
+
+    b, strong, i, em
+      display: inline-block
+
+    i, em
+      font: inherit
+
+.mock-frame
+  height: 100%
+  display: grid
+  grid-template-areas: "sidebar overview"
+  grid-template-columns: 250px 1fr
+
+.mock-sidebar
+  display: flex
+  //width: 290px
+  background: #393f44
+  border-left: 68px solid #292e34
+  position: relative
+  grid-area: sidebar
+
+  &:after
+    background: #393f44
+    content: ''
+    position: absolute
+    top: 0
+    left: -68px
+    width: 68px
+    height: 68px
+    border: 3px solid #39a5dc
+    border-width: 0 0 0 3px
+
+.mock-content
+  position: relative
+
+@media (max-width: $on-phone)
+  .mock-frame
+    grid-template-areas: "overview" "sidebar"
+    height: 100vh
+    grid-template-rows: 1fr 68px
+    grid-template-columns: 1fr
+
+    .mock-sidebar
+      background: #292e34
+
+      &:after
+        border-width: 0 0 3px 0
+
+    .mock-content
+      overflow: auto

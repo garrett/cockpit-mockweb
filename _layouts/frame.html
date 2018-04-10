@@ -1,0 +1,19 @@
+---
+layout: minimal
+---
+<link href="{{ site.baseurl }}/static/cockpit.css" rel="stylesheet">
+
+<section class="mock-topbar">
+  <h1>{{ page.title }}</h1>
+</section>
+
+<div class="mock-frame">
+  <div class="mock-sidebar">
+  </div>
+
+  <div class="mock-content {{ include.class }}" role="main">
+    {{ content }}
+  </div>
+
+</div>
+</div>
