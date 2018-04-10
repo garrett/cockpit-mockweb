@@ -7,18 +7,24 @@ $on-phone: 800px !default
   box-sizing: border-box
 
 body
-  //font-family: open sans, sans-serif
   margin: 0
   padding: 0
   display: flex
   flex-direction: column
   width: 100vw
   height: 100vh
-  //line-height: 1.6
+
+.mock-frame
+  height: 100%
+  display: grid
+  grid-template-areas: "nav nav" "sidebar overview"
+  grid-template-rows: auto 1fr
+  grid-template-columns: 250px 1fr
 
 .mock-topbar
   background: #1d1d1d
   border-top: 2px solid #39a5dc
+  grid-area: nav
 
   h1
     margin: 0
@@ -35,12 +41,6 @@ body
 
     i, em
       font: inherit
-
-.mock-frame
-  height: 100%
-  display: grid
-  grid-template-areas: "sidebar overview"
-  grid-template-columns: 250px 1fr
 
 .mock-sidebar
   display: flex
@@ -63,6 +63,7 @@ body
 
 .mock-content
   position: relative
+  overflow: auto
 
 @media (max-width: $on-phone)
   .mock-topbar
