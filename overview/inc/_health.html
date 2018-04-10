@@ -21,6 +21,8 @@ Past 24 hours:
 {% endcapture %}
 <div class="issues-past">{{ block | markdownify}}</div>
 
+{% elsif include.pcp %}
+NO PCP
 {% else %}
 <i class="fa fa-check"></i> Everything's fine
 {:.issues-summary}

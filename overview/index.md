@@ -6,3 +6,4 @@ layout: document
 
 - [Left side layout](overview)
 - [Right side layout](overview-right)
+- [History view](overview-right)

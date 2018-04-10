@@ -1,0 +1,69 @@
+---
+---
+
+.history
+  overflow: auto
+  display: flex
+  flex-direction: column
+
+  > .day
+    display: grid
+    height: 30vh
+    //grid-template-areas: "cpu date mem io net" "cpu top mem io net"
+    //grid-template-areas: "cpu mem io net date" "cpu mem io net top"
+    grid-template-areas: "date cpu mem io net" "top cpu mem io net"
+    grid-template-rows: auto 1fr
+    grid-template-columns: minmax(15rem, 1.5fr) repeat(4, 1fr)
+    border: 1px solid #ccc
+    border-width: 0 1px 1px 0
+
+    .datetime-time
+      display: none
+
+    > h2
+      grid-area: date
+      margin: 1rem 0
+      position: sticky
+      top: 0
+
+    > h2,
+    .procs-top
+      padding: 0 1rem
+
+    h3
+      font-size: inherit
+      margin: 0
+      padding: 0.5rem 1rem
+
+    .procs-top
+      grid-area: top
+
+    .graph
+      background: #eee
+      background: #f6f6f6 url(../img/graph-cpu-v.svg) no-repeat
+      background-clip: content-box
+      background-position: 0 100%
+      background-size: 100% calc(100% - 2.5rem)
+      min-height: 1rem
+      min-width: 1rem
+      position: relative
+
+      h3
+        background: rgba(#ccc, 0.2)
+        height: 2.5rem
+        text-align: center
+
+    > .graph-cpu
+      grid-area: cpu
+
+    > .graph-mem
+      grid-area: mem
+      background-image: url(../img/graph-ram-v.svg)
+
+    > .graph-io
+      grid-area: io
+      background-image: url(../img/graph-io-v.svg)
+
+    > .graph-net
+      grid-area: net
+      background-image: url(../img/graph-net-v.svg)

@@ -1,0 +1,33 @@
+  <section class="day">
+    <h2><time datetime="">
+      <span class="datetime-day">{{ include.day }}</span> <span class="datetime-time">{{ include.time }}</span>
+    </time></h2>
+
+    {% assign procs ="mysql apache nfsd samba htop" | split: " " %}
+    {% assign slicer = include.day | size | minus: 5 %}
+
+    <section class="proces-top">
+      <h3>Top processes</h3>
+      <ol>
+        {% for i in (0..slicer) %}
+          <li>{{ procs[i] }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="graph graph-mem">
+      <h3>RAM</h3>
+    </section>
+
+    <section class="graph graph-cpu">
+      <h3>CPU</h3>
+    </section>
+
+    <section class="graph graph-io">
+      <h3>I/O</h3>
+    </section>
+
+    <section class="graph graph-net">
+      <h3>Net</h3>
+    </section>
+  </section>

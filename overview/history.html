@@ -1,0 +1,13 @@
+---
+layout: frame
+title: "Cockpit: <b>History</b>"
+---
+
+<style>@import url(css/history.css);</style>
+
+<div class="history">
+  {% assign days = "Monday Tuesday Wednesday Thursday Friday Saturday Sunday" | split: " " %}
+  {% for day in days %}
+    {% include_relative inc/_history-day.html day=day %}
+  {% endfor %}
+</div>
