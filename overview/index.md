@@ -2,8 +2,14 @@
 layout: document
 ---
 
-# Overview page redesign
+## Overview page redesign
 
-- [Left side layout](overview)
-- [Right side layout](overview-right)
-- [History view](overview-right)
+### Without PCP installed
+
+- [Overview without PCP installed](overview-no-pcp)
+
+### With PCP installed
+
+- [Overview with PCP metrics: No issues](overview-no-issues)
+- [Overview with PCP metrics: Issues found](overview)
+- [History view](history)
