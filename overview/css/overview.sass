@@ -253,9 +253,12 @@ h3
     transform: scaleY(-1)
     margin-top: -1px
 
-.no-pcp .graph
-  background-repeat: no-repeat !important
-  animation: moveBackground 180s steps(600), scrollBackground 1800s steps(6000) infinite 180s
+.no-pcp
+  .graph
+    background-repeat: no-repeat !important
+    animation: moveBackground 180s steps(600), scrollBackground 1800s steps(6000) infinite 180s
+  .link-history
+    display: none
 
 .processes
   grid-area: p
