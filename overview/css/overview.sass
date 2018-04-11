@@ -159,8 +159,10 @@ h3
 
   .pficon,
   .fa
-    font-size: 26px
-    vertical-align: middle
+
+    &:not(.pficon-info)
+      font-size: 26px
+      vertical-align: middle
 
 @media (max-width: $on-phone)
   .health
@@ -251,6 +253,10 @@ h3
     transform: scaleY(-1)
     margin-top: -1px
 
+.no-pcp .graph
+  background-repeat: no-repeat !important
+  animation: moveBackground 180s steps(600), scrollBackground 1800s steps(6000) infinite 180s
+
 .processes
   grid-area: p
 
@@ -295,3 +301,16 @@ h3
 
   100%
     background-position: 600% 100%
+
+@keyframes moveBackground
+  0%
+    background-repeat: no-repeat !important
+    background-position-x: -50%
+
+  99%
+    background-repeat: no-repeat !important
+    background-position-x: 0%
+
+  100%
+    background-repeat: repeat-x
+    background-position-x: 0%
