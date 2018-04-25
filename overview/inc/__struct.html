@@ -16,4 +16,11 @@
   <section class="processes">
     {% include_relative inc/_procs.html %}
   </section>
+
 </div>
+
+{% if include.pcp %}
+  <section class="dialogs hide">
+    {% include_relative inc/_install_dialog.html %}
+  </section>
+{% endif %}

@@ -22,7 +22,13 @@ Past 24 hours:
 <div class="issues-past">{{ block | markdownify}}</div>
 
 {% elsif include.pcp %}
-[<i></i>{:.pficon.pficon-info} Install PCP for persistent metrics](#pcp-install).
+[<i></i>{:.pficon.pficon-info} Enable persistent metrics&hellip;](#install-pcp)
+{:#pcp-install}
+
+<span></span>{:.spinner.spinner-sm}
+Installing <strong>PCP</strong>
+{:#pcp-installing}
+
 {% else %}
 <i class="fa fa-check"></i> Everything's fine
 {:.issues-summary}

@@ -7,3 +7,21 @@ title: "System Overview <b>Mockup</b>: No PCP"
   class="sidebar-left no-pcp"
   pcp=true
 %}
+
+<script>
+  $('#pcp-install').on('click', function(){
+    $('.dialogs').toggleClass('hide', false);
+  });
+
+  $('.dialog-install')
+    .find('.btn-default').on('click', function(){
+      $('.dialogs').toggleClass('hide', true);
+    }).end()
+    .find('.btn-primary').on('click', function(){
+      $('.dialogs').toggleClass('hide', true);
+      $('.health').addClass('installing');
+      setTimeout(function(){
+        document.location="overview";
+      }, 5000);
+    }).end();
+</script>
