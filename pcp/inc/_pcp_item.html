@@ -12,14 +12,16 @@
 
 {% if n.pcp_predicate.label %}
   <p>
-    <b>Rule:</b>
+    <b>Threshold:</b>
     {{ n.pcp_predicate.label }}
   </p>
 {% endif %}
 
 {% if n.pcp_deriveds %}
-  Compute the value with:
-  <pre>{{ n.pcp_deriveds | join: " " }}</pre>
+  Compute
+  <samp>{{ n.pcp_deriveds | join: " " | split: "=" | first | strip }}</samp>
+  with:
+  <pre>{{ n.pcp_deriveds | join: " " | split: "=" | last | strip }}</pre>
 {% else %}
   Montor PCP metrics:
   <ul>
