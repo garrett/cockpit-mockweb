@@ -1,0 +1,42 @@
+---
+title: pcp
+layout: document
+---
+
+{% assign nodes = site.data.pcp.predefined.nodes %}
+{% assign groups = nodes | group_by_exp: "item", "item.parents.first" %}
+{% assign group_first = true %}
+
+{% for group in groups %}
+  {% unless group.name == "Start" or group.name == nil or group.name contains " - " %}
+  {% if group_first != true %}<hr>{% endif %}
+  {% assign group_first = false %}
+
+  <section class="primary">
+
+    {% assign node = nodes | where: "name", group.name | first %}
+
+    <h1 id="{{ group.name | slugify }}">{{ group.name }}</h1>
+
+    {% include_relative inc/_pcp_item.html node=node %}
+
+    {% for item in group.items %}
+      <section class="secondary">
+      <h2 id="{{ item.name | slugify | replace_first: '-', '--' }}">{{ item.name | split: " - " | last | capitalize }}</h2>
+      {% include_relative inc/_pcp_item.html node=item %}
+      </section>
+    {% endfor %}
+
+  </section>
+  {% endunless %}
+{% endfor %}
+
+<style>
+  h1 {
+    font-weight: 500;
+  }
+
+  section {
+    margin: 4rem 0 6rem;
+  }
+</style>

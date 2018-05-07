@@ -1,0 +1,51 @@
+{% assign n = include.node %}
+
+{% if n.description %}
+  <p>{{ n.description }}</p>
+{% endif %}
+
+{% if n.details %}
+<!--
+  <p>{{ n.details }}</p>
+-->
+{% endif %}
+
+{% if n.pcp_predicate.label %}
+  <p>
+    <b>Rule:</b>
+    {{ n.pcp_predicate.label }}
+  </p>
+{% endif %}
+
+{% if n.pcp_deriveds %}
+  Compute the value with:
+  <pre>{{ n.pcp_deriveds | join: " " }}</pre>
+{% else %}
+  Montor PCP metrics:
+  <ul>
+    {% for metric in n.pcp_metrics %}
+    <li><samp>{{ metric }}</samp></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if n.urls %}
+<p>
+References:
+  <ul>
+    {% for url in n.urls %}
+    <li>
+      <a href="{{ url }}">{{ url }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</p>
+{% endif %}
+
+{% if n.issues %}
+<p>
+  <em>
+  <b>Note:</b> {{ n.issues | join: " " }}
+  </em>
+</p>
+{% endif %}
