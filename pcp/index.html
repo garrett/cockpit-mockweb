@@ -20,7 +20,11 @@ layout: document
 
     <h2 id="{{ group.name | slugify }}">{{ group.name }}</h2>
 
-    {% include_relative inc/_pcp_item.html node=node %}
+    <section class="subsections">
+      <section class="secondary">
+        <h3 id="{{ group.name | append: ' main' | slugify | replace_first: '-', '--' }}">{{group.name}} (main)</h3>
+        {% include_relative inc/_pcp_item.html node=node %}
+      </section>
 
     {% for item in group.items %}
       <section class="secondary">
@@ -28,6 +32,7 @@ layout: document
       {% include_relative inc/_pcp_item.html node=item %}
       </section>
     {% endfor %}
+    </section>
 
   </section>
   {% endunless %}
@@ -54,7 +59,19 @@ layout: document
     font-size: 2rem;
   }
 
-  section {
+  section.primary {
     margin: 4rem 0 6rem;
+    padding: 0 2rem;
+  }
+
+  .subsections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60ch, 1fr));
+    grid-gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  .document.content-wrapper {
+    max-width: 175rem;
   }
 </style>
