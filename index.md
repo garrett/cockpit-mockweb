@@ -14,3 +14,4 @@ For now, please visit:
 * [Software updates demos](updates)
 * [Firewall](firewall)
 * [Overview](overview)
+* [Performance Co-Pilot (PCP)](pcp)
