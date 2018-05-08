@@ -1,5 +1,5 @@
 ---
-title: pcp
+title: PCP Measurements
 layout: document
 ---
 
@@ -8,6 +8,10 @@ layout: document
 {% assign group_first = true %}
 
 <h1>PCP Measurements</h1>
+
+<p class="intro">
+  Based on <a href="https://github.com/performancecopilot/pcp-webapp-grafana/blob/checklist/checklist.json" target="_blank">grafana/checklist.json</a>.
+</p>
 
 {% for group in groups %}
   {% unless group.name == "Start" or group.name == nil or group.name contains " - " %}
