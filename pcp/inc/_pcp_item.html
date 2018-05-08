@@ -1,13 +1,14 @@
 {% assign n = include.node %}
 
 {% if n.description %}
-  <p>{{ n.description }}</p>
-{% endif %}
-
-{% if n.details %}
-<!--
-  <p>{{ n.details }}</p>
--->
+  <p>
+    {{ n.description }}
+    {% if n.details %}
+    <a class="hoverhelp"
+      title="{{ n.details }}"><i
+      class="pficon pficon-info" ></i></a>
+    {% endif %}
+  </p>
 {% endif %}
 
 {% if n.pcp_predicate.label %}
