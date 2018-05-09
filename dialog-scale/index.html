@@ -1,0 +1,115 @@
+---
+layout: frame
+title: dialog
+---
+
+<style>
+  /* Dialog scaling magic: Just add a class. */
+
+  .modal-body-details.scale-up {
+    animation: dialogScaleUp 1s;
+  }
+
+  @keyframes dialogScaleUp {
+    0% {
+      opacity: 0;
+      max-height: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      max-height: 100vh;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Ignore the CSS below; it's just to make things look as expected */
+
+  .mock-content {
+    position: relative;
+    padding: 2rem;
+    background: #777;
+  }
+
+  .modal {
+    position: absolute;
+  }
+  
+  .modal-body-details > p,
+  .modal-body-details > ul {
+    margin-top: 1em;
+  }
+  .modal-body-details > ul {
+    columns: 20ch;
+  }
+</style>
+
+<script>
+  $(function(){
+    var template = $('#deps').html();
+
+    /* Add content & class on demo button click */
+    $('.btn-primary').click(function(event) {
+      console.log(template);
+      $('.modal-body-details')
+        .addClass('scale-up')
+        .html(template);
+    })
+
+    /* Remove content & class when clicking reset */
+    $('.btn-default').click(function(){
+      $('.modal-body-details')
+        .removeClass('scale-up')
+        .empty();
+    });
+  });
+</script>
+
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Modal Title</h4>
+      </div>
+      <div class="modal-body">
+        We're going to install stuff.
+
+        <div class="modal-body-details">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default">Reset</button>
+        <button class="btn btn-primary">Click HERE to demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="deps">
+  <p>
+    Deps will also be installed:
+  </p>
+  <ul>
+    <li>e2fsprogs-libs</li>
+    <li>gssproxy</li>
+    <li>keyutils</li>
+    <li>libbasicobjects</li>
+    <li>libcollection</li>
+    <li>libevent</li>
+    <li>libini_config</li>
+    <li>libnfsidmap</li>
+    <li>libpath_utils</li>
+    <li>libref_array</li>
+    <li>libtirpc</li>
+    <li>libverto-libevent</li>
+    <li>quota</li>
+    <li>quota-nls</li>
+    <li>rpcbind</li>
+    <li>systemd-sysv</li>
+    <li>tcp_wrappers</li>
+    <li>tcp_wrappers-libs</li>
+  </ul>
+</template>
