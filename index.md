@@ -3,7 +3,7 @@ title: Cockpit HTML mockups
 layout: document
 ---
 
-# Placeholder page!
+# Cockpit HTML mockups
 
 For now, please visit:
 
