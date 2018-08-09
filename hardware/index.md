@@ -16,6 +16,9 @@ layout: minimal
 
 ## RAW data
 - [JSON export](devices.json)
+
+## Memory
+- [Memory list mockup](memory)
 {% endcapture %}
 
 <div style="padding: 5vh 5vw 0; font-size: 140%">
