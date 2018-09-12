@@ -16,3 +16,4 @@ For now, please visit:
 * [Overview](overview)
 * [Performance Co-Pilot (PCP)](pcp)
 * [Dialog scale animation](dialog-scale)
+* [Animations](animation)
