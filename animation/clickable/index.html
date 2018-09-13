@@ -6,52 +6,43 @@ title: "Animation: New row"
 <style>
 @import url(storage.css);
 
-.listing-ct:hover tbody:not(.open) .listing-ct-toggle > i {
-  animation: fadeIn 400ms ease-in-out;
+/* Change the way listing-ct-toggle works; opacity instead of visibility */
+/* Also add transitions between state */
+/* (Visibility can be dropped completely if this is merged in) */
+td.listing-ct-toggle i {
+  opacity: 0;
+  transition: all 300ms;
   visibility: visible;
 }
-.listing-ct:not(:hover) tbody:not(.open) .listing-ct-toggle > i {
-  animation: fadeOut 200ms ease-in-out;
-  color: #999;
-}
-.listing-ct:hover tbody:not(.open) tr:not(:hover) .listing-ct-toggle > i {
-  color: #999;
+/* Part two, for visible states */
+tr.listing-ct-item:hover td.listing-ct-toggle i,
+tr.listing-ct-item td.listing-ct-toggle:hover i,
+tbody.open td.listing-ct-toggle i {
+  opacity: 1;
 }
 
+/* Default to grey toggles when not open or hovered */
+tbody:not(.open):not(:hover) td.listing-ct-toggle i {
+  color: #bbb; /* pf-black-400 */
+}
+
+/* Make toggles appear when hovering over the table */
+.listing-ct:hover tbody:not(.open) .listing-ct-toggle > i {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Allow for animating of states for table cells */
+.listing-ct-item > td,
+.listing-ct-item > th {
+  transition: all 300ms;
+}
+
+/* Make table cells look linky when hovering the row */
 tr:hover > .listing-ct-toggle ~ td,
 tr:hover > .listing-ct-toggle ~ th {
-  color: #0088ce;
-  animation: clickable 200ms ease-in-out;
+  color: #0088ce; /* pf-blue-400, default link color */
   text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-
-@keyframes clickable {
-  0% {
-    color: inherit;
-  }
-  100% {
-    color: #0088ce;
-  }
 }
 </style>
 
