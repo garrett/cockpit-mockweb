@@ -6,7 +6,8 @@ title: "Animation: New row"
 <style>
 @import url(storage.css);
 
-.listing-ct > tbody.new {
+.listing-ct > tbody.new tr,
+.listing-ct > tr.new {
   animation: newRow 4s ease-in-out;
 }
 
@@ -33,11 +34,6 @@ title: "Animation: New row"
   }
 }
 </style>
-
-<script>
-  $(function(){
-  });
-</script>
 
 <div class="col-md-12">
   <div id="detail-content">
