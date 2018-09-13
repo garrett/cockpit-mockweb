@@ -6,31 +6,29 @@ title: "Animation: New row"
 <style>
 @import url(storage.css);
 
-.listing-ct > tbody.new tr,
+.listing-ct > tbody.new,
 .listing-ct > tr.new {
-  animation: newRow 4s ease-in-out;
+  animation: newRow 4s ease-in;
 }
 
 @keyframes newRow {
   0% {
     background: #fdf4dd;
-    transform: scale(0);
+    transform: scaleX(0) scaleY(0);
     opacity: 0;
   }
   10% {
+    transform: scaleX(1) scaleY(1);
+  }
+  12% {
+    transform: scaleX(1) scaleY(1.25);
     opacity: 1;
-    transform: scale(1);
   }
   15% {
-    transform: scaleY(1.4);
-  }
-  20% {
-    transform: scaleY(1);
+    transform: scaleX(1) scaleY(1);
   }
   70% {
     background: #fdf4dd;
-  }
-  100% {
   }
 }
 </style>
