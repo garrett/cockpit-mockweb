@@ -33,9 +33,20 @@ tbody:not(.open):not(:hover) td.listing-ct-toggle i {
 }
 
 /* Make table cells look linky when hovering the row */
-tbody.open > tr.listing-ct-item:hover,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
   background-color: #def3ff; /* pf-blue-50 */
+}
+tbody.open > tr.listing-ct-item:hover {
+  background-color: #bee1f4;
+}
+
+/* Align other tables to the patternfly hover colors */
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th, .dialog-list-ct .list-group-item:hover:not(.active) {
+  background-color: #d4edfa; /* cockpit uses this for some reason */
+  background-color: #def3ff; /* pf-blue-50 */
+}
+.cockpit-log-panel .cockpit-logline:hover {
+  background-color: #ceeaf9 /* mix between pf-blue-50 and pf-blue-100 */
 }
 
 /*** Ignore CSS below. Page scaffolding use only. ***/
