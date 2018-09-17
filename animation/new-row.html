@@ -6,9 +6,15 @@ title: "Animation: New row"
 <style>
 @import url({{ site.baseurl }}/animation/storage.css);
 
+.panel tr.new,
+.panel .cockpit-logline.new,
 .listing-ct > tbody.new,
 .listing-ct > tr.new {
   animation: newRow 4s ease-in;
+}
+
+.panel .panel-heading.new {
+  animation: newRow 4s ease-in, newRowDark 4s ease-in;
 }
 
 @keyframes newRow {
@@ -29,6 +35,15 @@ title: "Animation: New row"
   }
   70% {
     background: #fdf4dd;
+  }
+}
+
+@keyframes newRowDark {
+  0% {
+    background: #b58100;
+  }
+  70% {
+    background: #b58100;
   }
 }
 </style>
