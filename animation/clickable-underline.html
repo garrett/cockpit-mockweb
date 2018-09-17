@@ -1,6 +1,6 @@
 ---
 layout: frame
-title: "Animation: Clickable"
+title: "Animation: Clickable - underline"
 ---
 
 <style>
@@ -21,7 +21,7 @@ tbody.open td.listing-ct-toggle i {
   opacity: 1;
 }
 
-/* Default to grey toggles when not open or hovered */
+/* Default to grey toggles when not open or hovered *
 tbody:not(.open):not(:hover) td.listing-ct-toggle i {
   color: #bbb; /* pf-black-400 */
 }
@@ -33,9 +33,13 @@ tbody:not(.open):not(:hover) td.listing-ct-toggle i {
 }
 
 /* Make table cells look linky when hovering the row */
-tbody.open > tr.listing-ct-item:hover,
-tr.listing-ct-item.listing-ct-nonavigate:hover {
-  background-color: #def3ff; /* pf-blue-50 */
+.cockpit-log-panel .cockpit-logline:hover > [role=cell]:not(:empty),
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th,
+tr:hover > .listing-ct-toggle ~ td,
+tr:hover > .listing-ct-toggle ~ th {
+  color: #0088ce; /* pf-blue-400, default link color */
+  text-decoration: underline;
 }
 
 /*** Ignore CSS below. Page scaffolding use only. ***/
