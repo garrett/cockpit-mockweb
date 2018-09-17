@@ -1,0 +1,38 @@
+---
+layout: frame
+title: "Animation: New row"
+---
+
+<style>
+@import url(storage.css);
+
+.listing-ct > tbody.new,
+.listing-ct > tr.new {
+  animation: newRow 4s ease-in;
+}
+
+@keyframes newRow {
+  0% {
+    background: #fdf4dd;
+    transform: scaleX(0) scaleY(0);
+    opacity: 0;
+  }
+  10% {
+    transform: scaleX(1) scaleY(1);
+  }
+  12% {
+    transform: scaleX(1) scaleY(1.25);
+    opacity: 1;
+  }
+  15% {
+    transform: scaleX(1) scaleY(1);
+  }
+  70% {
+    background: #fdf4dd;
+  }
+}
+</style>
+
+<div class="col-md-12">
+  {% include_relative _inc/partitions.html %}
+</div>

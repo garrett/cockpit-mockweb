@@ -1,0 +1,59 @@
+---
+layout: frame
+title: "Animation: Clickable"
+---
+
+<style>
+@import url({{ site.baseurl }}/animation/storage.css);
+
+/* Change the way listing-ct-toggle works; opacity instead of visibility */
+/* Also add transitions between state */
+/* (Visibility can be dropped completely if this is merged in) */
+td.listing-ct-toggle i {
+  opacity: 0;
+  transition: opacity 300ms;
+  visibility: visible;
+}
+/* Part two, for visible states */
+tr.listing-ct-item:hover td.listing-ct-toggle i,
+tr.listing-ct-item td.listing-ct-toggle:hover i,
+tbody.open td.listing-ct-toggle i {
+  opacity: 1;
+}
+
+/* Default to grey toggles when not open or hovered */
+tbody:not(.open):not(:hover) td.listing-ct-toggle i {
+  color: #bbb; /* pf-black-400 */
+}
+
+/* Make toggles appear when hovering over the table */
+.listing-ct:hover tbody:not(.open) .listing-ct-toggle > i {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Make table cells look linky when hovering the row */
+.cockpit-log-panel .cockpit-logline:hover > [role=cell]:not(:empty),
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th,
+tr:hover > .listing-ct-toggle ~ td,
+tr:hover > .listing-ct-toggle ~ th {
+  color: #0088ce; /* pf-blue-400, default link color */
+  text-decoration: underline;
+}
+
+/*** Ignore CSS below. Page scaffolding use only. ***/
+.col-md-12 + .col-md-12 {
+  margin-top: 4rem;
+}
+</style>
+
+<div class="col-md-12">
+  {% include_relative _inc/partitions.html %}
+</div>
+<div class="col-md-12">
+  {% include_relative _inc/mounts.html %}
+</div>
+<div class="col-md-12">
+  {% include_relative _inc/log.html %}
+</div>
