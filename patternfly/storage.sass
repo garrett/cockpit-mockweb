@@ -1,0 +1,1680 @@
+/* on-off button styling depends on data-toggle in bootstrap
+
+.btn-onoff-ct input
+  position: absolute
+  clip: rect(0, 0, 0, 0)
+  pointer-events: none
+
+.tooltip-ct-outer
+  display: inline-block
+  position: relative
+
+.tooltip-ct-inner
+  display: inline-block
+
+/* Layout fix for tooltip arrows.
+ *
+ * Sometimes when there are non-integer coordinates involved
+ * somewhere, rounding seems to make it so that there is a visible one
+ * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
+ * gap by letting the arrow and inner parts overlap by one pixel.
+ *
+ * This happens within the caption of the content listing.
+
+.tooltip
+  &.top .tooltip-arrow
+    bottom: 1px
+
+  &.bottom .tooltip-arrow
+    top: 1px
+
+.file-autocomplete-ct
+  input
+    padding-right: 24px
+
+  ul
+    max-height: 250px
+
+  .alert
+    margin: 0
+    border: none
+    padding: 0 24px 0 6px
+
+  .error
+    input
+      border-color: red
+      border-color: red
+
+    ul
+      border-color: red
+      padding: 0
+
+  span
+    &.spinner
+      position: absolute
+      top: 7px
+      z-index: 9
+
+    &.caret
+      position: absolute
+      top: 7px
+      z-index: 9
+      width: 1.5em
+      height: 1.5em
+      cursor: pointer
+      pointer-events: all
+
+a
+  cursor: pointer
+
+.disabled
+  pointer-events: auto
+
+.btn
+  min-height: 26px
+  min-width: 26px
+
+  &.disabled
+    pointer-events: auto
+
+    &:hover
+      z-index: auto
+
+a.disabled
+  cursor: not-allowed !important
+  text-decoration: none
+  pointer-events: none
+  color: #8b8d8f
+
+  &:hover
+    text-decoration: none
+
+.dropdown-menu
+  > li > a.disabled
+    color: #999999
+
+    &:hover, &:focus
+      color: #999999
+
+    &:hover, &:focus
+      text-decoration: none
+      background-color: transparent
+      background-image: none
+      border-color: transparent
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)
+      cursor: default
+
+  height: auto
+  overflow-x: hidden
+  max-height: 90vh
+
+/* Limit dropdown menus to 90% of the viewport size
+
+/* Align these buttons more nicely
+
+.btn
+  &.fa-minus, &.fa-plus
+    padding-top: 4px
+
+/* HACK: Workaround for https://github.com/patternfly/patternfly/issues/174
+
+.page-ct
+  margin-top: 20px
+
+.highlight-ct
+  background-color: #d4edfa
+
+/* Well and Blankslate
+
+.curtains-ct
+  top: 0px
+  height: 100%
+  width: 100%
+  position: fixed
+
+.panel .well
+  margin-bottom: 0px
+  border: none
+  border-radius: 0px
+  background-color: #FAFAFA
+
+.well.blank-slate-pf
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05) inset
+  padding-top: 40px
+
+.blank-slate-pf .spinner-lg
+  height: 58px
+  width: 58px
+
+/*
+ * Control buttons such as play and stop
+ * Used with .btn .btn-default
+
+.btn-control-ct
+  background-position: center center
+  background-size: 16px 16px
+  background-repeat: no-repeat
+  background-image: none
+  -webkit-border-radius: 2
+  -moz-border-radius: 2
+  border-radius: 2px
+  height: 28px
+  width: 28px
+  box-shadow: none
+
+  &:hover
+    background-position: center center
+    background-size: 16px 16px
+    background-repeat: no-repeat
+    background-image: none
+    -webkit-border-radius: 2
+    -moz-border-radius: 2
+    border-radius: 2px
+    height: 28px
+    width: 28px
+    box-shadow: none
+    background-color: #e0e0e0
+
+  background-color: #eeeeee
+
+/* On/off switch
+
+.btn-onoff-ct
+  margin: 1px 0px
+  text-transform: uppercase
+
+  .btn
+    color: transparent
+    border-color: #B7B7B7
+    padding: 2px 6px 1px 6px
+    background-color: white
+    background-image: linear-gradient(to bottom, rgb(250, 250, 250) 0px, rgb(237, 237, 237) 100%)
+    -webkit-box-shadow: none
+    box-shadow: none
+    width: 37px
+
+    &:first-child
+      border-right: #00435F
+
+    &:last-child
+      border-left: #00435F
+      padding-left: 5px
+
+    &.active
+      background-image: none
+      width: 36px
+
+      &:first-child
+        background-color: #0086CF
+        color: white
+        border-right: 1px solid #0071b0
+
+      &:last-child
+        color: #000
+        border-left: 1px solid #d6d6d6
+
+    &.disabled
+      pointer-events: none
+      color: transparent !important
+
+    &.active.disabled
+      background-color: #888 !important
+      color: white !important
+
+/* Small list inside a dialog
+/* Alert fixups
+
+/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491
+
+.modal-content .alert
+  text-align: left
+  padding-top: 5px
+  padding-bottom: 5px
+  word-wrap: break-word
+
+  .fa
+    position: absolute
+    left: 10px
+    top: 6px
+    font-size: 20px
+
+  .pficon
+    top: 5px
+
+.alert.alert-danger .fa
+  color: #af151a
+
+/* Dialog patterns
+
+.dialog-wait-ct
+  margin-top: 3px
+
+  .spinner
+    display: inline-block
+
+  span
+    vertical-align: 4px
+    padding-left: 10px
+
+.dialog-list-ct
+  max-height: 230px
+  overflow-x: auto
+  border: 1px solid #CCC
+  margin-bottom: 0px
+
+/* HACK: https://github.com/patternfly/patternfly/issues/255
+
+input[type=number]
+  padding: 0 0 0 5px
+
+/* Make a dialog visible
+
+.dialog-ct-visible
+  display: block
+
+#cockpit_modal_dialog .modal-body.scroll
+  max-height: calc(75vh - 10rem)
+  overflow: auto
+
+/* Listing pattern
+
+table.listing-ct
+  margin-top: 15px
+  min-width: 65%
+
+  >
+    caption, thead h3
+      font-size: 22px
+      padding: 10px 0px 10px
+      font-weight: 300
+      margin-top: 0
+
+    caption
+      color: inherit
+      line-height: 1.1
+
+    thead
+      td
+        padding-top: 20px
+
+      &:first-child td
+        padding-top: 0
+
+      td > a
+        line-height: 30px
+        padding: 10px 0 10px
+
+      th
+        border-top: 1px solid #f1f1f1
+        font-weight: normal
+        padding: 10px
+        color: #888
+
+        &:first-child
+          padding-left: 20px
+
+        &:last-child
+          text-align: right
+
+/* A listing item is a row in the table
+
+tbody > tr.listing-ct-item
+  border-top: 1px solid #f1f1f1
+  border-bottom: 1px solid #f1f1f1
+  cursor: pointer
+
+table.listing-ct > tbody
+  &:last-child
+    border-bottom: 1px solid #f1f1f1
+
+  + thead
+    border-top: 1px solid #f1f1f1
+
+  &.open
+    &:last-child
+      border-bottom: none
+
+    + thead
+      border-top: none
+
+tbody
+  > tr.listing-ct-item.listing-ct-warning
+    background-color: #fbc7c7
+
+  &.open
+    > tr.listing-ct-item
+      background-color: #ededed
+      border-bottom: none
+      border-top: none
+      border-left: 1px solid #ccc
+      border-right: 1px solid #ccc
+
+      td, th
+        border-top: 1px solid #ccc
+
+    td div.listing-ct-head
+      background-color: #fff
+
+    .listing-ct-panel
+      border: 1px solid #ccc
+
+      .listing-ct-body
+        border: none
+
+    > tr.listing-ct-panel
+      + tr.listing-ct-body
+        border-top: none
+
+      td div.listing-ct-head
+        border: none
+        border-bottom: 1px solid #ccc
+
+  &:not(.open) > tr.listing-ct-item
+    &:not(.listing-ct-nonavigate):hover
+      background-color: #def3ff
+
+    &.listing-ct-nonavigate:hover td.listing-ct-toggle
+      color: #65bedf
+
+  &.open > tr.listing-ct-item:hover
+    background-color: #ededed
+
+/* only highlight the row if navigation is available
+
+/* if we can't navigate to a row but expand is available, highlight the caret
+
+/* use gray for a row that's expanded or if navigation isn't available
+
+tr.listing-ct-item.listing-ct-nonavigate:hover
+  background-color: #ededed
+
+/* always highlight caret when hovering over an expanded row
+
+tbody.open > tr.listing-ct-item:hover td.listing-ct-toggle
+  color: #65bedf
+
+tr.listing-ct-item .listing-ct-toggle
+  padding: 0 !important
+  width: 35px
+  color: #030303
+
+table.listing-ct thead .listing-ct-toggle + th
+  padding-left: 0
+
+tr
+  &.listing-ct-item .listing-ct-toggle +
+    td, th
+      padding-left: 0
+
+  &:not(.listing-ct-selected) td.listing-ct-toggle:hover
+    color: #65bedf
+    background-color: #ededed
+
+    ~
+      td, th
+        background-color: #ededed
+
+td.listing-ct-toggle i
+  font-size: 24px
+  visibility: hidden
+
+tr.listing-ct-item
+  &:hover td.listing-ct-toggle i, td.listing-ct-toggle:hover i
+    visibility: visible
+
+td.listing-ct-toggle i:before
+  content: "\F105"
+
+tbody.open td.listing-ct-toggle i
+  visibility: visible
+
+  &:before
+    content: "\F107"
+
+/* Listing items have decent padding ...
+
+tr.listing-ct-item
+  td
+    padding: 10px
+
+  th
+    padding: 10px 10px 10px 15px
+
+/* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)
+
+.listing-ct-actions > .listing-ct-caption
+  font-size: 13px
+  vertical-align: middle
+  color: #0088ce
+  padding-right: 5px
+
+/* Listing actions can be used directly as a cell
+
+tr.listing-ct-item td.listing-ct-actions, td.listing-ct-actions
+  padding: 5px 10px
+  text-align: right
+  float: none
+
+/* if the entire row is selected, highlight
+
+tr.listing-ct-item.listing-ct-selected
+  background-color: #0088ce
+  color: #fff
+  border-color: #007ebf
+
+  &:hover
+    background-color: #007ebf
+    border-color: #007ebf
+
+  .badge
+    background-color: #00537e
+
+    &:hover
+      background-color: #003e5f
+
+.listing-ct-head .listing-ct-actions
+  margin-top: -7px
+
+tr.listing-ct-item td
+  &:first-child
+    padding-left: 20px
+
+  &:last-child
+    text-align: right
+
+/* The last column of a listing is always right aligned
+
+div
+  &.listing-ct-panel
+    box-shadow: 1px 1px 1px 1px #f5f5f5
+    margin-bottom: 15px
+
+  &.listing-ct-maybe
+    border: 1px dashed #ddd
+    box-shadow: none
+
+  &.listing-ct-head
+    padding: 10px 10px 0 10px
+    background-color: #f5f5f5
+    border-color: #ccc
+    border-style: solid
+    border-width: 1px 1px 0 1px
+    overflow: hidden
+
+    &:last-child
+      padding-bottom: 10px
+
+  &.listing-ct-maybe div
+    &.listing-ct-head, &.listing-ct-body
+      background-color: #fff
+      border: none
+
+tbody.active .listing-ct-head
+  border-top: 3px solid #0099d3
+
+.listing-ct-head
+  h3
+    font-weight: normal
+    font-size: 18px
+    margin-top: 0px
+    margin-left: 5px
+    margin-bottom: 10px
+
+    i
+      float: left
+      padding-right: 7px
+
+  .nav li a
+    padding-top: 0px
+    font-size: 13px
+
+  .nav-tabs
+    border-bottom: none
+
+  .nav-tabs-pf
+    margin-left: -10px
+
+  dl
+    display: inline-block
+    height: 1.6em
+    margin-bottom: 5px
+    white-space: nowrap
+    margin-right: 45px
+    margin-left: 5px
+
+  dt
+    font-weight: normal
+    display: inline
+    margin-right: 0.5em
+    color: #888
+
+  dd
+    display: inline
+    color: black
+
+/* To display info instead of tabs
+
+.listing-ct-body
+  padding: 20px 25px
+  font-size: 13px
+  border: 1px solid #ccc
+  background-color: #fff
+
+.listing-ct-inline >
+  .listing-ct-body
+    border: none
+    padding-top: 0px
+    padding-left: 20px
+    padding-bottom: 0px
+
+  h3
+    border-top: 1px solid #ccc
+    padding-top: 20px
+    margin-top: 30px
+
+    &:first-child
+      border-top: none
+      padding-top: 0px
+      margin-top: 20px
+
+.listing-ct-actions
+  float: right
+  min-height: 26px
+
+.listing-ct-status
+  float: right
+  clear: right
+
+.listing-ct-error
+  border-top: 1px solid #ccc
+  border-left: 1px solid #ccc
+  border-right: 1px solid #ccc
+
+  &.alert
+    margin-bottom: 0
+
+.listing-ct-body
+  tt
+    font-size: 12px
+
+  dl
+    margin: 0
+
+    dd dl.inline-dl dt
+      clear: left
+      float: left
+      width: 100px
+      min-height: 26px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      color: #888
+      font-weight: normal
+
+  dt
+    clear: left
+    float: left
+    width: 100px
+    min-height: 26px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    color: #888
+    font-weight: normal
+    text-align: right
+
+  dl dd dl dt
+    text-align: left
+
+  dd
+    margin-left: 110px
+    min-height: 26px
+    max-width: 1000px
+    overflow: hidden
+    text-overflow: ellipsis
+
+  dl.full-width
+    dt
+      text-align: left
+      min-width: none
+      max-width: none
+      float: none
+      width: auto
+
+    dd
+      margin-left: 0px
+
+table.listing-ct tbody.open
+  box-shadow: 1px 1px 1px 1px #f5f5f5
+
+/* By default these thincgs are hidden
+
+tbody
+  tr
+    &.listing-ct-panel, &.listing-ct-body
+      display: none
+
+  &.open tr
+    &.listing-ct-head, &.listing-ct-panel, &.listing-ct-body
+      display: table-row
+
+    &.listing-ct-head
+      border-color: #ccc
+      border-style: solid
+      border-width: 1px 1px 0 1px
+      border-top: 3px solid #0099d3
+      background-color: #f5f5f5
+
+/* ... unless they are in the right state
+
+tr
+  &.listing-ct-head + tr.listing-ct-head
+    border-top: none
+
+    td
+      padding: 0px 10px 0px 10px
+
+  &.listing-ct-body td
+    padding: 20px 25px
+    font-size: 13px
+
+.listing-ct-empty
+  color: #888
+  text-align: center
+  border-top: 1px solid #eee
+  border-bottom: 1px solid #eee
+
+/* Used at the end of a group of tbody to show an 'empty' message
+
+thead.listing-ct-empty td, table.listing-ct > thead.listing-ct-empty td
+  padding: 10px
+
+tbody + thead.listing-ct-empty
+  display: none
+
+/* Listing pattern defaults to using full width of parent
+
+.listing-ct-wide
+  width: 100%
+
+div.listing-ct-head
+  overflow: visible
+
+.listing-ct-head
+  .btn-group, button:not(.dropdown-toggle)
+    margin-left: 0.3em
+
+table.listing-ct > caption a
+  font-size: 16px
+
+tbody tr.listing-ct-noexpand
+  cursor: default
+
+/* Fix up nav-tabs-pf to work properly
+
+.nav-tabs-pf > li
+  &:first-child a
+    margin-left: 0px !important
+    padding-left: 15px !important
+
+  a:before
+    right: 0px !important
+
+  > a
+    &:active:before, &:focus:before, &:hover:before
+      height: 3px
+      left: 0px
+
+  &.active a:before
+    height: 3px
+    left: 0px
+
+.package-list-ct
+  margin: 1em 0
+  padding: 0
+  max-width: 110rem
+  text-align: left
+  box-sizing: border-box
+
+  li
+    text-align: left
+    box-sizing: border-box
+    width: 22rem
+    padding: 0 1ex
+    display: inline-block
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+.scale-up-ct
+  animation: dialogScaleUpCt 1s
+
+@keyframes dialogScaleUpCt
+  0%
+    opacity: 0
+    max-height: 0
+
+  25%
+    opacity: 0
+
+  50%
+    max-height: 100vh
+
+  100%
+    opacity: 1
+
+/* Panels don't draw borders between them
+
+.panel
+  > .table > tbody:first-child td
+    border-top: 1px solid rgb(221, 221, 221)
+
+  .table thead tr th
+    border-bottom: none
+
+/* Table headers should not generate a double border
+
+.panel-heading
+  background: #F5F5F5
+  height: 44px
+
+  .btn
+    margin-top: -3px
+
+/* Vertically center dropdown buttons in panel headers
+
+/*
+ * Fix up table row hovering.
+ *
+ * When you hover over table rows it's because they're clickable.
+ * Make the table row hover color match the list-group-item.
+
+.table-hover > tbody > tr >
+  td, th
+    cursor: pointer
+
+.dialog-list-ct .list-group-item
+  cursor: pointer
+
+.table-hover > tbody > tr:hover >
+  td, th
+    background-color: #d4edfa
+
+.dialog-list-ct .list-group-item:hover:not(.active)
+  background-color: #d4edfa
+
+/* Override patternfly to fit buttons and such
+
+.table
+  >
+    thead > tr > th, tbody > tr > td
+      padding: 8px
+
+    thead
+      background-image: none
+      background-color: #fff
+
+  tbody tr td:first-child, thead tr th:first-child
+    padding-left: 15px
+
+  tbody tr td:last-child, thead tr th:last-child
+    padding-right: 15px
+
+/* Override the heavy patternfly headers
+
+/* Make things line up
+
+.info-table-ct >
+  tr > td, tbody > tr > td
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    padding-left: 0.75em
+    padding-top: 0.25em
+    vertical-align: top
+    line-height: 26px
+
+  tr > td:first-child, tbody > tr > td:first-child
+    text-align: right
+    color: #888888
+
+  tr > td:not(:first-child), tbody > tr > td:not(:first-child)
+    color: black
+
+  tr > td button, tbody > tr > td button
+    max-width: 100%
+    overflow: hidden
+    text-overflow: ellipsis
+
+.form-table-ct
+  width: 100%
+
+  td
+    padding-left: 0.75em
+    padding-top: 0.25em
+    line-height: 26px
+
+    &.top
+      vertical-align: top
+
+    &:first-child
+      text-align: right
+      white-space: nowrap
+      color: #888888
+      width: 5px
+
+      /* will be expanded by nowrap
+
+    &[colspan]
+      text-align: inherit
+
+    height: 26px
+
+    &.header
+      font-weight: bold
+      text-align: left
+      color: #4D5258
+      padding: 20px 0 10px 0
+
+  label
+    input
+      &[type='radio'], &[type='checkbox']
+        margin-right: 4px
+
+    margin-bottom: 0px
+
+    span
+      vertical-align: super
+
+/* Break up sidebar in columns in smaller sizes
+
+@media (min-width: 992px)
+  .info-table-ct-container .info-table-ct
+    table-layout: fixed
+    width: 100%
+
+.plot-unit
+  display: inline-block
+  width: 28px
+  font-size: smaller
+  text-align: right
+  color: #545454
+  margin-right: 7px
+
+.plot-title
+  color: black
+
+.flot-y-axis .flot-tick-label
+  width: 28px
+  margin-right: 7px
+
+.flot-x-axis .flot-tick-label
+  margin-top: 3px
+
+.zoom-controls
+  visibility: hidden
+
+.show-zoom-controls .zoom-controls
+  visibility: visible
+
+.show-zoom-cursor .zoomable-plot
+  cursor: ew-resize
+
+.standard-zoom-controls
+  text-align: right
+
+  /* on the right
+  margin-bottom: -15px
+
+  /* overlapping with the title
+  z-index: 1
+
+  /* but on top of it
+  position: relative
+
+/*
+ * This file is part of Cockpit.
+ *
+ * Copyright (C) 2015 Red Hat, Inc.
+ *
+ * Cockpit is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * Cockpit is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+.cockpit-log-panel
+  border: 0
+
+  .panel-heading
+    background-color: #333
+    border-color: #333
+    color: #fff
+    padding-left: 10px
+    padding-top: 5px
+    padding-bottom: 5px
+    height: auto
+
+  .panel-body
+    padding: 0
+    border-bottom: 1px #ddd solid
+
+    .panel-heading
+      border-left: 1px #ddd solid
+      border-right: 1px #ddd solid
+      border-top: 0
+      border-bottom: 1px #ddd solid
+      background-color: #f5f5f5
+      font-weight: bold
+      padding-top: 2px
+      padding-bottom: 2px
+      width: auto
+      color: #333
+
+  > .panel-heading
+    margin-top: 15px
+
+  .cockpit-logline
+    border-left: 1px #ddd solid
+    border-right: 1px #ddd solid
+    background-color: #f5f5f5
+    padding-top: 2px
+    padding-bottom: 2px
+    padding-left: 10px
+
+.cockpit-logline
+  font-family: monospace
+  min-width: 310px
+  border-bottom: 1px solid #DDD
+  border-top: none
+
+  > .row > div:first-child
+    padding-left: 20px
+
+.cockpit-log-panel
+  .cockpit-logline:hover
+    background-color: #d4edfa
+
+  > .cockpit-logline:hover
+    cursor: pointer
+
+.cockpit-logmsg-reboot
+  font-style: italic
+
+.cockpit-log-warning
+  display: inline-block
+  width: 20px
+  vertical-align: middle
+
+  > i
+    color: black
+
+.cockpit-log-time
+  display: inline-block
+  width: 40px
+  vertical-align: middle
+
+.cockpit-log-service
+  width: 200px
+  margin-left: 10px
+
+.cockpit-log-service-container
+  display: inline-block
+  width: 200px
+  margin-left: 10px
+
+.cockpit-log-service-reduced
+  width: -moz-calc(100% - 70px)
+  width: -webkit-calc(100% - 70px)
+  width: calc(100% - 70px)
+
+.cockpit-log-message
+  width: -moz-calc(100% - 300px)
+  width: -webkit-calc(100% - 300px)
+  width: calc(100% - 300px)
+  text-overflow: ellipsis
+  overflow: hidden
+  display: inline-block
+  white-space: nowrap
+  vertical-align: middle
+
+.cockpit-log-service, .cockpit-log-service-reduced
+  text-overflow: ellipsis
+  overflow: hidden
+  display: inline-block
+  white-space: nowrap
+  vertical-align: middle
+
+/*
+ * This file is part of Cockpit.
+ *
+ * Copyright (C) 2015 Red Hat, Inc.
+ *
+ * Cockpit is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * Cockpit is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+#storage
+  padding-left: 5px
+  padding-right: 5px
+
+  .empty-panel-text
+    text-align: center
+    margin: 5px
+    color: #545454
+
+  .storage-mounts .table
+    table-layout: fixed
+
+    th, td
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+@media (max-width: 1200px)
+  .storage-mounts
+    .mount-name, .mount-point, .mount-size-graph, .mount-size-number
+      width: 25%
+
+    .mount-actions
+      width: 50%
+
+@media (min-width: 1200px)
+  .storage-mounts
+    .mount-name, .mount-point
+      width: 20%
+
+    .mount-size-graph
+      width: 45%
+
+    .mount-size-number
+      width: 15%
+
+    .mount-actions
+      width: 60%
+
+#nfs-mounts tr
+  height: 43px
+
+@media (max-width: 1814px)
+  #storage .storage-disk-size
+    width: 100%
+
+#storage
+  .create-storage
+    margin-bottom: 10px
+
+    button
+      margin-bottom: 5px
+      width: 100%
+      overflow: hidden
+      text-overflow: ellipsis
+
+  .storage-sidebar .table
+    table-layout: fixed
+
+    td
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+      img
+        margin-top: 8px
+
+@media (max-width: 1560px)
+  #storage .create-storage .col-lg-6
+    width: 100%
+
+#storage_raids .row span, #storage_vgs .row span, #storage_drives .row span
+  padding: 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+#storage_raids .row span.raid-size, #storage_vgs .row span.vg-size
+  text-align: right
+
+#storage .storage-sidebar
+  .storage-disk-size
+    padding-right: 5px
+
+  .storage-disk-name
+    overflow: hidden
+    text-overflow: ellipsis
+
+.available-disks-group
+  margin-bottom: 0px
+
+  input
+    &[type='checkbox'], &[type='radio']
+      margin: 4px 4px 4px -20px
+
+  .list-group-item
+    padding: 0
+
+    label
+      padding: 3px 10px
+
+  .checkbox label, .radio label
+    width: 100%
+
+  .checkbox label span, .radio label span
+    display: block
+    margin-left: 20px
+    margin-top: 6px
+    line-height: 20px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    max-width: 450px
+
+  .checkbox label input[type="checkbox"], .radio label input[type="radio"]
+    margin-left: auto
+    margin-top: 8px
+
+/* Make the whole row a hit target
+
+@media (min-width: 768px)
+  .storage-graph-container
+    &:nth-child(1)
+      padding-right: 5px
+
+    &:nth-child(2)
+      padding-left: 5px
+
+.dialog-select-row-table
+  width: 100%
+
+  td
+    text-align: left
+    padding-top: 0.75em
+    padding-bottom: 0.75em
+    padding-left: 0px
+    padding-right: 0px
+    vertical-align: top
+    white-space: default
+    color: black
+    width: auto
+    height: auto
+    border-top: 1px solid #D1D1D1
+    border-bottom: 1px solid #D1D1D1
+
+    &:first-child
+      text-align: left
+      padding-top: 0.75em
+      padding-bottom: 0.75em
+      padding-left: 0px
+      padding-right: 0px
+      vertical-align: top
+      white-space: default
+      color: black
+      width: auto
+      height: auto
+      border-top: 1px solid #D1D1D1
+      border-bottom: 1px solid #D1D1D1
+      padding-left: 0.75em
+      border-left: 1px solid #D1D1D1
+
+    &:last-child
+      padding-right: 0.75em
+      border-right: 1px solid #D1D1D1
+
+  th
+    font-weight: bold
+    text-align: left
+    color: #4D5258
+    padding: 0px
+    padding-top: 0.75em
+    padding-bottom: 0.75em
+    padding-left: 0px
+    padding-right: 0px
+
+    &:first-child
+      padding-left: 0.75em
+
+    &:last-child
+      padding-right: 0.75em
+
+.form-table-ct
+  .checkbox, .radio
+    margin-top: 0px
+    margin-bottom: 0px
+
+.arming-zone
+  .needs-arming
+    display: none
+
+  &.armed .needs-arming
+    display: block
+
+/* Slider
+
+.slider
+  display: block
+  margin: 10px 10px
+  height: 5px
+  white-space: nowrap
+  font-size: 0px
+  background-color: #ededed
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5)
+  cursor: pointer
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+
+.slider-warning
+  background-color: #d4a096
+
+.slider-bar
+  position: relative
+  height: 5px
+
+.slider >
+  .slider-bar > .slider-bar
+    border-right: 3px solid white
+    height: 5px
+    position: relative
+    display: inline-block
+
+  div:first-child
+    float: left
+    background-color: #00a8e1
+
+.slider-disabled > div:first-child
+  cursor: auto
+  background-color: #e7e7e7
+
+.slider-thumb
+  position: absolute
+  border-radius: 9px
+  background-color: #0085cf
+  width: 18px
+  height: 18px
+  top: -6px
+  right: -9px
+  content: '.'
+  cursor: pointer
+  border: 1px solid #006e9c
+  background-image: linear-gradient(to bottom, #00a8e1 0%, #0085cf 100%)
+  z-index: 1
+
+.slider-disabled .slider-thumb
+  background-color: #e7e7e7
+  border: 1px solid #d7d7d7
+  cursor: auto
+
+.size-slider
+  td
+    &:nth-child(1)
+      width: 100%
+      padding: 0px
+
+    padding: 0px
+
+  .size-text
+    display: inline
+    width: 6em
+    text-align: right
+    margin: 2px
+
+  .size-unit
+    width: 5em !important
+
+td.storage-icon
+  width: 48px
+
+  .spinner
+    margin-top: 5px
+
+span.rate-gap
+  display: inline-block
+  width: 1em
+
+div.progress
+  width: 100%
+
+#detail-header div.progress
+  min-width: 250px
+
+td
+  &.usage-text
+    text-align: right
+
+  &.job-description
+    width: 50%
+
+  &.job-status
+    width: 15%
+    text-align: right
+
+  &.job-action
+    text-align: right
+
+.detail-jobs
+  margin-top: 20px
+
+#storage-graph-toolbar .dropdown
+  display: inline-block
+
+  button span
+    width: 6em
+    text-align: left
+    padding-left: 5px
+    display: inline-block
+
+.storage-graph
+  height: 120px
+
+.action-dropdown-menu
+  right: 0px
+  left: auto
+  min-width: 0
+  text-align: left
+
+.content-item
+  width: 100%
+
+  table
+    width: 100%
+
+td
+  &.content-name
+    text-align: left
+
+  &.content-action
+    text-align: right
+
+    > div
+      display: inline-block
+      margin-right: 5px
+      vertical-align: middle
+
+    .spinner
+      visibility: hidden
+
+table.mdraid-item
+  width: 100%
+
+td
+  &.mdraid-slot
+    width: 20px
+    text-align: center
+
+  &.mdraid-states
+    width: 100px
+    text-align: right
+
+    .state-danger
+      color: red
+
+  &.mdraid-action
+    text-align: right
+    width: 10em
+
+table.vgroup-item
+  width: 100%
+
+td.vgroup-action
+  text-align: right
+
+.available-disks-group .checkbox
+  margin: 0px
+
+.dialog-arrow
+  color: black
+  cursor: pointer
+
+  .fa
+    width: 1em
+
+.dialog-checkbox-text
+  width: 100%
+  display: flex
+  flex-direction: row
+
+  \:nth-child(2)
+    flex: 1
+    margin-left: 0.5em
+
+.form-control[hidden]
+  display: none
+
+.modal-footer-danger
+  margin-bottom: 10px
+
+.modal-footer-teardown
+  text-align: left
+
+.content-level-1
+  padding-left: 30px
+
+.content-level-2
+  padding-left: 60px
+
+.content-level-3
+  padding-left: 90px
+
+.content-level-4
+  padding-left: 120px
+
+.content-level-5
+  padding-left: 150px
+
+.content-level-6
+  padding-left: 180px
+
+.content-level-7
+  padding-left: 210px
+
+.content-level-8
+  padding-left: 240px
+
+.content-level-9
+  padding-left: 270px
+
+.content-level-10
+  padding-left: 300px
+
+#detail-sidebar .table
+  table-layout: fixed
+
+  td
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+    img
+      margin-top: 4px
+
+    &.storage-action
+      width: 51px
+
+.tab-actions
+  float: right
+  margin-top: -15px
+  margin-right: -15px
+
+  button
+    margin-left: 0.3em
+
+a.disabled
+  color: #7dc3e8
+  text-decoration: none
+  cursor: not-allowed
+
+.listing-ct-body .tab-row-actions
+  display: inline-block
+  margin-left: 2em
+
+.listing-ct caption .pull-right
+  margin-right: 10px
+
+/* Make tooltips inside tables visible.
+
+.info-table-ct td, td.storage-action
+  overflow: visible !important
+
+.units-table
+  .cmd
+    font-family: monospace
+
+  >
+    tbody > tr > td:nth-child(1), thead > tr > th:nth-child(1)
+      border-right: none
+      white-space: nowrap
+      width: 1%
+
+    tbody > tr > td:nth-child(2), thead > tr > th:nth-child(2)
+      border-left: none
+      border-right: none
+      word-break: break-all
+
+    tbody > tr > td:nth-child(3), thead > tr > th:nth-child(3)
+      text-align: right
+      border-left: none
+      white-space: nowrap
+      width: 1%
+
+.network-keys-table td
+  vertical-align: baseline
+  padding-right: 10px
+
+.form-table-ct .combobox-container .input-group
+  width: 100%
+
+/* Prevent long names from sticking out of dialog titles
+
+.modal-title
+  word-break: break-all
+
+.panel-heading .spinner-inline
+  vertical-align: middle
+  margin-left: 0.5ex
+
+.just-installed
+  margin-right: 1em
+
+.faded
+  transition: opacity 1s, visibility 1s
+  opacity: 0
+  visibility: hidden
+
+.modal-body
+  .intermission
+    margin-top: 1.5ex
+    margin-bottom: 1ex
+    white-space: normal
+    line-height: 1.6666
+    color: rgb(54, 54, 54)
+
+  .medskip
+    height: 2.5ex
+
+  .widest-title
+    visibility: hidden
+    height: 0px
+
+.radio-horizontal
+  input[type=radio]
+    margin-top: 5px
+
+  label
+    margin-right: 1em
+
+.key-slot-panel-remaining
+  margin-right: 1em
+
+.shrink
+  width: 1%
+  white-space: nowrap
+
+.key-slot-panel
+  .key-type
+    padding-right: 1em
+
+  .key-slot
+    padding-right: 2em
+
+.sigkey-hash
+  font-family: monospace
+  font-size: 200%
+
+.inline-pre
+  display: inline
+  padding: 4px
+
+.modal-dialog h3
+  margin-top: 0
+  line-height: 24px
+
+.pficon.large
+  font-size: 200%
+
+.progressive-disclosure .form-group
+  padding-left: 20px
+
+  >
+    \:first-child
+      margin-left: -20px
+
+    \:not(:first-child)
+      margin-top: 0.5em
+      animation: showRemovalDisclosure ease-in-out 200ms
+
+@keyframes showRemovalDisclosure
+  0%
+    opacity: 0
+    transform: scaleY(0)
+    transform-origin: top left
+
+  100%
+    opacity: 1
+    transform: scaleY(1)
+
+.modal-dialog .slot-warning
+  color: #a30000
+
+  /* pf-red-200
+
+/* Reset line-height for help texts inside form-table-ct
+
+.form-table-ct td .help-block
+  line-height: 1.666666
+
+.modal-dialog .key-source .radio-horizontal
+  margin-bottom: 2ex
+
+.size-sliderx
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  .slider
+    flex: 1
+
+  .size-text
+    display: inline
+    width: 6em
+    text-align: right
+    margin: 2px
+
+  .size-unit
+    width: 5em !important
+
+/*# sourceMappingURL=storage.css.map
