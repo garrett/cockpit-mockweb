@@ -1,12 +1,24 @@
-<!doctype html>
+{% capture null %}{%
+  assign css = page.css | default: include.css | default: "patternfly index branding"
+%}{%
+  assign css_local = page.css_local | default: include.css_local | default: ""
+%}{%
+  assign css_includes = css | split: " "
+%}{%
+  assign css_local_includes = css_local | split: " "
+%}{% endcapture
+%}<!doctype html>
 <html lang="en">
   <head>
     <title>{{ page.title | default: site.title | strip_html }}</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link href="{{ site.baseurl }}/static/patternfly.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/static/index.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/static/branding.css" rel="stylesheet">
+    {% for css_file in css_includes %}
+      <link href="{{ site.baseurl }}/static/{{ css_file }}.css" rel="stylesheet">
+    {% endfor %}
+    {% for css_file in css_local_includes %}
+      <link href="{{ css_file }}" rel="stylesheet">
+    {% endfor %}
     <script src="{{ site.baseurl }}/static/jquery.js"></script>
     <script src="{{ site.baseurl }}/static/manifests.js"></script>
     <script src="{{ site.baseurl }}/static/po.js"></script>
