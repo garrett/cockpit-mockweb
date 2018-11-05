@@ -1,0 +1,190 @@
+---
+layout: frame
+title: "Machines"
+---
+
+<style>
+  h2, h3 {
+    padding: 0 20px 10px;
+  }
+
+  h2:not(:first-of-type) {
+    margin-top: 9rem;
+  }
+
+  .grid-cards-ct {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    padding: 20px;
+  }
+  .grid-cards-ct > div {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 60rem) {
+    /* Make a single card no longer than half the width */
+    .grid-cards-ct > div:first-child:last-child {
+      /* Remove 1/2 grid-gap to keep width the same */
+      max-width: calc(50% - 10px);
+    }
+  }
+
+  .card-ct-clickable:hover {
+  }
+
+  .cards-ct-hybrid .card-pf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: baseline;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  
+  .cards-ct-hybrid .card-pf-title,
+  .cards-ct-hybrid .card-pf-body {
+    margin: 0;
+    padding: 0;
+  }
+  .cards-ct-hybrid .card-pf-title {
+    display: flex;
+    flex: auto;
+  }
+  .cards-ct-hybrid .card-pf-title a {
+    display: block;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .cards-ct-hybrid .card-pf-body {
+    padding: 10px 20px;
+    flex: 0 auto;
+  }
+</style>
+
+<div class="cards-pf grid-cards-ct cards-ct-hybrid">
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="pools"><span class="pficon pficon-server"></span><span class="card-pf-aggregate-status-count">20</span>
+        Storage Pools
+      </a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-network"></span><span class="card-pf-aggregate-status-count">9</span>
+        Virtual Networks</a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-ok"></span></span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Begin example list below -->
+
+<div id="virtual-machines-listing" class="container-fluid">
+  <table class="listing listing-ct listing-ct-wide">
+    <caption class="cockpit-caption">Virtual Machines
+      <button class="btn btn-default pull-right" id="create-new-vm">
+        Add New VM
+      </button>
+    </caption>
+    <thead>
+      <tr>
+        <th class="listing-ct-toggle">
+        </th>
+        <th>Name</th>
+        <th>Connection</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-row-id="vm-boxes-unknown" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="vm-boxes-unknown-row">boxes-unknown</span>
+        </th>
+        <td>Session</td>
+        <td>
+          <span title="The VM is down." data-toggle="tooltip" data-placement="left">
+            <span id="vm-boxes-unknown-state">shut off</span>
+          </span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="vm-fedora-unkno" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="vm-fedora-unkno-row">fedora-unkno</span>
+        </th>
+        <td>Session</td>
+        <td>
+          <span title="The VM is down." data-toggle="tooltip" data-placement="left">
+            <span id="vm-fedora-unkno-state">shut off</span>
+          </span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="vm-ubuntu18.10" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="vm-ubuntu18.10-row">ubuntu18.10</span>
+        </th>
+        <td>Session</td>
+        <td>
+          <span title="The VM is down." data-toggle="tooltip" data-placement="left">
+            <span id="vm-ubuntu18.10-state">shut off</span>
+          </span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="vm-win10" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="vm-win10-row">win10</span>
+        </th>
+        <td>Session</td>
+        <td>
+          <span title="The VM is down." data-toggle="tooltip" data-placement="left">
+            <span id="vm-win10-state">shut off</span>
+          </span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,112 @@
+---
+layout: frame
+title: "Machines: Storage Pools"
+---
+
+<div id="storage-pools-listing" class="container-fluid">
+  
+  <ol class="breadcrumb">
+    <li><a role="link" tabindex="0" href="{{ site.baseurl }}/machines/">Virtual Machines</a></li>
+    <li class="active">Storage Pools</li>
+  </ol>
+
+  <table class="listing listing-ct listing-ct-wide">
+    <caption class="cockpit-caption">Storage Pools
+      <button class="btn btn-default pull-right" id="create-new-vm">
+        Add New Pool
+      </button>
+    </caption>
+    </caption>
+    <thead>
+      <tr>
+        <th class="listing-ct-toggle">
+        </th>
+        <th>Name</th>
+        <th>Path</th>
+        <th>Connection</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-row-id="pool-default-system" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="pool-default-system-name">default</span>
+        </th>
+        <td>
+          <span id="pool-/var/lib/libvirt/images-system-path">/var/lib/libvirt/images</span>
+        </td>
+        <td>System</td>
+        <td>
+          <span id="pool-default-system-state">active</span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="pool-Fedora-Workstation-Live-x86_64-28-system" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="pool-Fedora-Workstation-Live-x86_64-28-system-name">Fedora-Workstation-Live-x86_64-28</span>
+        </th>
+        <td>
+          <span id="pool-/home/garrett/Downloads/Fedora-Workstation-Live-x86_64-28-system-path">/home/garrett/Downloads/Fedora-Workstation-Live-x86_64-28</span>
+        </td>
+        <td>System</td>
+        <td>
+          <span id="pool-Fedora-Workstation-Live-x86_64-28-system-state">inactive</span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="pool-gnome-boxes-session" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="pool-gnome-boxes-session-name">gnome-boxes</span>
+        </th>
+        <td>
+          <span id="pool-/home/garrett/.local/share/gnome-boxes/images-session-path">/home/garrett/.local/share/gnome-boxes/images</span>
+        </td>
+        <td>Session</td>
+        <td>
+          <span id="pool-gnome-boxes-session-state">active</span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr data-row-id="pool-MSEdge.Win10.VirtualBox-system" class="listing-ct-item listing-ct-nonavigate">
+        <td class="listing-ct-toggle">
+          <i class="fa fa-fw">
+          </i>
+        </td>
+        <th>
+          <span id="pool-MSEdge.Win10.VirtualBox-system-name">MSEdge.Win10.VirtualBox</span>
+        </th>
+        <td>
+          <span id="pool-/home/garrett/Downloads/MSEdge.Win10.VirtualBox-system-path">/home/garrett/Downloads/MSEdge.Win10.VirtualBox</span>
+        </td>
+        <td>System</td>
+        <td>
+          <span id="pool-MSEdge.Win10.VirtualBox-system-state">inactive</span>
+        </td>
+      </tr>
+      <tr class="listing-ct-panel">
+      </tr>
+    </tbody>
+  </table>
+
+</div>
