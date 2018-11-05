@@ -1,0 +1,286 @@
+---
+layout: frame
+title: "Machines"
+---
+
+<style>
+  h2, h3 {
+    padding: 0 20px 10px;
+  }
+
+  h2:not(:first-of-type) {
+    margin-top: 9rem;
+  }
+
+  .grid-cards-ct {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    padding: 20px;
+  }
+  .grid-cards-ct > div {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 60rem) {
+    /* Make a single card no longer than half the width */
+    .grid-cards-ct > div:first-child:last-child {
+      /* Remove 1/2 grid-gap to keep width the same */
+      max-width: calc(50% - 10px);
+    }
+  }
+
+  .card-ct-clickable:hover {
+  }
+
+  .cards-ct-hybrid .card-pf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: baseline;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  
+  .cards-ct-hybrid .card-pf-title,
+  .cards-ct-hybrid .card-pf-body {
+    margin: 0;
+    padding: 0;
+  }
+  .cards-ct-hybrid .card-pf-title {
+    display: flex;
+    flex: auto;
+  }
+  .cards-ct-hybrid .card-pf-title a {
+    display: block;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .cards-ct-hybrid .card-pf-body {
+    padding: 10px 20px;
+    flex: 0 auto;
+  }
+</style>
+
+<h2>Custom Cards</h2>
+
+<h3>Grid Hybrid Cards (1 Item)</h3>
+
+<div class="cards-pf grid-cards-ct cards-ct-hybrid">
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-server"></span><span class="card-pf-aggregate-status-count">20</span>
+        Storage Pools
+      </a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a></span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<h3>Grid Hybrid Cards (2 Items)</h3>
+
+<div class="cards-pf grid-cards-ct cards-ct-hybrid">
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-server"></span><span class="card-pf-aggregate-status-count">20</span>
+        Storage Pools
+      </a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-network"></span><span class="card-pf-aggregate-status-count">9</span>
+        Virtual Networks</a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-ok"></span></span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<h3>Grid Mini Cards</h3>
+<div class="cards-pf grid-cards-ct">
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini card-ct-clickable">
+    <h3 class="card-pf-title">
+      <span class="pficon pficon-server"></span>
+      <span class="card-pf-aggregate-status-count">20</span>
+      Storage Pools
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#" class="add" data-toggle="tooltip"
+            data-placement="top" title="Add Ipsum"><span class="pficon pficon-add-circle-o"></span></a></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini card-ct-clickable">
+    <h3 class="card-pf-title">
+      <a href="#">
+        <span class="pficon pficon-network"></span>
+        <span class="card-pf-aggregate-status-count">9</span> Virtual Networks
+      </a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!---->
+
+<h3>Grid Cards</h3>
+
+<div class="cards-pf grid-cards-ct">
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-server"></span><span class="card-pf-aggregate-status-count">20</span>
+        Storage Pools
+      </a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+        <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-pf card-pf-accented card-pf-aggregate-status">
+    <h3 class="card-pf-title">
+      <a href="#"><span class="pficon pficon-network"></span><span class="card-pf-aggregate-status-count">9</span>
+        Virtual Networks</a>
+    </h3>
+    <div class="card-pf-body">
+      <p class="card-pf-aggregate-status-notifications">
+        <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-ok"></span></span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!---->
+
+<h2>PatternFly Upstream Cards</h2>
+<h3>Row Cards (PF)</h3>
+
+<div class="container-fluid container-cards-pf">
+  <div class="row row-cards-pf">
+    <div class="col-xs-6 col-sm-4 col-md-4">
+      <div class="card-pf card-pf-accented card-pf-aggregate-status">
+        <h3 class="card-pf-title">
+          <span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">0</span> Ipsum
+        </h3>
+        <div class="card-pf-body">
+          <p class="card-pf-aggregate-status-notifications">
+            <span class="card-pf-aggregate-status-notification"><a href="#" class="add" data-toggle="tooltip"
+                data-placement="top" title="Add Ipsum"><span class="pficon pficon-add-circle-o"></span></a></span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-4">
+      <div class="card-pf card-pf-accented card-pf-aggregate-status">
+        <h3 class="card-pf-title">
+          <a href="#"><span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">20</span> Amet</a>
+        </h3>
+        <div class="card-pf-body">
+          <p class="card-pf-aggregate-status-notifications">
+            <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+            <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a></span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-4">
+      <div class="card-pf card-pf-accented card-pf-aggregate-status">
+        <h3 class="card-pf-title">
+          <a href="#"><span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">9</span>
+            Adipiscing</a>
+        </h3>
+        <div class="card-pf-body">
+          <p class="card-pf-aggregate-status-notifications">
+            <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-ok"></span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---->
+
+<h3>Row Mini Cards (PF)</h3>
+
+<div class="cards-pf">
+  <div class="container-fluid container-cards-pf">
+    <div class="row-cards-pf">
+      <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 0px;">
+        <div class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini">
+          <h3 class="card-pf-title">
+            <span class="pficon pficon-server"></span>
+            <span class="card-pf-aggregate-status-count">0</span> Ipsum
+          </h3>
+          <div class="card-pf-body">
+            <p class="card-pf-aggregate-status-notifications">
+              <span class="card-pf-aggregate-status-notification"><a href="#" class="add" data-toggle="tooltip"
+                  data-placement="top" title="Add Ipsum"><span class="pficon pficon-add-circle-o"></span></a></span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini">
+          <h3 class="card-pf-title">
+            <a href="#">
+              <span class="pficon pficon-network"></span>
+              <span class="card-pf-aggregate-status-count">20</span> Virtual Networks
+            </a>
+          </h3>
+          <div class="card-pf-body">
+            <p class="card-pf-aggregate-status-notifications">
+              <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a></span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container-fluid">
+
+  Things.
+</div>
