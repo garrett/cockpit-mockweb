@@ -1,0 +1,60 @@
+---
+title: Basic grid
+layout: frame
+---
+
+<style>@import url({{ site.baseurl }}/forms/grid.css);</style>
+
+
+{% capture form %}
+<form class="form-grid">
+  <label class="control-label" for="text1">Text input 1</label>
+  <input class="form-control" id="text1" value="foo">
+
+  <label class="control-label"for="text2">Text input 2</label>
+  <input class="form-control form-grid-split" id="text2" value="foo">
+
+  <label class="control-label"for="text3">Text input 3</label>
+  <input class="form-control" id="text3" value="foo">
+
+  <label class="control-label"for="group1">Group1</label>
+  <fieldset id="group1">
+    <label class="checkbox-inline"><input type="checkbox">One</label>
+    <label class="checkbox-inline"><input type="checkbox">Two</label>
+    <label class="checkbox-inline"><input type="checkbox">Three</label>
+  </fieldset>
+</form>
+{% endcapture %}
+
+<div role="dialog">
+  <div class="fade modal-backdrop in"></div>
+
+  <div role="dialog" tabindex="-1" style="display: block;" class="fade in modal">
+
+    <div class="modal-dialog">
+      <div class="modal-content" role="document">
+        <div class="modal-header">
+          <button class="close" aria-hidden="true" aria-label="Close">
+            <span aria-hidden="true" class="pficon pficon-close">
+            </span>
+          </button>
+          <h4 class="modal-title">Example Form</h4>
+        </div>
+        <div class="modal-body">
+
+          <!-- BEGIN FORM -->
+
+          {{ form }}
+
+          <!-- END FORM -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default">Cancel</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+layout:
+---
+
+.form-grid
+  display: grid
+  grid-template-columns: repeat(2, minmax(4em, max-content) 1fr)
+  place-items: baseline stretch
+  grid-gap: 1em
+
+  > *
+    line-height: 26px
+
+  > label
+    text-align: right
+    padding-left: 1em
+
+  > input,
+  > fieldset
+    grid-column: 2 / -1
+    width: auto
+    margin: 0
+
+  > .form-grid-split,
+  > .form-grid-split + label,
+  > .form-grid-split + label + *
+    grid-column: auto / auto
