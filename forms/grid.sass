@@ -1,8 +1,8 @@
 ---
-layout:
+layout: text
 ---
 
-.form-grid
+.form-auto
   display: grid
   grid-template-columns: repeat(2, minmax(4em, max-content) 1fr)
   place-items: baseline stretch
@@ -11,17 +11,62 @@ layout:
   > *
     line-height: 26px
 
-  > label
+  > .control-label
     text-align: right
     padding-left: 1em
+    align-self: flex-start
 
   > input,
-  > fieldset
+  > fieldset,
+  > div,
+  > span,
+  > label:not(.control-label)
     grid-column: 2 / -1
     width: auto
     margin: 0
 
-  > .form-grid-split,
-  > .form-grid-split + label,
-  > .form-grid-split + label + *
+  > .btn-group,
+  > .bootstrap-select,
+  > .dropdown
+    width: auto !important
+
+  > fieldset
+    > .radio,
+    > .checkbox
+      > label
+        display: inline-flex
+        padding-right: 1em
+
+        > input[type="radio"],
+        > input[type="checkbox"]
+          position: static
+          height: 16px
+          margin: 5px 0.5em 5px 0
+
+  > .form-auto-split
     grid-column: auto / auto
+
+  .form-auto-group
+    display: flex
+
+    // Input type of number does not support size
+    // so set an upper constraint instead
+    > input[type=number]
+      max-width: calc(50% - 2.5px)
+
+    // Allow dropdowns to be less wide
+    > .dropdown
+      width: auto !important
+      flex: auto
+
+    // Add spacing to everything but the first element
+    > :not(:first-child)
+      margin-left: 5px
+
+  .form-auto-relax
+    width: auto !important
+    grid-column-end: auto
+
+.modal-dialog.modal-sm
+  .form-auto > .form-auto-split
+    grid-column: 2 / -1
