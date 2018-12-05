@@ -7,7 +7,7 @@ layout: document
 @import url({{ site.baseurl }}/forms/grid.css);
 
 .modal-dialog-machines {
-  width: 500px;
+  width: 50rem;
 }
 
 /* Hacks, as mockweb doesn't have 100% of Cockpit's CSS */
@@ -454,6 +454,50 @@ layout: document
   <hr>
 
   <label class="checkbox-inline"><input id="start-vm" type="checkbox"> Immediately Start VM</label>
+</form>
+{% endcapture %}
+
+{% capture form_bond %}
+<form id="network-bond-settings-body" class="form-auto">
+
+  <label class="control-label">Name</label>
+  <input id="network-bond-settings-interface-name-input" class="form-control" value="bond0" data-cip-id="network-bond-settings-interface-name-input">
+
+  <label class="control-label">Members</label>
+  <ul class="list-group available-interfaces-group dialog-list-ct"><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="C0:FF:33:C0:FF:33" checked><span>C0:FF:33:C0:FF:33</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="docker0"><span>docker0</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="enp0s31f6"><span>enp0s31f6</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="tap0"><span>tap0</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="tun0"><span>tun0</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="virbr0"><span>virbr0</span></label></div></li><li class="list-group-item"><div class="checkbox" style="margin: 0px;"><label><input type="checkbox" data-iface="wlp4s0"><span>wlp4s0</span></label></div></li></ul>
+
+  <label class="control-label">MAC</label>
+  <div class="input-group">
+    <input id="network-bond-settings-mac-input" class="form-control" type="text" value="" data-cip-id="network-bond-settings-mac-input">
+    <div class="input-group-btn dropdown">
+      <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="fa fa-caret-down"></span>
+      </button>
+      <ul id="network-bond-settings-mac-menu" class="dropdown-menu
+        add-button" role="menu"><li class="presentation"><a>(docker0)</a></li><li class="presentation"><a>(enp0s31f6)</a></li><li class="presentation"><a>(virbr0)</a></li><li class="presentation"><a>Permanent</a></li><li class="presentation"><a>Preserve</a></li><li class="presentation"><a>Random</a></li><li class="presentation"><a>Stable</a></li></ul>
+    </div>
+  </div>
+
+  <label class="control-label">Mode</label>
+  <div class="btn-group bootstrap-select dropdown form-control"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="pull-left">Active Backup</span><div class="caret"></div></button><ul class="dropdown-menu"><li value="balance-rr"><a>Round Robin</a></li><li value="active-backup"><a>Active Backup</a></li><li value="balance-xor"><a>XOR</a></li><li value="broadcast"><a>Broadcast</a></li><li value="802.3ad"><a>802.3ad</a></li><li value="balance-tlb"><a>Adaptive transmit load balancing</a></li><li value="balance-alb"><a>Adaptive load balancing</a></li></ul></div>
+
+  <label class="control-label">Primary</label>
+  <div class="btn-group bootstrap-select dropdown form-control"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="pull-left"></span><div class="caret"></div></button><ul class="dropdown-menu"><li value=""><a>-</a></li></ul></div>
+
+  <label class="control-label">Link Monitoring</label>
+  <div class="btn-group bootstrap-select dropdown form-control"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="pull-left">MII (Recommended)</span><div class="caret"></div></button><ul class="dropdown-menu"><li value="mii"><a>MII (Recommended)</a></li><li value="arp"><a>ARP</a></li></ul></div>
+
+  <label class="control-label">Monitoring Interval</label>
+  <input id="network-bond-settings-monitoring-interval-input" class="form-control network-number-field form-auto-relax" type="text" maxlength="4" value="100" data-cip-id="network-bond-settings-monitoring-interval-input" size=4>
+
+  <label class="control-label">Monitoring Targets</label>
+  <input id="network-bond-settings-monitoring-targets-input" class="form-control form-auto-relax" type="text" value="" size=4>
+
+  <label class="control-label">Link up delay</label>
+  <input id="network-bond-settings-link-up-delay-input" class="form-control network-number-field form-auto-relax" type="text" maxlength="4" length=4 value="0" data-cip-id="network-bond-settings-link-up-delay-input" size=4>
+
+  <label class="control-label">Link down delay</label>
+  <input id="network-bond-settings-link-down-delay-input" class="form-control network-number-field form-auto-relax" type="text" maxlength="4" value="0" data-cip-id="network-bond-settings-link-down-delay-input" size=4>
 </form>
 {% endcapture %}
 
