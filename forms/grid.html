@@ -532,25 +532,30 @@ FORM_HERE
 {{ dialog
 | replace: "TITLE", "Add Disk"
 | replace: "FORM_HERE", form_disk_add
+| replace: "Save", "Add"
 }}
 
 {{ dialog
 | replace: "TITLE", "Add Disk"
 | replace: "FORM_HERE", form_disk_existing
+| replace: "Save", "Add"
 }}
 
 {{ dialog
 | replace: "TITLE", "New NFS Mount"
 | replace: "FORM_HERE", form_nfs
+| replace: "Save", "Add"
 }}
 
 {{ dialog
 | replace: "TITLE", "Create New Virtual Machine"
 | replace: "FORM_HERE", form_vm
 | replace: "modal-dialog", "modal-dialog modal-dialog-machines"
+| replace: "Save", "Create"
 }}
 
 {{ dialog
 | replace: "TITLE", "Bond Settings"
 | replace: "FORM_HERE", form_bond
+| replace: "Save", "Apply"
 }}
