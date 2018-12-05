@@ -1,60 +1,510 @@
 ---
-title: Basic grid
-layout: frame
+title: Form auto-layout (using CSS Grid)
+layout: document
 ---
 
-<style>@import url({{ site.baseurl }}/forms/grid.css);</style>
+<style>
+@import url({{ site.baseurl }}/forms/grid.css);
+
+.modal-dialog-machines {
+  width: 500px;
+}
+
+/* Hacks, as mockweb doesn't have 100% of Cockpit's CSS */
+
+#source-file .input-group {
+  display: block;
+}
+
+#source-file .caret {
+  position: absolute;
+  top: 8px;
+  right: 13px;
+}
+</style>
 
 
-{% capture form %}
-<form class="form-grid">
+{% capture form_demo %}
+<form class="form-auto">
   <label class="control-label" for="text1">Text input 1</label>
   <input class="form-control" id="text1" value="foo">
 
   <label class="control-label"for="text2">Text input 2</label>
-  <input class="form-control form-grid-split" id="text2" value="foo">
+  <input class="form-control form-auto-split" id="text2" value="foo">
 
   <label class="control-label"for="text3">Text input 3</label>
-  <input class="form-control" id="text3" value="foo">
+  <input class="form-control form-auto-split" id="text3" value="foo">
 
-  <label class="control-label"for="group1">Group1</label>
-  <fieldset id="group1">
+  <hr>
+
+  <label class="control-label"for="group1">Inline Form</label>
+  <div class="form-inline" id="group1">
     <label class="checkbox-inline"><input type="checkbox">One</label>
     <label class="checkbox-inline"><input type="checkbox">Two</label>
     <label class="checkbox-inline"><input type="checkbox">Three</label>
-  </fieldset>
+  </div>
+
+  <label class="control-label"for="group2">Group</label>
+  <div role="group" id="group2">
+    <label class="checkbox-inline"><input type="checkbox">One</label>
+    <label class="checkbox-inline"><input type="checkbox">Two</label>
+    <label class="checkbox-inline"><input type="checkbox">Three</label>
+  </div>
 </form>
 {% endcapture %}
 
-<div role="dialog">
-  <div class="fade modal-backdrop in"></div>
+{% capture form_disk_add %}
+<form class="form-auto">
+  <label class="control-label" for="text1">Source</label>
+  <div class="form-inline" role="group">
+    <div class="radio">
+      <label><input type="radio" name="disk_check" checked>Create New</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="disk_check">Use Existing</label>
+    </div>
+  </div>
 
-  <div role="dialog" tabindex="-1" style="display: block;" class="fade in modal">
+  <hr>
 
-    <div class="modal-dialog">
-      <div class="modal-content" role="document">
-        <div class="modal-header">
-          <button class="close" aria-hidden="true" aria-label="Close">
-            <span aria-hidden="true" class="pficon pficon-close">
-            </span>
-          </button>
-          <h4 class="modal-title">Example Form</h4>
-        </div>
-        <div class="modal-body">
+  <label class="control-label" for="vendor-select">Pool</label>
+  <div class="btn-group bootstrap-select dropdown" id="vendor-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">boot</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="boot" data-data="boot">
+        <a>boot</a>
+      </li>
+    </ul>
+  </div>
 
-          <!-- BEGIN FORM -->
+  <hr>
 
-          {{ form }}
+  <label class="control-label" for="volume">Name</label>
+  <input class="form-control" id="text2" value="" placeholder="new volume name">
 
-          <!-- END FORM -->
+  <label class="control-label" for="size">Size</label>
+  <div role="group" class="form-auto-split">
+    <input type="text" class="form-control" id="size" value=1 min=1 size=4>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default">Cancel</button>
-          <button type="button" class="btn btn-primary">Save</button>
-        </div>
+    <div class="btn-group bootstrap-select dropdown" id="vendor-select">
+      <button class="btn btn-default dropdown-toggle" type="button">
+        <span class="pull-left">GiB</span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="" data-value="GiB" data-data="GiB">
+          <a>GiB</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <label class="control-label" for="size">Format</label>
+  <div class="btn-group bootstrap-select dropdown form-auto-split" id="vendor-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">qcow2</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="qcow2" data-data="qcow2">
+        <a>qcow2</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <label class="control-label">Persistence</label>
+  <label class="checkbox-inline"><input type="checkbox" checked>Always attach</label>
+</form>
+{% endcapture %}
+
+{% capture form_disk_existing %}
+<form class="form-auto">
+  <label class="control-label" for="text1">Source</label>
+  <fieldset class="form-inline">
+    <div class="radio">
+      <label><input type="radio" name="disk_check">Create New</label>
+      <label><input type="radio" name="disk_check" checked>Use Existing</label>
+    </div>
+  </fieldset>
+
+  <hr>
+
+  <label class="control-label" for="vendor-select">Pool</label>
+  <div class="btn-group bootstrap-select dropdown" id="vendor-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">boot</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="boot" data-data="boot">
+        <a>boot</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <label class="control-label" for="volume">Volume</label>
+  <div class="btn-group bootstrap-select dropdown" id="vendor-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">test</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="test" data-data="test">
+        <a>test</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <label class="control-label">Persistence</label>
+  <label class="checkbox-inline"><input type="checkbox" checked>Always attach</label>
+</form>
+{% endcapture %}
+
+{% capture form_nfs %}
+<form class="form-auto">
+</form>
+{% endcapture %}
+
+{% capture form_vm %}
+<form class="form-auto">
+  <label class="control-label" for="connection">Connection</label>
+  <div class="btn-group bootstrap-select dropdown" id="connection">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">QEMU/KVM System connection</span>
+      <span class="caret">
+      </span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="QEMU/KVM System connection" data-data="system">
+        <a>QEMU/KVM System connection</a>
+      </li>
+      <li class="" data-value="QEMU/KVM User connection" data-data="session">
+        <a>QEMU/KVM User connection</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <label class="control-label" for="vm-name">Name</label>
+  <input id="vm-name" class="form-control" type="text" minlength="1" placeholder="Unique name" value="" data-cip-id="vm-name">
+
+  <hr>
+
+  <label class="control-label" for="source-type">Installation Source Type</label>
+  <div class="btn-group bootstrap-select dropdown" id="source-type">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">Filesystem</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="Filesystem" data-data="file">
+        <a>Filesystem</a>
+      </li>
+      <li class="" data-value="URL" data-data="url">
+        <a>URL</a>
+      </li>
+    </ul>
+  </div>
+
+  <label class="control-label" for="source-file">Installation Source</label>
+
+  <div class="combobox-container file-autocomplete-ct" id="source-file">
+    <div class="input-group">
+      <input autocomplete="false" placeholder="Path to ISO file on host's file system" class="combobox form-control" type="text" value="" data-cip-id="jQuery342845639">
+      <span class="form-control-feedback caret">
+      </span>
+      <ul class="typeahead typeahead-long dropdown-menu">
+        <li class="directory">
+          <a data-type="directory">bin/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">boot/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">dev/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">etc/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">home/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">lib/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">lib64/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">lost+found/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">media/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">mnt/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">opt/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">proc/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">root/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">run/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">sbin/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">srv/</a>
+        </li>
+        <li class="file">
+          <a data-type="file">swapfile1</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">sys/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">tmp/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">usr/</a>
+        </li>
+        <li class="directory">
+          <a data-type="directory">var/</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <label class="control-label" for="vendor-select">OS Vendor</label>
+  <div class="btn-group bootstrap-select dropdown" id="vendor-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">Unspecified</span>
+      <span class="caret">
+      </span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="Unspecified" data-data="Unspecified">
+        <a>Unspecified</a>
+      </li>
+      <li role="separator" class="divider">
+      </li>
+      <li class="dropdown-header">linux</li>
+      <li class="" data-value="Alpine Linux Project" data-data="Alpine Linux Project">
+        <a>Alpine Linux Project</a>
+      </li>
+      <li class="" data-value="Asianux Project" data-data="Asianux Project">
+        <a>Asianux Project</a>
+      </li>
+      <li class="" data-value="BaseALT" data-data="BaseALT">
+        <a>BaseALT</a>
+      </li>
+      <li class="" data-value="Canonical Ltd" data-data="Canonical Ltd">
+        <a>Canonical Ltd</a>
+      </li>
+      <li class="" data-value="CentOS" data-data="CentOS">
+        <a>CentOS</a>
+      </li>
+      <li class="" data-value="CirrOS" data-data="CirrOS">
+        <a>CirrOS</a>
+      </li>
+      <li class="" data-value="Debian Project" data-data="Debian Project">
+        <a>Debian Project</a>
+      </li>
+      <li class="" data-value="Endless Mobile, Inc" data-data="Endless Mobile, Inc">
+        <a>Endless Mobile, Inc</a>
+      </li>
+      <li class="" data-value="Fedora Project" data-data="Fedora Project">
+        <a>Fedora Project</a>
+      </li>
+      <li class="" data-value="FreeDOS" data-data="FreeDOS">
+        <a>FreeDOS</a>
+      </li>
+      <li class="" data-value="Mageia" data-data="Mageia">
+        <a>Mageia</a>
+      </li>
+      <li class="" data-value="Red Hat, Inc" data-data="Red Hat, Inc">
+        <a>Red Hat, Inc</a>
+      </li>
+      <li class="" data-value="SUSE" data-data="SUSE">
+        <a>SUSE</a>
+      </li>
+      <li class="" data-value="System76, Inc." data-data="System76, Inc.">
+        <a>System76, Inc.</a>
+      </li>
+      <li class="" data-value="openSUSE" data-data="openSUSE">
+        <a>openSUSE</a>
+      </li>
+      <li class="dropdown-header">windows</li>
+      <li class="" data-value="Microsoft Corporation" data-data="Microsoft Corporation">
+        <a>Microsoft Corporation</a>
+      </li>
+      <li class="dropdown-header">beos</li>
+      <li class="" data-value="Haiku, Inc." data-data="Haiku, Inc.">
+        <a>Haiku, Inc.</a>
+      </li>
+      <li class="dropdown-header">bsd</li>
+      <li class="" data-value="DragonFlyBSD Project" data-data="DragonFlyBSD Project">
+        <a>DragonFlyBSD Project</a>
+      </li>
+      <li class="" data-value="FreeBSD Project" data-data="FreeBSD Project">
+        <a>FreeBSD Project</a>
+      </li>
+      <li class="" data-value="NetBSD Project" data-data="NetBSD Project">
+        <a>NetBSD Project</a>
+      </li>
+      <li class="" data-value="OpenBSD Project" data-data="OpenBSD Project">
+        <a>OpenBSD Project</a>
+      </li>
+      <li class="dropdown-header">darwin</li>
+      <li class="" data-value="Apple Inc." data-data="Apple Inc.">
+        <a>Apple Inc.</a>
+      </li>
+      <li class="dropdown-header">netware</li>
+      <li class="" data-value="Novell" data-data="Novell">
+        <a>Novell</a>
+      </li>
+      <li class="dropdown-header">solaris</li>
+      <li class="" data-value="Oracle" data-data="Oracle">
+        <a>Oracle</a>
+      </li>
+      <li class="" data-value="Sun" data-data="Sun">
+        <a>Sun</a>
+      </li>
+    </ul>
+  </div>
+
+  <label class="control-label" for="vendor-select">Operating System</label>
+  <div class="btn-group bootstrap-select dropdown" id="system-select">
+    <button class="btn btn-default dropdown-toggle" type="button">
+      <span class="pull-left">Other OS</span>
+      <span class="caret">
+      </span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="" data-value="Other OS" data-data="other-os">
+        <a>Other OS</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <label class="control-label" for="memory-size">Memory</label>
+  <div role="group">
+    <input id="memory-size" class="form-control" type="text" step="1"
+    min="0" value="1" data-cip-id="memory-size" size="4">
+    </span>
+
+    <div class="btn-group bootstrap-select dropdown" id="memory-size-unit-select">
+      <button class="btn btn-default dropdown-toggle" type="button">
+        <span class="pull-left">GiB</span>
+        <span class="caret">
+        </span>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="" data-value="MiB" data-data="MiB">
+          <a>MiB</a>
+        </li>
+        <li class="" data-value="GiB" data-data="GiB">
+          <a>GiB</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <label class="control-label" for="storage-size">Storage Size</label>
+  <div role="group">
+    <input id="storage-size" class="form-control" type="text" step="1" min="0" value="10" data-cip-id="storage-size" size="4">
+
+    <div class="btn-group bootstrap-select dropdown" id="storage-size-unit-select">
+      <button class="btn btn-default dropdown-toggle" type="button">
+        <span class="pull-left">GiB</span>
+        <span class="caret">
+        </span>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="" data-value="MiB" data-data="MiB">
+          <a>MiB</a>
+        </li>
+        <li class="" data-value="GiB" data-data="GiB">
+          <a>GiB</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <label class="checkbox-inline"><input id="start-vm" type="checkbox"> Immediately Start VM</label>
+</form>
+{% endcapture %}
+
+{% capture dialog %}
+  <div class="modal-dialog">
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <h4 class="modal-title">TITLE</h4>
+      </div>
+      <div class="modal-body">
+
+        <!-- BEGIN FORM -->
+        FORM_HERE
+        <!-- END FORM -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">Cancel</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
-
   </div>
-</div>
+{% endcapture %}
+
+{{ dialog
+| replace: "TITLE", "Simple Demo"
+| replace: "FORM_HERE", form_demo
+}}
+
+{{ dialog
+| replace: "TITLE", "Add Disk"
+| replace: "FORM_HERE", form_disk_add
+}}
+
+{{ dialog
+| replace: "TITLE", "Add Disk"
+| replace: "FORM_HERE", form_disk_existing
+}}
+
+{{ dialog
+| replace: "TITLE", "New NFS Mount"
+| replace: "FORM_HERE", form_nfs
+}}
+
+{{ dialog
+| replace: "TITLE", "Create New Virtual Machine"
+| replace: "FORM_HERE", form_vm
+| replace: "modal-dialog", "modal-dialog modal-dialog-machines"
+}}
+
+{{ dialog
+| replace: "TITLE", "Bond Settings"
+| replace: "FORM_HERE", form_bond
+}}
