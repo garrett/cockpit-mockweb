@@ -170,8 +170,25 @@ layout: document
 {% endcapture %}
 
 {% capture form_nfs %}
-<form class="form-auto">
-</form>
+  <form class="form-auto">
+    <label for="server-address" class="control-label">Server Address</label>
+    <input id="server-address" class="form-control" type="text" value="">
+
+    <label class="control-label">Path on Server</label>
+    <input id="server-path" class="form-control" type="text" value="">
+
+    <label class="control-label">Local Mount Point</label>
+    <input id="server-mount" class="form-control" type="text" value="">
+
+    <label class="control-label">Mount Options</label>
+    <fieldset>
+      <div class="checkbox"><label><input type="checkbox" checked>Mount at boot</label></div>
+
+      <div class="checkbox"><label><input type="checkbox">Mount read only</label></div>
+
+      <div class="checkbox"><label><input type="checkbox">Custom mount option</label>
+    </fieldset>
+  </form>
 {% endcapture %}
 
 {% capture form_vm %}
