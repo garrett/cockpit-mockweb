@@ -43,7 +43,6 @@ layout: text
   > .form-auto-split
     grid-column: auto / auto
 
-  > fieldset,
   > [role=group]
     align-self: start
     display: grid
@@ -72,6 +71,16 @@ layout: text
       position: static
       height: 16px
       margin: 5px 0.5em 5px 0
+
+  fieldset
+    > .radio,
+    > .checkbox
+
+      &:first-child
+        margin-top: 0
+
+      &:last-child
+        margin-bottom: 0
 
   .list-group
     margin-bottom: 5px
