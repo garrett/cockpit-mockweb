@@ -117,13 +117,13 @@
   justify-self: start;
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 640px) {
   :root {
     --form-layout-repeat: 1;
   }
 }
 
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 480px) {
   .form-layout {
     grid-template-columns: initial;
 
