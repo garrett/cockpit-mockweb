@@ -1,9 +1,13 @@
 ---
 ---
 
+:root {
+  --form-layout-repeat: 2;
+}
+
 .form-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(4em, max-content) 1fr);
+  grid-template-columns: repeat(var(--form-layout-repeat), minmax(4em, max-content) 1fr);
   place-items: baseline stretch;
   gap: 0 10px;
 
