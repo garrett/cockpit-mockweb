@@ -2,12 +2,12 @@
 ---
 
 :root {
-  --form-layout-repeat: 2;
+  --ct-form-layout-columns: 2;
 }
 
-.form-layout {
+.ct-form-layout {
   display: grid;
-  grid-template-columns: repeat(var(--form-layout-repeat), minmax(4em, max-content) 1fr);
+  grid-template-columns: repeat(var(--ct-form-layout-columns), minmax(4em, max-content) 1fr);
   place-items: baseline stretch;
   gap: 0 10px;
 
@@ -49,7 +49,7 @@
     width: auto !important;
   }
 
-  > .form-layout-split {
+  > .ct-form-layout-split {
     grid-column: auto / auto;
   }
 
@@ -105,26 +105,26 @@
   }
 }
 
-.modal-dialog.modal-sm .form-layout > .form-layout-split {
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
   grid-column: 2 / -1;
 }
 
-.form-layout-stretch {
+.ct-form-layout-stretch {
   justify-content: stretch !important;
 }
 
-.form-layout-relax {
+.ct-form-layout-relax {
   justify-self: start;
 }
 
 @media screen and (max-width: 640px) {
   :root {
-    --form-layout-repeat: 1;
+    --ct-form-layout-columns: 1;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .form-layout {
+  .ct-form-layout {
     grid-template-columns: initial;
 
     > * {

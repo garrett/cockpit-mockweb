@@ -28,15 +28,15 @@ body {
 </style>
 
 {% capture form_demo %}
-<form class="form-layout">
+<form class="ct-form-layout">
   <label class="control-label" for="text1">Text input 1</label>
   <input class="form-control" id="text1" value="foo">
 
   <label class="control-label"for="text2">Text input 2</label>
-  <input class="form-control form-layout-split" id="text2" value="foo">
+  <input class="form-control ct-form-layout-split" id="text2" value="foo">
 
   <label class="control-label"for="text3">Text input 3</label>
-  <input class="form-control form-layout-split" id="text3" value="foo">
+  <input class="form-control ct-form-layout-split" id="text3" value="foo">
 
   <hr>
 
@@ -50,7 +50,7 @@ body {
 {% endcapture %}
 
 {% capture form_disk_add %}
-<form class="form-layout">
+<form class="ct-form-layout">
   <label class="control-label" for="text1">Source</label>
   <fieldset class="form-inline">
     <div class="radio">
@@ -80,7 +80,7 @@ body {
   <input class="form-control" id="text2" value="" placeholder="new volume name">
 
   <label class="control-label" for="size">Size</label>
-  <div role="group" class="form-layout-split">
+  <div role="group" class="ct-form-layout-split">
     <input type="text" class="form-control" id="size" value=1 min=1 size=4>
 
     <div class="btn-group bootstrap-select dropdown" id="vendor-select">
@@ -97,7 +97,7 @@ body {
   </div>
 
   <label class="control-label" for="size">Format</label>
-  <div class="btn-group bootstrap-select dropdown form-layout-split" id="vendor-select">
+  <div class="btn-group bootstrap-select dropdown ct-form-layout-split" id="vendor-select">
     <button class="btn btn-default dropdown-toggle" type="button">
       <span class="pull-left">qcow2</span>
       <span class="caret"></span>
@@ -117,7 +117,7 @@ body {
 {% endcapture %}
 
 {% capture form_disk_existing %}
-<form class="form-layout">
+<form class="ct-form-layout">
   <label class="control-label" for="text1">Source</label>
   <fieldset class="form-inline">
     <div class="radio">
@@ -164,7 +164,7 @@ body {
 {% endcapture %}
 
 {% capture form_nfs %}
-  <form class="form-layout">
+  <form class="ct-form-layout">
     <label for="server-address" class="control-label">Server Address</label>
     <input id="server-address" class="form-control" type="text" value="">
 
@@ -186,7 +186,7 @@ body {
 {% endcapture %}
 
 {% capture form_vm %}
-<form class="form-layout">
+<form class="ct-form-layout">
   <label class="control-label" for="connection">Connection</label>
   <div class="btn-group bootstrap-select dropdown" id="connection">
     <button class="btn btn-default dropdown-toggle" type="button">
@@ -469,7 +469,7 @@ body {
 {% endcapture %}
 
 {% capture form_bond %}
-<form id="network-bond-settings-body" class="form-layout">
+<form id="network-bond-settings-body" class="ct-form-layout">
 
   <label class="control-label">Name</label>
   <input id="network-bond-settings-interface-name-input" class="form-control" value="bond0" data-cip-id="network-bond-settings-interface-name-input">
@@ -499,16 +499,16 @@ body {
   <div class="btn-group bootstrap-select dropdown form-control"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="pull-left">MII (Recommended)</span><div class="caret"></div></button><ul class="dropdown-menu"><li value="mii"><a>MII (Recommended)</a></li><li value="arp"><a>ARP</a></li></ul></div>
 
   <label class="control-label">Monitoring Interval</label>
-  <input id="network-bond-settings-monitoring-interval-input" class="form-control network-number-field form-layout-relax" type="text" maxlength="4" value="100" data-cip-id="network-bond-settings-monitoring-interval-input" size=4>
+  <input id="network-bond-settings-monitoring-interval-input" class="form-control network-number-field ct-form-layout-relax" type="text" maxlength="4" value="100" data-cip-id="network-bond-settings-monitoring-interval-input" size=4>
 
   <label class="control-label">Monitoring Targets</label>
-  <input id="network-bond-settings-monitoring-targets-input" class="form-control form-layout-relax" type="text" value="" size=4>
+  <input id="network-bond-settings-monitoring-targets-input" class="form-control ct-form-layout-relax" type="text" value="" size=4>
 
   <label class="control-label">Link up delay</label>
-  <input id="network-bond-settings-link-up-delay-input" class="form-control network-number-field form-layout-relax" type="text" maxlength="4" length=4 value="0" data-cip-id="network-bond-settings-link-up-delay-input" size=4>
+  <input id="network-bond-settings-link-up-delay-input" class="form-control network-number-field ct-form-layout-relax" type="text" maxlength="4" length=4 value="0" data-cip-id="network-bond-settings-link-up-delay-input" size=4>
 
   <label class="control-label">Link down delay</label>
-  <input id="network-bond-settings-link-down-delay-input" class="form-control network-number-field form-layout-relax" type="text" maxlength="4" value="0" data-cip-id="network-bond-settings-link-down-delay-input" size=4>
+  <input id="network-bond-settings-link-down-delay-input" class="form-control network-number-field ct-form-layout-relax" type="text" maxlength="4" value="0" data-cip-id="network-bond-settings-link-down-delay-input" size=4>
 </form>
 {% endcapture %}
 
