@@ -59,14 +59,12 @@ body {
 {% capture form_disk_add %}
 <form class="form-layout">
   <label class="control-label" for="text1">Source</label>
-  <div class="form-inline" role="group">
+  <fieldset class="form-inline">
     <div class="radio">
-      <label><input type="radio" name="disk_check" checked>Create New</label>
+      <label><input type="radio" name="disk_check">Create New</label>
+      <label><input type="radio" name="disk_check" checked>Use Existing</label>
     </div>
-    <div class="radio">
-      <label><input type="radio" name="disk_check">Use Existing</label>
-    </div>
-  </div>
+  </fieldset>
 
   <hr>
 
