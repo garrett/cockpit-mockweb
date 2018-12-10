@@ -116,3 +116,35 @@
 .form-layout-relax {
   justify-self: start;
 }
+
+@media screen and (max-width: 40rem) {
+  :root {
+    --form-layout-repeat: 1;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .form-layout {
+    grid-template-columns: initial;
+
+    > * {
+      grid-column: auto;
+      display: block;
+      overflow: auto;
+      max-width: 100%;
+    }
+
+    > .control-label {
+      padding: 0;
+      text-align: left;
+
+      &:not(:first-child) {
+        padding: 15px 0 0;
+      }
+    }
+
+    > hr {
+      height: 10px;
+    }
+  }
+}
