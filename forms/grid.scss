@@ -1,0 +1,114 @@
+---
+---
+
+.form-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(4em, max-content) 1fr);
+  place-items: baseline stretch;
+  gap: 0 10px;
+
+  > hr {
+    border: none;
+    grid-column: 1 / -1;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    line-height: 26px;
+  }
+
+  > .control-label {
+    text-align: right;
+    padding-left: 1em;
+    align-self: flex-start;
+  }
+
+  > ul,
+  > ol,
+  > dl,
+  > input,
+  > fieldset,
+  > div,
+  > span,
+  > p,
+  > label:not(.control-label) {
+    grid-column: 2 / -1;
+    width: auto;
+    margin: 0;
+  }
+
+  > .btn-group,
+  > .bootstrap-select,
+  > .dropdown {
+    width: auto !important;
+  }
+
+  > .form-layout-split {
+    grid-column: auto / auto;
+  }
+
+  > [role=group] {
+    align-self: start;
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    grid-template-columns: max-content;
+    justify-content: start;
+
+    // Allow dropdowns to be less wide
+    > .dropdown {
+      width: auto !important;
+    }
+
+    > .form-control {
+      width: auto;
+    }
+  }
+
+  .radio > label,
+  .checkbox > label,
+  .radio-inline,
+  .checkbox-inline {
+    display: inline-flex;
+    padding-left: 0;
+    padding-right: 10px;
+
+    > input[type="radio"],
+    > input[type="checkbox"] {
+      position: static;
+      height: 16px;
+      margin: 5px 0.5em 5px 0;
+    }
+  }
+
+  fieldset {
+    > .radio,
+    > .checkbox {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .list-group {
+    margin-bottom: 5px;
+  }
+}
+
+.modal-dialog.modal-sm .form-layout > .form-layout-split {
+  grid-column: 2 / -1;
+}
+
+.form-layout-stretch {
+  justify-content: stretch !important;
+}
+
+.form-layout-relax {
+  justify-self: start;
+}
