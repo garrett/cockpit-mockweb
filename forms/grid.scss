@@ -47,7 +47,7 @@
 
 .ct-form-layout {
   display: grid;
-  gap: 0 10px;
+  grid-gap: 0 10px;
   // Repeat a label that is a minimum of 4em and its control that
   // fills the remaining space by a CSS variable (default: 2)
   grid-template-columns: repeat(var(--ct-form-layout-columns), minmax(4em, max-content) 1fr);
@@ -125,7 +125,7 @@
   > [role=group] {
     align-self: start;
     display: grid;
-    gap: 5px;
+    grid-gap: 5px;
     grid-auto-flow: column;
     grid-template-columns: max-content;
     justify-content: start;
