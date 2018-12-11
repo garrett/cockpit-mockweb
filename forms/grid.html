@@ -49,6 +49,13 @@ body {
 </form>
 {% endcapture %}
 
+{% capture form_demo2 %}
+<form class="ct-form-layout">
+  <label class="control-label" for="text1">This label is long and the input has a <samp>size="3"</samp> attribute</label>
+  <input class="form-control" id="text1" value="foo" size="3">
+</form>
+{% endcapture %}
+
 {% capture form_disk_add %}
 <form class="ct-form-layout">
   <label class="control-label" for="text1">Source</label>
@@ -538,6 +545,11 @@ FORM_HERE
 {{ dialog
 | replace: "TITLE", "Simple Demo"
 | replace: "FORM_HERE", form_demo
+}}
+
+{{ dialog
+| replace: "TITLE", "Simpler Demo"
+| replace: "FORM_HERE", form_demo2
 }}
 
 {{ dialog
