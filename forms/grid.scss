@@ -23,7 +23,8 @@
 //
 // `ct-form-layout-relax`: Form elements normally stretch to take up the
 // full space. You can relax their width by adding this class to the
-// control.
+// control. Inputs with a size attribute are auto-relaxed and do not
+// need this class.
 //
 // `ct-form-layout-stretch`: If a control has a width specified
 // elsewhere, you can force it to stretch. This is mainly useful when
@@ -95,6 +96,11 @@
     grid-column: 2 / -1;
     margin: 0;
     width: auto;
+  }
+
+  // Auto-relax inputs with size
+  > input[size] {
+    justify-self: start;
   }
 
   // Some elements need special width considerations
