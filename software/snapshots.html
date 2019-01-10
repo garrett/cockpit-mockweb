@@ -1,0 +1,538 @@
+---
+title: "Software: System Snapshots"
+layout: frame
+---
+
+<style>
+@import url('{{ site.baseurl }}/forms/grid.css');
+@import url('updates.css');
+
+select.btn {
+  /*
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), 	linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background: url('data:image/svg+xml;utf8,<svg width="39" height="24" version="1.1" viewBox="0 0 10 6"><text x="3.7" y="4.7" font-family="FontAwesome" font-size="14px" font-weight="400" style="line-height:1.25"><tspan font-size="4.1026px"></tspan></text></svg>') 50% 50%;
+   */
+    --select-arrow: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='37' height='24' viewBox='0 0 9.487 6'><path d='M5.641 2.873a.062.062 0 0 0-.018-.042l-.09-.09a.062.062 0 0 0-.041-.018.06.06 0 0 0-.042.018l-.706.707-.707-.708a.062.062 0 0 0-.042-.017.058.058 0 0 0-.04.018l-.091.09a.059.059 0 0 0-.018.042c0 .014.008.03.018.04l.838.838a.06.06 0 0 0 .042.018.06.06 0 0 0 .04-.018l.84-.837a.062.062 0 0 0 .017-.041z' aria-label='' fill='%234d5258'/></svg>");
+
+  background: #f1f1f1;
+  background: var(--select-arrow) no-repeat 100% 50%, linear-gradient(#fafafa,#ededed);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: inherit;
+  text-align: left;
+}
+select.btn:hover {
+  background: var(--select-arrow) no-repeat 100% 50%, linear-gradient(#ededed, #fafafa);
+}
+</style>
+
+{% capture snapshots %}
+  <div class="header-buttons pk-updates--header pk-updates--header--auto" id="automatic">
+    <h2 class="pk-updates--header--heading">Snapshots</h2>
+
+    <div class="pk-updates--header--actions">
+      <div class="btn-group btn-onoff-ct">
+        <label class="btn active">
+          <input type="radio">
+          <span>On</span>
+        </label>
+        <label class="btn">
+          <input type="radio">
+          <span>Off</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="ct-form-layout ct-form-layout-relax">
+    <label class="control-label">
+      LVM snapshot
+    </label>
+    <select class="btn btn-default ct-form-layout-relax">
+      <option>every update</option>
+      <option>manual updates only</option>
+    </select>
+
+    <label class="control-label">
+      Hello
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture demo %}
+  <div id="app">
+    <div>
+      <div class="content-header-extra">
+        <div id="state" class="content-header-extra--state">23 updates</div>
+        <div class="content-header-extra--updated">Last checked: 8 hours ago</div>
+        <div class="content-header-extra--action">
+          <button class="btn btn-default">Check for Updates</button>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+
+        <div class="pk-updates">
+
+          <div class="header-buttons pk-updates--header pk-updates--header--auto" id="automatic">
+            <h2 class="pk-updates--header--heading">Automatic Updates</h2>
+            <div class="pk-updates--header--actions">
+              <div class="btn-group btn-onoff-ct">
+                <label class="btn active">
+                  <input type="radio">
+                  <span>On</span>
+                </label>
+                <label class="btn">
+                  <input type="radio">
+                  <span>Off</span>
+                </label>
+              </div>
+            </div>
+            <div class="auto-conf">
+              <span class="auto-conf-group">
+                <div class="btn-group bootstrap-select dropdown" id="auto-update-type">
+                  <button class="btn btn-default dropdown-toggle" type="button">
+                    <span class="pull-left">Apply all updates</span>
+                    <span class="caret">
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="" data-value="Apply all updates" data-data="all">
+                      <a>Apply all updates</a>
+                    </li>
+                    <li class="" data-value="Apply security updates" data-data="security">
+                      <a>Apply security updates</a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+              <span class="auto-conf-group">
+                <div class="btn-group bootstrap-select dropdown" id="auto-update-day">
+                  <button class="btn btn-default dropdown-toggle" type="button">
+                    <span class="pull-left">on Fridays</span>
+                    <span class="caret">
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="" data-value="every day" data-data="">
+                      <a>every day</a>
+                    </li>
+                    <li class="" data-value="on Mondays" data-data="mon">
+                      <a>on Mondays</a>
+                    </li>
+                    <li class="" data-value="on Tuesdays" data-data="tue">
+                      <a>on Tuesdays</a>
+                    </li>
+                    <li class="" data-value="on Wednesdays" data-data="wed">
+                      <a>on Wednesdays</a>
+                    </li>
+                    <li class="" data-value="on Thursdays" data-data="thu">
+                      <a>on Thursdays</a>
+                    </li>
+                    <li class="" data-value="on Fridays" data-data="fri">
+                      <a>on Fridays</a>
+                    </li>
+                    <li class="" data-value="on Saturdays" data-data="sat">
+                      <a>on Saturdays</a>
+                    </li>
+                    <li class="" data-value="on Sundays" data-data="sun">
+                      <a>on Sundays</a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+              <span class="auto-conf-group">
+                <span class="auto-conf-text">at</span>
+                <div class="btn-group bootstrap-select dropdown" id="auto-update-time">
+                  <button class="btn btn-default dropdown-toggle" type="button">
+                    <span class="pull-left">06:00</span>
+                    <span class="caret">
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="" data-value="00:00" data-data="0:00">
+                      <a>00:00</a>
+                    </li>
+                    <li class="" data-value="01:00" data-data="1:00">
+                      <a>01:00</a>
+                    </li>
+                    <li class="" data-value="02:00" data-data="2:00">
+                      <a>02:00</a>
+                    </li>
+                    <li class="" data-value="03:00" data-data="3:00">
+                      <a>03:00</a>
+                    </li>
+                    <li class="" data-value="04:00" data-data="4:00">
+                      <a>04:00</a>
+                    </li>
+                    <li class="" data-value="05:00" data-data="5:00">
+                      <a>05:00</a>
+                    </li>
+                    <li class="" data-value="06:00" data-data="6:00">
+                      <a>06:00</a>
+                    </li>
+                    <li class="" data-value="07:00" data-data="7:00">
+                      <a>07:00</a>
+                    </li>
+                    <li class="" data-value="08:00" data-data="8:00">
+                      <a>08:00</a>
+                    </li>
+                    <li class="" data-value="09:00" data-data="9:00">
+                      <a>09:00</a>
+                    </li>
+                    <li class="" data-value="10:00" data-data="10:00">
+                      <a>10:00</a>
+                    </li>
+                    <li class="" data-value="11:00" data-data="11:00">
+                      <a>11:00</a>
+                    </li>
+                    <li class="" data-value="12:00" data-data="12:00">
+                      <a>12:00</a>
+                    </li>
+                    <li class="" data-value="13:00" data-data="13:00">
+                      <a>13:00</a>
+                    </li>
+                    <li class="" data-value="14:00" data-data="14:00">
+                      <a>14:00</a>
+                    </li>
+                    <li class="" data-value="15:00" data-data="15:00">
+                      <a>15:00</a>
+                    </li>
+                    <li class="" data-value="16:00" data-data="16:00">
+                      <a>16:00</a>
+                    </li>
+                    <li class="" data-value="17:00" data-data="17:00">
+                      <a>17:00</a>
+                    </li>
+                    <li class="" data-value="18:00" data-data="18:00">
+                      <a>18:00</a>
+                    </li>
+                    <li class="" data-value="19:00" data-data="19:00">
+                      <a>19:00</a>
+                    </li>
+                    <li class="" data-value="20:00" data-data="20:00">
+                      <a>20:00</a>
+                    </li>
+                    <li class="" data-value="21:00" data-data="21:00">
+                      <a>21:00</a>
+                    </li>
+                    <li class="" data-value="22:00" data-data="22:00">
+                      <a>22:00</a>
+                    </li>
+                    <li class="" data-value="23:00" data-data="23:00">
+                      <a>23:00</a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+              <span class="auto-conf-group auto-conf-text">and restart the machine automatically.</span>
+            </div>
+          </div>
+
+          SNAPSHOTS_HERE
+
+          <div id="available" class="pk-updates--header">
+            <h2 class="pk-updates--header--heading">Available Updates</h2>
+            <div class="pk-updates--header--actions">
+              <button class="pk-update--all btn btn-primary">Install All Updates</button>
+            </div>
+          </div>
+          <table class="listing-ct">
+            <thead>
+              <tr>
+                <th>
+                </th>
+                <th>Name</th>
+                <th>Version</th>
+                <th>Severity</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>brave-browser-dev</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">0.60.9-1</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>fwupd</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">1.2.3-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>6</td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>This release adds the following features:</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>google-chrome-unstable</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">73.0.3664.3-1</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>http-parser</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">2.9.0-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Update Node.js to 10.15.0</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>krb5-devel</span>, <span>krb5-libs</span>, <span>krb5-libs</span>, <span>krb5-server</span>, …</th>
+                <td class="version">
+                  <span class="truncating">1.16.1-24.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Improve memset hygiene in one location.</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>libxmlb</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">0.1.6-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>New upstream release</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>nodejs</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">1:10.15.0-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Update Node.js to 10.15.0</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>npm</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">1:6.4.1-1.10.15.0.1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Update Node.js to 10.15.0</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>python2-pyqt5-sip</span>, <span>python2-sip</span>, <span>python3-pyqt5-sip</span>, <span>python3-sip</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">4.19.13-3.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Qt 5.11.3 security and bugfix release, https://blog.qt.io/blog/2018/12/04/qt-5-11-3-released-important-security-updates</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>qt5-devel</span>, <span>qt5-qtconnectivity</span>, <span>qt5-qtconnectivity-devel</span>, <span>qt5-rpm-macros</span>, …</th>
+                <td class="version">
+                  <span class="truncating">5.11.3-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Qt 5.11.3 security and bugfix release, https://blog.qt.io/blog/2018/12/04/qt-5-11-3-released-important-security-updates</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>tpm2-abrmd</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">2.0.3-2.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>1</td>
+                <td class="changelog">
+                  <div>
+                    <span>
+                      <p>Remove the tpm2-abrmd preset file since it shouldn't be included in the package.</p>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                  <i class="fa fa-fw">
+                  </i>
+                </td>
+                <th>
+                  <span>unrar</span>
+                </th>
+                <td class="version">
+                  <span class="truncating">5.6.8-1.fc29</span>
+                </td>
+                <td class="type">
+                  <span class="fa fa-bug">&nbsp;</span>
+                </td>
+                <td class="changelog">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="history">
+            <h2>Update History</h2>
+            <p>The following packages were updated 8 hours ago:</p>
+            <ul class="flow-list">
+              <li>brave-browser-dev</li>
+              <li>google-chrome-unstable</li>
+              <li>unrar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+{{ demo | replace: 'SNAPSHOTS_HERE', snapshots }}
