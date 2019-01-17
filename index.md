@@ -5,6 +5,7 @@ layout: document
 
 # Cockpit HTML mockups
 
+* [Forms: Grid-based layout](forms/grid)
 * [Animations](animation)
 * [Dialog scale animation](dialog-scale)
 * [Performance Co-Pilot (PCP)](pcp)
