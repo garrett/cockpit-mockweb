@@ -1,0 +1,43 @@
+<nav class="pf-c-nav" aria-label="Global">
+  {% include_relative _nav-group.html
+    number=1
+    title="Apps"
+    pages="
+      Image_Builder
+      View_all_apps
+    "
+  %}
+  {% include_relative _nav-group.html
+    number=2
+    title="System"
+    pages="
+      Overview*
+      Logs
+      Services
+      Storage
+      Networking
+      Podman_containers
+      Virtual_machines
+      Accounts
+    "
+  %}
+  <!--
+  <hr class="pf-c-divider" role="separator">
+  -->
+  {% include_relative _nav-group.html
+    number=3
+    title="Tools"
+    pages="
+      Software_updates
+      Terminal
+    "
+  %}
+  {% include_relative _nav-group.html
+    number=3
+    title="Debug"
+    pages="
+      Diagnostic_reports
+      Kernel_dump
+    "
+  %}
+</nav>

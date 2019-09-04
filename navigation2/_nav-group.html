@@ -1,0 +1,21 @@
+<section class="pf-c-nav__section" aria-labelledby="grouped-title{{ include.number }}">
+    <h2 class="pf-c-nav__section-title" id="grouped-title{{ include.number }}">
+        {{ include.title }}
+    </h2>
+    <ul class="pf-c-nav__simple-list">
+        {% assign pages = include.pages | strip | split: " " %}
+
+        {% for page in pages %}
+
+        {% if page contains '*' %}
+            {% assign current = 'pf-m-current" aria-current="page' %}
+        {% else %}
+            {% assign current = '' %}
+        {% endif %}
+
+        <li class="pf-c-nav__item"><a href="#" class="pf-c-nav__link {{ current }}">
+            {{ page | remove: "*" | replace: "_", " " | strip }}
+        </a></li>
+    {% endfor %}
+    </ul>
+</section>

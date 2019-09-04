@@ -1,0 +1,63 @@
+---
+---
+
+.test {
+    width: 20rem;
+}
+
+html, body, .page {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid: "header header" "nav content";
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: minmax(max-content, 15rem) 1fr;
+}
+
+.header {
+    grid-area: header;
+    background: black;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-top: 3px solid var(--pf-global--primary-color--light-100);
+
+    h1 {
+        font-size: 1.25rem;
+        font-family: var(--pf-global--FontFamily--heading--sans-serif);
+        text-transform: uppercase;
+    }
+}
+
+.nav {
+    grid-area: nav;
+    border-right: 1px solid var(--pf-global--BorderColor--100);
+    display: flex;
+    flex-direction: column;
+
+    > .pf-c-select {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--pf-global--BorderColor--100);
+    }
+
+    .pf-c-nav {
+        padding: 1rem 0;
+        overflow-y: auto;
+        flex: 1 1 0;
+    }
+
+    hr.pf-c-divider {
+        border: none;
+        border-top: 1px solid var(--pf-global--BorderColor--100);
+        margin: 2rem 1rem;
+    }
+}
+
+.content {
+    grid-area: content;
+    background: #fafafa;
+}
