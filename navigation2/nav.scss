@@ -1,6 +1,9 @@
 ---
 ---
 
+$phone: 640px;
+$desktop: $phone + 1px;
+
 .test {
     width: 20rem;
 }
@@ -14,9 +17,25 @@ html, body, .page {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid: "header header" "nav content";
-    grid-template-rows: max-content 1fr;
-    grid-template-columns: minmax(max-content, 15rem) 1fr;
+
+    @media (max-width: $phone) {
+        grid: "content content" "nav header";
+        grid-template-rows: 1fr 4rem;
+        grid-template-columns: auto 4rem;
+        overflow: hidden;
+    }
+
+    @media (min-width: $desktop) {
+        grid: "header header" "nav content";
+        grid-template-rows: max-content 1fr;
+        grid-template-columns: minmax(max-content, 15rem) 1fr;
+    }
+}
+
+.header,
+.nav,
+.content {
+    overflow: auto;
 }
 
 .header {
@@ -30,6 +49,12 @@ html, body, .page {
         font-size: 1.25rem;
         font-family: var(--pf-global--FontFamily--heading--sans-serif);
         text-transform: uppercase;
+    }
+
+    @media (max-width: $phone) {
+        h1 {
+            display: none;
+        }
     }
 }
 
@@ -54,6 +79,40 @@ html, body, .page {
         border: none;
         border-top: 1px solid var(--pf-global--BorderColor--100);
         margin: 2rem 1rem;
+    }
+
+    @media (max-width: $phone) {
+        flex-direction: row;
+        align-items: start;
+
+        > .pf-c-select,
+        .pf-c-nav > section {
+            max-width: 10rem;
+            margin: 0;
+        }
+
+        > .pf-c-select,
+        .pf-c-nav {
+            padding: 0;
+        }
+
+        > .pf-c-select {
+            width: 8rem;
+        }
+
+        .pf-c-nav {
+            display: flex;
+            overflow: auto;
+            max-width: calc(100vw - 30vw - 4rem);
+        }
+
+        .pf-c-nav > section {
+            &:focus,
+            &:focus-within,
+            &:hover {
+                //align-self: end;
+            }
+        }
     }
 }
 
