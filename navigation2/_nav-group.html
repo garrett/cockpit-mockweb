@@ -1,7 +1,9 @@
 <section class="pf-c-nav__section" aria-labelledby="grouped-title{{ include.number }}">
+    {% if include.title %}
     <h2 class="pf-c-nav__section-title" id="grouped-title{{ include.number }}">
         {{ include.title }}
     </h2>
+    {% endif %}
     <ul class="pf-c-nav__simple-list">
         {% assign pages = include.pages | strip | split: " " %}
 
@@ -23,6 +25,12 @@
             {% assign sub = false %}
         {% endif %}
 
+        {% if title contains '^' %}
+            {% assign back = true %}
+        {% else %}
+            {% assign back = false %}
+        {% endif %}
+
         {% if title contains '!' %}
             {% assign warn = true %}
         {% else %}
@@ -36,7 +44,12 @@
         {% endif %}
 
         <li class="pf-c-nav__item"><a href="{{ url }}" class="pf-c-nav__link {{ current }}">
-            {{ title | remove: "*" | remove: ">"  | remove: "!" | replace: "_", " " | strip }}
+            {% if back %}
+            <i class="fa fa-angle-left"></i>
+            {% endif %}
+            <span class="ct-nav-item">
+                {{ title | remove: "*" | remove: ">" | remove: "^"  | remove: "!" | replace: "_", " " | strip }}
+            </span>
             {% if sub %}
             <i class="fa fa-angle-right"></i>
             {% endif %}

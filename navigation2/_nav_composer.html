@@ -1,0 +1,20 @@
+<nav class="pf-c-nav pf-m-dark" aria-label="Global">
+  {% include_relative _nav-group.html
+    number=1
+    pages="
+      ^Web_Console-index
+    "
+  %}
+  {% include_relative _nav-group.html
+    number=2
+    pages="
+      Overview*
+      Logs
+      Services!
+      Storage
+      Networking
+      Podman_containers
+      Virtual_machines
+    "
+  %}
+</nav>

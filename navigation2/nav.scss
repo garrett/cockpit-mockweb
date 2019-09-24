@@ -98,8 +98,8 @@ main {
     .fa {
         font-size: 22px;
         margin-right: 0.5rem;
-        vertical-align: top;
-        margin-top: calc((22px - 1rem) / -4);
+        vertical-align: middle;
+        margin-top: calc((22px - 1rem) / -2);
     }
 
     .ct-header-item {
@@ -148,8 +148,16 @@ main {
 
     .pf-c-nav__link {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+
+        > :first-child {
+            &.fa {
+                margin-right: 0.5rem;
+            }
+            &:not(.fa) {
+                flex: auto;
+            }
+        }
     }
 
     hr.pf-c-divider {
@@ -239,12 +247,15 @@ main {
     }
 }
 
-.fa-exclamation-triangle::before {
-    color: var(--pf-global--warning-color--100);
+.fa-angle-up::before,
+.fa-angle-right::before,
+.fa-angle-down::before,
+.fa-angle-left::before {
+    color: var(--pf-global--Color--light-300);
 }
 
-.fa-angle-right::before {
-    color: var(--pf-global--Color--light-300);
+.fa-exclamation-triangle::before {
+    color: var(--pf-global--warning-color--100);
 }
 
 .fa-question-circle::before {
