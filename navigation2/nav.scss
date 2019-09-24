@@ -342,3 +342,6 @@ main {
 .pf-c-card > .ct-heading-group + .pf-c-table {
     border-top: 1px solid var(--pf-global--BorderColor--100);
 }
+.pf-c-table tr > * {
+    vertical-align: top;
+}

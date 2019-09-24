@@ -47,7 +47,7 @@
             </div>
 
             <!--
-            <p data-pf-content="true" class="">
+            <p data-pf-content="true">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because of its relative line height of 1.5.
             </p>
             -->
@@ -59,7 +59,7 @@
     
             <div class="ct-heading-group">
                 <h3 data-pf-content="true" class="pf-c-title pf-m-2xl">
-                    Firewall
+                    Public Zone
                 </h3>
 
                 <div class="ct-heading-info">
@@ -84,20 +84,26 @@
 
             </div>
             <table role="grid" class="pf-c-table pf-m-grid-md">
-                <thead class="">
+                <thead>
                     <tr>
-                        <th scope="col" data-label="Repositories" data-key="0" class="">Service</th>
-                        <th scope="col" data-label="Branches" data-key="1" class="">TCP</th>
-                        <th scope="col" data-label="Pull requests" data-key="2" class="">UDP</th>
-                        <th scope="col" data-label="Pull requests" data-key="3" class="pf-m-right">Actions</th>
+                        <th scope="col" data-label="Service" data-key="0">Service</th>
+                        <th scope="col" data-label="TCP" data-key="1">TCP</th>
+                        <th scope="col" data-label="UDP" data-key="2">UDP</th>
+                        <th scope="col" data-label="Actions" data-key="3" class="pf-m-right">Actions</th>
                     </tr>
                 </thead>
-                <tbody class="">
-                    <tr class="">
-                        <td data-label="Repositories" data-key="0" class="">one</td>
-                        <td data-label="Branches" data-key="1" class="">two</td>
-                        <td data-label="Pull requests" data-key="2" class="">three</td>
-                        <td data-label="Last Commit" data-key="3" class="pf-m-right">five</td>
+                <tbody>
+                    <tr>
+                        <td data-label="Service" data-key="0">Cockpit</td>
+                        <td data-label="TCP" data-key="1">9090</td>
+                        <td data-label="UDP" data-key="2"></td>
+                        <td data-label="Actions" data-key="3" class="pf-m-right"></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Service" data-key="0">DNS</td>
+                        <td data-label="TCP" data-key="1">53</td>
+                        <td data-label="UDP" data-key="2">53</td>
+                        <td data-label="Actions" data-key="3" class="pf-m-right"></td>
                     </tr>
                 </tbody>
             </table>
