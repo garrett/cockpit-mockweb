@@ -261,3 +261,21 @@ main {
 .fa-question-circle::before {
     color: var(--pf-global--info-color--100);
 }
+
+.ct-form > .pf-c-input-group {
+    width: auto !important;
+}
+
+.ct-system-info {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 20rem));
+    grid-gap: 3rem 2rem;
+}
+.ct-system-info > section {
+}
+
+.ct-system-info .ct-form > label {
+    font-size: var(--pf-global--FontSize--sm);
+    text-align: left;
+}

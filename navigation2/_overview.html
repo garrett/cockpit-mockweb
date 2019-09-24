@@ -1,14 +1,132 @@
-<h2 data-pf-content="true">Content area</h2>
+<h2>System information</h2>
 
-<p data-pf-content="true">
-    Content goes here.
-</p>
-<p data-pf-content="true">
-    Content goes here.
-</p>
-<p data-pf-content="true">
-    Content goes here.
-</p>
-<p data-pf-content="true">
-    Content goes here.
-</p>
+<div class="ct-system-info">
+    <section>
+        <h3>Software</h3>
+
+        <form class="ct-form">
+            <label class="control-label" for="system_information_os_text">Operating System</label>
+            <span id="system_information_os_text">Fedora 30.20190922.0 (Workstation Edition)</span>
+
+            <label class="control-label" for="system-ostree-version-link">Version</label>
+            <a tabindex="0" id="system-ostree-version-link" class="">30.20190922.0</a>
+
+            <label class="control-label" for="system_information_os_text">Updates</label>
+            <a tabindex="0" id="software-updates">
+                <i class="fa fa-bug"></i>
+                29 bug fixes available
+            </a>
+        </form>
+    </section>
+
+    <section>
+        <h3>Health</h3>
+
+        <form class="ct-form">
+            <label class="control-label">Warning</label>
+            <a href="#">
+                <i class="fa fa-exclamation-triangle"></i>
+                2 failed services
+            </a>
+        </form>
+    </section>
+
+    <section>
+        <h3>Hardware</h3>
+
+        <form class="ct-form">
+            <label class="control-label" for="system_information_hardware_text">Model</label>
+            <span>
+                <!-- wrap the <a> so that it doesn't stretch to the whole page width; otherwise tooltip looks bad -->
+                <a tabindex="0" id="system_information_hardware_text" data-original-title="" title="">Lockmart CM-88B
+                    Bison</a>
+            </span>
+
+            <label class="control-label" for="system_information_asset_tag_text">Asset Tag</label>
+            <span id="system_information_asset_tag_text">1809246(09)</span>
+
+            <label class="control-label" for="system_machine_id">Machine ID</label>
+            <span id="system_machine_id">c2f6bee7ea3b2bd3f3c344babb53ab4b</span>
+
+            <label class="control-label" for="system_information_systime_button">System Time</label>
+            <div role="group">
+                <span id="systime-tooltip" data-original-title="" title="">
+                    <a tabindex="0" class="systime-privileged" id="system_information_systime_button"
+                        data-timedated-initialized="true" data-stable="yes">2122-07-03 13:55</a>
+                </span>
+                <a tabindex="0" id="system_information_systime_ntp_status" role="button" data-toggle="tooltip"
+                    data-placement="bottom" data-html="true" title="" style="display: inline;"
+                    data-original-title="Synchronized" hidden="">
+                    <span class="fa fa-lg fa-info-circle"></span>
+                </a>
+            </div>
+
+            <label class="control-label">Power Options</label>
+
+            <div class="pf-c-input-group ct-form-relax">
+                <button class="pf-c-button pf-m-secondary" type="button">
+                    Restart
+                </button>
+
+                <div id="shutdown-group" class="pf-c-dropdown">
+                    <button class="pf-c-dropdown__toggle pf-m-plain" id="dropdown-example-kebab-button"
+                        aria-expanded="false" aria-label="Actions">
+                        <i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
+                    <ul class="pf-c-dropdown__menu" aria-labelledby="dropdown-example-kebab-button" hidden="">
+                        <li><a class="pf-c-dropdown__menu-item" href="#">Link</a></li>
+                        <li><button class="pf-c-dropdown__menu-item">Action</button></li>
+                        <li><a class="pf-c-dropdown__menu-item pf-m-disabled" aria-disabled="true" tabindex="-1"
+                                href="#">Disabled
+                                link</a></li>
+                        <li><button class="pf-c-dropdown__menu-item" disabled="">Disabled action</button></li>
+                        <li class="pf-c-divider" role="separator">
+                        </li>
+
+                        <li><a class="pf-c-dropdown__menu-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+
+        <form class="ct-form">
+            <label class="control-label" for="system_information_hostname_button">Host Name</label>
+            <span id="hostname-tooltip" data-original-title="" title="">
+                <a tabindex="0" class="hostname-privileged" id="system_information_hostname_button" data-stable="yes"
+                    title="" data-original-title="Rain (rain)">Rain (rain)</a>
+            </span>
+
+            <label class="control-label" for="system-ssh-keys-link">Secure Shell Keys</label>
+            <a tabindex="0" id="system-ssh-keys-link" data-toggle="modal"
+                data-target="#system_information_ssh_keys">Show
+                fingerprints</a>
+
+            <label class="control-label" for="system-info-domain">Domain</label>
+            <span id="system-info-domain"><span data-original-title="" title=""><a tabindex="0" data-stable="yes">Join
+                        Domain</a></span></span>
+
+            <label class="control-label">Performance Profile</label>
+            <span id="system-info-performance">
+                <div>
+                    <span id="tuned-status-tooltip" data-html="true"
+                        data-original-title="This system is using the recommended profile" title="">
+                        <a tabindex="0" class="action-trigger">balanced</a>
+                    </span>
+                </div>
+            </span>
+
+            <label class="control-label" for="server-pmlogger-switch" style="display: none;" hidden="">Store Metrics</label>
+            <div id="server-pmlogger-switch" style="display: none;" hidden=""><label class="onoff-ct"><input
+                        type="checkbox"><span class="switch-toggle"></span></label></div>
+
+            <a tabindex="0" id="system-information-enable-pcp-link" style="display: none;" hidden="">
+                <span class="pficon pficon-info"></span>
+                <span>Enable stored metrics…</span>
+            </a>
+        </form>
+    </section>
+
+</div>
