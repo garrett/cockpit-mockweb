@@ -279,3 +279,11 @@ main {
     font-size: var(--pf-global--FontSize--sm);
     text-align: left;
 }
+
+.ct-health-details {
+    &, li {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style-type: none;
+    }
+}
