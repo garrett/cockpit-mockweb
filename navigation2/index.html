@@ -1,7 +1,7 @@
 ---
 title: Cockpit
 layout: minimal
-css: "pf4/patternfly pf4/patternfly-addons"
+css: "pf4/patternfly pf4/patternfly-addons form-layout"
 css_local: "nav"
 ---
 <section class="page pf-m-redhat-font">
@@ -19,19 +19,7 @@ css_local: "nav"
     <main role="main" id="main-content-page-layout-group-nav" class="pf-c-page__main" tabindex="-1">
         <section class="pf-c-page__main-section pf-m-light">
             <div class="pf-c-content">
-                <h2 data-pf-content="true">Content area</h2>
-                <p data-pf-content="true">
-                    Content goes here.
-                </p>
-                <p data-pf-content="true">
-                    Content goes here.
-                </p>
-                <p data-pf-content="true">
-                    Content goes here.
-                </p>
-                <p data-pf-content="true">
-                    Content goes here.
-                </p>
+                {% include_relative _overview.html %}
             </div>
         </section>
     </main>
