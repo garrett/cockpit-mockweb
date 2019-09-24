@@ -5,13 +5,33 @@ css_local: "nav"
 ---
 <section class="page pf-m-redhat-font">
     <div class="header">
-        <h1>Fedora <b>Workstation Edition</b></h1>
+        {% include_relative _header.html %}
     </div>
-    <div class="nav">
+
+    <div id="page-sidebar" class="sidebar pf-c-page__sidebar pf-m-dark pf-m-expanded pf-c-page__sidebar-body">
         {% include_relative _select.html %}
         {% include_relative _search.html %}
         {% include_relative _nav.html %}
     </div>
-    <div class="content">
-    </div>
+
+
+    <main role="main" id="main-content-page-layout-group-nav" class="pf-c-page__main" tabindex="-1">
+        <section class="pf-c-page__main-section pf-m-light">
+            <div class="pf-c-content">
+                <h2 data-pf-content="true">Content area</h2>
+                <p data-pf-content="true">
+                    Content goes here.
+                </p>
+                <p data-pf-content="true">
+                    Content goes here.
+                </p>
+                <p data-pf-content="true">
+                    Content goes here.
+                </p>
+                <p data-pf-content="true">
+                    Content goes here.
+                </p>
+            </div>
+        </section>
+    </main>
 </section>
