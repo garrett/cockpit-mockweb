@@ -308,18 +308,17 @@ main {
 .ct-heading-group {
     display: flex;
     align-items: center;
+    flex-flow: row wrap;
 
-    h1, h2, h3,
+    h1, h2, h3, h4,
     .pf-c-title {
-        margin: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin-right: 2rem;
     }
 
     > * {
-        margin: 0 2rem;
-    }
-
-    > :first-child {
-        margin-left: 0;
+        margin: 0 2rem 0 0;
     }
 
     > :last-child {
