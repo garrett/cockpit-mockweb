@@ -207,7 +207,16 @@ main {
 
 .pf-c-page__main {
     background: #fafafa;
-    padding: 2rem;
+    //display: flex;
+
+    > section {
+        padding: 2rem;
+        background: var(--pf-global--BackgroundColor--light-300);
+
+        &.pf-m-light {
+            background-color: white;
+        }
+    }
 }
 
 .ct-search {
@@ -286,4 +295,50 @@ main {
         padding: 0 !important;
         list-style-type: none;
     }
+}
+
+.pf-c-page__main-section.pf-m-light {
+    --pf-c-page__main-section--BackgroundColor: var(--pf-c-page__main-section--m-light--BackgroundColor);
+}
+.pf-c-page__main-section {
+    padding: var(--pf-c-page__main-section--PaddingTop) var(--pf-c-page__main-section--PaddingRight) var(--pf-c-page__main-section--PaddingBottom) var(--pf-c-page__main-section--PaddingLeft);
+    background-color: var(--pf-c-page__main-section--BackgroundColor);
+}
+
+.ct-heading-group {
+    display: flex;
+    align-items: center;
+
+    h1, h2, h3,
+    .pf-c-title {
+        margin: 0 !important;
+    }
+
+    > * {
+        margin: 0 2rem;
+    }
+
+    > :first-child {
+        margin-left: 0;
+    }
+
+    > :last-child {
+        margin-right: 0;
+    }
+
+    > .ct-heading-group-actions {
+        flex: auto;
+        text-align: right;
+    }
+}
+
+.pf-c-breadcrumb + .pf-c-content {
+    margin-top: 0.5rem;
+}
+
+.pf-c-card > .ct-heading-group {
+    padding: 1rem;
+}
+.pf-c-card > .ct-heading-group + .pf-c-table {
+    border-top: 1px solid var(--pf-global--BorderColor--100);
 }
