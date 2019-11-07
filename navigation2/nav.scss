@@ -344,3 +344,61 @@ main {
 .pf-c-table tr > * {
     vertical-align: top;
 }
+
+.pf-c-switch__label {
+    font-size: var(--pf-global--FontSize--sm);
+}
+
+.ct-inline-list {
+    .pf-c-list.pf-m-inline {
+        display: inline-flex;
+        margin-left: 1rem;
+    }
+}
+
+.ct-system-overview {
+    --pf-l-gallery--GridTemplateColumns: repeat(auto-fill, minmax(20rem, 1fr));
+
+    .pf-c-progress {
+        grid-gap: 0;
+        width: 100%;
+        min-width: 3rem;
+    }
+
+    th {
+        font-size: var(--pf-global--FontSize--sm);
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    .pf-c-card__header {
+        font-size: var(--pf-global--FontSize--2xl);
+        font-weight: var(--pf-global--FontWeight--normal)
+    }
+
+    .pf-m-compact {
+        th, td {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    p + p {
+        margin-top: calc(var(--pf-global--LineHeight--md) * 1rem);
+    }
+
+    /* Drop the border on the last row when there are no card actions */
+    .pf-c-card__body:last-child {
+        .pf-c-table:last-child {
+            tr:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
