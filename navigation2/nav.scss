@@ -385,16 +385,18 @@ main {
         padding-top: 0;
 
         > * {
+            /*  If there's a value, set to 1px. Otherwise, divide by 0 and it becomes invalid */
+            --pixel-onoff: calc(var(--severity) / var(--severity) * 1px);
             /*  Hit severity is mapped to the --servity variable in blocks below. */
             height: calc(var(--severity) / var(--total) * 100%);
             /*  Make it stretchy so the math always works out. ("Fudge factor") */
             flex: auto;
             /*  Anti-alias the edges ever-so-slightly */
             border-radius: 1px;
-            /*  The margin equates to 1px unless the value is 0.
-                If 0, then it's 0/0 (error: division by zero, so it's invalid),
-                which then invalidates the margin, so it's skipped. */
-            margin-top: calc(var(--severity) / var(--severity) * 1px);
+            /* If there's a value, then there's a gap at top */
+            margin-top: var(--pixel-onoff);
+            /* If there's a value, always round height up to 1px minimum */
+            min-height: var(--pixel-onoff);
         }
 
         &-critical {
