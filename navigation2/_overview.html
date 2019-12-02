@@ -7,16 +7,31 @@
 <section class="pf-c-page__main-section">
     <div class="pf-l-gallery pf-m-gutter ct-system-overview">
 
-        <div class="pf-c-card">
+        <div class="pf-c-card ct-overview-health">
             <h2 class="pf-c-card__header">Health</h2>
             <div class="pf-c-card__body">
                 <ul>
-                    <li>
-                        <a href="#">2 failed services</a>
+                    <li class="health-item">
+                        <a href="#">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.765 4.236"><path d="M4.712 3.64a.397.397 0 01-.344.596H.398a.397.397 0 01-.344-.596L2.039.198a.397.397 0 01.688 0zm-2.33-.711a.38.38 0 100 .76.38.38 0 000-.76zm-.36-1.368l.06 1.125a.1.1 0 00.1.094h.401a.1.1 0 00.1-.094l.061-1.125a.1.1 0 00-.1-.105h-.523a.1.1 0 00-.1.105z" fill="#f0ab00"/></svg>
+                            2 failed services
+                        </a>
                     </li>
 
-                    <li>
-                        <a href="#">23 bug fixes</a>
+                    <li class="health-item">
+                        <a href="#">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.233 4.149"><path d="M4.233 2.37a.17.17 0 00-.169-.169h-.593v-.778L3.93.966a.168.168 0 000-.238.168.168 0 00-.238 0l-.458.457H1L.542.728a.168.168 0 00-.238 0 .168.168 0 000 .238l.458.457v.778H.169a.17.17 0 00-.169.17c0 .092.077.169.17.169h.592c0 .307.06.542.153.725l-.534.6a.174.174 0 00.013.241.174.174 0 00.241-.013l.484-.548s.35.35.828.35V1.524h.339v2.37c.45 0 .796-.317.796-.317l.524.521c.032.035.077.05.12.05a.162.162 0 00.118-.05.168.168 0 000-.238l-.55-.553c.106-.188.177-.436.177-.767h.593a.17.17 0 00.17-.17zM2.963.848a.846.846 0 10-1.693 0z" aria-label="" fill="#3d4043" stroke-width=".893"/></svg>
+                            23 bug fixes</a>
+                    </li>
+                    <li class="health-item">
+                        <a href="#">
+                            <span class="icon insights-icon" style="--critical:10;--important:5;--moderate:0;--low:2;">
+                                <span class="insights-icon-critical"></span>
+                                <span class="insights-icon-important"></span>
+                                <span class="insights-icon-moderate"></span>
+                                <span class="insights-icon-low"></span>
+                            </span>
+                            Insights: 17 hits, including critical</a>
                     </li>
                 </ul>
             </div>
@@ -144,6 +159,10 @@
                         <tr>
                             <th>Secure Shell keys</th>
                             <td><a href="#">Show fingerprints</a></td>
+                        </tr>
+                        <tr>
+                            <th>Domain</th>
+                            <td><button type="button" class="pf-c-button pf-m-secondary">Join domain</button></td>
                         </tr>
                         <tr>
                             <th>Metrics storage</th>

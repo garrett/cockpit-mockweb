@@ -341,6 +341,86 @@ main {
 .pf-c-card > .ct-heading-group + .pf-c-table {
     border-top: 1px solid var(--pf-global--BorderColor--100);
 }
+
+.ct-overview-health {
+    li {
+        display: block;
+
+        > a {
+            display: flex;
+            align-items: center;
+            padding: 0.25rem 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 0.25rem;
+        }
+    }
+    .icon {
+        width: auto;
+        height: 1.25rem;
+        flex-basis: 22px;
+        margin-right: 0.5rem;
+        justify-self: center;
+    }
+
+    .insights-icon {
+        // JavaScript-set numbers; default to 0
+        --critical: 0;
+        --important: 0;
+        --moderate: 0;
+        --low: 0;
+        // Add the numbers together, making calculations easier later on
+        --total: calc(var(--critical) + var(--important) + var(--moderate) + var(--low));
+        border-radius: 3px;
+        border: 1px solid #999;
+        // Use flex here (with auto below) so everything always adds up properly
+        display: flex;
+        flex-direction: column;
+        width: 22px;
+        height: 22px;
+        // Inner gap between colors and border
+        padding: 1px;
+
+        > * {
+            // Hit severity is mapped to the --servity variable in blocks below.
+            height: calc(var(--severity) / var(--total) * 100%);
+            // Make it stretchy so the math always works out. ("Fudge factor")
+            flex: auto;
+            // Anti-alias the edges ever-so-slightly
+            border-radius: 1px;
+
+            &:not(:first-child) {
+                // This equates to a 1px unless the value is 0.
+                // If 0, then it's 0/0 (error: division by zero, so it's invalid),
+                // which then invalidates the margin, so it's skipped.
+                margin-top: calc(var(--severity) / var(--severity) * 1px);
+            }
+        }
+
+        &-critical {
+            --severity: var(--critical);
+            background: red;
+        }
+
+        &-important {
+            --severity: var(--important);
+            background: orange;
+        }
+
+        &-moderate {
+            --severity: var(--moderate);
+            background: yellow;
+        }
+
+        &-low {
+            --severity: var(--low);
+            background: lightgray;
+        }
+    }
+}
+
+
 .pf-c-table tr > * {
     vertical-align: top;
 }
