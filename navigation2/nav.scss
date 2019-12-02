@@ -373,7 +373,7 @@ main {
         // Add the numbers together, making calculations easier later on
         --total: calc(var(--critical) + var(--important) + var(--moderate) + var(--low));
         border-radius: 3px;
-        border: 1px solid #999;
+        border: 1px solid var(--pf-global--BorderColor--200);
         // Use flex here (with auto below) so everything always adds up properly
         display: flex;
         flex-direction: column;
@@ -400,22 +400,22 @@ main {
 
         &-critical {
             --severity: var(--critical);
-            background: red;
+            background: #c9190b;
         }
 
         &-important {
             --severity: var(--important);
-            background: orange;
+            background: #ec7a08;
         }
 
         &-moderate {
             --severity: var(--moderate);
-            background: yellow;
+            background: #f0ab00;
         }
 
         &-low {
             --severity: var(--low);
-            background: lightgray;
+            background: #d2d2d2;
         }
     }
 }
