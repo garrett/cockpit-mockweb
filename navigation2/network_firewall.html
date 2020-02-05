@@ -5,15 +5,21 @@ css: "pf4/patternfly pf4/patternfly-addons form-layout"
 css_local: "nav"
 ---
 <section class="page pf-m-redhat-font">
+    <div class="ct-switcher">
+        {% include_relative _select.html %}
+    </div>
+
     <div class="header">
         {% include_relative _header.html %}
     </div>
 
     <div id="page-sidebar" class="sidebar pf-c-page__sidebar pf-m-dark pf-m-expanded pf-c-page__sidebar-body">
-        {% include_relative _select.html %}
         {% include_relative _search.html %}
         {% include_relative _nav_network_firewall.html %}
     </div>
 
     {% include_relative _network_firewall.html %}
 </section>
+    <div class="ct-switcher">
+        {% include_relative _select.html %}
+    </div>

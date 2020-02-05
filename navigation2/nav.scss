@@ -1,6 +1,42 @@
 ---
 ---
 
+.ct-switcher {
+    grid-area: switcher;
+    border: 1px solid #999;
+    border-width: 0 1px 1px 0;
+
+    > .pf-c-select {
+        display: flex;
+        height: 100%;
+
+        > button {
+            padding-left: 1.5rem;
+        }
+    }
+
+    .pf-c-select__toggle-text {
+        text-align: left;
+        line-height: var(--pf-global--LineHeight--sm);
+    }
+
+    .username,
+    .at {
+        display: inline-block;
+        font-size: var(--pf-global--FontSize--sm);
+    }
+    .at {
+        opacity: 0.8;
+    }
+    .hostname {
+        display: block;
+        font-weight: 600;
+    }
+}
+
+h1.title {
+}
+
 .pf-m-dark {
     scrollbar-color: var(--pf-global--Color--400) var(--pf-global--BackgroundColor--dark-400);
     text-shadow: 0 0;
@@ -55,7 +91,7 @@ html, body, .page {
     }
 
     @media (min-width: $desktop) {
-        grid: "header header" "sidebar main";
+        grid: "switcher header" "sidebar main";
         grid-template-rows: max-content 1fr;
         grid-template-columns: minmax(min-content, 15rem) 1fr;
     }
@@ -67,11 +103,15 @@ main {
     overflow: auto;
 }
 
+.ct-switcher,
+.header {
+    border-top: 3px solid var(--pf-global--primary-color--light-100);
+}
+
 .header {
     grid-area: header;
     background: #1b1b1b;
     color: white;
-    border-top: 3px solid var(--pf-global--primary-color--light-100);
     display: grid;
     align-items: center;
     grid-template-columns: auto;
