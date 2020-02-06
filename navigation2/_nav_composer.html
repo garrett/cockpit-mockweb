@@ -1,20 +1,35 @@
 <nav class="pf-c-nav pf-m-dark" aria-label="Global">
   {% include_relative _nav-group.html
     number=1
+    title="Apps"
     pages="
-      ^Web_Console-index
+      Image_Builder*-composer
+      Fullscreen_demo-fullscreen
+      Demo_with_menu>-demo
+      View_all_apps
     "
   %}
   {% include_relative _nav-group.html
     number=2
+    title="System"
     pages="
-      Overview*
+      Overview-index
       Logs
       Services!
       Storage
-      Networking
+      Networking-network_firewall
       Podman_containers
       Virtual_machines
     "
   %}
-</nav>
+  {% include_relative _nav-group.html
+    number=3
+    title="Tools"
+    pages="
+      Software_updates
+      Accounts
+      Diagnostic_reports
+      Kernel_dump
+      Terminal
+    "
+  %}</nav>

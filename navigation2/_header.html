@@ -1,6 +1,12 @@
+<!--
 <h1 class="title">
-    Web Console
+    {{ include.title | default: "Web Console"}}
 </h1>
+-->
+
+<div class="meta">
+    {{ include.meta }}
+</div>
 
 <div class="ct-header-item help">
     <i class="fa fa-question-circle"></i>

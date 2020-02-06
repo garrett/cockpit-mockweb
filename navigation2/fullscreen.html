@@ -1,0 +1,47 @@
+---
+title: Fullscreen Demo
+layout: minimal
+css: "pf4/patternfly pf4/patternfly-addons"
+css_local: "nav"
+---
+{% capture back %}
+<nav class="pf-c-nav pf-m-dark">
+    <ul class="pf-c-nav__simple-list">
+        <li class="pf-c-nav__item">
+            <a href="." class="pf-c-nav__link">
+                <i class="fa fa-angle-left"></i>
+                Back to WebConsole
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endcapture %}
+
+<section class="page pf-m-redhat-font ct-page-fullscreen">
+    <div class="ct-switcher">
+        {% include_relative _select.html %}
+    </div>
+
+    <div class="header">
+        {% include_relative _header.html title=page.title meta=back %}
+    </div>
+
+    <!--
+    <div id="page-sidebar" class="sidebar pf-c-page__sidebar pf-m-dark pf-m-expanded pf-c-page__sidebar-body">
+        {% include_relative _search.html %}
+        {% include_relative _nav_demo.html %}
+    </div>
+    -->
+
+
+    <main role="main" id="main-content-page-layout-group-nav" class="pf-c-page__main" tabindex="-1">
+        <section class="pf-c-page__main-section pf-m-light">
+            <div class="pf-c-content">
+                <h2 data-pf-content="true">Fullscreen app</h2>
+                <p data-pf-content="true">
+                    This is a fullscreen app. It handles its own navigation and everything else. Cockpit just has a title bar at the top.
+                </p>
+            </div>
+        </section>
+    </main>
+</section>

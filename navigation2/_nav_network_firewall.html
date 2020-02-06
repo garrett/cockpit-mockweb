@@ -3,7 +3,9 @@
     number=1
     title="Apps"
     pages="
-      Image_Builder>-composer
+      Image_Builder-composer
+      Fullscreen_demo-fullscreen
+      Demo_with_menu>-demo
       View_all_apps
     "
   %}
@@ -15,29 +17,19 @@
       Logs
       Services!
       Storage
-      Networking*
+      Networking*-network_firewall
       Podman_containers
       Virtual_machines
     "
   %}
-  <!--
-  <hr class="pf-c-divider" role="separator">
-  -->
   {% include_relative _nav-group.html
     number=3
     title="Tools"
     pages="
       Software_updates
       Accounts
-      Terminal
-    "
-  %}
-  {% include_relative _nav-group.html
-    number=3
-    title="Debug"
-    pages="
       Diagnostic_reports
       Kernel_dump
+      Terminal
     "
-  %}
-</nav>
+  %}</nav>

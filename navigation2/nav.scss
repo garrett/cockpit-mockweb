@@ -95,6 +95,20 @@ html, body, .page {
         grid-template-rows: max-content 1fr;
         grid-template-columns: minmax(min-content, 15rem) 1fr;
     }
+
+    &.ct-page-fullscreen {
+        @media (max-width: $phone) {
+            grid: "main main" "header header";
+        }
+
+        @media (min-width: $desktop) {
+            grid-template-areas: "switcher header" "main main";
+        }
+
+        .ct-header-item {
+            display: none;
+        }
+    }
 }
 
 .header,
