@@ -1,6 +1,6 @@
 <ul class="pf-c-select pf-m-dark">
     <span id="select-plain-label" hidden>Choose one</span>
-    <button class="pf-c-select__toggle pf-m-plain" id="select-plain-toggle" aria-haspopup="true" aria-expanded="false"
+    <button class="pf-c-select__toggle pf-m-plain" id="host-switcher"
         aria-labelledby="select-plain-label select-plain-toggle">
         <div class="pf-c-select__toggle-wrapper">
             <span class="pf-c-select__toggle-text">
@@ -24,3 +24,19 @@
         <li><button class="pf-c-select__menu-item" aria-pressed="false">June</button></li>
     </ul>
 </ul>
+
+<script>
+    (function(){
+        var switcher = !!document.location.pathname.match(/hosts/);
+
+        $('#host-switcher').on("click", function(event){
+            console.log("Clicked!", event);
+
+            if (switcher) {
+                document.location = ".";
+            } else {
+                document.location = "hosts.html";
+            }
+        });
+    })();
+</script>

@@ -37,24 +37,44 @@
             {% assign warn = false %}
         {% endif %}
 
+        {% if title contains '@' %}
+            {% assign host = true %}
+            {% assign user = title | split: '@' | first %}
+            {% assign hostname = title | split: '@' | last | remove: '*' %}
+            {% assign item-class = "host-item" %}
+        {% else %}
+            {% assign host = false %}
+        {% endif %}
+
         {% if link %}
             {% assign url = link | append: ".html" %}
         {% else %}
             {% assign url = "#" %}
         {% endif %}
 
-        <li class="pf-c-nav__item"><a href="{{ url }}" class="pf-c-nav__link {{ current }}">
+        <li class="pf-c-nav__item"><a href="{{ url }}" class="pf-c-nav__link {{ current }} {{ item-class }}">
             {% if back %}
             <i class="fa fa-angle-left"></i>
             {% endif %}
             <span class="ct-nav-item">
+                {% if host %}
+                <span class="username">{{ user }}</span>
+                <span class="at">@</span>
+                <span class="hostname">{{ hostname }}</span>
+                {% else %}
                 {{ title | remove: "*" | remove: ">" | remove: "^"  | remove: "!" | replace: "_", " " | strip }}
+                {% endif %}
             </span>
             {% if sub %}
             <i class="fa fa-angle-right"></i>
             {% endif %}
             {% if warn %}
             <i class="fa fa-exclamation-triangle"></i>
+            {% endif %}
+            {% if host %}
+            <button class="pf-c-button pf-m-danger" type="button" aria-label="Remove host" title="Remove host">
+                <i class="fa fa-minus"></i>
+            </button>
             {% endif %}
         </a></li>
     {% endfor %}

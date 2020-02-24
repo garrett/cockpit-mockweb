@@ -1,0 +1,30 @@
+---
+title: Cockpit
+layout: minimal
+css: "pf4/patternfly pf4/patternfly-addons form-layout"
+css_local: "nav"
+---
+<section class="page pf-m-redhat-font view-hosts">
+    <div class="ct-switcher">
+        {% include_relative _select.html %}
+    </div>
+
+    <div class="header">
+        {% include_relative _header.html %}
+    </div>
+
+    <div id="page-sidebar" class="sidebar pf-c-page__sidebar pf-m-dark pf-m-expanded pf-c-page__sidebar-body">
+        {% include_relative _search.html %}
+        {% include_relative _nav.html %}
+
+        <div class="sidebar-hosts pf-c-page__sidebar pf-c-page__sidebar-body pf-m-expanded">
+            {% include_relative _search.html string="Search hosts" %}
+            {% include_relative _nav_hosts.html %}
+            <button class="pf-c-button pf-m-secondary" type="button">Add new host…</button>
+        </div>
+    </div>
+
+    <main role="main" id="main-content-page-layout-group-nav ct-system-overview" class="pf-c-page__main" tabindex="-1">
+                {% include_relative _overview.html %}
+    </main>
+</section>

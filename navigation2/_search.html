@@ -1,5 +1,5 @@
 <form class="pf-c-form ct-search pf-site-search">
-        <input type="text" id="global-search-input" name="global-search-input" placeholder="Search"
+        <input type="text" id="global-search-input" name="global-search-input" placeholder="{{ include.string | default: 'Search'}}"
             class="pf-c-form-control pf-site-search-input ds-input" aria-invalid="false" value="" autocomplete="off"
             spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input"
             aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
