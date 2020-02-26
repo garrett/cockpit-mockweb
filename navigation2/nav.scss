@@ -585,6 +585,13 @@ main {
     }
 }
 
+#host-switcher {
+    &:hover,
+    &:focus {
+        background: var(--pf-global--BackgroundColor--dark-400);
+    }
+}
+
 .host-dialog {
     &.pf-c-backdrop {
         position: relative;
