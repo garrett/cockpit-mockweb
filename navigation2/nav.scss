@@ -549,15 +549,20 @@ main {
         position: relative;
     }
     .sidebar-hosts {
+        --sidebar-animation-speed: 600ms;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         background: var(--pf-global--BackgroundColor--dark-200);
-        animation: slideDown 900ms;
+        animation: slideDown var(--sidebar-animation-speed);
         display: flex;
         flex-direction: column;
+
+        > * {
+            animation: noScroll var(--sidebar-animation-speed), fadeInThird var(--sidebar-animation-speed);
+        }
 
         &.slide-up {
             animation: slideDown 900ms;
@@ -580,6 +585,26 @@ main {
     }
 }
 
+.host-dialog {
+    &.pf-c-backdrop {
+        position: relative;
+        grid-column: 2 / -1;
+        grid-row: 2 / -1;
+    }
+
+    .pf-l-bullseye {
+        align-items: start;
+    }
+    .pf-c-modal-box {
+        margin-top: 2rem;
+    }
+
+}
+
+#host-color {
+    align-self: center;
+}
+
 @keyframes slideDown {
     0% {
         height: 0;
@@ -588,5 +613,20 @@ main {
     100% {
         height: 100%;
         overflow: hidden;
+    }
+}
+
+@keyframes noScroll {
+    0%, 100% {
+        overflow: hidden;
+    }
+}
+
+@keyframes fadeInThird {
+    0%, 33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

@@ -20,11 +20,64 @@ css_local: "nav"
         <div class="sidebar-hosts pf-c-page__sidebar pf-c-page__sidebar-body pf-m-expanded">
             {% include_relative _search.html string="Search hosts" %}
             {% include_relative _nav_hosts.html %}
-            <button class="pf-c-button pf-m-secondary" type="button">Add new host…</button>
+            <button id="add-host" class="pf-c-button pf-m-secondary" type="button">Add new host…</button>
         </div>
     </div>
 
     <main role="main" id="main-content-page-layout-group-nav ct-system-overview" class="pf-c-page__main" tabindex="-1">
                 {% include_relative _overview.html %}
     </main>
+
+    {% capture add-machine-body %}
+    <div class="ct-form">
+        <label for="host-address" class="control-label">Address</label>
+        <input id="host-address" class="pf-c-form-control" placeholder="Enter IP address or hostname" type="text">
+
+        <label for="host-color" class="control-label">Color</label>
+        <input id="host-color" type="color" class="ct-form-relax">
+    </div>
+    {% endcapture %}
+
+    {% include_relative _modal.html
+        title="Add machine"
+        id="add-machine"
+        class="host-dialog"
+        body=add-machine-body
+        primary="Add"
+        secondary="Cancel"
+    %}
+
+    {% include_relative _modal.html
+        title="Remove machine"
+        id="remove-machine"
+        class="host-dialog"
+        body="Are you sure you want to remove <strong class='replace'>this host</strong>?"
+        primary="Remove"
+        secondary="Cancel"
+    %}
 </section>
+
+<script>
+    (function(){
+        $('#add-host').on('click', function(event){
+            $('#add-machine').removeAttr('hidden');
+        });
+
+        $('.remove-host').on('click', function(event){
+            var host = $(event.currentTarget).parent().find('.hostname').text();
+
+            console.log(host);
+
+            $('#remove-machine')
+                .find('.replace').text(host)
+                .end()
+                .removeAttr('hidden');
+
+            event.preventDefault();
+        });
+
+        $('.host-dialog button').on('click', function(event){
+            $('.host-dialog').attr('hidden', 'hidden');
+        });
+    })();
+</script>
