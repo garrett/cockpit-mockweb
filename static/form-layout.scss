@@ -86,7 +86,8 @@ $padding-large-vertical: 1rem;
   // All <label> elements describing form elements in PatternFly are
   // supposed to have a `control-label` class.
   // These precede control elements.
-  > .control-label {
+  > .control-label,
+  > .pf-c-form__label {
     text-align: right;
     padding: 0;
     margin: 0;
@@ -102,7 +103,7 @@ $padding-large-vertical: 1rem;
 
   // Put all control elements to the right of the labels,
   // stretching to the rightmost column
-  > :not(.control-label):not(hr):not(.ct-form-split):not(.ct-form-full) {
+  > :not(.control-label):not(.pf-c-form__label):not(hr):not(.ct-form-split):not(.ct-form-full) {
     grid-column: 2 / -1;
   }
 
@@ -372,7 +373,8 @@ $padding-large-vertical: 1rem;
       }
 
       // As control labels fill the row, left align and remove padding
-      > .control-label {
+      > .control-label,
+      > .pf-c-form__label {
         padding: 0;
         text-align: left;
 
