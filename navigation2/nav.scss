@@ -612,6 +612,60 @@ main {
     align-self: center;
 }
 
+// Copy header CSS from Cockpit
+.ct-overview-header {
+  align-items: center;
+  display: flex;
+  flex: none;
+
+  &,
+  &-hostname {
+    flex-wrap: wrap;
+  }
+
+  &-actions,
+  &-hostname {
+    box-sizing: border-box;
+    display: flex;
+  }
+
+  &-hostname {
+    align-items: baseline;
+    flex: auto;
+    /* Collapse down to 15rem, to help preserve button on the right */
+    flex-basis: 15rem;
+
+    > h1 {
+      font-size: var(--pf-global--FontSize--2xl);
+    }
+  }
+
+  &-hostname > h1,
+  &-subheading {
+    padding-right: 1rem;
+  }
+
+  &-actions {
+    align-items: center;
+  }
+
+  &-subheading {
+    font-size: var(--pf-global--FontSize--md);
+  }
+}
+
+@media (min-width: 780px) {
+    /* Embiggen subheading & card headings when there's space */
+    .ct-system-overview .pf-c-card__header {
+        font-size: var(--pf-global--FontSize--2xl);
+    }
+
+    .ct-overview-header-subheading {
+        font-size: var(--pf-global--FontSize--lg);
+    }
+}
+
+
 @keyframes slideDown {
     0% {
         height: 0;
