@@ -594,10 +594,35 @@ main {
             animation-direction: reverse;
         }
 
+        &:not(.edit-mode) {
+            .remove-host {
+                display: none;
+            }
+            .is-editing {
+                display: none;
+            }
+        }
+
+        &.edit-mode {
+            .remove-host {
+            }
+            .not-editing {
+                display: none;
+            }
+        }
+
         > button {
             display: flex;
-            margin: 1.5rem;
+            margin: 0.75rem 1.5rem;
             justify-content: center;
+
+            &:first-of-type {
+                margin-top: 1.5rem;
+            }
+
+            + button {
+                margin-top: 0;
+            }
         }
 
         .pf-c-button {

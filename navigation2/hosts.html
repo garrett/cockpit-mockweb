@@ -20,7 +20,11 @@ css_local: "nav"
         <div class="sidebar-hosts pf-c-page__sidebar pf-c-page__sidebar-body pf-m-expanded">
             {% include_relative _search.html string="Search hosts" %}
             {% include_relative _nav_hosts.html %}
-            <button id="add-host" class="pf-c-button pf-m-secondary" type="button">Add new host…</button>
+            <button id="edit-hosts" class="pf-c-button pf-m-secondary" type="button">
+                <span class="not-editing">Edit hosts</span>
+                <span class="is-editing">Stop editing hosts</span>
+            </button>
+            <button id="add-host" class="pf-c-button pf-m-secondary" type="button">Add new host</button>
         </div>
     </div>
 
@@ -72,6 +76,16 @@ css_local: "nav"
                 .find('.replace').text(host)
                 .end()
                 .removeAttr('hidden');
+
+            event.preventDefault();
+        });
+
+        $('#edit-hosts').on('click', function(event){
+            var $sidebar = $(event.currentTarget).parent('.sidebar-hosts');
+
+            console.log($sidebar)
+
+            $sidebar.toggleClass('edit-mode');
 
             event.preventDefault();
         });
