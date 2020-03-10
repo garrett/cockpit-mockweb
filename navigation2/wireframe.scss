@@ -1,0 +1,146 @@
+---
+---
+
+html, body {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+}
+
+$phone: 720px;
+$desktop: $phone + 1px;
+
+[class^=menu-] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    background: #eee;
+    position: relative;
+    z-index: 99;
+
+    &:not(.visible) {
+        display: none;
+    }
+}
+
+[class^=icon] {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background: #999;
+    padding: 0.5rem;
+}
+
+.page {
+    display: grid;
+    width: 100%;
+    height: 100%;
+
+    >* {
+        outline: 1px dotted rgba(100,200,200,0.5);
+        /*
+        grid-row: content;
+        grid-column: 1;
+        */
+    }
+
+    .bar {
+        grid-area: bar;
+        display: grid;
+        grid-gap: 1rem;
+
+        .icon-system {
+            grid-area: system;
+        }
+        .icon-host {
+            grid-area: host;
+        }
+        .icon-help {
+            grid-area: help;
+        }
+        .icon-extra {
+            grid-area: extra;
+        }
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .menu-navigation {
+        grid-area: nav;
+        flex-direction: column;
+
+        &.visible {
+            display: flex;
+        }
+    }
+
+    .menu-host {
+        flex-direction: column;
+
+        &.visible {
+            display: flex;
+        }
+    }
+
+    @media (max-width: $phone) {
+        grid:
+            [content] "content" 1fr
+            [bar] "bar" 4rem;
+
+        
+        .menu-navigation,
+        .menu-host,
+        .menu-help,
+        .menu-extra {
+            grid-column: content;
+            grid-row: content;
+            align-self: end;
+            justify-self: end;
+        }
+        .menu-navigation {
+            justify-self: start;
+        }
+
+        .bar {
+            grid: "system . host help extra";
+            grid-template-columns: auto 1fr repeat(3, auto);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        grid:
+            [bar] "bar bar" 4rem
+            [content-1] "nav content" auto
+            [content-2] "nav content" 1fr
+            / max-content 1fr;
+
+        .menu-host {
+            grid-column: nav;
+            grid-row: nav;
+            display: none;
+        }
+
+        .menu-help,
+        .menu-extra {
+            grid-column: content;
+            grid-row: content-1;
+            justify-self: end;
+        }
+
+        .bar {
+            grid: "host . help extra";
+            grid-template-columns: auto 1fr repeat(2, auto);
+
+            .icon-system {
+                display: none;
+            }
+        }
+
+        .menu-navigation {
+            display: flex;
+        }
+    }
+}

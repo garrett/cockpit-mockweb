@@ -1,0 +1,83 @@
+---
+title: Cockpit
+layout: minimal
+css: "pf4/patternfly pf4/patternfly-addons form-layout"
+css_local: "wireframe"
+---
+
+<div class="page pf-m-redhat-font">
+    <div class="bar">
+        <button class="icon-system" data-target="menu-navigation">System</button>
+        <button class="icon-host" data-target="menu-host">Host</button>
+        <button class="icon-help" data-target="menu-help">Help</button>
+        <button class="icon-extra" data-target="menu-extra">...</button>
+    </div>
+
+    <div class="menu-navigation sidebar">
+        <div class="titlebar">
+        <h2>Title</h2>
+        </div>
+        <input type="text" placeholder="search" aria-label="Search">
+        <section>
+            <h3>Apps</h3>
+            <ul>
+                <li>...</li>
+            </ul>
+        </section>
+        <section>
+            <h3>System</h3>
+            <ul>
+                <li class="selected">Overview</li>
+                <li>Logs</li>
+                <li>Services</li>
+                <li>Storage</li>
+                <li>Networking</li>
+                <li>Podman Containers</li>
+                <li>Virtual Machines</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Tools</h3>
+            <ul>
+                <li>...</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="menu-host">
+        <div class="titlebar">
+            <h2>Hosts</h2>
+        </div>
+        Host switcher menu
+        <input type="text" placeholder="search" aria-label="Search">
+    </div>
+
+    <div class="menu-help">Help menu</div>
+
+    <div class="menu-extra">
+        <div class="titlebar">
+            <h2>First Last</h2>
+            <button>Privileged</button>
+        </div>
+        More stuff here
+    </div>
+
+    <div class="content">
+        <p>
+            This is a simple demo of splitting actions from popups, for both mobile and desktop.
+        </p>
+    </div>
+</div>
+
+<script>
+    (function(){
+        console.log('start');
+        $('[data-target]').on('click', function(event){
+            let target = $(this).attr('data-target');
+
+            $()
+
+            $('.' + target).toggleClass('visible');
+        });
+    })();
+</script>
