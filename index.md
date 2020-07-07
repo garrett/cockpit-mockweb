@@ -6,12 +6,11 @@ layout: document
 # Cockpit HTML mockups
 
 ## Layouts
-
 * [Forms: Grid-based layout](forms/grid)
+* [Cards](cards)
 * [Checklist](checklist)
 
 ## Pages
-
 * [Overview](overview)
 * [Software updates demos](updates)
 
@@ -19,14 +18,16 @@ layout: document
 * [Performance Co-Pilot (PCP)](pcp)
   
 ## Animation
-
 * [Animations](animation)
 * [Dialog scale animation](dialog-scale)
 
 ## Information
-
 * [Hardware lists](hardware)
 * [Firewall services](firewall/services)
+* [OS info](osinfo)
+
+## Misc.
+* [Topology mod](topology)
 
 ## Navigation
 * [Navigation](navigation2) (contains several sub-mockups; just click around)
