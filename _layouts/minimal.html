@@ -8,7 +8,7 @@
   assign css_local_includes = css_local | split: " "
 %}{% endcapture
 %}<!doctype html>
-<html lang="en">
+<html lang="en" class="{{ page.class }}">
   <head>
     <title>{{ page.title | default: site.title | strip_html }}</title>
     <meta charset="utf-8">
