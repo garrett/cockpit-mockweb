@@ -45,20 +45,17 @@
         grid-column: 1;
         grid-row: calc(60 - var(--metrics-minute));
         display: grid;
-        grid-template: "info time";
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: [info] 1fr [time] 1fr;
         align-items: baseline;
 
-        dt, dd {
-            display: inline;
+        dt {
+            grid-column: time;
+            font-size: var(--pf-global--FontSize--sm);
+            grid-row: 1;
         }
 
-        dt {
-            grid-area: time;
-            font-size: var(--pf-global--FontSize--sm)
-        }
         dd {
-            grid-area: info;
+            grid-column: info;
         }
     }
 
