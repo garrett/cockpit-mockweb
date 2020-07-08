@@ -4,7 +4,7 @@
 .metrics {
     --column-size: 6rem;
     --data-min-height:5px;
-    --data-gap: 1px;
+    --data-gap: 2px;
     &-history,
     &-hour {
         display: grid;
