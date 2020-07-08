@@ -2,14 +2,14 @@
 ---
 
 .metrics {
-    --column-size: 6rem;
-    --data-min-height:5px;
+    --column-size: minmax(5rem, 10vw);
+    --data-min-height:6px;
     --data-gap: 2px;
     &-history,
     &-hour {
         display: grid;
         grid-template: "events cpu memory disks net information";
-        grid-template-columns: [events] 1fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [information] 1fr;
+        grid-template-columns: [events] 3fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [information] 2fr;
         grid-column: 1 / -1;
         position: relative;
     }
@@ -31,6 +31,10 @@
 
     &-label {
         background: #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+
         &:not(#metrics-label-events):not(#metrics-label-information) {
             text-align: center;
         }
@@ -92,6 +96,9 @@
         &:nth-of-type(5n + 2) {
             --size1: 0%;
             --size2: 0%;
+        }
+        &:nth-of-type(7n-2) {
+            --size2: calc(15% * var(--mult));
         }
 
         > .saturation,
