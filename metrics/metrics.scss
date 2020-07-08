@@ -3,28 +3,33 @@
 
 .metrics {
     --column-size: 6rem;
-    --data-min-height: 4px;
+    --data-min-height:5px;
+    --data-gap: 1px;
     &-history,
-    &-day {
+    &-hour {
         display: grid;
         grid-template: "events cpu memory disks net information";
         grid-template-columns: [events] 1fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [details] 1fr;
-        grid-gap: 1px;
-        bakcground: red;
         grid-column: 1 / -1;
+        position: relative;
     }
 
-    &-day {
-        grid-template-rows: repeat(61, minmax(var(--data-min-height), auto));
+    &-hour {
+        grid-gap: var(--data-gap);
+        grid-template-rows: repeat(60, minmax(var(--data-min-height), auto));
     }
 
-    &-events,
     &-time,
     &-label {
         padding: 0.5rem 1rem;
     }
 
-    .metrics-label {
+    &-events {
+        padding: 0 1rem;
+    }
+
+    &-label {
+        background: #ddd;
         &:not(#metrics-label-events):not(#metrics-label-information) {
             text-align: center;
         }
@@ -33,15 +38,16 @@
     &-time {
         grid-row: 0;
         grid-column: 1 / -1;
-        background: #aaa;
+        background: #eee;
     }
 
     &-events {
         grid-column: 1;
-        grid-row: calc(var(--metrics-minute) + 1);
+        grid-row: calc(60 - var(--metrics-minute));
         display: grid;
         grid-template: "info time";
         grid-template-columns: 1fr 1fr;
+        align-items: baseline;
 
         dt, dd {
             display: inline;
@@ -49,6 +55,7 @@
 
         dt {
             grid-area: time;
+            font-size: var(--pf-global--FontSize--sm)
         }
         dd {
             grid-area: info;
@@ -56,27 +63,71 @@
     }
 
     &-data {
-        grid-row: calc(var(--metrics-minute) + 1);
-        background: red;
+        --size1: 25%;
+        --size2: 25%;
+        grid-row: calc(60 - var(--metrics-minute));
+        display: grid;
+        grid-template-areas: ". saturation utilization .";
+        grid-template-columns: calc(50% - var(--size1)) var(--size1) var(--size2) calc(50% - var(--size2));
+
+        &:nth-of-type(odd) {
+            --size1: calc(33% * var(--mult));
+            --size2: calc(25% * var(--mult));
+        }
+        &:nth-of-type(3n + 1) {
+            --size1: calc(11% * var(--mult));
+        }
+        &:nth-of-type(5n + 1) {
+            --size2: calc(35% * var(--mult));
+        }
+        &:nth-of-type(7n + 1) {
+            --size2: calc(5% * var(--mult));
+        }
+        &:nth-of-type(9n + 1) {
+            grid-template-columns: calc(50% - var(--size2)) var(--size2) var(--size1) calc(50% - var(--size1));
+        }
+        &:nth-of-type(5n + 2) {
+            --size1: 0%;
+            --size2: 0%;
+        }
+
+        > .saturation,
+        > .utilization {
+            background-color: var(--color);
+            min-width: 2px;
+        }
+
+        > .saturation {
+            grid-area: saturation;
+        }
+
+        > .utilization {
+            grid-area: utilization;
+            opacity: 0.7;
+        }
 
         &-cpu {
-            background: plum;
+            --color: plum;
             grid-column: cpu;
+            --mult: 1;
         }
 
         &-memory {
-            background: lightblue;
+            --color: lightblue;
             grid-column: memory;
+            --mult: 0.5;
         }
 
         &-disks {
-            background: lightgreen;
+            --color: lightgreen;
             grid-column: disks;
+            --mult: 0.25;
         }
 
         &-network {
-            background: lightsalmon;
+            --color: lightsalmon;
             grid-column: network;
+            --mult: 0.15;
         }
     }
 }

@@ -1,3 +1,6 @@
 {% for i in (1..60) %}
-<div class="metrics-data metrics-data-{{ include.resource }}" style="--metrics-minute: {{ i }}"></div>
+<div class="metrics-data metrics-data-{{ include.resource }}" style="--metrics-minute: {{ i }}">
+    <div class="saturation"></div>
+    <div class="utilization"></div>
+</div>
 {% endfor %}

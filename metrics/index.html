@@ -8,7 +8,6 @@ class: "pf-m-redhat-font"
 
 <div class="metrics">
     <section>
-        Stuff at the top
     </section>
 
     <section class="metrics-history">
@@ -19,7 +18,7 @@ class: "pf-m-redhat-font"
         <div id="metrics-label-net" class="metrics-label">Net</div>
         <div id="metrics-label-information" class="metrics-label">Information</div>
 
-        <div class="metrics-day">
+        <div class="metrics-hour">
             <h3 class="metrics-time"><time>3:00 Monday June 3</time></h3>
 
             <dl class="metrics-events" style="--metrics-minute: 3">
@@ -29,11 +28,47 @@ class: "pf-m-redhat-font"
 
             <dl class="metrics-events" style="--metrics-minute: 14">
                 <dt><time>3:14</time></dt>
-                <dd>Swap</dd>
+                <dd>Network errors (53)</dd>
             </dl>
 
             <dl class="metrics-events" style="--metrics-minute: 33">
                 <dt><time>3:33</time>  - <time>3:34</time></dt>
+                <dd>Swap</dd>
+            </dl>
+
+            {% include_relative _data.html resource="cpu" %}
+            {% include_relative _data.html resource="memory" %}
+            {% include_relative _data.html resource="disks" %}
+            {% include_relative _data.html resource="network" %}
+        </div>
+        <div class="metrics-hour">
+            <h3 class="metrics-time"><time>2:00 Monday June 3</time></h3>
+
+            <dl class="metrics-events" style="--metrics-minute: 11">
+                <dt><time>3:03</time>  - <time>3:07</time></dt>
+                <dd>Swap</dd>
+            </dl>
+
+            <dl class="metrics-events" style="--metrics-minute: 51">
+                <dt><time>3:14</time></dt>
+                <dd>Swap</dd>
+            </dl>
+
+            {% include_relative _data.html resource="cpu" %}
+            {% include_relative _data.html resource="memory" %}
+            {% include_relative _data.html resource="disks" %}
+            {% include_relative _data.html resource="network" %}
+        </div>
+        <div class="metrics-hour">
+            <h3 class="metrics-time"><time>1:00 Monday June 3</time></h3>
+
+            <dl class="metrics-events" style="--metrics-minute: 11">
+                <dt><time>3:03</time>  - <time>3:07</time></dt>
+                <dd>Swap</dd>
+            </dl>
+
+            <dl class="metrics-events" style="--metrics-minute: 51">
+                <dt><time>3:14</time></dt>
                 <dd>Swap</dd>
             </dl>
 
