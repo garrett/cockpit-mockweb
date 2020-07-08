@@ -1,0 +1,82 @@
+---
+---
+
+.metrics {
+    --column-size: 6rem;
+    --data-min-height: 4px;
+    &-history,
+    &-day {
+        display: grid;
+        grid-template: "events cpu memory disks net information";
+        grid-template-columns: [events] 1fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [details] 1fr;
+        grid-gap: 1px;
+        bakcground: red;
+        grid-column: 1 / -1;
+    }
+
+    &-day {
+        grid-template-rows: repeat(61, minmax(var(--data-min-height), auto));
+    }
+
+    &-events,
+    &-time,
+    &-label {
+        padding: 0.5rem 1rem;
+    }
+
+    .metrics-label {
+        &:not(#metrics-label-events):not(#metrics-label-information) {
+            text-align: center;
+        }
+    }
+
+    &-time {
+        grid-row: 0;
+        grid-column: 1 / -1;
+        background: #aaa;
+    }
+
+    &-events {
+        grid-column: 1;
+        grid-row: calc(var(--metrics-minute) + 1);
+        display: grid;
+        grid-template: "info time";
+        grid-template-columns: 1fr 1fr;
+
+        dt, dd {
+            display: inline;
+        }
+
+        dt {
+            grid-area: time;
+        }
+        dd {
+            grid-area: info;
+        }
+    }
+
+    &-data {
+        grid-row: calc(var(--metrics-minute) + 1);
+        background: red;
+
+        &-cpu {
+            background: plum;
+            grid-column: cpu;
+        }
+
+        &-memory {
+            background: lightblue;
+            grid-column: memory;
+        }
+
+        &-disks {
+            background: lightgreen;
+            grid-column: disks;
+        }
+
+        &-network {
+            background: lightsalmon;
+            grid-column: network;
+        }
+    }
+}
