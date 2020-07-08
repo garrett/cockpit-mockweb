@@ -1,5 +1,5 @@
 {% for i in (1..60) %}
-<div class="metrics-data metrics-data-{{ include.resource }}" style="--metrics-minute: {{ i }}">
+<div class="metrics-data metrics-data-{{ include.resource }}" style="--metrics-minute: {{ i }}" aria-hidden=true>
     <div class="saturation"></div>
     <div class="utilization"></div>
 </div>

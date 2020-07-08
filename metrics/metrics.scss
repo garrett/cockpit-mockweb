@@ -9,7 +9,7 @@
     &-hour {
         display: grid;
         grid-template: "events cpu memory disks net information";
-        grid-template-columns: [events] 1fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [details] 1fr;
+        grid-template-columns: [events] 1fr [cpu] var(--column-size) [memory] var(--column-size) [disks] var(--column-size) [network] var(--column-size) [information] 1fr;
         grid-column: 1 / -1;
         position: relative;
     }
@@ -24,6 +24,7 @@
         padding: 0.5rem 1rem;
     }
 
+    &-info,
     &-events {
         padding: 0 1rem;
     }
@@ -42,7 +43,7 @@
     }
 
     &-events {
-        grid-column: 1;
+        grid-column: events;
         grid-row: calc(60 - var(--metrics-minute));
         display: grid;
         grid-template-columns: [info] 1fr [time] 1fr;
@@ -57,6 +58,11 @@
         dd {
             grid-column: info;
         }
+    }
+
+    &-info {
+        grid-row: calc(60 - var(--metrics-minute));
+        grid-column: information;
     }
 
     &-data {
