@@ -1,7 +1,7 @@
 #!/usr/bin/bash -e
 
 echo "## Creating mockweb container..."
-toolbox create -r 31 -c cockpit-mockweb
+toolbox create -r 32 -c cockpit-mockweb
 
 run="toolbox run -c cockpit-mockweb"
 
