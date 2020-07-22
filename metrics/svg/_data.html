@@ -1,0 +1,44 @@
+{% capture data %}
+{% for i in (1..60) %}
+<div class="metrics-data metrics-data-{{ include.resource }}" style="--metrics-minute: {{ i }}" aria-hidden=true>
+    <svg viewBox="0 0 100 60" preserveAspectRatio="none" class="svg-graph svg-graph-vertical utilization">
+        <polygon transform="matrix(0,1,1,0,0,0)" points="
+            0,0
+    
+            0,30
+            10,33
+            20,40
+            25,33
+            28,100
+            30,80
+            33,52
+            40,16
+            45,30
+            50,20
+            60,30
+    
+            60,0
+        " />
+    </svg>
+    <svg viewBox="0 0 100 60" preserveAspectRatio="none" class="svg-graph svg-graph-vertical saturation">
+        <polygon transform="matrix(0,1,-1,0,100,0)" points="
+            0,0
+
+            0,30
+            10,33
+            20,40
+            25,33
+            28,100
+            30,80
+            33,52
+            40,16
+            45,30
+            50,20
+            60,30
+
+            60,0
+        " />
+    </svg>
+</div>
+{% endfor %}
+{% endcapture %}{{ data | strip_newlines }}
