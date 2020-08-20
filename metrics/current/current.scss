@@ -1,6 +1,15 @@
 ---
 ---
 
+@media screen and (max-width: 600px) {
+    /* Make the skip link visible in mobile mode */
+    .ct-metrics-skip {
+        display: block;
+        position: static;
+        margin: var(--pf-global--spacer--md) var(--pf-global--spacer--md) 0;
+    }
+}
+
 .ct-usage {
     display: grid;
     padding: var(--pf-global--spacer--lg) var(--pf-global--spacer--xl);
