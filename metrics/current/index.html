@@ -8,114 +8,127 @@ class: "pf-m-redhat-font"
 {% capture newline %}
 {% endcapture %}
 
-<div class="pf-l-split pf-m-gutter ct-current">
-  <div class="current-usage pf-l-split__item pf-m-fill pf-l-gallery pf-m-gutter">
-        <div class="usage-block usage-block-cpu">
-            <h2>CPU</h2>
-            {% assign percents = "25 75 100 80" | split: " " %}
-            {% assign i = 0 %}
-            {% for percent in percents %}
-                {% assign amount = percent | append: "%" %}
-                {% assign cpu = i | prepend: "CPU " %}
-                {% include_relative _progress.html title=cpu percent=percent amount=amount %}
-                {% assign i = i | plus: 1 %}
-            {% endfor %}
-            <p>Load average: 3.79, 3.78, 3.51</p>
-        </div>
-
-        <div class="usage-block usage-block-memory">
-            <h2>Memory</h2>
-            {% include_relative _progress.html percent=85 amount="3 GiB available" tooltip="7 / 20 GiB used" %}
-            {% include_relative _progress.html percent=12 amount="24 MiB swap" tooltip="200 MiB total" %}
-        </div>
-
-        <div class="usage-block usage-block-disk">
-            {% capture disks %}
-                / 90 100 GiB
-                /boot 190 200 MiB
-                /var 20 100 GiB
-                /mnt/Documents 200 250 GiB
-                /mnt/SourceTree 578 600 GiB
-            {% endcapture %}
-            {% assign disks = disks | split: newline %}
-
-            <h2>Disk</h2>
-            {% for disk in disks %}
-                {% assign d = disk | strip | split: " " %}
-                {% assign title = d[0] | strip %}
-                {% assign used_size = d[1] | strip | plus: 0 %}
-                {% assign free_size = d[2] | strip | minus: d[1] %}
-                {% assign total_size = d[2] | strip | plus: 0 %}
-                {% assign per = 100.0 | times: used_size | divided_by: total_size %}
-                {% capture used %}{{used_size}} / {{total_size}} {{d[3]}}{% endcapture %}
-                {% capture free %}{{free_size}} {{d[3]}} free{% endcapture %}
-                {% capture tooltip %}{{used}} used{% endcapture %}
-                {% unless title == "" %}
-                    {% include_relative _progress.html title=title percent=per amount=free tooltip=tooltip %}
-                {% endunless %}
-            {% endfor %}
-        </div>
-
-        <div class="usage-block usage-block-network">
-            <h2>Network</h2>
-            {% include_relative _progress.html title="In" percent=24 amount="5 Mb/s" %}
-            {% include_relative _progress.html title="Out" percent=75 amount="23 Mb/s" %}
-        </div>
-
-        <div class="usage-block usage-block-temperature">
-            <h2>Temperature</h2>
-
-            <div class="ct-form ct-form-info">
-                <div class="control-label">acpitz</div>
-                <div class="ct-temp">46°C</div>
-                <div class="control-label">pch_skylake</div>
-                <div class="ct-temp">46°C</div>
-                <div class="control-label">coretemp</div>
-                <div class="ct-temp">49°C</div>
+<div class="ct-metrics">
+    <div class="pf-l-split pf-m-gutter ct-current">
+    <div class="current-usage pf-l-split__item pf-m-fill pf-l-gallery pf-m-gutter">
+            <div class="usage-block usage-block-cpu">
+                <h2>CPU</h2>
+                {% assign percents = "25 75 100 80" | split: " " %}
+                {% assign i = 0 %}
+                {% for percent in percents %}
+                    {% assign amount = percent | append: "%" %}
+                    {% assign cpu = i | prepend: "CPU " %}
+                    {% include_relative _progress.html title=cpu percent=percent amount=amount %}
+                    {% assign i = i | plus: 1 %}
+                {% endfor %}
+                <p>Load average: 3.79, 3.78, 3.51</p>
             </div>
+
+            <div class="usage-block usage-block-memory">
+                <h2>Memory</h2>
+                {% include_relative _progress.html percent=85 amount="3 GiB available" tooltip="7 / 20 GiB used" %}
+                {% include_relative _progress.html percent=12 amount="24 MiB swap" tooltip="200 MiB total" %}
+            </div>
+
+            <div class="usage-block usage-block-disk">
+                {% capture disks %}
+                    / 90 100 GiB
+                    /boot 190 200 MiB
+                    /var 20 100 GiB
+                    /mnt/Documents 200 250 GiB
+                    /mnt/SourceTree 578 600 GiB
+                {% endcapture %}
+                {% assign disks = disks | split: newline %}
+
+                <h2>Disk</h2>
+                {% for disk in disks %}
+                    {% assign d = disk | strip | split: " " %}
+                    {% assign title = d[0] | strip %}
+                    {% assign used_size = d[1] | strip | plus: 0 %}
+                    {% assign free_size = d[2] | strip | minus: d[1] %}
+                    {% assign total_size = d[2] | strip | plus: 0 %}
+                    {% assign per = 100.0 | times: used_size | divided_by: total_size %}
+                    {% capture used %}{{used_size}} / {{total_size}} {{d[3]}}{% endcapture %}
+                    {% capture free %}{{free_size}} {{d[3]}} free{% endcapture %}
+                    {% capture tooltip %}{{used}} used{% endcapture %}
+                    {% unless title == "" %}
+                        {% include_relative _progress.html title=title percent=per amount=free tooltip=tooltip %}
+                    {% endunless %}
+                {% endfor %}
+            </div>
+
+            <div class="usage-block usage-block-network">
+                <h2>Network</h2>
+                {% include_relative _progress.html title="In" percent=24 amount="5 Mb/s" %}
+                {% include_relative _progress.html title="Out" percent=75 amount="23 Mb/s" %}
+            </div>
+
+            <div class="usage-block usage-block-temperature">
+                <h2>Temperature</h2>
+
+                <div class="ct-form ct-form-info">
+                    <div class="control-label">acpitz</div>
+                    <div class="ct-temp">46°C</div>
+                    <div class="control-label">pch_skylake</div>
+                    <div class="ct-temp">46°C</div>
+                    <div class="control-label">coretemp</div>
+                    <div class="ct-temp">49°C</div>
+                </div>
+            </div>
+
         </div>
 
+        <div class="current-processes pf-l-split__item">
+            <h2>Processes</h2>
+        
+            <div class="pf-c-tabs process-tabs">
+                <ul class="pf-c-tabs__list">
+                    <li class="pf-c-tabs__item pf-m-current">
+                        <button class="pf-c-tabs__link" id="default-example-users-link">
+                            <span class="pf-c-tabs__item-text">All</span>
+                        </button>
+                    </li>
+                    <li class="pf-c-tabs__item">
+                        <button class="pf-c-tabs__link" id="default-example-containers-link">
+                            <span class="pf-c-tabs__item-text">System</span>
+                        </button>
+                    </li>
+                    <li class="pf-c-tabs__item">
+                        <button class="pf-c-tabs__link" id="default-example-database-link">
+                            <span class="pf-c-tabs__item-text">Users</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+                
+            <section class="pf-c-tab-content" id="tab1-panel" role="tabpanel" tabindex="0">
+                Process table here
+            </section>
+
+            <section class="pf-c-tab-content" id="tab2-panel" role="tabpanel" tabindex="0" hidden>
+            </section>
+
+            <section class="pf-c-tab-content" id="tab3-panel" role="tabpanel" tabindex="0" hidden>
+            </section>
+
+            <section class="pf-c-tab-content" id="tab4-panel" role="tabpanel" tabindex="0" hidden>
+            </section>
+        </div>
     </div>
 
-    <div class="current-processes pf-l-split__item">
-        <h2>Processes</h2>
-    
-        <div class="pf-c-tabs process-tabs">
-            <ul class="pf-c-tabs__list">
-                <li class="pf-c-tabs__item pf-m-current">
-                    <button class="pf-c-tabs__link" id="default-example-users-link">
-                        <span class="pf-c-tabs__item-text">All</span>
-                    </button>
-                </li>
-                <li class="pf-c-tabs__item">
-                    <button class="pf-c-tabs__link" id="default-example-containers-link">
-                        <span class="pf-c-tabs__item-text">System</span>
-                    </button>
-                </li>
-                <li class="pf-c-tabs__item">
-                    <button class="pf-c-tabs__link" id="default-example-database-link">
-                        <span class="pf-c-tabs__item-text">Users</span>
-                    </button>
-                </li>
-                <li class="pf-c-tabs__item">
-                    <button class="pf-c-tabs__link" id="default-example-database-link">
-                        <span class="pf-c-tabs__item-text">Containers</span>
-                    </button>
-                </li>
+    <div class="ct-metrics-history">
+        <p>
+            Historical metrics go here.
+        </p>
+        <p>
+            View source:
+        </p>
+        <p>
+            <ul>
+                <li><a href="https://github.com/garrett/cockpit-mockweb/blob/master/metrics/current/index.html">Page (HTML)</a></li>
+                <li><a href="https://github.com/garrett/cockpit-mockweb/blob/master/metrics/current/_progress.html">progress (HTML)</a></li>
+                <li><a href="https://github.com/garrett/cockpit-mockweb/blob/master/metrics/current/current.scss">Style (SCSS)</a></li>
             </ul>
-        </div>
-            
-        <section class="pf-c-tab-content" id="tab1-panel" role="tabpanel" tabindex="0">
-            Process table here
-        </section>
-
-        <section class="pf-c-tab-content" id="tab2-panel" role="tabpanel" tabindex="0" hidden>
-        </section>
-
-        <section class="pf-c-tab-content" id="tab3-panel" role="tabpanel" tabindex="0" hidden>
-        </section>
-
-        <section class="pf-c-tab-content" id="tab4-panel" role="tabpanel" tabindex="0" hidden>
-        </section>
+        </p>
     </div>
 </div>

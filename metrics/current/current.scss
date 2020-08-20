@@ -89,3 +89,29 @@
         padding: var(--pf-global--spacer--md);
     }
 }
+
+.ct-metrics {
+    min-height: 100%;
+
+    &,
+    &-history {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-history {
+        background: var(--pf-global--BackgroundColor--200);
+        flex: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    p + p {
+        margin-top: 1rem;
+    }
+
+    ul > li {
+        list-style: disc;
+    }
+}
