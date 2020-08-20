@@ -1,0 +1,91 @@
+---
+---
+
+.ct-current {
+    padding: var(--pf-global--spacer--lg) var(--pf-global--spacer--xl);
+
+    h2 {
+        font-size: var(--pf-global--FontSize--xl);
+        font-weight: var(--pf-global--FontWeight--normal);
+        line-height: var(--pf-global--LineHeight--sm);
+    }
+}
+
+.current-usage {
+    align-items: baseline;
+
+    .pf-c-progress {
+        grid-gap: 0;
+    }
+
+    .pf-m-warning {
+        --pf-c-progress__bar--before--BackgroundColor: var(--pf-global--warning-color--100);
+        --pf-c-progress__status-icon--Color: var(--pf-global--warning-color--100);
+        --pf-c-progress__bar--before--Opacity: 0.3;
+    }
+}
+
+.current-usage {
+    --pf-l-split--m-gutter--MarginRight: var(--pf-global--spacer--2xl);
+
+    /* Align blocks to be top to  left to right, top to bottom */
+
+    grid-template-areas: "cpu memory" "cpu network" "disk network" "disk temperature" "disk .";
+
+
+    @media screen and (max-width: 1000px) {
+        grid-template-areas: "cpu" "memory" "disk" "network" "temperature";
+    }
+
+    /* Align blocks to be top to bottom, left to right */
+
+    @media screen and (min-width: 1400px) {
+    /* Overlap columns for which items will be taller than others */
+    grid-template-areas: "cpu    disk network"
+                         "cpu    disk temperature"
+                         "memory disk temperature";
+    }
+
+    &.pf-m-gutter {
+        grid-gap: var(--pf-global--spacer--xl) var(--pf-global--spacer--2xl);
+    }
+}
+
+.usage-block {
+    display: grid;
+    grid-gap: var(--pf-global--spacer--sm) var(--pf-global--spacer--md);
+
+    &-cpu,
+    &-memory,
+    &-network {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-cpu { grid-area: cpu; }
+    &-memory { grid-area: memory; }
+    &-network { grid-area: network; }
+    &-temperature { grid-area: temperature; }
+    &-disk { grid-area: disk; }
+
+    h2, p {
+        grid-column: 1 / -1;
+    }
+}
+
+.current-processes {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+
+    .pf-c-tabs__item {
+        --pf-c-tabs__link--FontSize: var(--pf-global--FontSize--sm);
+    }
+
+    .pf-c-tab-content {
+        flex: auto;
+        border: var(--pf-global--BorderWidth--sm) solid var(--pf-global--BorderColor--100);
+        border-radius: var(--pf-global--BorderRadius--sm);
+        border-top: none;
+        padding: var(--pf-global--spacer--md);
+    }
+}

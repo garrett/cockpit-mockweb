@@ -1,0 +1,27 @@
+{% assign additional = "" %}
+{% assign percentage = include.percent | strip | plus: 0 %}
+
+{% if percentage >= 90 %}
+    {% assign additional = " pf-m-danger" %}
+{% elsif percentage >= 70 %}
+    {% assign additional = " pf-m-warning" %}
+{% endif %}
+
+{% if include.tooltip %}
+    {% capture title %}title="{{include.tooltip}}"{% endcapture %}
+{% endif %}
+
+<div class="pf-c-progress pf-m-sm {{additional}}" id="progress-sm-example" {{title}}>
+    <div class="pf-c-progress__description" id="progress-sm-example-description">
+        {{include.title}}
+    </div>
+    <div class="pf-c-progress__status" aria-hidden="true">
+        <span class="pf-c-progress__measure">
+            {{include.amount}}
+        </span>
+    </div>
+    <div class="pf-c-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+        aria-valuenow="{{percentage}}" aria-describedby="progress-sm-example-description">
+        <div class="pf-c-progress__indicator" style="width:{{percentage}}%;"></div>
+    </div>
+</div>
