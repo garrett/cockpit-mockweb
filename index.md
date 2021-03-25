@@ -19,6 +19,7 @@ layout: document
   
 ## Animation
 * [Animations](animation)
+* [New row animation](animation/new-row)
 * [Dialog scale animation](dialog-scale)
 
 ## Information
