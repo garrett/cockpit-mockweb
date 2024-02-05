@@ -1,8 +1,0 @@
-#!/usr/bin/bash -e
-
-echo "## Deleting Cockpit mockweb container..."
-
-toolbox rm -f cockpit-mockweb
-rm -rf .gem
-
-echo "## Done! "
