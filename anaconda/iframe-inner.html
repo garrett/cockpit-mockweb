@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <script type="text/javascript">
+        /* Most of this JS isn't important. The important part is the sendMessage function. We're sending an object to the parent window and it has 'hasModal' set to true when there's a modal. The parent page looks for this data.hasModal and adds a class when it is true or removes it when it isn't true (false or undefined). */
+
+        // Set up a toggle (not really important for the implementation)
+        var hasModal = false;
+
+        // Send an object as a message to the parent page
+        var sendMessage = (state) => {
+            window.top.postMessage({
+                "name": "modal",
+                "hasModal": state
+            }, event.origin);
+        };
+
+        // This is our modal handling code, to either show or hide our simple modal.
+        var dialogState = (isVisible) => {
+            // Swap state
+            hasModal = !hasModal;
+
+            // The actual thing that matters for this demo. It sends a message to the parent page of either having a modal or not.
+            sendMessage(hasModal);
+            
+            // Toggle the class in the DOM to simulate the modal creation and removal
+            document.getElementById("dialog").classList.toggle("visible", hasModal);
+            document.body.classList.toggle("has-modal", hasModal);
+        };
+
+        // For the demo: Bind the buttons to toggle modal state
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById('toggler').addEventListener('mouseup', (event) => {
+                dialogState(hasModal);
+            });
+
+            document.getElementById("button-close").addEventListener("mouseup", dialogState);
+        });
+    </script>
+
+    <style>
+        html, body {
+            margin: 0; padding: 0;
+        }
+        body {
+            /* Basic page stuff */
+            background: white;
+            padding: 0.5rem 1rem;
+
+            /* Simulate a background scrim from PF */
+            &.has-modal::after {
+                position: absolute;
+                inset: 0;
+                content: '';
+                background: #999a;
+                /* For the demo, let the mouse pass through to the toggle button */
+                pointer-events: none;
+            }
+        }
+
+        /* Simulate showing a modal from PF */
+        dialog.visible {
+            display: block;
+            z-index: 10;
+            position: relative;
+        }
+    </style>
+
+    <body>
+        <p>
+            Everything within the dotted box is within the iframe.
+        </p>
+        <button id="toggler">toggle</button>
+        <dialog id="dialog">
+            <h2>Dialog here</h2>
+            <p>
+                Example dialog
+            </p>
+            <form method="dialog">
+                <button id="button-close">Close</button>
+            </form>
+        </dialog>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <title>Anaconda iframe with a modal inside</title>
+    <script>
+        // Set up a listener for receiving messages
+        window.onmessage = function(event) {
+            // Add a class if there's a model in the iframe, otherwise remove it.
+            document.body.classList.toggle("has-modal", event.data.hasModal);
+        };
+    </script>
+
+    <style>
+        /* The important stuff: iframe should have a z-index higher than the background scrim. */
+        iframe {
+            /* z-index requires a position */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Simulate a PF background scrim */
+        body.has-modal::after {
+            position: absolute;
+            inset: 0;
+            content: '';
+            background: #999a;
+        }
+
+        /* Basic page scaffolding: You can ignore all CSS below */
+        html, body {
+            display: grid;
+            block-size: 100%;
+            inline-size: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            gap: 0 2rem;
+            grid:
+                "title title"
+                "iframe sidebar"
+                "actions actions";
+            grid-template-columns: 1fr 20rem;
+            grid-template-rows: auto 1fr auto;
+            align-items: stretch;
+
+            > h1, p {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        iframe {
+            border: 1px dashed #444;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            grid-area: title;
+        }
+
+        .frame-wrapper {
+            grid-area: iframe;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .actions {
+            grid-area: actions;
+        }
+    </style>
+    <body>
+        <h1>Title</h1>
+        <div class="frame-wrapper">
+            <iframe src="iframe-inner.html"></iframe>
+        </div>
+        <p class="sidebar">Sidebar</p>
+        <p class="actions">The rest of the page</p>
+    </body>
+</html>
