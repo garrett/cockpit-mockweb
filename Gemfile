@@ -22,5 +22,8 @@ group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
 end
 
+gem 'csv'
+gem 'faraday-retry'
 # HTML/XML parser
 gem 'oga'
+gem 'webrick'
