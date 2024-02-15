@@ -36,5 +36,8 @@ layout: document
 * [Navigation iframe subnav demo](navigation/iframe) (old)
 * [Navigation demo](navigation) (old)
 
+## Navigator
+* [Navigator grid](navigator/grid)
+
 ## Anaconda
 * [iframe with a modal](anaconda/iframe-outer)

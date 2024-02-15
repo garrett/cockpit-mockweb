@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<style type="text/css">
+    @import url(grid.css);
+</style>
+
+<script>
+    var items = '';
+    var isGrid = false;
+    var script = '<link rel="stylesheet" href="../../../node_modules/@patternfly/patternfly/patternfly.css">';
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        document.getElementById("toggle")?.addEventListener("mousedown", (event) => {
+            isGrid = !isGrid;
+
+            fileview = document.getElementById("fileview");
+
+            if (isGrid) {
+                fileview.classList.replace("view-details", "view-grid")
+            } else {
+                fileview.classList.replace("view-grid", "view-details")
+            }
+        });
+
+        function addRow(item) {
+            return `
+                <tr data-type="${ item.type }" class="pf-v5-c-table__tr" role="row">
+                  <td class="pf-v5-c-table__td item-num" role="cell" data-label="number">${ item.num }</td>
+                  <td class="pf-v5-c-table__td item-name" role="cell" data-label="${ item.type } name">${ item.name }</td>
+                  <td class="pf-v5-c-table__td item-size" role="cell" data-label="size">${ item.size }</td>
+                  <td class="pf-v5-c-table__td item-date" role="cell" data-label="date">${ item.date }</td>
+                </tr>`;
+        }
+
+        function genString(length = 3) {
+            return Math.random().toString(16).substr(2, length);
+        }
+
+        var num = 1;
+        for (var i = 0; i < 1000; i++) {
+            const isFile = (num > 13);
+            const length = Math.floor(Math.random() * 10) + 1;
+            const wild = Math.floor(Math.random() * 100);
+            const type = isFile ? 'file' : 'folder';
+
+            items += addRow({
+                num: num++,
+                type: type,
+                name: genString(length) +
+                    ((wild > 90) ? "-" + genString(wild) : '') +
+                    (isFile ? "." + genString(3) : ''),
+                size: Math.floor(Math.random() * 100) + ' MiB',
+                date: '2024-02-14'
+            });
+        }
+
+        document.querySelector('#fileview > tbody').innerHTML = items;
+    })
+
+    console.log(items);
+</script>
+
+<div class="toolbar">
+    <button id="toggle">Toggle</button>
+</div>
+
+<body>
+    <table
+        id="fileview" 
+      class="pf-v5-c-table pf-m-grid-md fileview view-details"
+      role="grid"
+      aria-label="This is a simple table example"
+      id="table-basic"
+    >
+  <thead class="pf-v5-c-table__thead">
+    <tr class="pf-v5-c-table__tr" role="row">
+      <th class="pf-v5-c-table__th" role="columnheader" scope="col">#</th>
+      <th class="pf-v5-c-table__th" role="columnheader" scope="col">Name</th>
+      <th class="pf-v5-c-table__th" role="columnheader" scope="col">Size</th>
+      <th class="pf-v5-c-table__th" role="columnheader" scope="col">Date</th>
+    </tr>
+  </thead>
+
+  <tbody class="pf-v5-c-table__tbody" role="rowgroup">
+  </tbody>
+  </table>
+</body>
+
+</html>
