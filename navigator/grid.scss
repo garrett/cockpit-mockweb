@@ -1,5 +1,9 @@
 ---
 ---
+
+// @import url("../../../node_modules/@patternfly/patternfly/patternfly-base.css");
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -12,10 +16,13 @@ html {
     box-sizing: border-box;
 }
 .toolbar {
-    padding: 0.5rem;
+    align-items: center;
     background: #eee;
-    position: sticky;
+    display: grid;
+    grid-template-columns: 1fr auto;
     inset-block-start: 0;
+    padding: 0.5rem 1rem;
+    position: sticky;
     z-index: 99;
 
     > button {
@@ -24,6 +31,7 @@ html {
     }
 }
 .fileview {
+    --icon-size: 32px;
     border-collapse: collapse;
     inline-size: 100%;
     margin: 0.5rem;
@@ -37,7 +45,7 @@ html {
             /* content-visibility: auto; */
             aspect-ratio: 1;
             background-color: #999;
-            block-size: 32px;
+            block-size: var(--icon-size);
             content: '';
             display: block;
             mask-repeat: no-repeat;
@@ -65,12 +73,17 @@ html {
     }
 
     &.view-details {
+        --icon-size: 16px;
+        inline-size: calc(100% - 1rem);
+        margin: 0.5rem auto;
+
         tr:hover {
             background-color: #eee;
         }
     }
 
     &.view-grid {
+        --icon-size: 64px;
         display: contents;
 
         thead {
@@ -79,6 +92,7 @@ html {
         tbody {
             display: grid;
             gap: 0.5em;
+            margin: 0.5em;
             grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         }
 
@@ -88,7 +102,7 @@ html {
             display: block;
             /* flex-flow: column; */
             /* align-items: center; */
-            padding: 0.25em 0.25em;
+            padding: 0.5em;
 
             td {
                 display: block;
@@ -124,6 +138,26 @@ html {
                 background-color: #eee;
                 outline: 1px solid #ccc;
             }
+        }
+    }
+}
+
+#toggle {
+    align-items: center;
+    display: flex;
+    gap: 0.25em;
+
+    &::before {
+        aspect-ratio: 1;
+        block-size: 16px;
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' aria-hidden='true' class='pf-v5-svg' color='var(--pf-v5-global--Color--100)' viewBox='0 0 512 512'%3E%3Cpath d='M296 32h192c13 0 24 11 24 24v160c0 13-11 24-24 24H296c-13 0-24-11-24-24V56c0-13 11-24 24-24zm-80 0H24C11 32 0 43 0 56v160c0 13 11 24 24 24h192c13 0 24-11 24-24V56c0-13-11-24-24-24zM0 296v160c0 13 11 24 24 24h192c13 0 24-11 24-24V296c0-13-11-24-24-24H24c-13 0-24 11-24 24zm296 184h192c13 0 24-11 24-24V296c0-13-11-24-24-24H296c-13 0-24 11-24 24v160c0 13 11 24 24 24z'/%3E%3C/svg%3E");
+    }
+    &.view-grid {
+        &::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' aria-hidden='true' class='pf-v5-svg' color='var(--pf-v5-global--Color--100)' viewBox='0 0 512 512'%3E%3Cpath d='M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z'/%3E%3C/svg%3E");
         }
     }
 }

@@ -11,15 +11,17 @@
     var script = '<link rel="stylesheet" href="../../../node_modules/@patternfly/patternfly/patternfly.css">';
 
     document.addEventListener("DOMContentLoaded", (event) => {
-        document.getElementById("toggle")?.addEventListener("mousedown", (event) => {
+        document.getElementById("toggle")?.addEventListener("mouseup", (event) => {
             isGrid = !isGrid;
 
             fileview = document.getElementById("fileview");
 
             if (isGrid) {
                 fileview.classList.replace("view-details", "view-grid")
+                event.target.classList = "view-grid";
             } else {
                 fileview.classList.replace("view-grid", "view-details")
+                event.target.classList = "view-details";
             }
         });
 
@@ -62,6 +64,9 @@
 </script>
 
 <div class="toolbar">
+    <div>
+        system / path / goes / here
+    </div>
     <button id="toggle">Toggle</button>
 </div>
 
