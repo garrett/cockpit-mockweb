@@ -13,6 +13,7 @@
     var isGrid = true;
 
     document.addEventListener("DOMContentLoaded", (event) => {
+        // Bind view toggle button
         document.getElementById("toggle")?.addEventListener("mouseup", (event) => {
             isGrid = !isGrid;
             const numberOfElements = document.querySelector(".fileview tbody")?.childElementCount || 1;
@@ -23,13 +24,14 @@
 
             if (isGrid) {
                 fileview.classList.replace("view-details", "view-grid")
-                event.target.classList = "view-grid";
+                event.target.classList.replace("view-details", "view-grid");
             } else {
                 fileview.classList.replace("view-grid", "view-details")
-                event.target.classList = "view-details";
+                event.target.classList.replace("view-grid", "view-details");
             }
         });
 
+        // Add an individual row template
         function addRow(item) {
             return `
                 <tr data-type="${item.type}" class="ct-table__tr" role="row">
@@ -39,41 +41,71 @@
                 </tr>`;
         }
 
+        // Make a random string for fake filenames
         function genString(length = 3) {
             return Math.random().toString(16).substr(2, length);
         }
 
-        var num = 1;
-        for (var i = 0; i < 5000; i++) {
-            const isFile = (num > 13);
-            const length = Math.floor(Math.random() * 10) + 1;
-            const wild = Math.floor(Math.random() * 100);
-            const type = isFile ? 'file' : 'folder';
+        function updateView(numberOfItems = 1000) {
+            var num = 1;
+            var items = [];
+            const container = document.querySelector('#fileview > tbody');
 
-            items += addRow({
-                num: num++,
-                type: type,
-                name: genString(length) +
-                    ((wild > 90) ? "-" + genString(wild) : '') +
-                    (isFile ? "." + genString(3) : ''),
-                size: Math.floor(Math.random() * 100) + ' MiB',
-                date: '2024-02-14'
-            });
+            // Build items
+            for (var i = 0; i < numberOfItems; i++) {
+                const isFile = (num > 13);
+                const length = Math.floor(Math.random() * 10) + 1;
+                const wild = Math.floor(Math.random() * 100);
+                const type = isFile ? 'file' : 'folder';
+
+                items += addRow({
+                    num: num++,
+                    type: type,
+                    name: genString(length) +
+                        ((wild > 90) ? "-" + genString(wild) : '') +
+                        (isFile ? "." + genString(3) : ''),
+                    size: Math.floor(Math.random() * 100) + ' MiB',
+                    date: '2024-02-14'
+                });
+            }
+
+            // Remove all children (otherwise the browser tries to deal with previous and new children at the same time)
+            container.replaceChildren();
+            // Insert all items
+            container.innerHTML = items;
         }
 
-        document.querySelector('#fileview > tbody').innerHTML = items;
-    })
+        // Create the initial view
+        updateView();
 
-    console.log(items);
+        document.getElementById('config')?.addEventListener('change', (event) => {
+            // Update the view with a new set of items
+            updateView(event.target.value);
+            event.preventDefault();
+        }) ;
+    });
 </script>
 
 <body>
     <div id="app">
     <div class="toolbar">
-        <div>
-            system / path / goes / here
+        <div class="breadcrumbs">
+            <a href="#">system</a> /
+            <a href="#">path</a> /
+            <a href="#">goes</a> /
+            here
         </div>
-        <button id="toggle" class="view-grid">Toggle</button>
+
+        <form id="config" class="pf-v5-c-form pf-m-inline">
+            <div class="pf-v5-c-form__group-control pf-m-inline">
+                <label class="pf-v5-c-form__label-text pf-m-inline"
+                    for="items-1k">Number of items:</label>
+                <label class="pf-v5-c-radio"><input type="radio" name="items" value="1000" id="items-1k" class="pf-v5-c-radio__input" checked>1k</label>
+                <label class="pf-v5-c-radio"><input type="radio" name="items" value="5000" id="items-5k" class="pf-v5-c-radio__input">5k</label>
+                <label class="pf-v5-c-radio"><input type="radio" name="items" value="10000" id="items-10k" class="pf-v5-c-radio__input">10k</label>
+            </div>
+        </form>
+        <button id="toggle" class="pf-v5-c-button pf-m-secondary view-grid">Toggle</button>
     </div>
 
         <table id="fileview"

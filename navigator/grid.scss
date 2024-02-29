@@ -2,26 +2,17 @@
 ---
 
 @import url("../../../node_modules/@patternfly/patternfly/patternfly-base.css");
-
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--pf-v5-global--FontFamily--text);
-    font-size: var(--pf-v5-global--FontSize--md);
-}
-
-* {
-    box-sizing: border-box;
-}
+@import url("../../../node_modules/@patternfly/patternfly/components/Form/form.css");
+@import url("../../../node_modules/@patternfly/patternfly/components/Radio/radio.css");
 
 .toolbar {
     align-items: center;
     background: var(--pf-v5-global--BackgroundColor--200);
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
+    gap: var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--md);
     inset-block-start: 0;
-    padding: 0.5rem 1rem;
+    padding: var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--md);
     position: sticky;
     z-index: 99;
 
@@ -201,6 +192,11 @@ html, body {
 }
 
 @container app (width < 64ch) {
+    .toolbar {
+        grid-template: auto / auto;
+        justify-items: start;
+    }
+
     .fileview.view-details {
         --details-size: 10rem;
 
@@ -247,6 +243,11 @@ html, body {
     }
     .item-date {
         grid-area: date;
+    }
+
+    .fileview.view-grid tbody {
+        justify-content: start;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
 }
 
