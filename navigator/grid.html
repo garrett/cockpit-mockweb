@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+<title>Cockpit Navigator fileview</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style type="text/css">
@@ -9,7 +10,7 @@
 
 <script>
     var items = '';
-    var isGrid = false;
+    var isGrid = true;
 
     document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("toggle")?.addEventListener("mouseup", (event) => {
@@ -43,7 +44,7 @@
         }
 
         var num = 1;
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 5000; i++) {
             const isFile = (num > 13);
             const length = Math.floor(Math.random() * 10) + 1;
             const wild = Math.floor(Math.random() * 100);
@@ -72,20 +73,20 @@
         <div>
             system / path / goes / here
         </div>
-        <button id="toggle">Toggle</button>
+        <button id="toggle" class="view-grid">Toggle</button>
     </div>
 
         <table id="fileview"
-            class="ct-table fileview view-details"
+            class="ct-table fileview view-grid"
             role="grid" aria-label="This is a simple table example"
             id="table-basic">
             <thead class="ct-table__thead">
                 <tr class="ct-table__tr" role="row">
-                    <th class="ct-table__th" role="columnheader"
+                    <th class="ct-table__th col-name" role="columnheader"
                         scope="col">Name</th>
-                    <th class="ct-table__th" role="columnheader"
+                    <th class="ct-table__th col-size" role="columnheader"
                         scope="col">Size</th>
-                    <th class="ct-table__th" role="columnheader"
+                    <th class="ct-table__th col-date" role="columnheader"
                         scope="col">Date</th>
                 </tr>
             </thead>

@@ -133,6 +133,12 @@ html, body {
             padding: var(--pf-v5-global--spacer--sm);
             border-block-start: none;
         }
+
+        .col-size, .item-size,
+        .col-date, .item-date {
+            width: 12ch;
+            text-align: right;
+        }
     }
 
     &.view-grid {
@@ -143,10 +149,13 @@ html, body {
             display: none;
         }
         tbody {
+            align-items: start;
             display: grid;
-            gap: 0.5em;
+            // As we're using justify-content: space-between, this is the minimum gap horizontally;
+            gap: var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--xs);
+            grid-template-columns: repeat(auto-fit, 10rem);
+            justify-content: space-between;
             margin: 0.5em;
-            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         }
 
         tr {
@@ -191,7 +200,7 @@ html, body {
     }
 }
 
-@container app (width < 70ch) {
+@container app (width < 64ch) {
     .fileview.view-details {
         --details-size: 10rem;
 
@@ -202,6 +211,7 @@ html, body {
         tr {
             display: grid;
             gap: 0 1rem;
+            justify-items: end;
         }
 
         thead tr {
@@ -217,6 +227,16 @@ html, body {
                 padding: 0;
             }
         }
+
+        .col-name, .item-name {
+            justify-self: start;
+        }
+
+        .col-size, .item-size,
+        .col-date, .item-date {
+            width: unset;
+        }
+        
     }
 
     .item-name {
