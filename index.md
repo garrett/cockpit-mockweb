@@ -16,7 +16,7 @@ layout: document
 
 ## Metrics
 * [Performance Co-Pilot (PCP)](pcp)
-  
+
 ## Animation
 * [Animations](animation)
 * [New row animation](animation/new-row)
@@ -32,12 +32,15 @@ layout: document
 
 ## Navigation
 * [Navigation](navigation2) (contains several sub-mockups; just click around)
-* [Navigation wireframe (desktop vs mobile)](navigation2/wireframe.html) 
+* [Navigation wireframe (desktop vs mobile)](navigation2/wireframe.html)
 * [Navigation iframe subnav demo](navigation/iframe) (old)
 * [Navigation demo](navigation) (old)
 
 ## Navigator
 * [Navigator grid](navigator/grid)
+
+## Fullscreen
+* [Fullscreen the Virtual Machine console](fullscreen)
 
 ## Anaconda
 * [iframe with a modal](anaconda/iframe-outer)
